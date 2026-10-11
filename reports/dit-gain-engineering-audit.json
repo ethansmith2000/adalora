@@ -1,0 +1,23 @@
+{
+  "checks": {
+    "complete": true,
+    "successful_worker_exit": true,
+    "source_verified": true,
+    "bounded_nonquality_calibration": true,
+    "early_stream_replay": true,
+    "same_batches_noise_and_base_init": true,
+    "finite_metrics": true,
+    "zero_init_and_wakeup": true,
+    "weights_saved": false,
+    "test_evaluated": false
+  },
+  "selected_within_tolerance": {
+    "basis_r8": true,
+    "basis_r2": true,
+    "basis_r4": true,
+    "bottleneck_r2": true,
+    "bottleneck_r4": true
+  },
+  "bytes_retained": 3760760,
+  "report_sha256": "33a22f76de29e8a7fce71c0fb47afd80d84d142e6ddade0e2c082f6436135d87"
+}

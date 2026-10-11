@@ -1,0 +1,1154 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-projectors-20261008T205312Z",
+  "audit": {
+    "checks": {
+      "successful_exits_closed_supervisors": true,
+      "source_runtime_data_configs_budgets": true,
+      "selection_recomputed_without_quality": true,
+      "mandatory_response_bounded_corrections": true,
+      "frozen_gain_rate_fresh_confirmation": true,
+      "initialization_gradients_paired_traces": true,
+      "equal_shape_base_gain_lr_adapter_init": true,
+      "claimed_gpu_matches_runtime": true,
+      "frozen_evaluators_counts": true,
+      "bounded_concurrency": true,
+      "no_weights_test_speed_study": true,
+      "storage_within_bound": true
+    },
+    "calibration_runs": 22,
+    "confirmation_runs": 12,
+    "bytes_retained": 53125559,
+    "report_sha256": "337e468c7cc3f26cd5bc6f031da714755e87f8e15ab543d4c1f9b6d706d1f7ed"
+  },
+  "aggregates": [
+    {
+      "family": "independent_linear",
+      "label": "Independent s16 affine",
+      "parameters": 4954032,
+      "adapter_parameters": 774336,
+      "design": {
+        "rank": 8,
+        "n_basis": 16,
+        "projector_groups": 6,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 1.0,
+      "metrics": {
+        "fid": {
+          "mean": 124.12467956542969,
+          "sd": 3.3363040671478013,
+          "values": [
+            126.48380279541016,
+            121.76555633544922
+          ]
+        },
+        "agreement_percent": {
+          "mean": 28.57999950647354,
+          "sd": 0.14142164283587938,
+          "values": [
+            28.47999930381775,
+            28.679999709129333
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06756599960625172,
+          "sd": 0.0001973500766972956,
+          "values": [
+            0.06770554718375206,
+            0.06742645202875137
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 620.154296875,
+          "sd": 0.0,
+          "values": [
+            620.154296875,
+            620.154296875
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "values": [
+            1.0,
+            1.0
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "values": [
+            1.0,
+            1.0
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.7122183764386171,
+          "sd": 0.038036470353769565,
+          "values": [
+            0.7391142225581686,
+            0.6853225303190655
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.4428772516583956,
+          "sd": 0.3057912985483807,
+          "values": [
+            2.6591043524897957,
+            2.2266501508269956
+          ]
+        }
+      }
+    },
+    {
+      "family": "independent_silu",
+      "label": "Independent s16 SiLU",
+      "parameters": 4954032,
+      "adapter_parameters": 774336,
+      "design": {
+        "rank": 8,
+        "n_basis": 16,
+        "projector_groups": 6,
+        "coefficient_activation": "silu",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 3.038430345503401,
+      "metrics": {
+        "fid": {
+          "mean": 127.21773529052734,
+          "sd": 0.19093264159968787,
+          "values": [
+            127.35274505615234,
+            127.08272552490234
+          ]
+        },
+        "agreement_percent": {
+          "mean": 28.620000183582306,
+          "sd": 0.42426492850763814,
+          "values": [
+            28.920000791549683,
+            28.31999957561493
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.0672177002966404,
+          "sd": 0.00028398944392890596,
+          "values": [
+            0.06741851115822792,
+            0.06701688943505286
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 620.193359375,
+          "sd": 0.0,
+          "values": [
+            620.193359375,
+            620.193359375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.9622739844669167,
+          "sd": 0.011088799610608468,
+          "values": [
+            0.9701149498667967,
+            0.9544330190670367
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 2.83863752768605,
+          "sd": 1.1480675468638255,
+          "values": [
+            3.650443875333665,
+            2.0268311800384344
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.6556938255755491,
+          "sd": 0.012061657113221142,
+          "values": [
+            0.6642227051126548,
+            0.6471649460384435
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 4.367679962330576,
+          "sd": 2.0547361771265664,
+          "values": [
+            5.820597846726094,
+            2.9147620779350576
+          ]
+        }
+      }
+    },
+    {
+      "family": "two_groups_linear",
+      "label": "Two groups s48 affine",
+      "parameters": 4954032,
+      "adapter_parameters": 774336,
+      "design": {
+        "rank": 8,
+        "n_basis": 48,
+        "projector_groups": 2,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 0.3539042154445919,
+      "metrics": {
+        "fid": {
+          "mean": 131.9630470275879,
+          "sd": 6.330033154802446,
+          "values": [
+            127.4870376586914,
+            136.43905639648438
+          ]
+        },
+        "agreement_percent": {
+          "mean": 27.650000154972076,
+          "sd": 1.0040917675265606,
+          "values": [
+            26.94000005722046,
+            28.360000252723694
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06798033962547778,
+          "sd": 0.00012332465009570217,
+          "values": [
+            0.06789313592910766,
+            0.06806754332184792
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 616.12646484375,
+          "sd": 0.0,
+          "values": [
+            616.12646484375,
+            616.12646484375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.9519344672966028,
+          "sd": 0.2179284328930619,
+          "values": [
+            0.7978357945845612,
+            1.1060331400086443
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 0.8723136558375981,
+          "sd": 0.16378348770245943,
+          "values": [
+            0.7565012410368055,
+            0.9881260706383906
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.8294903579481812,
+          "sd": 0.029082927152893883,
+          "values": [
+            0.8500550929547468,
+            0.8089256229416155
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.582638336760845,
+          "sd": 0.08624863624572755,
+          "values": [
+            2.521651341203399,
+            2.6436253323182908
+          ]
+        }
+      }
+    },
+    {
+      "family": "two_groups_silu",
+      "label": "Two groups s48 SiLU",
+      "parameters": 4954032,
+      "adapter_parameters": 774336,
+      "design": {
+        "rank": 8,
+        "n_basis": 48,
+        "projector_groups": 2,
+        "coefficient_activation": "silu",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 0.9537651340006984,
+      "metrics": {
+        "fid": {
+          "mean": 134.33898544311523,
+          "sd": 14.564467276297394,
+          "values": [
+            144.6376190185547,
+            124.04035186767578
+          ]
+        },
+        "agreement_percent": {
+          "mean": 28.709998726844788,
+          "sd": 0.6081115890545834,
+          "values": [
+            28.279998898506165,
+            29.13999855518341
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06811161170601845,
+          "sd": 0.00017602095172660902,
+          "values": [
+            0.06823607731461524,
+            0.06798714609742165
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 616.17333984375,
+          "sd": 0.0,
+          "values": [
+            616.17333984375,
+            616.17333984375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.7679961378688606,
+          "sd": 0.05166755612235306,
+          "values": [
+            0.7314616585674082,
+            0.8045306171703129
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 0.9663801459367247,
+          "sd": 0.23616580855616695,
+          "values": [
+            0.799385701222255,
+            1.1333745906511943
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.8116221923522775,
+          "sd": 0.0627785491730091,
+          "values": [
+            0.8560133301855654,
+            0.7672310545189897
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.3261327853109375,
+          "sd": 0.07453227043151849,
+          "values": [
+            2.2734305114715814,
+            2.378835059150294
+          ]
+        }
+      }
+    },
+    {
+      "family": "all_shared_linear",
+      "label": "All shared s96 affine",
+      "parameters": 4954032,
+      "adapter_parameters": 774336,
+      "design": {
+        "rank": 8,
+        "n_basis": 96,
+        "projector_groups": 1,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 0.21455895441024406,
+      "metrics": {
+        "fid": {
+          "mean": 136.49249267578125,
+          "sd": 3.9111628042516533,
+          "values": [
+            133.7268829345703,
+            139.2581024169922
+          ]
+        },
+        "agreement_percent": {
+          "mean": 26.590000092983246,
+          "sd": 0.18384666054694532,
+          "values": [
+            26.719999313354492,
+            26.460000872612
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06823025698959828,
+          "sd": 3.271118486834971e-05,
+          "values": [
+            0.06820712668895722,
+            0.06825338729023933
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 615.32568359375,
+          "sd": 0.0,
+          "values": [
+            615.32568359375,
+            615.32568359375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.9557255238209157,
+          "sd": 0.04885135073229059,
+          "values": [
+            0.9902686451938408,
+            0.9211824024479907
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 0.9901182968833835,
+          "sd": 0.16052365355066364,
+          "values": [
+            0.8766109329168692,
+            1.1036256608498978
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.571982149787609,
+          "sd": 0.0025182283444053185,
+          "values": [
+            0.5737628061265141,
+            0.5702014934487037
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.8349401615402754,
+          "sd": 0.15118670463562006,
+          "values": [
+            2.94184530561337,
+            2.728035017467181
+          ]
+        }
+      }
+    },
+    {
+      "family": "two_groups_s16",
+      "label": "Two groups s16 affine",
+      "parameters": 4437808,
+      "adapter_parameters": 258112,
+      "design": {
+        "rank": 8,
+        "n_basis": 16,
+        "projector_groups": 2,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 1.3195201942793655,
+      "metrics": {
+        "fid": {
+          "mean": 132.8930892944336,
+          "sd": 1.290036134018054,
+          "values": [
+            131.98089599609375,
+            133.80528259277344
+          ]
+        },
+        "agreement_percent": {
+          "mean": 27.619999647140503,
+          "sd": 0.2262737856004368,
+          "values": [
+            27.459999918937683,
+            27.779999375343323
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06799724459648132,
+          "sd": 0.00010401757918791547,
+          "values": [
+            0.0680707961320877,
+            0.06792369306087494
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 606.11083984375,
+          "sd": 0.0,
+          "values": [
+            606.11083984375,
+            606.11083984375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 1.144323258483016,
+          "sd": 0.040428455896057584,
+          "values": [
+            1.1157360231660125,
+            1.1729104938000197
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 1.3959168676432678,
+          "sd": 0.15003795401679546,
+          "values": [
+            1.2898240129226364,
+            1.5020097223638993
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.7492317440388105,
+          "sd": 0.019844031711247836,
+          "values": [
+            0.7632635934279147,
+            0.7351998946497063
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.984705911003796,
+          "sd": 0.20871073007583596,
+          "values": [
+            3.132286683546815,
+            2.8371251384607774
+          ]
+        }
+      }
+    }
+  ],
+  "paired_differences": {
+    "independent_linear": {
+      "independent_silu": {
+        "fid": {
+          "mean": -3.0930557250976562,
+          "sd": 3.145371425548113,
+          "values": [
+            -0.8689422607421875,
+            -5.317169189453125
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.04000067710876465,
+          "sd": 0.5656865713435175,
+          "values": [
+            -0.4400014877319336,
+            0.3600001335144043
+          ]
+        }
+      },
+      "two_groups_linear": {
+        "fid": {
+          "mean": -7.838367462158203,
+          "sd": 9.666337221950247,
+          "values": [
+            -1.00323486328125,
+            -14.673500061035156
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.9299993515014648,
+          "sd": 0.8626701246906813,
+          "values": [
+            1.53999924659729,
+            0.31999945640563965
+          ]
+        }
+      },
+      "two_groups_silu": {
+        "fid": {
+          "mean": -10.214305877685547,
+          "sd": 11.228163209149592,
+          "values": [
+            -18.15381622314453,
+            -2.2747955322265625
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.12999922037124634,
+          "sd": 0.4666899462187041,
+          "values": [
+            0.20000040531158447,
+            -0.45999884605407715
+          ]
+        }
+      },
+      "all_shared_linear": {
+        "fid": {
+          "mean": -12.367813110351562,
+          "sd": 7.247466871399454,
+          "values": [
+            -7.243080139160156,
+            -17.49254608154297
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.9899994134902954,
+          "sd": 0.3252683033828247,
+          "values": [
+            1.7599999904632568,
+            2.219998836517334
+          ]
+        }
+      },
+      "two_groups_s16": {
+        "fid": {
+          "mean": -8.768409729003906,
+          "sd": 4.626340201165855,
+          "values": [
+            -5.497093200683594,
+            -12.039726257324219
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.9599998593330383,
+          "sd": 0.08485214276455741,
+          "values": [
+            1.019999384880066,
+            0.9000003337860107
+          ]
+        }
+      }
+    },
+    "independent_silu": {
+      "independent_linear": {
+        "fid": {
+          "mean": 3.0930557250976562,
+          "sd": 3.145371425548113,
+          "values": [
+            0.8689422607421875,
+            5.317169189453125
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.04000067710876465,
+          "sd": 0.5656865713435175,
+          "values": [
+            0.4400014877319336,
+            -0.3600001335144043
+          ]
+        }
+      },
+      "two_groups_linear": {
+        "fid": {
+          "mean": -4.745311737060547,
+          "sd": 6.520965796402134,
+          "values": [
+            -0.1342926025390625,
+            -9.356330871582031
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.9700000286102295,
+          "sd": 1.4283566960341987,
+          "values": [
+            1.9800007343292236,
+            -0.04000067710876465
+          ]
+        }
+      },
+      "two_groups_silu": {
+        "fid": {
+          "mean": -7.121250152587891,
+          "sd": 14.373534634697705,
+          "values": [
+            -17.284873962402344,
+            3.0423736572265625
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.08999854326248169,
+          "sd": 1.0323765175622215,
+          "values": [
+            0.6400018930435181,
+            -0.8199989795684814
+          ]
+        }
+      },
+      "all_shared_linear": {
+        "fid": {
+          "mean": -9.274757385253906,
+          "sd": 4.102095445851341,
+          "values": [
+            -6.374137878417969,
+            -12.175376892089844
+          ]
+        },
+        "agreement_pp": {
+          "mean": 2.03000009059906,
+          "sd": 0.24041826796069282,
+          "values": [
+            2.2000014781951904,
+            1.8599987030029297
+          ]
+        }
+      },
+      "two_groups_s16": {
+        "fid": {
+          "mean": -5.67535400390625,
+          "sd": 1.4809687756177419,
+          "values": [
+            -4.628150939941406,
+            -6.722557067871094
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.000000536441803,
+          "sd": 0.650538714108075,
+          "values": [
+            1.4600008726119995,
+            0.5400002002716064
+          ]
+        }
+      }
+    },
+    "two_groups_linear": {
+      "independent_linear": {
+        "fid": {
+          "mean": 7.838367462158203,
+          "sd": 9.666337221950247,
+          "values": [
+            1.00323486328125,
+            14.673500061035156
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.9299993515014648,
+          "sd": 0.8626701246906813,
+          "values": [
+            -1.53999924659729,
+            -0.31999945640563965
+          ]
+        }
+      },
+      "independent_silu": {
+        "fid": {
+          "mean": 4.745311737060547,
+          "sd": 6.520965796402134,
+          "values": [
+            0.1342926025390625,
+            9.356330871582031
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.9700000286102295,
+          "sd": 1.4283566960341987,
+          "values": [
+            -1.9800007343292236,
+            0.04000067710876465
+          ]
+        }
+      },
+      "two_groups_silu": {
+        "fid": {
+          "mean": -2.3759384155273438,
+          "sd": 20.89450043109984,
+          "values": [
+            -17.15058135986328,
+            12.398704528808594
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.0599985718727112,
+          "sd": 0.39598017847197714,
+          "values": [
+            -1.3399988412857056,
+            -0.7799983024597168
+          ]
+        }
+      },
+      "all_shared_linear": {
+        "fid": {
+          "mean": -4.529445648193359,
+          "sd": 2.418870350550793,
+          "values": [
+            -6.239845275878906,
+            -2.8190460205078125
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.0600000619888306,
+          "sd": 1.187938428073506,
+          "values": [
+            0.2200007438659668,
+            1.8999993801116943
+          ]
+        }
+      },
+      "two_groups_s16": {
+        "fid": {
+          "mean": -0.9300422668457031,
+          "sd": 5.0399970207843925,
+          "values": [
+            -4.493858337402344,
+            2.6337738037109375
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.030000507831573486,
+          "sd": 0.7778179819261238,
+          "values": [
+            -0.5199998617172241,
+            0.5800008773803711
+          ]
+        }
+      }
+    },
+    "two_groups_silu": {
+      "independent_linear": {
+        "fid": {
+          "mean": 10.214305877685547,
+          "sd": 11.228163209149592,
+          "values": [
+            18.15381622314453,
+            2.2747955322265625
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.12999922037124634,
+          "sd": 0.4666899462187041,
+          "values": [
+            -0.20000040531158447,
+            0.45999884605407715
+          ]
+        }
+      },
+      "independent_silu": {
+        "fid": {
+          "mean": 7.121250152587891,
+          "sd": 14.373534634697705,
+          "values": [
+            17.284873962402344,
+            -3.0423736572265625
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.08999854326248169,
+          "sd": 1.0323765175622215,
+          "values": [
+            -0.6400018930435181,
+            0.8199989795684814
+          ]
+        }
+      },
+      "two_groups_linear": {
+        "fid": {
+          "mean": 2.3759384155273438,
+          "sd": 20.89450043109984,
+          "values": [
+            17.15058135986328,
+            -12.398704528808594
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.0599985718727112,
+          "sd": 0.39598017847197714,
+          "values": [
+            1.3399988412857056,
+            0.7799983024597168
+          ]
+        }
+      },
+      "all_shared_linear": {
+        "fid": {
+          "mean": -2.1535072326660156,
+          "sd": 18.47563008054905,
+          "values": [
+            10.910736083984375,
+            -15.217750549316406
+          ]
+        },
+        "agreement_pp": {
+          "mean": 2.1199986338615417,
+          "sd": 0.7919582496015287,
+          "values": [
+            1.5599995851516724,
+            2.679997682571411
+          ]
+        }
+      },
+      "two_groups_s16": {
+        "fid": {
+          "mean": 1.4458961486816406,
+          "sd": 15.854503410315449,
+          "values": [
+            12.656723022460938,
+            -9.764930725097656
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.0899990797042847,
+          "sd": 0.38183780345414664,
+          "values": [
+            0.8199989795684814,
+            1.359999179840088
+          ]
+        }
+      }
+    },
+    "all_shared_linear": {
+      "independent_linear": {
+        "fid": {
+          "mean": 12.367813110351562,
+          "sd": 7.247466871399454,
+          "values": [
+            7.243080139160156,
+            17.49254608154297
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.9899994134902954,
+          "sd": 0.3252683033828247,
+          "values": [
+            -1.7599999904632568,
+            -2.219998836517334
+          ]
+        }
+      },
+      "independent_silu": {
+        "fid": {
+          "mean": 9.274757385253906,
+          "sd": 4.102095445851341,
+          "values": [
+            6.374137878417969,
+            12.175376892089844
+          ]
+        },
+        "agreement_pp": {
+          "mean": -2.03000009059906,
+          "sd": 0.24041826796069282,
+          "values": [
+            -2.2000014781951904,
+            -1.8599987030029297
+          ]
+        }
+      },
+      "two_groups_linear": {
+        "fid": {
+          "mean": 4.529445648193359,
+          "sd": 2.418870350550793,
+          "values": [
+            6.239845275878906,
+            2.8190460205078125
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.0600000619888306,
+          "sd": 1.187938428073506,
+          "values": [
+            -0.2200007438659668,
+            -1.8999993801116943
+          ]
+        }
+      },
+      "two_groups_silu": {
+        "fid": {
+          "mean": 2.1535072326660156,
+          "sd": 18.47563008054905,
+          "values": [
+            -10.910736083984375,
+            15.217750549316406
+          ]
+        },
+        "agreement_pp": {
+          "mean": -2.1199986338615417,
+          "sd": 0.7919582496015287,
+          "values": [
+            -1.5599995851516724,
+            -2.679997682571411
+          ]
+        }
+      },
+      "two_groups_s16": {
+        "fid": {
+          "mean": 3.5994033813476562,
+          "sd": 2.6211266702335996,
+          "values": [
+            1.7459869384765625,
+            5.45281982421875
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.029999554157257,
+          "sd": 0.4101204461473821,
+          "values": [
+            -0.7400006055831909,
+            -1.3199985027313232
+          ]
+        }
+      }
+    },
+    "two_groups_s16": {
+      "independent_linear": {
+        "fid": {
+          "mean": 8.768409729003906,
+          "sd": 4.626340201165855,
+          "values": [
+            5.497093200683594,
+            12.039726257324219
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.9599998593330383,
+          "sd": 0.08485214276455741,
+          "values": [
+            -1.019999384880066,
+            -0.9000003337860107
+          ]
+        }
+      },
+      "independent_silu": {
+        "fid": {
+          "mean": 5.67535400390625,
+          "sd": 1.4809687756177419,
+          "values": [
+            4.628150939941406,
+            6.722557067871094
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.000000536441803,
+          "sd": 0.650538714108075,
+          "values": [
+            -1.4600008726119995,
+            -0.5400002002716064
+          ]
+        }
+      },
+      "two_groups_linear": {
+        "fid": {
+          "mean": 0.9300422668457031,
+          "sd": 5.0399970207843925,
+          "values": [
+            4.493858337402344,
+            -2.6337738037109375
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.030000507831573486,
+          "sd": 0.7778179819261238,
+          "values": [
+            0.5199998617172241,
+            -0.5800008773803711
+          ]
+        }
+      },
+      "two_groups_silu": {
+        "fid": {
+          "mean": -1.4458961486816406,
+          "sd": 15.854503410315449,
+          "values": [
+            -12.656723022460938,
+            9.764930725097656
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.0899990797042847,
+          "sd": 0.38183780345414664,
+          "values": [
+            -0.8199989795684814,
+            -1.359999179840088
+          ]
+        }
+      },
+      "all_shared_linear": {
+        "fid": {
+          "mean": -3.5994033813476562,
+          "sd": 2.6211266702335996,
+          "values": [
+            -1.7459869384765625,
+            -5.45281982421875
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.029999554157257,
+          "sd": 0.4101204461473821,
+          "values": [
+            0.7400006055831909,
+            1.3199985027313232
+          ]
+        }
+      }
+    }
+  },
+  "calibration": {
+    "independent_linear": {
+      "family": "independent_linear",
+      "attempt": 0,
+      "adapter_lr_multiplier": 1.0,
+      "metric": 0.0004920035019798282,
+      "per_seed_metrics": {
+        "65": 0.0005189930755780855,
+        "66": 0.0004650139283815709
+      },
+      "metric_to_target": 1.0,
+      "within_tolerance": true
+    },
+    "independent_silu": {
+      "family": "independent_silu",
+      "attempt": 1,
+      "adapter_lr_multiplier": 3.038430345503401,
+      "metric": 0.0005389550539500002,
+      "per_seed_metrics": {
+        "66": 0.0005011590316523021,
+        "65": 0.0005767510762476983
+      },
+      "metric_to_target": 1.0954293044281969,
+      "within_tolerance": true
+    },
+    "two_groups_linear": {
+      "family": "two_groups_linear",
+      "attempt": 1,
+      "adapter_lr_multiplier": 0.3539042154445919,
+      "metric": 0.0005479465817188611,
+      "per_seed_metrics": {
+        "65": 0.0005256963377178181,
+        "66": 0.0005701968257199042
+      },
+      "metric_to_target": 1.1137046372920463,
+      "within_tolerance": true
+    },
+    "two_groups_silu": {
+      "family": "two_groups_silu",
+      "attempt": 1,
+      "adapter_lr_multiplier": 0.9537651340006984,
+      "metric": 0.0004779529635925428,
+      "per_seed_metrics": {
+        "65": 0.00044971868555876426,
+        "66": 0.0005061872416263213
+      },
+      "metric_to_target": 0.9714421984178042,
+      "within_tolerance": true
+    },
+    "all_shared_linear": {
+      "family": "all_shared_linear",
+      "attempt": 1,
+      "adapter_lr_multiplier": 0.21455895441024406,
+      "metric": 0.0005179532963666134,
+      "per_seed_metrics": {
+        "66": 0.00047507054841844365,
+        "65": 0.0005608360443147831
+      },
+      "metric_to_target": 1.0527431091087012,
+      "within_tolerance": true
+    },
+    "two_groups_s16": {
+      "family": "two_groups_s16",
+      "attempt": 1,
+      "adapter_lr_multiplier": 1.3195201942793655,
+      "metric": 0.00047072168581507867,
+      "per_seed_metrics": {
+        "66": 0.0004218468111503171,
+        "65": 0.0005195965604798403
+      },
+      "metric_to_target": 0.9567445839732619,
+      "within_tolerance": true
+    }
+  },
+  "limits": [
+    "Two-seed 5k quality screen, not longer confirmation or statistical significance.",
+    "Independent affine/silu s16, two-group affine/silu s48, and all-shared affine s96 have equal adapter and total parameter counts.",
+    "Two-group affine s16 is a fixed-width tying control; the full sharing/width/nonlinearity factorial is not tested.",
+    "One shared module per group; unique parameters and per-layer diagnostics are separately audited.",
+    "The same broadcast condition ties the conditional transform within each group, while base blocks and AdaLN/gates remain independent.",
+    "At equal affine budget G*s is fixed; lower group count does not establish lower total generation FLOPs or speed.",
+    "Rates are selected only on aggregate early function updates, not loss or generated quality; matching may drift across seeds/layers/time.",
+    "Calibration seeds 65/66 and screen seeds 67/68 are fresh relative to previous quality studies.",
+    "FID uses 5k images and a fixed sampling seed; classifier agreement is a frozen proxy.",
+    "Raw-model diagnostics and EMA quality concern different states; fixed-probe operator Frobenius norms do not establish variance preservation.",
+    "No output normalization, larger MLP/trunk, layer embeddings, partial decoder sharing, new ViT/LM/retrieval or structured operators are tested.",
+    "Concurrent eager training is not isolated timing or an equal-time comparison; dedicated speed work stays deferred.",
+    "No automatic longer confirmation is launched by this screen."
+  ],
+  "gpu_hours": {
+    "calibration": 0.13756290791029135,
+    "screen": 0.6973553770894069,
+    "final_evaluation": 0.11359848377023203
+  },
+  "quality_winner_claimed": false
+}

@@ -1,0 +1,41 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-basis-heads-20261008T214617Z",
+  "artifacts": {
+    "dit-basis-head-screen.json": {
+      "sha256": "8d598a2b4f3dcc5a8327f0560f8e60edd72a11c7e170f8c88b3f7f6053a3eb84",
+      "bytes": 31037
+    },
+    "dit-basis-head-screen-audit.json": {
+      "sha256": "5be5d212e356ee4147e7a4466e0bcfa241b39c3146aad6bd587fa68b2b65552b",
+      "bytes": 737
+    },
+    "dit-basis-head-screen-evidence.json": {
+      "sha256": "1bdc6a232e4a36974982428a2a31d812ef23480ab9fb6e198f26064516c61559",
+      "bytes": 9617999
+    },
+    "dit-basis-head-screen.png": {
+      "sha256": "dc48c99e2713fe3ccf38de617c0d41212d9018c45dda2be8ac8f858d9b23ba42",
+      "bytes": 165373
+    },
+    "dit-basis-head-screen.svg": {
+      "sha256": "0738f8175760659fae89ec4f188ea149bcad0c293b69a78f12c0c90107284d60",
+      "bytes": 84485
+    },
+    "dit-basis-head-screen-updates.png": {
+      "sha256": "f947d3f01522fbdabb049d06f4c3cccd9a65126a15b47b006c29a5d8546a5267",
+      "bytes": 337646
+    },
+    "dit-basis-head-screen-updates.svg": {
+      "sha256": "7607ebb8986a4b85ff0d9dfb8da0fcabecbce056cad98479ba5e628e31faac02",
+      "bytes": 83967
+    },
+    "dit-basis-head-screen.md": {
+      "sha256": "238dfab8ec15ffbdf5f66ab8f3cc83cc124b5a9b4aa38b5e71bcb16c79bb28b3",
+      "bytes": 7707
+    }
+  },
+  "analysis_source_sha256": {
+    "audit_dit_basis_heads.py": "658b2eb5e45324f582c15eeea741d1189f944ea4cd26dbb1f6a4091a986786c1",
+    "summarize_dit_basis_heads.py": "53c947da6fabde37d285a3775d2d162f1ee55c4c36e3aee4a039eac9921c65d6"
+  }
+}

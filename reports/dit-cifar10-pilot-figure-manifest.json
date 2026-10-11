@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-06T22:46:19.914519+00:00",
+  "source_report": "/workspace/adalora/reports/dit-cifar10-pilot.json",
+  "source_sha256": "bf1a44c913a2966d9c59f968c819f3c51bd484d69c4b8c63cf9c072eb3f0246a",
+  "plot_script_sha256": "9b50219d418bcae4536f3fdb1aae6100a02005125e6d71e258325f2ce6fde679",
+  "matplotlib_version": "3.11.1",
+  "uncertainty": "none; single-seed pilot",
+  "figures": {
+    "/workspace/adalora/reports/dit-cifar10-pilot.png": "2e1d530272506e0c32f06386c73180821a890fe06e03ea8fb9e4945631c17ec4",
+    "/workspace/adalora/reports/dit-cifar10-pilot.pdf": "d958bbc40d05744d1e731f5522d6e3665f77186ac897f8003303e46e9ea1ca52",
+    "/workspace/adalora/reports/dit-cifar10-pilot-curves.png": "b550693c1100a292ee8b245d080a436248efdf62c2b943931056c23638f1db85",
+    "/workspace/adalora/reports/dit-cifar10-pilot-curves.pdf": "cd36d1da913becac7c9f9be0df65aa6dd382f6800f0635d76ee4472216707938"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "fourteen_new_runs_six_frozen_anchors": true,
+    "successful_exits_closed_worker_supervisors": true,
+    "frozen_sources_evaluators": true,
+    "same_training_implementation_as_anchors": true,
+    "parameter_budget_matched": true,
+    "dplr_equal_base_init_matched_linear_silu_init": true,
+    "paired_data_noise_labels_including_anchors": true,
+    "zero_start_gradient_wakeup": true,
+    "correct_curves_and_guidance_denominators": true,
+    "claimed_gpu_matches_runtime": true,
+    "two_gpu_cap": true,
+    "no_weights_test_evaluation": true,
+    "storage_within_bound": true
+  },
+  "bytes_retained": 936635898,
+  "report_sha256": "1b7c80b0ccee835bcf5c1beb88a561d8f8c5fda5e6623dda8b37e7104d6730b4"
+}

@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "successful_exits_closed_supervisors": true,
+    "source_runtime_data_configs_budgets": true,
+    "selection_recomputed_without_quality": true,
+    "mandatory_response_bounded_corrections": true,
+    "frozen_gain_rate_fresh_confirmation": true,
+    "initialization_gradients_paired_traces": true,
+    "base_gain_lr_layer_heads_mlp_activation_init": true,
+    "claimed_gpu_matches_runtime": true,
+    "frozen_evaluators_counts": true,
+    "bounded_concurrency": true,
+    "no_weights_test_speed_study": true,
+    "storage_within_bound": true
+  },
+  "calibration_runs": 26,
+  "confirmation_runs": 12,
+  "bytes_retained": 77756242,
+  "report_sha256": "1bdc6a232e4a36974982428a2a31d812ef23480ab9fb6e198f26064516c61559"
+}

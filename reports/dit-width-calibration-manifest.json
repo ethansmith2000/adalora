@@ -1,0 +1,41 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-width-20261008T165955Z",
+  "artifacts": {
+    "dit-width-calibration.svg": {
+      "sha256": "bbfb6e0c9e713bcd1bf7cd084f8975dda30f1915c6d6ec74143fee0b287bc82e",
+      "bytes": 77325
+    },
+    "dit-width-calibration.json": {
+      "sha256": "537c17f1ee8b27e895d98a246a63f4668b2f6bf2e6aa0d28a6a182bc2497aae9",
+      "bytes": 40961
+    },
+    "dit-width-calibration-evidence.json": {
+      "sha256": "98fff47e205ef126973cee0e728ef61211958f04031d194bfd500e408913c657",
+      "bytes": 6987343
+    },
+    "dit-width-calibration-audit.json": {
+      "sha256": "3111327cd1e2586c198302a810ebf4aa3581451f9b939b78f44ef98e1dc293ee",
+      "bytes": 730
+    },
+    "dit-width-calibration.md": {
+      "sha256": "35068ac260694d8e22ae93904c7241250e635349a29274dca7f6155ed9165924",
+      "bytes": 7795
+    },
+    "dit-width-calibration.png": {
+      "sha256": "556bf0bb24cd3db27e9240d77c093cb6d790c62edc85ad313e38aa87a1229040",
+      "bytes": 141246
+    },
+    "dit-width-calibration-updates.png": {
+      "sha256": "4e8c4eed222e0d71ab0dffc11e6c83e4a5dcbd334b21e0c0917ae664725c94db",
+      "bytes": 357967
+    },
+    "dit-width-calibration-updates.svg": {
+      "sha256": "078a41fa9c0132c022a39d9ec645aa3073698ae8a1eaee996aa1ef6d44d4dc89",
+      "bytes": 96427
+    }
+  },
+  "analysis_source_sha256": {
+    "audit_dit_width.py": "9f84c29fb59e4357171316f6772505953fe6a98e6794550b6c1396e134c2e780",
+    "summarize_dit_width.py": "f3e8838a76fc374b38ca12a8eb4344701c6083cdd5c548a64a209c4a27e9097a"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "raw_workflow": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z",
+  "report_sha256": "ed0866026309d79b47b0321c232e4839a79473c3cb6c1387dcc4e82a05bad0ac",
+  "original_training_runner": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/runner",
+  "reporting_runner": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/reporting-recovery/runner",
+  "recovery_manifest_sha256": "edb40a1270be471f37f9ee22ac1154eba0c0e77f9521b6c3127d000e6293d4c3",
+  "original_failure_protocol_sha256": "89e3218010064a318a9f9c65e571fe1fdd03abe333a05376f813260e65d63679",
+  "exports": {
+    "dit-factor-offset.json": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/comparison.json",
+      "sha256": "df84178af9194b5d8be55b3f11a6bc3c1747862acc7e84d2e32b5527aed00037"
+    },
+    "dit-factor-offset-evidence.json": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/report.json",
+      "sha256": "ed0866026309d79b47b0321c232e4839a79473c3cb6c1387dcc4e82a05bad0ac"
+    },
+    "dit-factor-offset-audit.json": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/audit.json",
+      "sha256": "1855c5e9f8fa9616b4c099ad6aa46408119f6d6e2a34a9bacb102e7b8ba5f940"
+    },
+    "dit-factor-offset-protocol.json": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/protocol.json",
+      "sha256": "c5c2030e707f73d3d20009314607eb9cdd6e35c499ae5bd1ea358b8a47f5a6c4"
+    },
+    "dit-factor-offset-recovery.json": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/reporting-recovery/manifest.json",
+      "sha256": "edb40a1270be471f37f9ee22ac1154eba0c0e77f9521b6c3127d000e6293d4c3"
+    },
+    "dit-factor-offset-convergence.png": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/convergence.png",
+      "sha256": "49d77014f14479d8582e52090a2dc2aab3ac9cfab094869e37beb8a65b83b17c"
+    },
+    "dit-factor-offset-convergence.svg": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/convergence.svg",
+      "sha256": "b0479d9b62f35e9bfd60e8e138c4b4450ac506ba38be84fbce34498dbb6d3d19"
+    },
+    "dit-factor-offset-guidance.png": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/guidance.png",
+      "sha256": "9b8b2fd814cd505180b1419aea2c385c076682390e55b049cd3362d6913afa8e"
+    },
+    "dit-factor-offset-guidance.svg": {
+      "source": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/guidance.svg",
+      "sha256": "334e265a6b4e240c3e0b10592a2319e69666c1c80def20a4dbae9196ffdd8ed8"
+    },
+    "dit-factor-offset.md": {
+      "source": "editorial summary of audited records",
+      "sha256": "cc84eba8336e6dc2777a68c6d99870bf431994e258346bc1c9d877bf0e7f5dc7"
+    }
+  },
+  "all_audit_checks_passed": true,
+  "retrained": false,
+  "controller_closed": true,
+  "weights_saved": false,
+  "independent_audit_replay_passed": true
+}

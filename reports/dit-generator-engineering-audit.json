@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "complete": true,
+    "successful_worker_exit": true,
+    "frozen_source": true,
+    "budgets": true,
+    "shared_data_noise": true,
+    "same_base_for_equal_shapes": true,
+    "paired_raw_scaled_basis": true,
+    "zero_init_gradient_wakeup": true,
+    "compiled_parity": true,
+    "weights_saved": false,
+    "quality_ranking": false
+  },
+  "bytes_retained": 4750403,
+  "report_sha256": "e62f2f5edc557f296e778cccc48098c01765e94d7737c80566f4d76ae624ec11"
+}

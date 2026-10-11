@@ -1,0 +1,53 @@
+{
+  "state": "quality",
+  "raw_workflow": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z",
+  "protocol": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z/protocol.json",
+  "launch_validation": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z/launch_validation.json",
+  "maximum_our_gpus": 2,
+  "new_calibration_pilots": 8,
+  "reused_calibration_pilots": 28,
+  "gated_quality_runs": 16,
+  "quality_runs_started": 4,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "original_gate_preserved": true,
+  "updated_utc": "2026-10-11T19:09:39.084703+00:00",
+  "calibration_pilots_complete": 8,
+  "quality_gate_passed": true,
+  "selected_rates": {
+    "s24": 1.0,
+    "s12": 2.0,
+    "s48": 0.5,
+    "s24_detached": 1.0,
+    "static_r8_diagonal": 12.0
+  },
+  "selected_ratio_ranges": {
+    "s12": [
+      0.8266880764794411,
+      1.167194030149108
+    ],
+    "s48": [
+      0.9302870151132081,
+      1.1763270475409546
+    ],
+    "s24_detached": [
+      0.9076452582228649,
+      1.199380016577411
+    ],
+    "static_r8_diagonal": [
+      0.7777222232499652,
+      1.3969067345727229
+    ]
+  },
+  "calibration_sha256": "01f2af75f2b3e5f08c4bded4be5c5090e5165bfd500282e4993548b8bb312e60",
+  "quality_runs_complete": 2,
+  "quality_progress_snapshot": {
+    "utc": "2026-10-11T19:09:33.560945+00:00",
+    "stage": "quality",
+    "completed": 2,
+    "submitted": 4,
+    "total": 16,
+    "active": 2
+  },
+  "calibration_report": "reports/vit-token-refinement-calibration.json"
+}

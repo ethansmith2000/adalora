@@ -1,0 +1,39 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/dit-longer-confirmation-20261010T154131Z",
+  "families": {
+    "plain": {
+      "variant": "adaln_zero",
+      "mlp_ratio": 4.0
+    },
+    "static_s32": {
+      "variant": "adaln_zero",
+      "mlp_ratio": 6.625
+    },
+    "affine_s32": {
+      "variant": "dplr",
+      "mlp_ratio": 4.0
+    }
+  },
+  "parameters": {
+    "plain": 9758768,
+    "static_s32": 12516656,
+    "affine_s32": 12511792
+  },
+  "seeds": [
+    92,
+    93
+  ],
+  "train_steps": 60000,
+  "schedule_horizon": 60000,
+  "maximum_our_gpus": 2,
+  "weights_saved": false,
+  "resource_protocol": "/workspace/adalora/runs/dit-longer-confirmation-20261010T154131Z/protocol.json",
+  "cpu_tests_passed": 5,
+  "next_track": "ViT token self-conditioning; preparation only, no GPU launch or queue",
+  "preflight_passed": true,
+  "preflight_complete_utc": "2026-10-10T15:43:24.183667+00:00",
+  "audit_passed": true,
+  "report_sha256": "d37d7d8dbc4d428578abb7b8aef6ef0c740d79b6a2fe4622ef09f53420a84609",
+  "controller_closed": true
+}

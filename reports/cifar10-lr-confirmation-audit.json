@@ -1,0 +1,560 @@
+{
+  "passed": true,
+  "protocol_state": "complete",
+  "selection_frozen_before_confirmation": true,
+  "training_source_sha256": {
+    "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+    "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+    "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+    "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+  },
+  "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+  "runtime_versions": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cu128",
+    "cuda_wheel": "12.8"
+  },
+  "hardware_inventory": {
+    "recorded_utc": "2026-10-06T21:42:05.306900+00:00",
+    "source": "nvidia-smi GPU inventory",
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-6c0ce978-4b2d-20a2-a25c-b111a56a3b3d",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-13cc532b-da57-e8fc-29ec-7eca34a6e43e",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-f9397a2d-9940-b5ab-bd06-54c68b83117b",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-55fc0669-93bd-9223-674d-212086d4258b",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      },
+      {
+        "index": "4",
+        "uuid": "GPU-0d8515c7-fc33-c2b3-7e6e-48791efad78d",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      },
+      {
+        "index": "5",
+        "uuid": "GPU-30b51b9a-d3ac-4a3f-7b1d-46332232a9c1",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      },
+      {
+        "index": "6",
+        "uuid": "GPU-8c7bb66c-eccc-1946-48f6-306f8f5a6d25",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      },
+      {
+        "index": "7",
+        "uuid": "GPU-866cad81-dc9b-cc40-afb8-c387d3ffba5f",
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory.total": "32607",
+        "driver_version": "595.84"
+      }
+    ],
+    "workspace_is_volume": false,
+    "local_artifact_persistence": "stop/start preserves files; recycle/destroy removes local files"
+  },
+  "all_new_workers_exit_status_zero": true,
+  "all_logged_losses_and_gradients_finite": true,
+  "official_test_evaluated": false,
+  "weights_or_checkpoints_saved": false,
+  "common_recipe": {
+    "placement": "mlp_in",
+    "chunk": 2048,
+    "detach_condition": false,
+    "depth": 6,
+    "patch_size": 4,
+    "mlp_ratio": 4.0,
+    "qk_norm": false,
+    "drop_rate": 0.0,
+    "gradient_checkpointing": false,
+    "max_steps": null,
+    "batch_size": 128,
+    "weight_decay": 0.05,
+    "warmup_ratio": 0.05,
+    "min_lr_ratio": 0.01,
+    "label_smoothing": 0.1,
+    "max_grad_norm": 1.0,
+    "split_seed": 123,
+    "val_fraction": 0.1,
+    "num_workers": 4,
+    "cpu_threads": 4,
+    "data_source": "huggingface",
+    "data_dir": "data",
+    "hf_home": "/workspace/.hf_home",
+    "download": false,
+    "train_limit": null,
+    "val_limit": null,
+    "synthetic": false,
+    "synthetic_samples": 256,
+    "precision": "bf16",
+    "device": "cuda:0",
+    "compile": false,
+    "log_every": 20,
+    "benchmark_warmup_steps": 10,
+    "evaluate_test": false,
+    "save_weights": false,
+    "artifact_purpose": null
+  },
+  "tuning_endpoints": 23,
+  "confirmation_runs": 21,
+  "dplr_paired_comparisons": {
+    "plain": {
+      "seeds": [
+        43,
+        44,
+        45
+      ],
+      "paired_dplr_gains_percentage_points": [
+        -0.28000000000000247,
+        0.13999999999999568,
+        0.5000000000000004
+      ],
+      "mean": 0.11999999999999789,
+      "sample_sd": 0.3903844259188641
+    },
+    "diagonal": {
+      "seeds": [
+        43,
+        44,
+        45
+      ],
+      "paired_dplr_gains_percentage_points": [
+        0.5000000000000004,
+        0.039999999999995595,
+        0.9199999999999986
+      ],
+      "mean": 0.48666666666666486,
+      "sample_sd": 0.4401514890731766
+    },
+    "static_lora_diagonal": {
+      "seeds": [
+        43,
+        44,
+        45
+      ],
+      "paired_dplr_gains_percentage_points": [
+        -0.0400000000000067,
+        1.4399999999999968,
+        0.7199999999999984
+      ],
+      "mean": 0.7066666666666629,
+      "sample_sd": 0.740090084606824
+    },
+    "plain_w216": {
+      "seeds": [
+        43,
+        44,
+        45
+      ],
+      "paired_dplr_gains_percentage_points": [
+        -0.26000000000000467,
+        -0.26000000000000467,
+        -0.21999999999999797
+      ],
+      "mean": -0.24666666666666912,
+      "sample_sd": 0.023094010767588897
+    },
+    "plain_w240": {
+      "seeds": [
+        43,
+        44,
+        45
+      ],
+      "paired_dplr_gains_percentage_points": [
+        -0.6000000000000005,
+        0.539999999999996,
+        0.6800000000000028
+      ],
+      "mean": 0.2066666666666661,
+      "sample_sd": 0.702092111715645
+    }
+  },
+  "stability_observations": [
+    {
+      "stage": "tuning",
+      "name": "plain-lr0.0002-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 8.077860832214355,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain-lr0.001-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 3.987131357192993,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "diagonal-lr0.0002-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 8.832820892333984,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "diagonal-lr0.001-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 3.824856996536255,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "static_lora_diagonal-lr0.0002-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 8.206820487976074,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "static_lora_diagonal-lr0.001-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 3.5108606815338135,
+      "logged_fraction_grad_norm_above_clip": 0.9971590909090909
+    },
+    {
+      "stage": "tuning",
+      "name": "dplr-lr0.0002-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 7.877996444702148,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "dplr-lr0.001-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 3.361218214035034,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain_w216-lr0.0002-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 7.295982837677002,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain_w216-lr0.001-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 3.2310397624969482,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "dplr-lr0.0005-h0.3-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 5.393740653991699,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "dplr-lr0.0005-h3-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 8.496872901916504,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "exact-lr0.0005-h0.1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 8.013936996459961,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "exact-lr0.0005-h0.3-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 7.6002373695373535,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain_w240-lr0.0002-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 8.116415023803711,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain_w240-lr0.0005-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 4.9117207527160645,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain_w240-lr0.001-h1-s42",
+      "reused": false,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 5.407157897949219,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "diagonal-lr0.0005-h1-s42",
+      "reused": true,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 5.583518028259277,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "dplr-lr0.0005-h1-s42",
+      "reused": true,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 4.709423065185547,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "exact-lr0.0005-h1-s42",
+      "reused": true,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 13.768147468566895,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain_w216-lr0.0005-h1-s42",
+      "reused": true,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 4.600270748138428,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "plain-lr0.0005-h1-s42",
+      "reused": true,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 5.056381702423096,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "tuning",
+      "name": "static_lora_diagonal-lr0.0005-h1-s42",
+      "reused": true,
+      "logged_train_observations": 352,
+      "logged_max_grad_norm": 5.906396865844727,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain-s43",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 8.921396255493164,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain-s44",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 5.7276105880737305,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain-s45",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 8.432859420776367,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "diagonal-s43",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 6.897517681121826,
+      "logged_fraction_grad_norm_above_clip": 0.9988636363636364
+    },
+    {
+      "stage": "confirmation",
+      "name": "diagonal-s44",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 6.641427040100098,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "diagonal-s45",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 5.675428867340088,
+      "logged_fraction_grad_norm_above_clip": 0.9931818181818182
+    },
+    {
+      "stage": "confirmation",
+      "name": "static_lora_diagonal-s43",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 9.756019592285156,
+      "logged_fraction_grad_norm_above_clip": 0.9977272727272727
+    },
+    {
+      "stage": "confirmation",
+      "name": "static_lora_diagonal-s44",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 7.0832390785217285,
+      "logged_fraction_grad_norm_above_clip": 0.9988636363636364
+    },
+    {
+      "stage": "confirmation",
+      "name": "static_lora_diagonal-s45",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 6.660269737243652,
+      "logged_fraction_grad_norm_above_clip": 0.9954545454545455
+    },
+    {
+      "stage": "confirmation",
+      "name": "dplr-s43",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 5.3758134841918945,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "dplr-s44",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 6.937583923339844,
+      "logged_fraction_grad_norm_above_clip": 0.9988636363636364
+    },
+    {
+      "stage": "confirmation",
+      "name": "dplr-s45",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 6.342631816864014,
+      "logged_fraction_grad_norm_above_clip": 0.9943181818181818
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain_w216-s43",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 4.892107963562012,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain_w216-s44",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 5.300045490264893,
+      "logged_fraction_grad_norm_above_clip": 0.9988636363636364
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain_w216-s45",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 6.366486072540283,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain_w240-s43",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 6.821645259857178,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain_w240-s44",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 5.135622501373291,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "plain_w240-s45",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 5.820815563201904,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "exact-s43",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 11.574984550476074,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "exact-s44",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 10.690476417541504,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    },
+    {
+      "stage": "confirmation",
+      "name": "exact-s45",
+      "reused": false,
+      "logged_train_observations": 880,
+      "logged_max_grad_norm": 10.253183364868164,
+      "logged_fraction_grad_norm_above_clip": 1.0
+    }
+  ],
+  "evidence_bytes_under_workflow": 45073485,
+  "limitations": [
+    "Three seeds on one fixed validation split; no confidence interval or test-set result.",
+    "DPLR received five tuning candidates; the other main families received three.",
+    "Parameter controls are approximate; FLOPs estimates exclude elementwise ops and backward.",
+    "Width 240 slightly exceeds DPLR's budget; no width-264 control is included in this 50-epoch confirmation of exact rank 2.",
+    "Concurrent shared-instance timings are not isolated efficiency measurements.",
+    "Gradient summaries cover logged steps, not every optimizer step."
+  ]
+}

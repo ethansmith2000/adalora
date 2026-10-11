@@ -1,0 +1,32 @@
+{
+  "state": "calibration_gate_failed",
+  "raw_workflow": "/workspace/adalora/runs/vit-token-20261011T070503Z",
+  "protocol": "/workspace/adalora/runs/vit-token-20261011T070503Z/protocol.json",
+  "cpu_validation": "/workspace/adalora/runs/vit-token-20261011T070503Z/launch_validation.json",
+  "maximum_our_gpus": 2,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "planned_runs": {
+    "preflight": 2,
+    "calibration": 28,
+    "quality": 16
+  },
+  "preflight_passed": true,
+  "default_factor_offsets_for_new_recipes": true,
+  "preflight_complete_utc": "2026-10-11T07:09:44.681008+00:00",
+  "preflight_validation": "/workspace/adalora/runs/vit-token-20261011T070503Z/preflight_validation.json",
+  "reporting_recovery": "/workspace/adalora/runs/vit-token-20261011T070503Z/preflight-reporting-recovery/manifest.json",
+  "controller": "/workspace/adalora/runs/vit-token-20261011T070503Z/recovery-controller.conf",
+  "training_sources_changed": false,
+  "preflight_rerun": false,
+  "calibration_pilots_complete": 28,
+  "quality_runs_started": 0,
+  "controller_closed": true,
+  "failed_families": [
+    "s12",
+    "static_r8_diagonal"
+  ],
+  "diagnostic_report": "/workspace/adalora/reports/vit-token-coarse-calibration.md",
+  "followup_workflow": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z",
+  "followup_plan": "/workspace/adalora/reports/vit-token-refinement-plan.json"
+}

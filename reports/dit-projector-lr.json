@@ -1,0 +1,389 @@
+{
+  "comparisons": [
+    {
+      "family": "affine_s32",
+      "target": "affine_s16",
+      "scale": "1.0",
+      "adapter_lr_multiplier": 0.5,
+      "fid": {
+        "mean": 52.53504180908203,
+        "sd": 0.34814780439066056,
+        "values": [
+          52.28886413574219,
+          52.781219482421875
+        ]
+      },
+      "unit_rate_fid": {
+        "mean": 51.82522201538086,
+        "sd": 0.4950319316746428,
+        "values": [
+          51.475181579589844,
+          52.175262451171875
+        ]
+      },
+      "paired_fid_change": {
+        "mean": 0.7098197937011719,
+        "sd": 0.1468841272839823,
+        "values": [
+          0.8136825561523438,
+          0.60595703125
+        ]
+      },
+      "agreement_percent": {
+        "mean": 52.880001068115234,
+        "sd": 0.0,
+        "values": [
+          52.880001068115234,
+          52.880001068115234
+        ]
+      },
+      "paired_agreement_pp_change": {
+        "mean": -2.959999442100525,
+        "sd": 0.36769332109389063,
+        "values": [
+          -3.2199978828430176,
+          -2.7000010013580322
+        ]
+      },
+      "quality_seed_early_update_ratios": [
+        [
+          1.4532752873165877,
+          1.2483971515234906,
+          1.141637318900573,
+          1.0227070030031482
+        ],
+        [
+          0.9217429476486222,
+          1.0545055383093815,
+          0.9586948976908228,
+          0.912182647538236
+        ]
+      ]
+    },
+    {
+      "family": "affine_s32",
+      "target": "affine_s16",
+      "scale": "2.0",
+      "adapter_lr_multiplier": 0.5,
+      "fid": {
+        "mean": 38.87764549255371,
+        "sd": 0.183350254965184,
+        "values": [
+          39.007293701171875,
+          38.74799728393555
+        ]
+      },
+      "unit_rate_fid": {
+        "mean": 38.22221755981445,
+        "sd": 0.3929731694181189,
+        "values": [
+          37.94434356689453,
+          38.500091552734375
+        ]
+      },
+      "paired_fid_change": {
+        "mean": 0.6554279327392578,
+        "sd": 0.5763234243833029,
+        "values": [
+          1.0629501342773438,
+          0.24790573120117188
+        ]
+      },
+      "agreement_percent": {
+        "mean": 84.7599983215332,
+        "sd": 0.05656950007132197,
+        "values": [
+          84.79999899864197,
+          84.71999764442444
+        ]
+      },
+      "paired_agreement_pp_change": {
+        "mean": -1.3700008392333984,
+        "sd": 0.3535530534184857,
+        "values": [
+          -1.6200006008148193,
+          -1.1200010776519775
+        ]
+      },
+      "quality_seed_early_update_ratios": [
+        [
+          1.4532752873165877,
+          1.2483971515234906,
+          1.141637318900573,
+          1.0227070030031482
+        ],
+        [
+          0.9217429476486222,
+          1.0545055383093815,
+          0.9586948976908228,
+          0.912182647538236
+        ]
+      ]
+    },
+    {
+      "family": "affine_s64",
+      "target": "affine_s16",
+      "scale": "1.0",
+      "adapter_lr_multiplier": 0.25,
+      "fid": {
+        "mean": 52.93617630004883,
+        "sd": 0.0033933270673091004,
+        "values": [
+          52.938575744628906,
+          52.93377685546875
+        ]
+      },
+      "unit_rate_fid": {
+        "mean": 51.44366455078125,
+        "sd": 0.37286136765829647,
+        "values": [
+          51.18001174926758,
+          51.70731735229492
+        ]
+      },
+      "paired_fid_change": {
+        "mean": 1.4925117492675781,
+        "sd": 0.3762546947256056,
+        "values": [
+          1.7585639953613281,
+          1.2264595031738281
+        ]
+      },
+      "agreement_percent": {
+        "mean": 53.049999475479126,
+        "sd": 0.2969835533471637,
+        "values": [
+          52.84000039100647,
+          53.25999855995178
+        ]
+      },
+      "paired_agreement_pp_change": {
+        "mean": -3.140002489089966,
+        "sd": 0.25455853563609776,
+        "values": [
+          -3.320002555847168,
+          -2.9600024223327637
+        ]
+      },
+      "quality_seed_early_update_ratios": [
+        [
+          1.3633960405582708,
+          1.2649141387425626,
+          1.2234703854823732,
+          1.1400271519959306
+        ],
+        [
+          0.892327366038138,
+          1.2143952443771664,
+          1.0182184388442308,
+          0.9140911621071586
+        ]
+      ]
+    },
+    {
+      "family": "affine_s64",
+      "target": "affine_s16",
+      "scale": "2.0",
+      "adapter_lr_multiplier": 0.25,
+      "fid": {
+        "mean": 40.00587463378906,
+        "sd": 0.3291203567493264,
+        "values": [
+          40.23859786987305,
+          39.77315139770508
+        ]
+      },
+      "unit_rate_fid": {
+        "mean": 37.60542869567871,
+        "sd": 0.38304944105513783,
+        "values": [
+          37.334571838378906,
+          37.876285552978516
+        ]
+      },
+      "paired_fid_change": {
+        "mean": 2.4004459381103516,
+        "sd": 0.7121697978044642,
+        "values": [
+          2.9040260314941406,
+          1.8968658447265625
+        ]
+      },
+      "agreement_percent": {
+        "mean": 83.78999829292297,
+        "sd": 0.6081115890545834,
+        "values": [
+          84.2199981212616,
+          83.35999846458435
+        ]
+      },
+      "paired_agreement_pp_change": {
+        "mean": -3.6100000143051147,
+        "sd": 0.7778158745836983,
+        "values": [
+          -3.0600011348724365,
+          -4.159998893737793
+        ]
+      },
+      "quality_seed_early_update_ratios": [
+        [
+          1.3633960405582708,
+          1.2649141387425626,
+          1.2234703854823732,
+          1.1400271519959306
+        ],
+        [
+          0.892327366038138,
+          1.2143952443771664,
+          1.0182184388442308,
+          0.9140911621071586
+        ]
+      ]
+    },
+    {
+      "family": "silu_s32_h64",
+      "target": "linear_s32_h64",
+      "scale": "1.0",
+      "adapter_lr_multiplier": 2.0,
+      "fid": {
+        "mean": 52.3882942199707,
+        "sd": 0.20745150881765365,
+        "values": [
+          52.24160385131836,
+          52.53498458862305
+        ]
+      },
+      "unit_rate_fid": {
+        "mean": 53.35235023498535,
+        "sd": 0.29970522823660317,
+        "values": [
+          53.564273834228516,
+          53.14042663574219
+        ]
+      },
+      "paired_fid_change": {
+        "mean": -0.9640560150146484,
+        "sd": 0.5071567370542568,
+        "values": [
+          -1.3226699829101562,
+          -0.6054420471191406
+        ]
+      },
+      "agreement_percent": {
+        "mean": 53.82000207901001,
+        "sd": 0.31112803570741976,
+        "values": [
+          53.60000133514404,
+          54.04000282287598
+        ]
+      },
+      "paired_agreement_pp_change": {
+        "mean": 1.8600016832351685,
+        "sd": 0.4808323212365346,
+        "values": [
+          1.5200018882751465,
+          2.2000014781951904
+        ]
+      },
+      "quality_seed_early_update_ratios": [
+        [
+          0.9246474631791077,
+          0.7666222561471523,
+          0.6901471682005307,
+          0.8533734341303324
+        ],
+        [
+          0.713430744209296,
+          0.7496583180400102,
+          0.7508284051160072,
+          0.8011451047591405
+        ]
+      ]
+    },
+    {
+      "family": "silu_s32_h64",
+      "target": "linear_s32_h64",
+      "scale": "2.0",
+      "adapter_lr_multiplier": 2.0,
+      "fid": {
+        "mean": 39.17461395263672,
+        "sd": 0.5090907716387247,
+        "values": [
+          38.814632415771484,
+          39.53459548950195
+        ]
+      },
+      "unit_rate_fid": {
+        "mean": 40.50225639343262,
+        "sd": 0.27473271473171634,
+        "values": [
+          40.6965217590332,
+          40.30799102783203
+        ]
+      },
+      "paired_fid_change": {
+        "mean": -1.3276424407958984,
+        "sd": 0.7838234863704411,
+        "values": [
+          -1.8818893432617188,
+          -0.7733955383300781
+        ]
+      },
+      "agreement_percent": {
+        "mean": 83.90999734401703,
+        "sd": 0.6363963390902444,
+        "values": [
+          84.35999751091003,
+          83.45999717712402
+        ]
+      },
+      "paired_agreement_pp_change": {
+        "mean": 1.5499979257583618,
+        "sd": 0.07070976774672692,
+        "values": [
+          1.5999972820281982,
+          1.4999985694885254
+        ]
+      },
+      "quality_seed_early_update_ratios": [
+        [
+          0.9246474631791077,
+          0.7666222561471523,
+          0.6901471682005307,
+          0.8533734341303324
+        ],
+        [
+          0.713430744209296,
+          0.7496583180400102,
+          0.7508284051160072,
+          0.8011451047591405
+        ]
+      ]
+    }
+  ],
+  "audit": {
+    "checks": {
+      "bounded_pilot_grid": true,
+      "update_only_selection": true,
+      "recipes_frozen": true,
+      "six_quality_runs": true,
+      "frozen_sources_evaluators": true,
+      "same_initialization_and_observed_streams": true,
+      "zero_start_gradient_activation": true,
+      "successful_exits_closed_workers": true,
+      "two_gpu_cap": true,
+      "no_weights_test": true,
+      "storage_within_bound": true
+    },
+    "report_sha256": "f57f7affbd4c46d7e46775516cff94e4d3791e7900f0bb30b4c226e201439737",
+    "bytes_retained": 1501791521
+  },
+  "limits": [
+    "Quality seeds86/87 and evaluation split are reused for paired rate contrasts; this is an exploratory follow-up, not an independent generalization estimate.",
+    "Calibration seeds90/91 are separate; rates are frozen before new quality runs and never selected using FID, agreement or loss.",
+    "Function updates are FP32 raw-model fixed-input probes; matching is approximate and path/optimizer dependent, not a muP derivation.",
+    "Quality-seed update transfer is measured and reported; a pilot match does not establish matching throughout training.",
+    "Only adapter LR changes; base LR, gain, initialization, model/data/sampling recipe and 30k schedule remain fixed.",
+    "Final CFG1/2 share one EMA state/noise; 5k-image held-out FID and classifier agreement remain pilot proxies."
+  ]
+}

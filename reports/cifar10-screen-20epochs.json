@@ -1,0 +1,2183 @@
+{
+  "screen": {
+    "created_utc": "2026-10-06T20:52:59.155679+00:00",
+    "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z",
+    "purpose": "20-epoch learning-quality screen of six conditioning variants and two wider capacity controls",
+    "epochs": 20,
+    "batch_size": 128,
+    "seed": 42,
+    "split_seed": 123,
+    "training_examples": 45000,
+    "validation_examples": 5000,
+    "test_evaluated": false,
+    "expected_steps_per_run": 7040,
+    "source_sha256": {
+      "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+      "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+      "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+      "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6",
+      "requirements.txt": "a99b0215fef24da2418770f424fb86a2f491165c074eef214545dab418eaaf2d"
+    },
+    "provenance": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "launcher_sha256": "24a3d6cfdde7ec598bc1467b0af65f077be4d565fed0669c12e409d554ca453b",
+    "disk_free_bytes_before_launch": 346812964864,
+    "expected_total_storage_bytes_upper_bound": 83886080,
+    "artifact_retention": "retain configs, source snapshot, split indices, metrics, logs and summary until explicitly removed",
+    "model_weights": false,
+    "periodic_checkpoints": false,
+    "gpu_allocation": "one lifetime GPU claim per run; wait for a free GPU; no forced preemption",
+    "timing_limitation": "concurrent runs share CPU/storage; use isolated repeated measurements for final efficiency claims",
+    "jobs": [
+      {
+        "name": "basis-r8-k16",
+        "service": "adalora_cifar20_20261006t205259z_basis_r8_k16",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/basis-r8-k16.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/basis-r8-k16",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_basis_r8_k16.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_basis_r8_k16.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_basis_r8_k16",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/basis-r8-k16.json"
+        ]
+      },
+      {
+        "name": "diagonal",
+        "service": "adalora_cifar20_20261006t205259z_diagonal",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/diagonal.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/diagonal",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_diagonal.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_diagonal.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_diagonal",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/diagonal.json"
+        ]
+      },
+      {
+        "name": "dplr-r8-k16",
+        "service": "adalora_cifar20_20261006t205259z_dplr_r8_k16",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/dplr-r8-k16.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/dplr-r8-k16",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_dplr_r8_k16.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_dplr_r8_k16.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_dplr_r8_k16",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/dplr-r8-k16.json"
+        ]
+      },
+      {
+        "name": "exact-r2",
+        "service": "adalora_cifar20_20261006t205259z_exact_r2",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/exact-r2.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/exact-r2",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_exact_r2.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_exact_r2.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_exact_r2",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/exact-r2.json"
+        ]
+      },
+      {
+        "name": "plain-w216",
+        "service": "adalora_cifar20_20261006t205259z_plain_w216",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/plain-w216.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain-w216",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_plain_w216.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_plain_w216.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_plain_w216",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/plain-w216.json"
+        ]
+      },
+      {
+        "name": "plain-w264",
+        "service": "adalora_cifar20_20261006t205259z_plain_w264",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/plain-w264.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain-w264",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_plain_w264.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_plain_w264.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_plain_w264",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/plain-w264.json"
+        ]
+      },
+      {
+        "name": "plain",
+        "service": "adalora_cifar20_20261006t205259z_plain",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/plain.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_plain.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_plain.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_plain",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/plain.json"
+        ]
+      },
+      {
+        "name": "static-lora-r8-diagonal",
+        "service": "adalora_cifar20_20261006t205259z_static_lora_r8_diagonal",
+        "config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/static-lora-r8-diagonal.json",
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/static-lora-r8-diagonal",
+        "wrapper": "/opt/supervisor-scripts/adalora_cifar20_20261006t205259z_static_lora_r8_diagonal.sh",
+        "supervisor_config": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/services/adalora_cifar20_20261006t205259z_static_lora_r8_diagonal.conf",
+        "command": [
+          "/workspace/bin/gpu-claim",
+          "run",
+          "--owner",
+          "adalora",
+          "--job",
+          "adalora_cifar20_20261006t205259z_static_lora_r8_diagonal",
+          "--wait",
+          "--",
+          "/venv/main/bin/python",
+          "-u",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/source/train_cifar10.py",
+          "--override_json",
+          "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/configs/static-lora-r8-diagonal.json"
+        ]
+      }
+    ],
+    "supervisor_control": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/supervisor.conf",
+    "launched": true,
+    "launched_utc": "2026-10-06T20:53:25.210153+00:00"
+  },
+  "summary": {
+    "updated_utc": "2026-10-06T21:00:14.107848+00:00",
+    "screen": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/screen.json",
+    "all_complete": true,
+    "runs_started": 8,
+    "same_data_split": true,
+    "same_source_snapshot": true,
+    "selection_limit": "one seed and 20 epochs; use longer, tuned multi-seed confirmation before final claims",
+    "rows": [
+      {
+        "name": "basis-r8-k16",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_basis_r8_k16",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 0.8957231614155511,
+        "latest_validation_accuracy": 0.7634,
+        "best_validation_accuracy": 0.7646,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.344,
+            "loss": 1.764140001296997
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.4556,
+            "loss": 1.5059224430084228
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.5244,
+            "loss": 1.3370104497909545
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.5642,
+            "loss": 1.2431735893249511
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.5892,
+            "loss": 1.1571358885765075
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.5992,
+            "loss": 1.157686376953125
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.6364,
+            "loss": 1.0386403551101684
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.6404,
+            "loss": 1.0467878170013427
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.6656,
+            "loss": 0.9812250196456909
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.684,
+            "loss": 0.9273064747810363
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.6968,
+            "loss": 0.9018857181549073
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.7198,
+            "loss": 0.8313530116081238
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.717,
+            "loss": 0.8433269261360169
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.7318,
+            "loss": 0.8035571767807007
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.7426,
+            "loss": 0.775520728969574
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.7488,
+            "loss": 0.7602051860332489
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.7562,
+            "loss": 0.7518131786346436
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.7646,
+            "loss": 0.73625304312706
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.7644,
+            "loss": 0.7356049463748932
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.7634,
+            "loss": 0.7368406121253968
+          }
+        ],
+        "latest_images_per_second": 3997.524574561483,
+        "recent_grad_norm_before_clip": 4.979718208312988,
+        "recent_hyper_grad_norm_before_clip": 2.488248586654663,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/basis-r8-k16",
+        "config": {
+          "variant": "basis",
+          "placement": "mlp_in",
+          "rank": 8,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 192,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/basis-r8-k16",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "basis",
+          "rank": 8,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 246.96710713999346,
+          "validation": {
+            "loss": 0.7368406121253968,
+            "accuracy": 0.7634,
+            "examples": 5000,
+            "seconds": 0.5623413120629266,
+            "images_per_second": 8891.397257757393,
+            "tokens_per_second": 577940.8217542305
+          },
+          "best_validation_accuracy": 0.7646,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 234.9467670088634,
+          "train_images_per_second": 3825.206924282111,
+          "train_tokens_per_second": 248638.4500783372,
+          "parameters": 3464458,
+          "extra_parameters": 774336,
+          "base_parameters": 2690122,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 466338048,
+          "extra_forward_matmul_flops_per_token_estimate": 1548288.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 540452864,
+          "peak_training_reserved_bytes": 664797184
+        },
+        "elapsed_gpu_hours": 0.06860197420555374,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      },
+      {
+        "name": "diagonal",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_diagonal",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 0.8799734513599652,
+        "latest_validation_accuracy": 0.769,
+        "best_validation_accuracy": 0.77,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.3466,
+            "loss": 1.7646013065338135
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.4576,
+            "loss": 1.524071337890625
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.5208,
+            "loss": 1.3516100845336914
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.562,
+            "loss": 1.2341725654602052
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.603,
+            "loss": 1.140917313194275
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.609,
+            "loss": 1.1181529169082642
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.6374,
+            "loss": 1.0382488054275514
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.6466,
+            "loss": 1.018267893409729
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.6768,
+            "loss": 0.9461960800170899
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.6926,
+            "loss": 0.9152844597816467
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.6974,
+            "loss": 0.8975238691329956
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.7164,
+            "loss": 0.8272219207763671
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.718,
+            "loss": 0.8219643832206726
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.7376,
+            "loss": 0.7784698793411254
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.7448,
+            "loss": 0.7567737253189087
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.7548,
+            "loss": 0.7358667037010193
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.76,
+            "loss": 0.7214038760662079
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.7668,
+            "loss": 0.7140375183582306
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.77,
+            "loss": 0.70862775888443
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.769,
+            "loss": 0.7089319743156434
+          }
+        ],
+        "latest_images_per_second": 4510.817065958157,
+        "recent_grad_norm_before_clip": 3.590801477432251,
+        "recent_hyper_grad_norm_before_clip": 0.7199469804763794,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/diagonal",
+        "config": {
+          "variant": "diagonal",
+          "placement": "mlp_in",
+          "rank": 2,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 192,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/diagonal",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "diagonal",
+          "rank": 2,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 214.2005873740418,
+          "validation": {
+            "loss": 0.7089319743156434,
+            "accuracy": 0.769,
+            "examples": 5000,
+            "seconds": 0.5372189220506698,
+            "images_per_second": 9307.192644879338,
+            "tokens_per_second": 604967.521917157
+          },
+          "best_validation_accuracy": 0.77,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 202.3097012831131,
+          "train_images_per_second": 4442.298091984859,
+          "train_tokens_per_second": 288749.3759790158,
+          "parameters": 3134794,
+          "extra_parameters": 444672,
+          "base_parameters": 2690122,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 423207168,
+          "extra_forward_matmul_flops_per_token_estimate": 884736.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 537313280,
+          "peak_training_reserved_bytes": 654311424
+        },
+        "elapsed_gpu_hours": 0.059500163159456054,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      },
+      {
+        "name": "dplr-r8-k16",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_dplr_r8_k16",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 0.8821430530030125,
+        "latest_validation_accuracy": 0.776,
+        "best_validation_accuracy": 0.7764,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.3146,
+            "loss": 1.8099746128082275
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.457,
+            "loss": 1.4857851009368896
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.533,
+            "loss": 1.3288061687469483
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.5728,
+            "loss": 1.223921035194397
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.5964,
+            "loss": 1.1435373514175415
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.615,
+            "loss": 1.0995495128631592
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.6242,
+            "loss": 1.0612939533233643
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.6538,
+            "loss": 1.0096287174224854
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.6744,
+            "loss": 0.9367794111251831
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.6908,
+            "loss": 0.9073169738769531
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.7124,
+            "loss": 0.8581038711547851
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.7222,
+            "loss": 0.8118236087799072
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.7396,
+            "loss": 0.7865396857738495
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.7404,
+            "loss": 0.7680256998062134
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.7616,
+            "loss": 0.732959072303772
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.7616,
+            "loss": 0.7142690806388855
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.7668,
+            "loss": 0.7112819262504577
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.7742,
+            "loss": 0.7019393618106842
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.7764,
+            "loss": 0.6964463381767273
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.776,
+            "loss": 0.6952596091747284
+          }
+        ],
+        "latest_images_per_second": 4027.62067634703,
+        "recent_grad_norm_before_clip": 4.398170471191406,
+        "recent_hyper_grad_norm_before_clip": 2.1377005577087402,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/dplr-r8-k16",
+        "config": {
+          "variant": "dplr",
+          "placement": "mlp_in",
+          "rank": 8,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 192,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/dplr-r8-k16",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "dplr",
+          "rank": 8,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 268.37101139803417,
+          "validation": {
+            "loss": 0.6952596091747284,
+            "accuracy": 0.776,
+            "examples": 5000,
+            "seconds": 0.46625663700979203,
+            "images_per_second": 10723.707939185846,
+            "tokens_per_second": 697041.01604708
+          },
+          "best_validation_accuracy": 0.7764,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 256.1870763619663,
+          "train_images_per_second": 3508.0614243405466,
+          "train_tokens_per_second": 228023.99258213554,
+          "parameters": 3909130,
+          "extra_parameters": 1219008,
+          "base_parameters": 2690122,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 523845888,
+          "extra_forward_matmul_flops_per_token_estimate": 2433024.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 643291136,
+          "peak_training_reserved_bytes": 771751936
+        },
+        "elapsed_gpu_hours": 0.0745475031661206,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      },
+      {
+        "name": "exact-r2",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_exact_r2",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 1.1389588685081409,
+        "latest_validation_accuracy": 0.6774,
+        "best_validation_accuracy": 0.6796,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.3048,
+            "loss": 1.8526359939575194
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.3564,
+            "loss": 1.7254827419281007
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.4128,
+            "loss": 1.5832352682113648
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.4534,
+            "loss": 1.489038091468811
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.473,
+            "loss": 1.479597191810608
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.4676,
+            "loss": 1.4813543935775757
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.5278,
+            "loss": 1.3192340576171875
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.5538,
+            "loss": 1.2547383632659912
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.5822,
+            "loss": 1.1808552431106567
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.5938,
+            "loss": 1.165127436542511
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.6144,
+            "loss": 1.0970017076492309
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.6288,
+            "loss": 1.072757382774353
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.6364,
+            "loss": 1.0479549048423766
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.6522,
+            "loss": 0.9923474237442017
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.6636,
+            "loss": 0.9715291522979737
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.6666,
+            "loss": 0.956830080318451
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.6714,
+            "loss": 0.9494624725341797
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.6764,
+            "loss": 0.9329057885169982
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.6796,
+            "loss": 0.9279336334228515
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.6774,
+            "loss": 0.9261055471420289
+          }
+        ],
+        "latest_images_per_second": 2549.7992180490673,
+        "recent_grad_norm_before_clip": 4.824950218200684,
+        "recent_hyper_grad_norm_before_clip": 1.5148770809173584,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/exact-r2",
+        "config": {
+          "variant": "exact",
+          "placement": "mlp_in",
+          "rank": 2,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 192,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/exact-r2",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "exact",
+          "rank": 2,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 365.6618752969662,
+          "validation": {
+            "loss": 0.9261055471420289,
+            "accuracy": 0.6774,
+            "examples": 5000,
+            "seconds": 0.6531506140017882,
+            "images_per_second": 7655.202173608171,
+            "tokens_per_second": 497588.14128453104
+          },
+          "best_validation_accuracy": 0.6796,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 350.59060776396655,
+          "train_images_per_second": 2563.445740123931,
+          "train_tokens_per_second": 166623.9731080555,
+          "parameters": 4901962,
+          "extra_parameters": 2211840,
+          "base_parameters": 2690122,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 653238528,
+          "extra_forward_matmul_flops_per_token_estimate": 4423680.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 519233536,
+          "peak_training_reserved_bytes": 637534208
+        },
+        "elapsed_gpu_hours": 0.10157274313804616,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      },
+      {
+        "name": "plain-w216",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_plain_w216",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 0.9563730833248589,
+        "latest_validation_accuracy": 0.7494,
+        "best_validation_accuracy": 0.7494,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.3402,
+            "loss": 1.774555322265625
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.4318,
+            "loss": 1.5534600957870484
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.4978,
+            "loss": 1.3977540199279785
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.5278,
+            "loss": 1.3203381698608398
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.5584,
+            "loss": 1.2434144914627074
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.5584,
+            "loss": 1.2554192274093627
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.6194,
+            "loss": 1.0922513283729554
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.6342,
+            "loss": 1.0616365089416504
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.6516,
+            "loss": 1.0036257885932922
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.681,
+            "loss": 0.9422492564201355
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.6876,
+            "loss": 0.9199868995666504
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.705,
+            "loss": 0.8613466827392579
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.7094,
+            "loss": 0.8566402254104615
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.7202,
+            "loss": 0.8299630097389221
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.733,
+            "loss": 0.8000348434448242
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.7332,
+            "loss": 0.7849489462852478
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.7424,
+            "loss": 0.7719591286659241
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.7438,
+            "loss": 0.7614199478149414
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.7456,
+            "loss": 0.7577585593223571
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.7494,
+            "loss": 0.7557534290790557
+          }
+        ],
+        "latest_images_per_second": 4833.809872402811,
+        "recent_grad_norm_before_clip": 3.287254810333252,
+        "recent_hyper_grad_norm_before_clip": null,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain-w216",
+        "config": {
+          "variant": "plain",
+          "placement": "mlp_in",
+          "rank": 2,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 216,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain-w216",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "plain",
+          "rank": 2,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 180.70440747705288,
+          "validation": {
+            "loss": 0.7557534290790557,
+            "accuracy": 0.7494,
+            "examples": 5000,
+            "seconds": 0.5109756849706173,
+            "images_per_second": 9785.201423601038,
+            "tokens_per_second": 636038.0925340675
+          },
+          "best_validation_accuracy": 0.7494,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 169.13871354120784,
+          "train_images_per_second": 5313.508546823858,
+          "train_tokens_per_second": 345378.05554355076,
+          "parameters": 3399634,
+          "extra_parameters": 0,
+          "base_parameters": 3399634,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 459933984,
+          "extra_forward_matmul_flops_per_token_estimate": 0.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 516657664,
+          "peak_training_reserved_bytes": 652214272
+        },
+        "elapsed_gpu_hours": 0.0501956687436258,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      },
+      {
+        "name": "plain-w264",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_plain_w264",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 1.0206210112419372,
+        "latest_validation_accuracy": 0.7374,
+        "best_validation_accuracy": 0.7374,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.3388,
+            "loss": 1.7751114952087403
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.4228,
+            "loss": 1.5737382358551026
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.479,
+            "loss": 1.4443773643493651
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.5012,
+            "loss": 1.3684377098083496
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.5362,
+            "loss": 1.286130399131775
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.5158,
+            "loss": 1.3624747802734376
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.5816,
+            "loss": 1.1970422193527221
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.5968,
+            "loss": 1.1492280742645264
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.6016,
+            "loss": 1.125836756515503
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.6408,
+            "loss": 1.0378592843055725
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.6496,
+            "loss": 1.0154877873420716
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.6834,
+            "loss": 0.9355116136550903
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.6886,
+            "loss": 0.9096442082405091
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.6966,
+            "loss": 0.9020265262603759
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.7196,
+            "loss": 0.844629504776001
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.7212,
+            "loss": 0.8320417155265808
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.7336,
+            "loss": 0.8112773263931274
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.7356,
+            "loss": 0.7959240911483765
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.7374,
+            "loss": 0.7934436715126038
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.7374,
+            "loss": 0.7905339834213256
+          }
+        ],
+        "latest_images_per_second": 4980.860516608001,
+        "recent_grad_norm_before_clip": 3.9550869464874268,
+        "recent_hyper_grad_norm_before_clip": null,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain-w264",
+        "config": {
+          "variant": "plain",
+          "placement": "mlp_in",
+          "rank": 2,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 264,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain-w264",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "plain",
+          "rank": 2,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 182.6308250069851,
+          "validation": {
+            "loss": 0.7905339834213256,
+            "accuracy": 0.7374,
+            "examples": 5000,
+            "seconds": 0.49191894300747663,
+            "images_per_second": 10164.276190364162,
+            "tokens_per_second": 660677.9523736705
+          },
+          "best_validation_accuracy": 0.7374,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 170.8691378806252,
+          "train_images_per_second": 5259.697632628517,
+          "train_tokens_per_second": 341880.3461208536,
+          "parameters": 5067490,
+          "extra_parameters": 0,
+          "base_parameters": 5067490,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 680751456,
+          "extra_forward_matmul_flops_per_token_estimate": 0.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 638575104,
+          "peak_training_reserved_bytes": 763363328
+        },
+        "elapsed_gpu_hours": 0.05073078472416253,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      },
+      {
+        "name": "plain",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_plain",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 0.9529102899776861,
+        "latest_validation_accuracy": 0.7544,
+        "best_validation_accuracy": 0.7544,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.3322,
+            "loss": 1.7883200704574584
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.447,
+            "loss": 1.5361320560455323
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.4956,
+            "loss": 1.382590193939209
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.5502,
+            "loss": 1.2607138868331909
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.5858,
+            "loss": 1.1603845209121704
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.594,
+            "loss": 1.1701583911895752
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.6268,
+            "loss": 1.0800972038269043
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.6436,
+            "loss": 1.0155756273269654
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.6646,
+            "loss": 0.9778068182945251
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.6944,
+            "loss": 0.9094290529251099
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.6962,
+            "loss": 0.9090095652580261
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.7148,
+            "loss": 0.846017484664917
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.722,
+            "loss": 0.8381788471221924
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.7302,
+            "loss": 0.8046468085289001
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.74,
+            "loss": 0.7790308101654053
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.7456,
+            "loss": 0.76378305311203
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.75,
+            "loss": 0.7497782704353333
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.7534,
+            "loss": 0.7413123969078064
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.7528,
+            "loss": 0.741170806312561
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.7544,
+            "loss": 0.7400437714099884
+          }
+        ],
+        "latest_images_per_second": 4635.791606717986,
+        "recent_grad_norm_before_clip": 4.051798343658447,
+        "recent_hyper_grad_norm_before_clip": null,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain",
+        "config": {
+          "variant": "plain",
+          "placement": "mlp_in",
+          "rank": 2,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 192,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/plain",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "plain",
+          "rank": 2,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 190.91459556494374,
+          "validation": {
+            "loss": 0.7400437714099884,
+            "accuracy": 0.7544,
+            "examples": 5000,
+            "seconds": 0.5424716679845005,
+            "images_per_second": 9217.071222497209,
+            "tokens_per_second": 599109.6294623185
+          },
+          "best_validation_accuracy": 0.7544,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 179.42620469047688,
+          "train_images_per_second": 5008.855877826523,
+          "train_tokens_per_second": 325575.632058724,
+          "parameters": 2690122,
+          "extra_parameters": 0,
+          "base_parameters": 2690122,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 365699328,
+          "extra_forward_matmul_flops_per_token_estimate": 0.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 453108736,
+          "peak_training_reserved_bytes": 578813952
+        },
+        "elapsed_gpu_hours": 0.05303183210137326,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      },
+      {
+        "name": "static-lora-r8-diagonal",
+        "state": "complete",
+        "service": "adalora_cifar20_20261006t205259z_static_lora_r8_diagonal",
+        "step": 7040,
+        "epochs_completed": 20,
+        "latest_train_loss": 0.8740120364454227,
+        "latest_validation_accuracy": 0.7718,
+        "best_validation_accuracy": 0.7738,
+        "validation_curve": [
+          {
+            "epoch": 1,
+            "step": 352,
+            "accuracy": 0.3254,
+            "loss": 1.7943215978622435
+          },
+          {
+            "epoch": 2,
+            "step": 704,
+            "accuracy": 0.4678,
+            "loss": 1.5049065687179566
+          },
+          {
+            "epoch": 3,
+            "step": 1056,
+            "accuracy": 0.5176,
+            "loss": 1.3551590240478515
+          },
+          {
+            "epoch": 4,
+            "step": 1408,
+            "accuracy": 0.5686,
+            "loss": 1.2324701545715333
+          },
+          {
+            "epoch": 5,
+            "step": 1760,
+            "accuracy": 0.5968,
+            "loss": 1.1525406524658204
+          },
+          {
+            "epoch": 6,
+            "step": 2112,
+            "accuracy": 0.6062,
+            "loss": 1.1315132234573364
+          },
+          {
+            "epoch": 7,
+            "step": 2464,
+            "accuracy": 0.6288,
+            "loss": 1.089637403488159
+          },
+          {
+            "epoch": 8,
+            "step": 2816,
+            "accuracy": 0.6472,
+            "loss": 1.007830871963501
+          },
+          {
+            "epoch": 9,
+            "step": 3168,
+            "accuracy": 0.6888,
+            "loss": 0.9340773057937622
+          },
+          {
+            "epoch": 10,
+            "step": 3520,
+            "accuracy": 0.709,
+            "loss": 0.8804050127983093
+          },
+          {
+            "epoch": 11,
+            "step": 3872,
+            "accuracy": 0.7074,
+            "loss": 0.8815264682769776
+          },
+          {
+            "epoch": 12,
+            "step": 4224,
+            "accuracy": 0.7252,
+            "loss": 0.8176381697177887
+          },
+          {
+            "epoch": 13,
+            "step": 4576,
+            "accuracy": 0.7366,
+            "loss": 0.8087542788505554
+          },
+          {
+            "epoch": 14,
+            "step": 4928,
+            "accuracy": 0.7488,
+            "loss": 0.76899363322258
+          },
+          {
+            "epoch": 15,
+            "step": 5280,
+            "accuracy": 0.752,
+            "loss": 0.7459629114151001
+          },
+          {
+            "epoch": 16,
+            "step": 5632,
+            "accuracy": 0.7604,
+            "loss": 0.7340222029685974
+          },
+          {
+            "epoch": 17,
+            "step": 5984,
+            "accuracy": 0.7632,
+            "loss": 0.7232085335731506
+          },
+          {
+            "epoch": 18,
+            "step": 6336,
+            "accuracy": 0.7738,
+            "loss": 0.7063786823749543
+          },
+          {
+            "epoch": 19,
+            "step": 6688,
+            "accuracy": 0.771,
+            "loss": 0.7071062231063843
+          },
+          {
+            "epoch": 20,
+            "step": 7040,
+            "accuracy": 0.7718,
+            "loss": 0.7060828152418137
+          }
+        ],
+        "latest_images_per_second": 4794.041927121122,
+        "recent_grad_norm_before_clip": 4.670156955718994,
+        "recent_hyper_grad_norm_before_clip": 0.9834855794906616,
+        "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/static-lora-r8-diagonal",
+        "config": {
+          "variant": "static_lora_diagonal",
+          "placement": "mlp_in",
+          "rank": 8,
+          "n_basis": 16,
+          "chunk": 2048,
+          "detach_condition": false,
+          "width": 192,
+          "depth": 6,
+          "heads": 3,
+          "patch_size": 4,
+          "mlp_ratio": 4.0,
+          "qk_norm": false,
+          "drop_rate": 0.0,
+          "gradient_checkpointing": false,
+          "epochs": 20,
+          "max_steps": null,
+          "batch_size": 128,
+          "lr": 0.0005,
+          "hyper_lr_multiplier": 1.0,
+          "weight_decay": 0.05,
+          "warmup_ratio": 0.05,
+          "min_lr_ratio": 0.01,
+          "label_smoothing": 0.1,
+          "max_grad_norm": 1.0,
+          "seed": 42,
+          "split_seed": 123,
+          "val_fraction": 0.1,
+          "num_workers": 4,
+          "cpu_threads": 4,
+          "data_source": "huggingface",
+          "data_dir": "data",
+          "hf_home": "/workspace/.hf_home",
+          "download": false,
+          "train_limit": null,
+          "val_limit": null,
+          "synthetic": false,
+          "synthetic_samples": 256,
+          "precision": "bf16",
+          "device": "cuda:0",
+          "compile": false,
+          "log_every": 20,
+          "benchmark_warmup_steps": 10,
+          "evaluate_test": false,
+          "output_dir": "/workspace/adalora/runs/cifar10-screen-20261006T205259Z/static-lora-r8-diagonal",
+          "save_weights": false,
+          "artifact_purpose": null
+        },
+        "results": {
+          "variant": "static_lora_diagonal",
+          "rank": 8,
+          "n_basis": 16,
+          "seed": 42,
+          "completed_steps": 7040,
+          "processed_images": 900000,
+          "elapsed_seconds": 226.4973365800688,
+          "validation": {
+            "loss": 0.7060828152418137,
+            "accuracy": 0.7718,
+            "examples": 5000,
+            "seconds": 0.47982018906623125,
+            "images_per_second": 10420.570275982765,
+            "tokens_per_second": 677337.0679388797
+          },
+          "best_validation_accuracy": 0.7738,
+          "test": null,
+          "synthetic": false,
+          "benchmark_warmup_steps": 10,
+          "benchmark_images": 898720,
+          "benchmark_seconds": 214.646686589811,
+          "train_images_per_second": 4186.973553043707,
+          "train_tokens_per_second": 272153.28094784095,
+          "parameters": 3180874,
+          "extra_parameters": 490752,
+          "base_parameters": 2690122,
+          "tokens_per_image": 65,
+          "forward_matmul_flops_per_image_estimate": 429197568,
+          "extra_forward_matmul_flops_per_token_estimate": 976896.0,
+          "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+          "device_name": "NVIDIA GeForce RTX 5090",
+          "peak_training_allocated_bytes": 559721472,
+          "peak_training_reserved_bytes": 696254464
+        },
+        "elapsed_gpu_hours": 0.06291592682779688,
+        "source_matches_snapshot": true,
+        "split_sha256": "367c125ebd93ba38d169b61c471c541d73a6e8b27decad196aba09845dea6766",
+        "train_examples": 45000,
+        "validation_examples": 5000
+      }
+    ]
+  },
+  "audit": {
+    "basis-r8-k16": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 3.408524751663208,
+      "logged_grad_norm_max": 6.268309593200684
+    },
+    "diagonal": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 3.1337616443634033,
+      "logged_grad_norm_max": 5.583518028259277
+    },
+    "dplr-r8-k16": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 3.303609609603882,
+      "logged_grad_norm_max": 4.709423065185547
+    },
+    "exact-r2": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 3.347654700279236,
+      "logged_grad_norm_max": 13.768147468566895
+    },
+    "plain-w216": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 2.7187803983688354,
+      "logged_grad_norm_max": 4.600270748138428
+    },
+    "plain-w264": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 2.647709846496582,
+      "logged_grad_norm_max": 4.874022006988525
+    },
+    "plain": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 2.89705753326416,
+      "logged_grad_norm_max": 5.056381702423096
+    },
+    "static-lora-r8-diagonal": {
+      "complete": true,
+      "validation_epochs": 20,
+      "finite_logged_train_metrics": true,
+      "weights_saved": false,
+      "logged_grad_norm_median": 3.063564896583557,
+      "logged_grad_norm_max": 5.906396865844727
+    }
+  },
+  "hardware": {
+    "captured_utc": "2026-10-06T20:54:36.385045+00:00",
+    "gpu_claims": [
+      {
+        "pid": 505106,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_basis_r8_k16",
+        "uuid": "GPU-6c0ce978-4b2d-20a2-a25c-b111a56a3b3d",
+        "index": 0,
+        "started": "2026-10-06T20:52:59Z",
+        "locker": "gpu-claim"
+      },
+      {
+        "pid": 505128,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_diagonal",
+        "uuid": "GPU-13cc532b-da57-e8fc-29ec-7eca34a6e43e",
+        "index": 1,
+        "started": "2026-10-06T20:53:02Z",
+        "locker": "gpu-claim"
+      },
+      {
+        "pid": 505191,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_dplr_r8_k16",
+        "uuid": "GPU-f9397a2d-9940-b5ab-bd06-54c68b83117b",
+        "index": 2,
+        "started": "2026-10-06T20:53:06Z",
+        "locker": "gpu-claim"
+      },
+      {
+        "pid": 505241,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_exact_r2",
+        "uuid": "GPU-55fc0669-93bd-9223-674d-212086d4258b",
+        "index": 3,
+        "started": "2026-10-06T20:53:09Z",
+        "locker": "gpu-claim"
+      },
+      {
+        "pid": 505291,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_plain_w216",
+        "uuid": "GPU-0d8515c7-fc33-c2b3-7e6e-48791efad78d",
+        "index": 4,
+        "started": "2026-10-06T20:53:12Z",
+        "locker": "gpu-claim"
+      },
+      {
+        "pid": 505353,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_plain_w264",
+        "uuid": "GPU-30b51b9a-d3ac-4a3f-7b1d-46332232a9c1",
+        "index": 5,
+        "started": "2026-10-06T20:53:15Z",
+        "locker": "gpu-claim"
+      },
+      {
+        "pid": 505464,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_plain",
+        "uuid": "GPU-8c7bb66c-eccc-1946-48f6-306f8f5a6d25",
+        "index": 6,
+        "started": "2026-10-06T20:53:19Z",
+        "locker": "gpu-claim"
+      },
+      {
+        "pid": 505513,
+        "owner": "adalora",
+        "job": "adalora_cifar20_20261006t205259z_static_lora_r8_diagonal",
+        "uuid": "GPU-866cad81-dc9b-cc40-afb8-c387d3ffba5f",
+        "index": 7,
+        "started": "2026-10-06T20:53:22Z",
+        "locker": "gpu-claim"
+      }
+    ],
+    "gpu_inventory": "0, GPU-6c0ce978-4b2d-20a2-a25c-b111a56a3b3d, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n1, GPU-13cc532b-da57-e8fc-29ec-7eca34a6e43e, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n2, GPU-f9397a2d-9940-b5ab-bd06-54c68b83117b, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n3, GPU-55fc0669-93bd-9223-674d-212086d4258b, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n4, GPU-0d8515c7-fc33-c2b3-7e6e-48791efad78d, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n5, GPU-30b51b9a-d3ac-4a3f-7b1d-46332232a9c1, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n6, GPU-8c7bb66c-eccc-1946-48f6-306f8f5a6d25, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n7, GPU-866cad81-dc9b-cc40-afb8-c387d3ffba5f, NVIDIA GeForce RTX 5090, 595.84, 32607 MiB\n",
+    "gpu_claim_helper_sha256": "611938811010295b5313cb0b52be88d4ff88a3e06842bbbe70bb5bd1a3c91cb6"
+  },
+  "total_loop_gpu_hours": 0.521096596066135,
+  "timing_scope": "training and validation loop time excludes startup; concurrent GPU runs share CPU/storage",
+  "interpretation": "DPLR leads the single-seed endpoint, but its 0.42 percentage-point gain over static LoRA plus diagonal is small and not capacity matched. Basis mixing does not beat diagonal at this recipe. Exact rank 2 needs optimization diagnostics and hypernetwork LR tuning before judging the transform family.",
+  "next_experiment": "Modest LR tuning for plain, diagonal, static LoRA plus diagonal and DPLR; smaller hypernetwork LR for exact as a diagnostic; longer matched-budget multi-seed confirmation before diffusion transfer."
+}

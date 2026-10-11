@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-10-07T18:50:39.743983+00:00",
+  "source_report": "/workspace/adalora/runs/dit-followup-20261007T174446Z/report.json",
+  "source_sha256": "8c6f758903539105c1b16056b051f5cb026784e7bb89a7d5624e4798fdbd0689",
+  "audit_sha256": "c0528116ce4b32150f5cd4024464cb5247f64bc5592fb089b51af9952438af82",
+  "plot_script_sha256": "fd9b8f5140f72db98a12ec6ee973904feb4b644b5fe67c9d79aaa4ce9aca3775",
+  "matplotlib_version": "3.11.1",
+  "uncertainty": "sample SD over three training seeds, not CI",
+  "figures": {
+    "dit-lr-tuning.png": "d89cb24948bd2d200c84755ffe0cc8923ae19331c0183a1cdf58b17da63a217f",
+    "dit-lr-tuning.pdf": "381f907151284167575b691f93bf02a6d62ab5cceb46498be7fb571afd88bb1e",
+    "dit-lr-confirmation.png": "f422cff4cc44e1262e3fbce57c77157c0c2c7b1aafb2ec3c8e44215f16769f5d",
+    "dit-lr-confirmation.pdf": "41d51b0283320def77a88ae6d66c0fc38437751995ad403bc0569e69935fd316",
+    "dit-lr-confirmation-curves.png": "d496366d89368567884549d666620a174f88e7a6a3f7e96a2658df477588eb8e",
+    "dit-lr-confirmation-curves.pdf": "e12cb760d95711e1f1969f296783197cdb903d97eb2fe6a815477d8f7eafc001"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source_run": "/workspace/adalora/runs/dit-gain-quality-20261007T215415Z",
+  "report_sha256": "0ad02256bb6ecc0fefd7df5db9cd580f8e54f4c1bcc7f2c8b37e9a53b1ea40ea",
+  "analysis_source_sha256": "60eb189d4580487c384f5c5e6591266d40472da9049ca4ab77230e3cc94c920e",
+  "outputs_sha256": {
+    "/workspace/adalora/reports/dit-gain-quality.md": "97fb884928ae0092e0c5e8fe4a588b43300ef1d1cf7c766549b7a9806cd3127b",
+    "/workspace/adalora/reports/dit-gain-quality.json": "0ad02256bb6ecc0fefd7df5db9cd580f8e54f4c1bcc7f2c8b37e9a53b1ea40ea",
+    "/workspace/adalora/reports/dit-gain-quality-audit.json": "6dbfe017e99e94a7235eb697d52e5bda36f1fd36b157d1b96e07520148125c46",
+    "/workspace/adalora/reports/dit-gain-quality.png": "521accca99e2ed5686118f6b1f20a029b941243fec4e52f87aac6923c4d0bd73",
+    "/workspace/adalora/reports/dit-gain-quality.svg": "975007d98efaeb065413a3c514a5414646432d92a7df64351ac99104c1bc3289",
+    "/workspace/adalora/reports/dit-gain-quality-updates.png": "def404348d8e5f7b99b021d0d2d4bf288ab5a884825fa9790a78b217aa25cdb9",
+    "/workspace/adalora/reports/dit-gain-quality-updates.svg": "e4752c1177b5d39a9cf36a2ae868456f8c48bec61e0bd568ee9c5fa82485dfcb"
+  },
+  "weights_saved": false,
+  "test_evaluated": false,
+  "retention": "compact evidence until explicitly removed"
+}

@@ -1,0 +1,15 @@
+{
+  "source_run": "/workspace/adalora/runs/dit-gain-20261007T213229Z",
+  "report_sha256": "33a22f76de29e8a7fce71c0fb47afd80d84d142e6ddade0e2c082f6436135d87",
+  "analysis_source_sha256": "629e4f5d7baacd11106e11ced1d132f933edba912bf36d2c9a030503e3d601da",
+  "outputs_sha256": {
+    "/workspace/adalora/reports/dit-gain-engineering.md": "22dad251a7bae8508064915dac12e1c8385ca48ef916cb30a9cd9d6accf62109",
+    "/workspace/adalora/reports/dit-gain-engineering.json": "33a22f76de29e8a7fce71c0fb47afd80d84d142e6ddade0e2c082f6436135d87",
+    "/workspace/adalora/reports/dit-gain-engineering-audit.json": "4b6b36e5abfc562f4950f0b28673f56edcfd0e8920460520d8a5e553ab0db174",
+    "/workspace/adalora/reports/dit-gain-engineering.png": "a9abf45a2c56b2104d8a748880c3414c36fc7400b45aaa29dcd420c7ff814660",
+    "/workspace/adalora/reports/dit-gain-engineering.svg": "0246f62c4d0668e0c4067a5c5ed770acc76249870a95f8bec16f9fd99ae0ad6d"
+  },
+  "weights_saved": false,
+  "test_evaluated": false,
+  "retention": "compact research evidence until explicitly removed"
+}

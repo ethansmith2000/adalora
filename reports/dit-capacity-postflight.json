@@ -1,0 +1,11 @@
+{
+  "checked_utc": "2026-10-10T04:18:59.627517+00:00",
+  "state": "complete",
+  "training_report_sha256": "a747e84d84d1e1c8a058c3ef7ba8b5ff60987b013f169c3ecddca5358ee3fb33",
+  "automatic_audit_passed": true,
+  "controller_exit_code": 0,
+  "controller_shutdown": true,
+  "workers_closed": true,
+  "weights_saved": false,
+  "max_concurrent_workers": 2
+}

@@ -1,0 +1,41 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-core-20261008T040258Z",
+  "artifacts": {
+    "dit-core-confirmation-evidence.json": {
+      "sha256": "bfd47a94bc42fede5b9afab880ba707242e3167e42b5b84f47f63077f1047a15",
+      "bytes": 5770485
+    },
+    "dit-core-confirmation-updates.png": {
+      "sha256": "e16a3dc35d3644f5107126eb522eccf6861295f2e92207f51567194c217269b9",
+      "bytes": 332739
+    },
+    "dit-core-confirmation-updates.svg": {
+      "sha256": "70cc257fe58d1e51d0adac1e6b0ce232c1c16f13ed624897119e43ee9d6a43a9",
+      "bytes": 91639
+    },
+    "dit-core-confirmation.png": {
+      "sha256": "7d35756f0d1c78292a973d1a676f794861d7c41df4c11fa9a348ee459d61c7c8",
+      "bytes": 125760
+    },
+    "dit-core-confirmation.md": {
+      "sha256": "0a8e9ed8fcd28a03f4e51050039c098aa82f94fcbc51879f49053933805e7bd2",
+      "bytes": 6660
+    },
+    "dit-core-confirmation.svg": {
+      "sha256": "a57622bde803ea16c984ec5b122a6dc732feb0788d5f4b0cabb92ff71578e6f1",
+      "bytes": 75842
+    },
+    "dit-core-confirmation.json": {
+      "sha256": "982dd27175309b8ecc5dba6b8c7dcde9e0ebde5b4065c21a59c8ac770af211e8",
+      "bytes": 41722
+    },
+    "dit-core-confirmation-audit.json": {
+      "sha256": "cc1c942fd16caacf79e2831dde0d72eac245a562f4cc67812291ae02e57ba0f0",
+      "bytes": 942
+    }
+  },
+  "analysis_source_sha256": {
+    "summarize_dit_core.py": "f774ad972d01b4be356999000ff380d8735bc928ec458d4d1976c1c81fb2603a",
+    "audit_dit_core.py": "84be5c407a741e98e7fffe97e845bf997b8ffef54416878f6545554bb62afbf1"
+  }
+}

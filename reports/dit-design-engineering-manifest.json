@@ -1,0 +1,20 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-design-20261007T204233Z",
+  "report_sha256": "2662892e096ec0c16d2b7369d3991d83a95c5ef723eaf4e371a987c9ae751fd0",
+  "audit_sha256": "fff3d616b77644c373ad4a5e85742ea2da4b48564fbc3ce5e9aeddc7869d3f99",
+  "summary_script_sha256": "f16963a2b29ceac375c2f4ff33dc18bae32ebe448690369bf2009649dcadc15e",
+  "artifacts": {
+    "dit-design-engineering.json": {
+      "sha256": "2662892e096ec0c16d2b7369d3991d83a95c5ef723eaf4e371a987c9ae751fd0",
+      "bytes": 903337
+    },
+    "dit-design-engineering-audit.json": {
+      "sha256": "fff3d616b77644c373ad4a5e85742ea2da4b48564fbc3ce5e9aeddc7869d3f99",
+      "bytes": 497
+    },
+    "dit-design-engineering.md": {
+      "sha256": "3e0dc001b9778fc026a6ebd350141dd59e495d332a35a11c1657b1f193daee9e",
+      "bytes": 3210
+    }
+  }
+}

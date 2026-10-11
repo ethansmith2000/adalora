@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "bounded_pilot_grid": true,
+    "update_only_selection": true,
+    "recipes_frozen": true,
+    "six_quality_runs": true,
+    "frozen_sources_evaluators": true,
+    "same_initialization_and_observed_streams": true,
+    "zero_start_gradient_activation": true,
+    "successful_exits_closed_workers": true,
+    "two_gpu_cap": true,
+    "no_weights_test": true,
+    "storage_within_bound": true
+  },
+  "report_sha256": "f57f7affbd4c46d7e46775516cff94e4d3791e7900f0bb30b4c226e201439737",
+  "bytes_retained": 1501791521
+}

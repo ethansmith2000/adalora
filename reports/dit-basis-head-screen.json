@@ -1,0 +1,1167 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-basis-heads-20261008T214617Z",
+  "audit": {
+    "checks": {
+      "successful_exits_closed_supervisors": true,
+      "source_runtime_data_configs_budgets": true,
+      "selection_recomputed_without_quality": true,
+      "mandatory_response_bounded_corrections": true,
+      "frozen_gain_rate_fresh_confirmation": true,
+      "initialization_gradients_paired_traces": true,
+      "base_gain_lr_layer_heads_mlp_activation_init": true,
+      "claimed_gpu_matches_runtime": true,
+      "frozen_evaluators_counts": true,
+      "bounded_concurrency": true,
+      "no_weights_test_speed_study": true,
+      "storage_within_bound": true
+    },
+    "calibration_runs": 26,
+    "confirmation_runs": 12,
+    "bytes_retained": 77756242,
+    "report_sha256": "1bdc6a232e4a36974982428a2a31d812ef23480ab9fb6e198f26064516c61559"
+  },
+  "aggregates": [
+    {
+      "family": "independent_linear",
+      "label": "Independent affine s16",
+      "parameters": 4954032,
+      "adapter_parameters": 774336,
+      "design": {
+        "rank": 8,
+        "n_basis": 16,
+        "projector_groups": 6,
+        "decoder_groups": 0,
+        "coefficient_hidden": 0,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 1.0,
+      "metrics": {
+        "fid": {
+          "mean": 133.6689682006836,
+          "sd": 5.351001650519372,
+          "values": [
+            137.45269775390625,
+            129.88523864746094
+          ]
+        },
+        "agreement_percent": {
+          "mean": 27.959999442100525,
+          "sd": 0.9616646424730692,
+          "values": [
+            27.27999985218048,
+            28.63999903202057
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06749361984431743,
+          "sd": 0.00010678127870000186,
+          "values": [
+            0.06741811407804489,
+            0.06756912561058998
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 620.154296875,
+          "sd": 0.0,
+          "values": [
+            620.154296875,
+            620.154296875
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "values": [
+            1.0,
+            1.0
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "values": [
+            1.0,
+            1.0
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.647377048771431,
+          "sd": 0.08440942808553899,
+          "values": [
+            0.7070635277667938,
+            0.5876905697760682
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.325752100926238,
+          "sd": 0.0021478931109112686,
+          "values": [
+            2.324233311142249,
+            2.3272708907102273
+          ]
+        }
+      }
+    },
+    {
+      "family": "two_bases_s16",
+      "label": "Two bases s16 / layer heads",
+      "parameters": 4462512,
+      "adapter_parameters": 282816,
+      "design": {
+        "rank": 8,
+        "n_basis": 16,
+        "projector_groups": 6,
+        "decoder_groups": 2,
+        "coefficient_hidden": 0,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 1.041632338568115,
+      "metrics": {
+        "fid": {
+          "mean": 138.71763610839844,
+          "sd": 7.60582163097509,
+          "values": [
+            133.33950805664062,
+            144.09576416015625
+          ]
+        },
+        "agreement_percent": {
+          "mean": 25.38999915122986,
+          "sd": 0.09899451778238791,
+          "values": [
+            25.459998846054077,
+            25.31999945640564
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06772642481327057,
+          "sd": 0.00033376333787499165,
+          "values": [
+            0.0674904184937477,
+            0.06796243113279343
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 612.646484375,
+          "sd": 0.0,
+          "values": [
+            612.646484375,
+            612.646484375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.9720476172906282,
+          "sd": 0.05835089206014526,
+          "values": [
+            1.0133079287546412,
+            0.9307873058266152
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 0.9217889217911284,
+          "sd": 0.00486819593885145,
+          "values": [
+            0.925231256151635,
+            0.9183465874306217
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.530521641597208,
+          "sd": 0.04200933766344739,
+          "values": [
+            0.5602267291321871,
+            0.5008165540622289
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.2450904085748764,
+          "sd": 0.03249820073445611,
+          "values": [
+            2.2221107104591806,
+            2.2680701066905717
+          ]
+        }
+      }
+    },
+    {
+      "family": "two_bases_s44",
+      "label": "Two bases s44 / layer heads",
+      "parameters": 4957440,
+      "adapter_parameters": 777744,
+      "design": {
+        "rank": 8,
+        "n_basis": 44,
+        "projector_groups": 6,
+        "decoder_groups": 2,
+        "coefficient_hidden": 0,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 0.4175423036920055,
+      "metrics": {
+        "fid": {
+          "mean": 140.11575317382812,
+          "sd": 1.2182745495198892,
+          "values": [
+            139.25430297851562,
+            140.97720336914062
+          ]
+        },
+        "agreement_percent": {
+          "mean": 25.259999930858612,
+          "sd": 0.19799114290720135,
+          "values": [
+            25.119999051094055,
+            25.40000081062317
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06767507221400737,
+          "sd": 4.184174747458004e-06,
+          "values": [
+            0.06767211355566978,
+            0.06767803087234497
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 624.3701171875,
+          "sd": 0.0,
+          "values": [
+            624.3701171875,
+            624.3701171875
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 1.0729296126476624,
+          "sd": 0.04707600811642728,
+          "values": [
+            1.0396418480773437,
+            1.106217377217981
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 1.0285343606676862,
+          "sd": 0.02785452877563196,
+          "values": [
+            1.0482304868516914,
+            1.008838234483681
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.5409033947788374,
+          "sd": 0.014478732618488714,
+          "values": [
+            0.5511414047963576,
+            0.5306653847613172
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.823823171602254,
+          "sd": 0.11127523581186931,
+          "values": [
+            2.745139697781549,
+            2.902506645422959
+          ]
+        }
+      }
+    },
+    {
+      "family": "all_bases_s77",
+      "label": "All bases s77 / layer heads",
+      "parameters": 4949388,
+      "adapter_parameters": 769692,
+      "design": {
+        "rank": 8,
+        "n_basis": 77,
+        "projector_groups": 6,
+        "decoder_groups": 1,
+        "coefficient_hidden": 0,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 0.22586302865740998,
+      "metrics": {
+        "fid": {
+          "mean": 144.2476348876953,
+          "sd": 0.6600857339390657,
+          "values": [
+            144.71438598632812,
+            143.7808837890625
+          ]
+        },
+        "agreement_percent": {
+          "mean": 23.719999939203262,
+          "sd": 0.254557481964885,
+          "values": [
+            23.54000061750412,
+            23.899999260902405
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06784593719542026,
+          "sd": 7.66026600265172e-05,
+          "values": [
+            0.06779177093505859,
+            0.06790010345578194
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 628.14404296875,
+          "sd": 0.0,
+          "values": [
+            628.14404296875,
+            628.14404296875
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.9960126540491695,
+          "sd": 0.03266139402007517,
+          "values": [
+            1.0191077472437704,
+            0.9729175608545686
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 0.8611828994167261,
+          "sd": 0.04075760892428858,
+          "values": [
+            0.8323629177614122,
+            0.8900028810720398
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.45086917503096713,
+          "sd": 0.07412773561179418,
+          "values": [
+            0.5032853995560703,
+            0.39845295050586393
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.517873536535024,
+          "sd": 0.015463491280873647,
+          "values": [
+            2.5069391969894994,
+            2.528807876080549
+          ]
+        }
+      }
+    },
+    {
+      "family": "mlp_linear",
+      "label": "Independent s16 / linear MLP48",
+      "parameters": 4981968,
+      "adapter_parameters": 802272,
+      "design": {
+        "rank": 8,
+        "n_basis": 16,
+        "projector_groups": 6,
+        "decoder_groups": 0,
+        "coefficient_hidden": 48,
+        "coefficient_activation": "linear",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 1.73173322310857,
+      "metrics": {
+        "fid": {
+          "mean": 131.5992431640625,
+          "sd": 4.25586872840552,
+          "values": [
+            128.5898895263672,
+            134.6085968017578
+          ]
+        },
+        "agreement_percent": {
+          "mean": 28.720000386238098,
+          "sd": 0.05656950007132197,
+          "values": [
+            28.679999709129333,
+            28.760001063346863
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.0674176740884781,
+          "sd": 0.00025537915163534585,
+          "values": [
+            0.06723709375858307,
+            0.06759825441837311
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 620.72021484375,
+          "sd": 0.0,
+          "values": [
+            620.72021484375,
+            620.72021484375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.8050537889633748,
+          "sd": 0.05971358229362395,
+          "values": [
+            0.8472776679321372,
+            0.7628299099946123
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 1.1055243681030311,
+          "sd": 0.043429522773048235,
+          "values": [
+            1.074815058046513,
+            1.136233678159549
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.6447159503932905,
+          "sd": 0.01602583516839382,
+          "values": [
+            0.6333839736715414,
+            0.6560479271150397
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 1.5548781986383953,
+          "sd": 0.0807793239752451,
+          "values": [
+            1.4977585908758344,
+            1.6119978064009561
+          ]
+        }
+      }
+    },
+    {
+      "family": "mlp_silu",
+      "label": "Independent s16 / SiLU MLP48",
+      "parameters": 4981968,
+      "adapter_parameters": 802272,
+      "design": {
+        "rank": 8,
+        "n_basis": 16,
+        "projector_groups": 6,
+        "decoder_groups": 0,
+        "coefficient_hidden": 48,
+        "coefficient_activation": "silu",
+        "adapter_gain": 0.35355339059327373
+      },
+      "lr_multiplier": 3.504776769803809,
+      "metrics": {
+        "fid": {
+          "mean": 128.92845916748047,
+          "sd": 4.718148849864529,
+          "values": [
+            125.59222412109375,
+            132.2646942138672
+          ]
+        },
+        "agreement_percent": {
+          "mean": 27.17999964952469,
+          "sd": 1.0465167852376265,
+          "values": [
+            26.440000534057617,
+            27.91999876499176
+          ]
+        },
+        "ema_noise_mse": {
+          "mean": 0.06722412910461426,
+          "sd": 4.284783489535596e-06,
+          "values": [
+            0.06722715890407563,
+            0.0672210993051529
+          ]
+        },
+        "peak_allocated_mib": {
+          "mean": 620.77880859375,
+          "sd": 0.0,
+          "values": [
+            620.77880859375,
+            620.77880859375
+          ]
+        },
+        "early_update_to_anchor": {
+          "mean": 0.632023615325171,
+          "sd": 0.002817990397387826,
+          "values": [
+            0.6300309952058596,
+            0.6340162354444826
+          ]
+        },
+        "final_update_to_anchor": {
+          "mean": 2.6626057020389626,
+          "sd": 1.6763816169969745,
+          "values": [
+            3.847986511273993,
+            1.4772248928039324
+          ]
+        },
+        "final_live_delta_to_base": {
+          "mean": 0.6651557317864196,
+          "sd": 0.03200643628821346,
+          "values": [
+            0.6877876999274305,
+            0.6425237636454086
+          ]
+        },
+        "final_transform_frobenius": {
+          "mean": 2.015193426995352,
+          "sd": 0.42094814777374284,
+          "values": [
+            2.3128487168140826,
+            1.7175381371766216
+          ]
+        }
+      }
+    }
+  ],
+  "paired_differences": {
+    "independent_linear": {
+      "two_bases_s16": {
+        "fid": {
+          "mean": -5.048667907714844,
+          "sd": 12.956823281494461,
+          "values": [
+            4.113189697265625,
+            -14.210525512695312
+          ]
+        },
+        "agreement_pp": {
+          "mean": 2.5700002908706665,
+          "sd": 1.060659160255457,
+          "values": [
+            1.8200010061264038,
+            3.319999575614929
+          ]
+        }
+      },
+      "two_bases_s44": {
+        "fid": {
+          "mean": -6.446784973144531,
+          "sd": 6.569276200039261,
+          "values": [
+            -1.801605224609375,
+            -11.091964721679688
+          ]
+        },
+        "agreement_pp": {
+          "mean": 2.699999511241913,
+          "sd": 0.7636734995658677,
+          "values": [
+            2.160000801086426,
+            3.2399982213974
+          ]
+        }
+      },
+      "all_bases_s77": {
+        "fid": {
+          "mean": -10.578666687011719,
+          "sd": 4.690915916580306,
+          "values": [
+            -7.261688232421875,
+            -13.895645141601562
+          ]
+        },
+        "agreement_pp": {
+          "mean": 4.239999502897263,
+          "sd": 0.7071071605081841,
+          "values": [
+            3.739999234676361,
+            4.739999771118164
+          ]
+        }
+      },
+      "mlp_linear": {
+        "fid": {
+          "mean": 2.0697250366210938,
+          "sd": 9.606870378924892,
+          "values": [
+            8.862808227539062,
+            -4.723358154296875
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.7600009441375732,
+          "sd": 0.9050951424017472,
+          "values": [
+            -1.3999998569488525,
+            -0.12000203132629395
+          ]
+        }
+      },
+      "mlp_silu": {
+        "fid": {
+          "mean": 4.740509033203125,
+          "sd": 10.069150500383902,
+          "values": [
+            11.8604736328125,
+            -2.37945556640625
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.7799997925758362,
+          "sd": 0.08485214276455741,
+          "values": [
+            0.8399993181228638,
+            0.7200002670288086
+          ]
+        }
+      }
+    },
+    "two_bases_s16": {
+      "independent_linear": {
+        "fid": {
+          "mean": 5.048667907714844,
+          "sd": 12.956823281494461,
+          "values": [
+            -4.113189697265625,
+            14.210525512695312
+          ]
+        },
+        "agreement_pp": {
+          "mean": -2.5700002908706665,
+          "sd": 1.060659160255457,
+          "values": [
+            -1.8200010061264038,
+            -3.319999575614929
+          ]
+        }
+      },
+      "two_bases_s44": {
+        "fid": {
+          "mean": -1.3981170654296875,
+          "sd": 6.3875470814552004,
+          "values": [
+            -5.914794921875,
+            3.118560791015625
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.12999922037124634,
+          "sd": 0.29698566068958926,
+          "values": [
+            0.339999794960022,
+            -0.0800013542175293
+          ]
+        }
+      },
+      "all_bases_s77": {
+        "fid": {
+          "mean": -5.529998779296875,
+          "sd": 8.265907364914154,
+          "values": [
+            -11.3748779296875,
+            0.31488037109375
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.669999212026596,
+          "sd": 0.3535519997472729,
+          "values": [
+            1.9199982285499573,
+            1.4200001955032349
+          ]
+        }
+      },
+      "mlp_linear": {
+        "fid": {
+          "mean": 7.1183929443359375,
+          "sd": 3.349952902569569,
+          "values": [
+            4.7496185302734375,
+            9.487167358398438
+          ]
+        },
+        "agreement_pp": {
+          "mean": -3.3300012350082397,
+          "sd": 0.15556401785370988,
+          "values": [
+            -3.2200008630752563,
+            -3.440001606941223
+          ]
+        }
+      },
+      "mlp_silu": {
+        "fid": {
+          "mean": 9.789176940917969,
+          "sd": 2.8876727811105596,
+          "values": [
+            7.747283935546875,
+            11.831069946289062
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.7900004982948303,
+          "sd": 1.1455113030200144,
+          "values": [
+            -0.98000168800354,
+            -2.5999993085861206
+          ]
+        }
+      }
+    },
+    "two_bases_s44": {
+      "independent_linear": {
+        "fid": {
+          "mean": 6.446784973144531,
+          "sd": 6.569276200039261,
+          "values": [
+            1.801605224609375,
+            11.091964721679688
+          ]
+        },
+        "agreement_pp": {
+          "mean": -2.699999511241913,
+          "sd": 0.7636734995658677,
+          "values": [
+            -2.160000801086426,
+            -3.2399982213974
+          ]
+        }
+      },
+      "two_bases_s16": {
+        "fid": {
+          "mean": 1.3981170654296875,
+          "sd": 6.3875470814552004,
+          "values": [
+            5.914794921875,
+            -3.118560791015625
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.12999922037124634,
+          "sd": 0.29698566068958926,
+          "values": [
+            -0.339999794960022,
+            0.0800013542175293
+          ]
+        }
+      },
+      "all_bases_s77": {
+        "fid": {
+          "mean": -4.1318817138671875,
+          "sd": 1.8783602834589548,
+          "values": [
+            -5.4600830078125,
+            -2.803680419921875
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.5399999916553497,
+          "sd": 0.05656633905768365,
+          "values": [
+            1.5799984335899353,
+            1.5000015497207642
+          ]
+        }
+      },
+      "mlp_linear": {
+        "fid": {
+          "mean": 8.516510009765625,
+          "sd": 3.037594178885631,
+          "values": [
+            10.664413452148438,
+            6.3686065673828125
+          ]
+        },
+        "agreement_pp": {
+          "mean": -3.460000455379486,
+          "sd": 0.14142164283587938,
+          "values": [
+            -3.5600006580352783,
+            -3.360000252723694
+          ]
+        }
+      },
+      "mlp_silu": {
+        "fid": {
+          "mean": 11.187294006347656,
+          "sd": 3.4998743003446404,
+          "values": [
+            13.662078857421875,
+            8.712509155273438
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.9199997186660767,
+          "sd": 0.8485256423304252,
+          "values": [
+            -1.320001482963562,
+            -2.5199979543685913
+          ]
+        }
+      }
+    },
+    "all_bases_s77": {
+      "independent_linear": {
+        "fid": {
+          "mean": 10.578666687011719,
+          "sd": 4.690915916580306,
+          "values": [
+            7.261688232421875,
+            13.895645141601562
+          ]
+        },
+        "agreement_pp": {
+          "mean": -4.239999502897263,
+          "sd": 0.7071071605081841,
+          "values": [
+            -3.739999234676361,
+            -4.739999771118164
+          ]
+        }
+      },
+      "two_bases_s16": {
+        "fid": {
+          "mean": 5.529998779296875,
+          "sd": 8.265907364914154,
+          "values": [
+            11.3748779296875,
+            -0.31488037109375
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.669999212026596,
+          "sd": 0.3535519997472729,
+          "values": [
+            -1.9199982285499573,
+            -1.4200001955032349
+          ]
+        }
+      },
+      "two_bases_s44": {
+        "fid": {
+          "mean": 4.1318817138671875,
+          "sd": 1.8783602834589548,
+          "values": [
+            5.4600830078125,
+            2.803680419921875
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.5399999916553497,
+          "sd": 0.05656633905768365,
+          "values": [
+            -1.5799984335899353,
+            -1.5000015497207642
+          ]
+        }
+      },
+      "mlp_linear": {
+        "fid": {
+          "mean": 12.648391723632812,
+          "sd": 4.915954462344586,
+          "values": [
+            16.124496459960938,
+            9.172286987304688
+          ]
+        },
+        "agreement_pp": {
+          "mean": -5.000000447034836,
+          "sd": 0.19798798189356304,
+          "values": [
+            -5.139999091625214,
+            -4.860001802444458
+          ]
+        }
+      },
+      "mlp_silu": {
+        "fid": {
+          "mean": 15.319175720214844,
+          "sd": 5.378234583803595,
+          "values": [
+            19.122161865234375,
+            11.516189575195312
+          ]
+        },
+        "agreement_pp": {
+          "mean": -3.4599997103214264,
+          "sd": 0.7919593032727416,
+          "values": [
+            -2.8999999165534973,
+            -4.0199995040893555
+          ]
+        }
+      }
+    },
+    "mlp_linear": {
+      "independent_linear": {
+        "fid": {
+          "mean": -2.0697250366210938,
+          "sd": 9.606870378924892,
+          "values": [
+            -8.862808227539062,
+            4.723358154296875
+          ]
+        },
+        "agreement_pp": {
+          "mean": 0.7600009441375732,
+          "sd": 0.9050951424017472,
+          "values": [
+            1.3999998569488525,
+            0.12000203132629395
+          ]
+        }
+      },
+      "two_bases_s16": {
+        "fid": {
+          "mean": -7.1183929443359375,
+          "sd": 3.349952902569569,
+          "values": [
+            -4.7496185302734375,
+            -9.487167358398438
+          ]
+        },
+        "agreement_pp": {
+          "mean": 3.3300012350082397,
+          "sd": 0.15556401785370988,
+          "values": [
+            3.2200008630752563,
+            3.440001606941223
+          ]
+        }
+      },
+      "two_bases_s44": {
+        "fid": {
+          "mean": -8.516510009765625,
+          "sd": 3.037594178885631,
+          "values": [
+            -10.664413452148438,
+            -6.3686065673828125
+          ]
+        },
+        "agreement_pp": {
+          "mean": 3.460000455379486,
+          "sd": 0.14142164283587938,
+          "values": [
+            3.5600006580352783,
+            3.360000252723694
+          ]
+        }
+      },
+      "all_bases_s77": {
+        "fid": {
+          "mean": -12.648391723632812,
+          "sd": 4.915954462344586,
+          "values": [
+            -16.124496459960938,
+            -9.172286987304688
+          ]
+        },
+        "agreement_pp": {
+          "mean": 5.000000447034836,
+          "sd": 0.19798798189356304,
+          "values": [
+            5.139999091625214,
+            4.860001802444458
+          ]
+        }
+      },
+      "mlp_silu": {
+        "fid": {
+          "mean": 2.6707839965820312,
+          "sd": 0.4622801214590092,
+          "values": [
+            2.9976654052734375,
+            2.343902587890625
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.5400007367134094,
+          "sd": 0.9899472851663046,
+          "values": [
+            2.2399991750717163,
+            0.8400022983551025
+          ]
+        }
+      }
+    },
+    "mlp_silu": {
+      "independent_linear": {
+        "fid": {
+          "mean": -4.740509033203125,
+          "sd": 10.069150500383902,
+          "values": [
+            -11.8604736328125,
+            2.37945556640625
+          ]
+        },
+        "agreement_pp": {
+          "mean": -0.7799997925758362,
+          "sd": 0.08485214276455741,
+          "values": [
+            -0.8399993181228638,
+            -0.7200002670288086
+          ]
+        }
+      },
+      "two_bases_s16": {
+        "fid": {
+          "mean": -9.789176940917969,
+          "sd": 2.8876727811105596,
+          "values": [
+            -7.747283935546875,
+            -11.831069946289062
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.7900004982948303,
+          "sd": 1.1455113030200144,
+          "values": [
+            0.98000168800354,
+            2.5999993085861206
+          ]
+        }
+      },
+      "two_bases_s44": {
+        "fid": {
+          "mean": -11.187294006347656,
+          "sd": 3.4998743003446404,
+          "values": [
+            -13.662078857421875,
+            -8.712509155273438
+          ]
+        },
+        "agreement_pp": {
+          "mean": 1.9199997186660767,
+          "sd": 0.8485256423304252,
+          "values": [
+            1.320001482963562,
+            2.5199979543685913
+          ]
+        }
+      },
+      "all_bases_s77": {
+        "fid": {
+          "mean": -15.319175720214844,
+          "sd": 5.378234583803595,
+          "values": [
+            -19.122161865234375,
+            -11.516189575195312
+          ]
+        },
+        "agreement_pp": {
+          "mean": 3.4599997103214264,
+          "sd": 0.7919593032727416,
+          "values": [
+            2.8999999165534973,
+            4.0199995040893555
+          ]
+        }
+      },
+      "mlp_linear": {
+        "fid": {
+          "mean": -2.6707839965820312,
+          "sd": 0.4622801214590092,
+          "values": [
+            -2.9976654052734375,
+            -2.343902587890625
+          ]
+        },
+        "agreement_pp": {
+          "mean": -1.5400007367134094,
+          "sd": 0.9899472851663046,
+          "values": [
+            -2.2399991750717163,
+            -0.8400022983551025
+          ]
+        }
+      }
+    }
+  },
+  "calibration": {
+    "independent_linear": {
+      "family": "independent_linear",
+      "attempt": 0,
+      "adapter_lr_multiplier": 1.0,
+      "metric": 0.0005137259270971603,
+      "per_seed_metrics": {
+        "70": 0.000446724326441957,
+        "71": 0.0005807275277523635
+      },
+      "metric_to_target": 1.0,
+      "within_tolerance": true
+    },
+    "two_bases_s16": {
+      "family": "two_bases_s16",
+      "attempt": 1,
+      "adapter_lr_multiplier": 1.041632338568115,
+      "metric": 0.0005038360138011437,
+      "per_seed_metrics": {
+        "71": 0.000551674610809035,
+        "70": 0.00045599741679325234
+      },
+      "metric_to_target": 0.9807486584297972,
+      "within_tolerance": true
+    },
+    "two_bases_s44": {
+      "family": "two_bases_s44",
+      "attempt": 1,
+      "adapter_lr_multiplier": 0.4175423036920055,
+      "metric": 0.000581945547007005,
+      "per_seed_metrics": {
+        "70": 0.0005735893222057106,
+        "71": 0.0005903017718082992
+      },
+      "metric_to_target": 1.1327938036830725,
+      "within_tolerance": true
+    },
+    "all_bases_s77": {
+      "family": "all_bases_s77",
+      "attempt": 2,
+      "adapter_lr_multiplier": 0.22586302865740998,
+      "metric": 0.0005225582657052048,
+      "per_seed_metrics": {
+        "71": 0.0005297322119683182,
+        "70": 0.0005153843194420915
+      },
+      "metric_to_target": 1.0171927055695869,
+      "within_tolerance": true
+    },
+    "mlp_linear": {
+      "family": "mlp_linear",
+      "attempt": 1,
+      "adapter_lr_multiplier": 1.73173322310857,
+      "metric": 0.0005182093291296042,
+      "per_seed_metrics": {
+        "70": 0.00045062937048593693,
+        "71": 0.0005857892877732714
+      },
+      "metric_to_target": 1.0087272255417936,
+      "within_tolerance": true
+    },
+    "mlp_silu": {
+      "family": "mlp_silu",
+      "attempt": 2,
+      "adapter_lr_multiplier": 3.504776769803809,
+      "metric": 0.0004938381080137333,
+      "per_seed_metrics": {
+        "71": 0.0005364142119409129,
+        "70": 0.00045126200408655376
+      },
+      "metric_to_target": 0.9612871026467278,
+      "within_tolerance": true
+    }
+  },
+  "limits": [
+    "Two fresh seeds and 5k steps of a 30k schedule; not longer confirmation or statistical significance.",
+    "Independent s16 versus two shared decoder groups s44 and one group s77 match whole-model parameters within 0.1%, not exactly.",
+    "Two shared decoder groups s16 is a fixed-width tying control; all adapters have independent layer-specific heads.",
+    "Hidden-linear versus SiLU MLP heads have exactly equal parameters; both add 0.56% whole-model parameters relative to the affine reference.",
+    "U/V decoders are shared, but independently generated per-layer factors cannot be reused as identical transforms.",
+    "Base blocks, AdaLN heads and gates remain independent; the produced rank stays eight.",
+    "Gradient records per adapter overlap shared decoder parameters; separate unique decoder and head groups describe ownership.",
+    "Rates are selected only on aggregate early function updates; fresh seeds/layers/later steps may drift and are not retuned.",
+    "Calibration seeds 70/71 and quality seeds 72/73 are fresh relative to previous studies.",
+    "FID uses5k images and one sampling seed; class agreement is a frozen proxy.",
+    "Fixed-probe operator norms and raw-model updates do not guarantee variance preservation or EMA quality.",
+    "No output normalization, shared nonlinear trunk, layer embeddings, new token-conditioning or structured operators are tested.",
+    "At most two claimed GPU workers including all stages; concurrent eager telemetry is not isolated speed evidence.",
+    "No weights/checkpoints and no automatic longer confirmation."
+  ],
+  "gpu_hours": {
+    "calibration": 0.17305330209463135,
+    "screen": 0.7340854396469271,
+    "final_evaluation": 0.12239644665054382
+  },
+  "quality_winner_claimed": false
+}

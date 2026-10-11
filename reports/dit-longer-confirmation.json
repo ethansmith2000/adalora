@@ -1,0 +1,545 @@
+{
+  "raw_workflow": "/workspace/adalora/runs/dit-longer-confirmation-20261010T154131Z",
+  "aggregates": [
+    {
+      "family": "plain",
+      "parameters": 9758768,
+      "adapter_parameters": 0,
+      "forward_flops": 848822272,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 47.11198425292969,
+            "sd": 0.460990765069364,
+            "values": [
+              46.786014556884766,
+              47.43795394897461
+            ]
+          },
+          "agreement_percent": {
+            "mean": 51.749998331069946,
+            "sd": 0.9192396247620032,
+            "values": [
+              52.399998903274536,
+              51.099997758865356
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 35.07048797607422,
+            "sd": 0.39070196004556385,
+            "values": [
+              34.794219970703125,
+              35.34675598144531
+            ]
+          },
+          "agreement_percent": {
+            "mean": 82.6799988746643,
+            "sd": 0.31112803570741976,
+            "values": [
+              82.89999961853027,
+              82.45999813079834
+            ]
+          }
+        }
+      },
+      "convergence": {
+        "10000": {
+          "fid": {
+            "mean": 80.66486358642578,
+            "sd": 2.8367351115246575,
+            "values": [
+              82.67073822021484,
+              78.65898895263672
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.06199245875477791,
+            "sd": 3.643343015612989e-05,
+            "values": [
+              0.06201822108030319,
+              0.06196669642925262
+            ]
+          }
+        },
+        "20000": {
+          "fid": {
+            "mean": 58.870609283447266,
+            "sd": 0.32922285788490485,
+            "values": [
+              58.637813568115234,
+              59.1034049987793
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05954319843053818,
+            "sd": 8.23616854860844e-06,
+            "values": [
+              0.05954902228116989,
+              0.05953737457990646
+            ]
+          }
+        },
+        "30000": {
+          "fid": {
+            "mean": 52.39423751831055,
+            "sd": 0.6488699517881346,
+            "values": [
+              51.93541717529297,
+              52.853057861328125
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05859061465263367,
+            "sd": 2.1675466698316205e-05,
+            "values": [
+              0.058575287783145906,
+              0.05860594152212143
+            ]
+          }
+        },
+        "45000": {
+          "fid": {
+            "mean": 48.4028263092041,
+            "sd": 0.6732841038439491,
+            "values": [
+              47.92674255371094,
+              48.878910064697266
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.057973195624351506,
+            "sd": 3.6134566853333603e-05,
+            "values": [
+              0.05794764462709427,
+              0.057998746621608734
+            ]
+          }
+        },
+        "60000": {
+          "fid": {
+            "mean": 47.11198425292969,
+            "sd": 0.460990765069364,
+            "values": [
+              46.786014556884766,
+              47.43795394897461
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05781983059644699,
+            "sd": 3.8864704829953766e-05,
+            "values": [
+              0.05779234910011292,
+              0.057847312092781066
+            ]
+          }
+        }
+      },
+      "peak_allocated_mib": {
+        "mean": 1521.7705078125,
+        "sd": 0.0,
+        "values": [
+          1521.7705078125,
+          1521.7705078125
+        ]
+      }
+    },
+    {
+      "family": "static_s32",
+      "parameters": 12516656,
+      "adapter_parameters": 0,
+      "forward_flops": 1201143808,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 44.36760902404785,
+            "sd": 0.6640967652181504,
+            "values": [
+              43.89802169799805,
+              44.837196350097656
+            ]
+          },
+          "agreement_percent": {
+            "mean": 53.88000011444092,
+            "sd": 0.39597807112955163,
+            "values": [
+              54.15999889373779,
+              53.60000133514404
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 32.326955795288086,
+            "sd": 0.9015325535908183,
+            "values": [
+              31.689476013183594,
+              32.96443557739258
+            ]
+          },
+          "agreement_percent": {
+            "mean": 84.76999998092651,
+            "sd": 0.4384030888406175,
+            "values": [
+              85.07999777793884,
+              84.46000218391418
+            ]
+          }
+        }
+      },
+      "convergence": {
+        "10000": {
+          "fid": {
+            "mean": 70.17572402954102,
+            "sd": 1.7912289234206251,
+            "values": [
+              68.90913391113281,
+              71.44231414794922
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.06099347803592682,
+            "sd": 3.4625321925582576e-07,
+            "values": [
+              0.06099372287392616,
+              0.060993233197927474
+            ]
+          }
+        },
+        "20000": {
+          "fid": {
+            "mean": 54.39655685424805,
+            "sd": 0.1920709436842701,
+            "values": [
+              54.532371520996094,
+              54.2607421875
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05879529369175435,
+            "sd": 3.514358907772317e-05,
+            "values": [
+              0.05877044342160225,
+              0.058820143961906435
+            ]
+          }
+        },
+        "30000": {
+          "fid": {
+            "mean": 49.32341384887695,
+            "sd": 0.3499388768649795,
+            "values": [
+              49.07596969604492,
+              49.570858001708984
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.058003588554263116,
+            "sd": 4.619568129840811e-05,
+            "values": [
+              0.057970923274755476,
+              0.05803625383377075
+            ]
+          }
+        },
+        "45000": {
+          "fid": {
+            "mean": 45.46049690246582,
+            "sd": 0.719485142006803,
+            "values": [
+              44.951744079589844,
+              45.9692497253418
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05746963632106781,
+            "sd": 5.700566937719107e-05,
+            "values": [
+              0.05742932722568512,
+              0.0575099454164505
+            ]
+          }
+        },
+        "60000": {
+          "fid": {
+            "mean": 44.36760902404785,
+            "sd": 0.6640967652181504,
+            "values": [
+              43.89802169799805,
+              44.837196350097656
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05732412546575069,
+            "sd": 5.715049859273156e-05,
+            "values": [
+              0.05728371396064758,
+              0.05736453697085381
+            ]
+          }
+        }
+      },
+      "peak_allocated_mib": {
+        "mean": 1747.7392578125,
+        "sd": 0.1767766952966369,
+        "values": [
+          1747.6142578125,
+          1747.8642578125
+        ]
+      }
+    },
+    {
+      "family": "affine_s32",
+      "parameters": 12511792,
+      "adapter_parameters": 2753024,
+      "forward_flops": 864813056,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 43.66351318359375,
+            "sd": 1.3228257078099532,
+            "values": [
+              42.72813415527344,
+              44.59889221191406
+            ]
+          },
+          "agreement_percent": {
+            "mean": 60.64999997615814,
+            "sd": 0.3252683033828247,
+            "values": [
+              60.87999939918518,
+              60.4200005531311
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 30.083415985107422,
+            "sd": 1.25002562496448,
+            "values": [
+              29.199514389038086,
+              30.967317581176758
+            ]
+          },
+          "agreement_percent": {
+            "mean": 90.40000140666962,
+            "sd": 0.2262737856004368,
+            "values": [
+              90.2400016784668,
+              90.56000113487244
+            ]
+          }
+        }
+      },
+      "convergence": {
+        "10000": {
+          "fid": {
+            "mean": 66.15961837768555,
+            "sd": 2.418503504381354,
+            "values": [
+              67.86975860595703,
+              64.44947814941406
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.061028716149926186,
+            "sd": 3.8881732156962323e-07,
+            "values": [
+              0.06102899108529091,
+              0.06102844121456146
+            ]
+          }
+        },
+        "20000": {
+          "fid": {
+            "mean": 53.549652099609375,
+            "sd": 1.0776915446756796,
+            "values": [
+              52.7876091003418,
+              54.31169509887695
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.0589314536601305,
+            "sd": 6.380615189280647e-05,
+            "values": [
+              0.05888633589744568,
+              0.05897657142281532
+            ]
+          }
+        },
+        "30000": {
+          "fid": {
+            "mean": 48.674909591674805,
+            "sd": 1.4036100896373302,
+            "values": [
+              47.68240737915039,
+              49.66741180419922
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05813189890086651,
+            "sd": 9.504620522856975e-05,
+            "values": [
+              0.05806469108462334,
+              0.05819910671710968
+            ]
+          }
+        },
+        "45000": {
+          "fid": {
+            "mean": 44.75136375427246,
+            "sd": 1.5077890069613462,
+            "values": [
+              43.68519592285156,
+              45.81753158569336
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.057593185380101206,
+            "sd": 9.953089122059322e-05,
+            "values": [
+              0.057522806411981584,
+              0.05766356434822083
+            ]
+          }
+        },
+        "60000": {
+          "fid": {
+            "mean": 43.66351318359375,
+            "sd": 1.3228257078099532,
+            "values": [
+              42.72813415527344,
+              44.59889221191406
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05745124571323395,
+            "sd": 9.787381622174146e-05,
+            "values": [
+              0.05738203847408295,
+              0.05752045295238495
+            ]
+          }
+        }
+      },
+      "peak_allocated_mib": {
+        "mean": 1195.3662109375,
+        "sd": 0.13258252147247765,
+        "values": [
+          1195.2724609375,
+          1195.4599609375
+        ]
+      }
+    }
+  ],
+  "paired_dplr_differences": {
+    "plain": {
+      "1.0": {
+        "fid_dplr_minus_control": {
+          "mean": -3.4484710693359375,
+          "sd": 0.8618349427405894,
+          "values": [
+            -4.057880401611328,
+            -2.839061737060547
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 8.900001645088196,
+          "sd": 0.5939713213791785,
+          "values": [
+            8.480000495910645,
+            9.320002794265747
+          ]
+        }
+      },
+      "2.0": {
+        "fid_dplr_minus_control": {
+          "mean": -4.987071990966797,
+          "sd": 0.8593236649189162,
+          "values": [
+            -5.594705581665039,
+            -4.379438400268555
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 7.72000253200531,
+          "sd": 0.5374018213078565,
+          "values": [
+            7.340002059936523,
+            8.100003004074097
+          ]
+        }
+      }
+    },
+    "static_s32": {
+      "1.0": {
+        "fid_dplr_minus_control": {
+          "mean": -0.7040958404541016,
+          "sd": 0.6587289425918029,
+          "values": [
+            -1.1698875427246094,
+            -0.23830413818359375
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 6.769999861717224,
+          "sd": 0.07070976774672692,
+          "values": [
+            6.720000505447388,
+            6.8199992179870605
+          ]
+        }
+      },
+      "2.0": {
+        "fid_dplr_minus_control": {
+          "mean": -2.243539810180664,
+          "sd": 0.34849307137366176,
+          "values": [
+            -2.489961624145508,
+            -1.9971179962158203
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 5.630001425743103,
+          "sd": 0.6646768744410543,
+          "values": [
+            5.160003900527954,
+            6.099998950958252
+          ]
+        }
+      }
+    }
+  },
+  "audit": {
+    "checks": {
+      "six_completed_runs": true,
+      "successful_exits_closed_worker_supervisors": true,
+      "frozen_sources_evaluators": true,
+      "same_training_implementation_as_reference": true,
+      "parameter_budget_matched": true,
+      "plain_dplr_equal_base_init": true,
+      "paired_data_noise_labels_fresh_seeds": true,
+      "zero_start_gradient_wakeup": true,
+      "correct_curves_and_guidance_denominators": true,
+      "claimed_gpu_matches_runtime": true,
+      "two_gpu_cap": true,
+      "no_weights_test_evaluation": true,
+      "storage_within_bound": true
+    },
+    "bytes_retained": 402334912,
+    "report_sha256": "d37d7d8dbc4d428578abb7b8aef6ef0c740d79b6a2fe4622ef09f53420a84609"
+  },
+  "limits": [
+    "Two paired seeds and one held-out split; sample SD is not a confidence interval.",
+    "Wider plain MLP matches DPLR parameters within0.039%, not FLOPs, activation shapes or identical initialization.",
+    "Plain ratio4 and DPLR share the same base initialization; all three share observed data/noise/effective-label traces.",
+    "Affine s32 uses adapter rate1 and gain1/sqrt(8); LR pilot matching was diagnostic and did not improve its30k quality. No new LR search is performed.",
+    "Seeds92/93 are fresh for this comparison; the held-out split/evaluation noise remain reused exploratory proxies.",
+    "Intermediate quality uses CFG1; final scales1/2 share one EMA state and initial-noise seed.",
+    "5k-image held-out-train FID is not published50k-image FID; classifier agreement is an auxiliary proxy.",
+    "Compiled concurrent training is not an isolated speed benchmark.",
+    "Fresh60k cosine schedules are not resumptions of30k runs; equal-step comparisons to previous30k cohorts are schedule-confounded. Sixty thousand steps still do not establish saturation."
+  ]
+}

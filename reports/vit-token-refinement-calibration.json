@@ -1,0 +1,314 @@
+{
+  "selected_rates": {
+    "s24": 1.0,
+    "s12": 2.0,
+    "s48": 0.5,
+    "s24_detached": 1.0,
+    "static_r8_diagonal": 12.0
+  },
+  "candidates": {
+    "s12": [
+      {
+        "rate": 0.25,
+        "ratios": [
+          0.12961599178686337,
+          0.15950762523980577,
+          0.20712408634648227,
+          0.13928720863338515,
+          0.18621232978882615,
+          0.19745239106351412
+        ],
+        "within_bounds": false,
+        "score": 1.7879370971299098
+      },
+      {
+        "rate": 1.0,
+        "ratios": [
+          0.47125353373443946,
+          0.6130034875320551,
+          0.5307444519705078,
+          0.6132884459006429,
+          0.5328855085205758,
+          0.6248973247561409
+        ],
+        "within_bounds": false,
+        "score": 0.5772924732635812
+      },
+      {
+        "rate": 2.0,
+        "ratios": [
+          0.8266880764794411,
+          1.167194030149108,
+          0.9875053382411024,
+          0.9084559825922232,
+          1.1027638046020398,
+          0.9630694443413028
+        ],
+        "within_bounds": true,
+        "score": 0.09816033138529773
+      },
+      {
+        "rate": 4.0,
+        "ratios": [
+          1.4814673606356443,
+          2.5037470483520248,
+          1.4785050152958905,
+          2.0330175426815233,
+          2.359259558774393,
+          1.9052150379256747
+        ],
+        "within_bounds": false,
+        "score": 0.652386134693886
+      }
+    ],
+    "s48": [
+      {
+        "rate": 0.25,
+        "ratios": [
+          0.48755929745134746,
+          0.5813244289618019,
+          0.5356963067996167,
+          0.5255068895937562,
+          0.5834831830550313,
+          0.5662738613759709
+        ],
+        "within_bounds": false,
+        "score": 0.605964433555977
+      },
+      {
+        "rate": 0.5,
+        "ratios": [
+          0.9302870151132081,
+          1.0372071030328112,
+          0.9874236974793026,
+          0.9916692304022297,
+          1.0052866802125366,
+          1.1763270475409546
+        ],
+        "within_bounds": true,
+        "score": 0.04958085503077299
+      },
+      {
+        "rate": 1.0,
+        "ratios": [
+          1.7226056940294219,
+          1.6668640253509657,
+          1.7881833677151713,
+          1.8454458559239941,
+          1.8433925791487535,
+          1.7509168417061365
+        ],
+        "within_bounds": true,
+        "score": 0.5700750788023334
+      },
+      {
+        "rate": 4.0,
+        "ratios": [
+          7.096716634339944,
+          10.398312528046525,
+          6.957995260694831,
+          7.351790334938778,
+          9.330024542385079,
+          7.051185218406401
+        ],
+        "within_bounds": false,
+        "score": 2.0704240655910406
+      }
+    ],
+    "s24_detached": [
+      {
+        "rate": 0.25,
+        "ratios": [
+          0.2582115136495854,
+          0.38620736270054923,
+          0.3814720631023553,
+          0.280043047014548,
+          0.3536430476569262,
+          0.33510670202600984
+        ],
+        "within_bounds": false,
+        "score": 1.1124433602458386
+      },
+      {
+        "rate": 1.0,
+        "ratios": [
+          0.9667635353798587,
+          1.0270512679004962,
+          1.0878846369468111,
+          1.199380016577411,
+          0.97203364520341,
+          0.9076452582228649
+        ],
+        "within_bounds": true,
+        "score": 0.0752999334458682
+      },
+      {
+        "rate": 4.0,
+        "ratios": [
+          3.836702085728835,
+          6.2616483725988665,
+          5.072825364759025,
+          3.8587964745931442,
+          4.737390234128434,
+          4.507122305850229
+        ],
+        "within_bounds": false,
+        "score": 1.5357425315880389
+      }
+    ],
+    "static_r8_diagonal": [
+      {
+        "rate": 0.25,
+        "ratios": [
+          0.020789388878283337,
+          0.02188678862048566,
+          0.019106858640767232,
+          0.02037009764327144,
+          0.022095786109143853,
+          0.019587044977792862
+        ],
+        "within_bounds": false,
+        "score": 3.8819725154693705
+      },
+      {
+        "rate": 1.0,
+        "ratios": [
+          0.07531938999507935,
+          0.08321016979311593,
+          0.06491424323224795,
+          0.07553978053252017,
+          0.0702578196921537,
+          0.063051953440194
+        ],
+        "within_bounds": false,
+        "score": 2.6349278934928475
+      },
+      {
+        "rate": 4.0,
+        "ratios": [
+          0.31320977134040756,
+          0.31565218834773734,
+          0.3403428196533688,
+          0.25715898930066033,
+          0.2640861958563434,
+          0.23006146642017067
+        ],
+        "within_bounds": false,
+        "score": 1.258457929108073
+      },
+      {
+        "rate": 8.0,
+        "ratios": [
+          0.5235643179570989,
+          0.7406382608965995,
+          0.5385885449950275,
+          0.5329741791571814,
+          0.5392797271110152,
+          0.4431089069220745
+        ],
+        "within_bounds": false,
+        "score": 0.6044807633252604
+      },
+      {
+        "rate": 12.0,
+        "ratios": [
+          0.7777222232499652,
+          1.3969067345727229,
+          1.1398199212580746,
+          0.8390539845685305,
+          0.8100044279553659,
+          0.8044184432609742
+        ],
+        "within_bounds": true,
+        "score": 0.22005799162680473
+      },
+      {
+        "rate": 16.0,
+        "ratios": [
+          1.283086753915705,
+          2.241467127312043,
+          1.8263772444679338,
+          1.1988960631939753,
+          1.433422128247031,
+          1.6071757810370535
+        ],
+        "within_bounds": false,
+        "score": 0.4457796684622127
+      }
+    ]
+  },
+  "failed_families": [],
+  "quality_gate_passed": true,
+  "reference": "s24 offset-enabled, unit adapter LR",
+  "seeds": [
+    96,
+    97
+  ],
+  "probe_steps": [
+    100,
+    250,
+    500
+  ],
+  "ratio_bounds": [
+    0.5,
+    2.0
+  ],
+  "criterion": "Closest geometric update magnitude among rates meeting every per-seed/per-probe bound; no accuracy selection",
+  "limits": "Early low-rank function updates only; diagonal/whole-network updates and full trajectory remain unmatched.",
+  "evidence": {
+    "checked_utc": "2026-10-11T19:09:39.084703+00:00",
+    "raw_workflow": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z",
+    "original_gate_preserved": true,
+    "original_pilots_audited": 28,
+    "additional_pilots_audited": 8,
+    "paired_sources_runtime_split_initialization_streams_verified": true,
+    "selected_ratio_ranges": {
+      "s12": [
+        0.8266880764794411,
+        1.167194030149108
+      ],
+      "s48": [
+        0.9302870151132081,
+        1.1763270475409546
+      ],
+      "s24_detached": [
+        0.9076452582228649,
+        1.199380016577411
+      ],
+      "static_r8_diagonal": [
+        0.7777222232499652,
+        1.3969067345727229
+      ]
+    },
+    "source_sha256": {
+      "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+      "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+      "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79",
+      "dit_cifar10.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+      "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+      "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+      "summarize_dit_cifar10_screen.py": "187a761734f5ca2466860c2c620936545226bdde5b9d883b11b83fc10f8f7647",
+      "test_vit_factor_offsets.py": "6501396cbd07646e891b89da0102c7e276e623e8ea317d70c6761f8f4f21fe0d",
+      "test_vit_token_study.py": "e306c4a91b02f7780347d0c79b9fa11698ffc210f397d7b145c7ff9ecccfcca7",
+      "train_cifar10.py": "823abf08457b56373313f581ba2aa8946f0659fe5aec3ad01510016f95bb4c47",
+      "train_dit_cifar10.py": "e21fe0ed704569b799ec75b1b830abeb5fc2a638e8ccb52b1fac06e3dbc7e902",
+      "vit.py": "4adfc9b9b061e174d70e52265edbdaa191ce7e2197b5f9c506bbe64ab788ab13",
+      "vit_quality_diagnostics.py": "5e83aac014374d0cb93f279c3094f889e6c846f95134e7cf1e25cca490351122",
+      "vit_token_study.py": "c5e95daff46833dcbe1509336593b8cd39d64634b237853217d32b811acb1ac7",
+      "vit_token_refinement.py": "ad7a85b0e7ef35026491befb55fa1008709e1710766ef2f3eddcbf94cf7ce5b9",
+      "test_vit_token_refinement.py": "1fbeccc7b849a213b4da7409996af55e96975c0ee9676ed7c438b5cf7006ef34"
+    },
+    "reference_protocol_sha256": "fe73876d551c1f36f1a8851210eb47bbbf4eff6e992c7eb4e3afcbb3030b6c32",
+    "reference_calibration_sha256": "c6d7b83c25dcc6f9df588e66d44e357a61c58185c9faf81d6e0bc7a7c861930a",
+    "calibration_sha256": "01f2af75f2b3e5f08c4bded4be5c5090e5165bfd500282e4993548b8bb312e60",
+    "quality_progress_snapshot": {
+      "utc": "2026-10-11T19:09:33.560945+00:00",
+      "stage": "quality",
+      "completed": 2,
+      "submitted": 4,
+      "total": 16,
+      "active": 2
+    },
+    "quality_stage_final_audit_pending": true
+  }
+}

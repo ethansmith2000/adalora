@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "eight_completed_runs": true,
+    "successful_exits_closed_worker_supervisors": true,
+    "frozen_sources_evaluators": true,
+    "undeclared_sources_match_reference": true,
+    "declared_offset_parameter_increment": true,
+    "equal_base_initialization": true,
+    "paired_data_noise_labels_fresh_seeds": true,
+    "zero_start_gradient_wakeup": true,
+    "correct_curves_and_guidance_denominators": true,
+    "claimed_gpu_matches_runtime": true,
+    "two_gpu_cap": true,
+    "no_weights_test_evaluation": true,
+    "storage_within_bound": true
+  },
+  "bytes_retained": 540842774,
+  "report_sha256": "ed0866026309d79b47b0321c232e4839a79473c3cb6c1387dcc4e82a05bad0ac"
+}

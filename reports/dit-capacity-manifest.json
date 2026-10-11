@@ -1,0 +1,67 @@
+{
+  "raw_workflow": "/workspace/adalora/runs/dit-capacity-20261010T014610Z",
+  "training_report_sha256": "a747e84d84d1e1c8a058c3ef7ba8b5ff60987b013f169c3ecddca5358ee3fb33",
+  "artifacts": {
+    "dit-capacity.md": {
+      "bytes": 4931,
+      "sha256": "0221e966eabe9c62c7bdf8fb054861a6dafb690110183a5995cb9ccde6e01033"
+    },
+    "dit-capacity.json": {
+      "bytes": 95501,
+      "sha256": "8db13b5ae933e503ab99b8add8f21b5655270477968522d2bbcec4e3a115c7e2"
+    },
+    "dit-capacity-evidence.json": {
+      "bytes": 2541768,
+      "sha256": "a747e84d84d1e1c8a058c3ef7ba8b5ff60987b013f169c3ecddca5358ee3fb33"
+    },
+    "dit-capacity-audit.json": {
+      "bytes": 687,
+      "sha256": "10d902fcc8a2564d1ad4f0038bab65040360b5c7325dd1fc30a14040c4ba1aad"
+    },
+    "dit-capacity-protocol.json": {
+      "bytes": 6521,
+      "sha256": "87ba036fc942c7c37a5397187d0f118073253884396faf37325f7023c79580e0"
+    },
+    "dit-capacity-postflight.json": {
+      "bytes": 352,
+      "sha256": "b301bb50bdf10f52801ba9ee5a988555928083f4996f7f0b3b7fb4523fd0de94"
+    },
+    "dit-capacity-convergence.png": {
+      "bytes": 125591,
+      "sha256": "6842daed46b4db7b5a0f4a9861b343d86a522e6c5d941fa96c861ce1e93aad92"
+    },
+    "dit-capacity-convergence.svg": {
+      "bytes": 66469,
+      "sha256": "6dc50cb9ab5c12efbf4948f2cde352c49cb87904c223499e862ea66f1c377d9e"
+    },
+    "dit-capacity-guidance.png": {
+      "bytes": 142362,
+      "sha256": "4a6a63e906dcdfc4393a5d31e16c337626998f5ba749ad21f038b6da519a93a8"
+    },
+    "dit-capacity-guidance.svg": {
+      "bytes": 61741,
+      "sha256": "bf10f992d192d1a6cc05eac8176655d384cf71628f6be0b2afb2f4f7b5077d91"
+    }
+  },
+  "frozen_source_sha256": {
+    "train_dit_cifar10.py": "55ec1babe3bd205304f0c7a0cce99e292c4c296f360886dd0f256de36cca35de",
+    "dit_cifar10.py": "be86e77380239f7175a65a5349868cc7737e612dd4d5f284bd29f94fc656ec6c",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "dit_capacity.py": "1310b39a46e5993c484b65dff2d03dc73c84253e0becf6ca04fd7aeee91201e2",
+    "test_dit_capacity.py": "14239dcc4688fe92aa0cf2f299c989fe274eb8753cca28d83de11274c81d70f5",
+    "dit_optimizer_cfg.py": "3378d7c5134705d869e94b5c3cf4a6dcc4e658cc542b52f5b74b01777d2e6820",
+    "test_dit_optimizer_cfg.py": "009993b6614132bc66601e9f3f1517ebabdac5ff9624b3596bb10beb8101ba27",
+    "test_dit_training_options.py": "d4002ce783e70aab60f621b5dbd3197eabbea84a10a005eab03d950a4e871133",
+    "dit_quality_diagnostics.py": "e8af18303008d71d7a48207be0ed497b71ae71f70b036d33c276865431165a13",
+    "benchmark_dit_design.py": "f7c1fdc761d636356bbe87e1d07dd7c09938c67f8f110a2236196edb3130099d",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "summarize_dit_cifar10_screen.py": "6df07cca87e5a5028dbba38bb6533778876733ab33040a5fbc4ee4ca41888528",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3"
+  },
+  "weights_saved": false,
+  "max_concurrent_workers": 2
+}

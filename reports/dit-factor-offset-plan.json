@@ -1,0 +1,50 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z",
+  "families": {
+    "s8_plain": {
+      "variant": "dplr",
+      "n_basis": 8,
+      "factor_offsets": false
+    },
+    "s8_offsets": {
+      "variant": "dplr",
+      "n_basis": 8,
+      "factor_offsets": true
+    },
+    "s32_plain": {
+      "variant": "dplr",
+      "n_basis": 32,
+      "factor_offsets": false
+    },
+    "s32_offsets": {
+      "variant": "dplr",
+      "n_basis": 32,
+      "factor_offsets": true
+    }
+  },
+  "parameters": {
+    "s8_plain": 10447024,
+    "s8_offsets": 10528944,
+    "s32_plain": 12511792,
+    "s32_offsets": 12593712
+  },
+  "seeds": [
+    94,
+    95
+  ],
+  "train_steps": 30000,
+  "maximum_our_gpus": 2,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "final_focused_checks_passed": 15,
+  "protocol": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/protocol.json",
+  "preflight_passed": true,
+  "preflight_complete_utc": "2026-10-10T19:38:01.654470+00:00",
+  "audit_passed": true,
+  "controller_closed": true,
+  "reporting_recovery": "/workspace/adalora/runs/dit-factor-offset-20261010T193609Z/reporting-recovery/manifest.json",
+  "report_sha256": "ed0866026309d79b47b0321c232e4839a79473c3cb6c1387dcc4e82a05bad0ac",
+  "comparison": "/workspace/adalora/reports/dit-factor-offset.md",
+  "postflight_checks_passed": 22
+}

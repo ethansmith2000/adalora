@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "complete": true,
+    "successful_worker_exits": true,
+    "same_source_runtime_data": true,
+    "full_loader_and_matched_schedule": true,
+    "calibration_recomputed_without_quality_selection": true,
+    "global_rates_frozen_before_independent_confirmation_seeds": true,
+    "same_paired_batch_noise_digests": true,
+    "same_noise_end_states": true,
+    "same_paired_width192_initialization": true,
+    "paired_rank8_adapter_initialization": true,
+    "highest_fp32_probes": true,
+    "zero_init_and_gradient_wakeup": true,
+    "same_frozen_evaluators_and_denominators": true,
+    "bounded_concurrency": true,
+    "lifetime_claim_hardware_matches_runtime": true,
+    "no_new_weights_or_test_evaluation": true,
+    "workers_shutdown": true,
+    "storage_within_bound": true
+  },
+  "report_sha256": "e529dcc5738c0dde1439f58fb3d3ae13245870b9a245a1eea3c618c181d41afb",
+  "bytes_retained": 41705293,
+  "classifier_real_accuracy": 0.807200014591217
+}

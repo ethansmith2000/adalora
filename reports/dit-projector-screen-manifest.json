@@ -1,0 +1,41 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-projectors-20261008T205312Z",
+  "artifacts": {
+    "dit-projector-screen.json": {
+      "sha256": "9445f987630af16dc01e9234bc5fdb0f5bb9d7b5bc92db1dad5b99a2419c83bc",
+      "bytes": 30820
+    },
+    "dit-projector-screen-audit.json": {
+      "sha256": "b5689aed04082b921387fe547ff59899107695beefc029d5661674fe2326a6c5",
+      "bytes": 730
+    },
+    "dit-projector-screen-evidence.json": {
+      "sha256": "337e468c7cc3f26cd5bc6f031da714755e87f8e15ab543d4c1f9b6d706d1f7ed",
+      "bytes": 5990911
+    },
+    "dit-projector-screen.png": {
+      "sha256": "fb96875f67f5f85b89734fc035c1aa215eef02567515f52fbccde1b312f8f332",
+      "bytes": 139794
+    },
+    "dit-projector-screen.svg": {
+      "sha256": "73ea99b6ce357270dfc6f08d9496b51ff1e1e14f741ee3d66530fde2c828a4d7",
+      "bytes": 77066
+    },
+    "dit-projector-screen-updates.png": {
+      "sha256": "4bac814db35c6724c668d15dc55bee5ea60fe37f2208803c56dac885ffc02c33",
+      "bytes": 334094
+    },
+    "dit-projector-screen-updates.svg": {
+      "sha256": "dbc5680faea81799471398172cdb6203d941aec54f1fa3ddfa20f2ea797a22b5",
+      "bytes": 77376
+    },
+    "dit-projector-screen.md": {
+      "sha256": "e3cd90d4e9f5a1cfd7ff5c580918b8674259e1d1325e6162dae7ab27915e8d8a",
+      "bytes": 7299
+    }
+  },
+  "analysis_source_sha256": {
+    "audit_dit_projectors.py": "d72073d45ca7fcf5ac587b92567994d51a5a0fae423b486d76d05722785712bc",
+    "summarize_dit_projectors.py": "6ea766dba14d217ff48f3f297fc5e7cc694a0dcc7ae102184034165b87d2454e"
+  }
+}

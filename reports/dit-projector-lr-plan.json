@@ -1,0 +1,77 @@
+{
+  "state": "complete",
+  "created_utc": "2026-10-10T06:44:36.975644+00:00",
+  "reference_workflow": "/workspace/adalora/runs/dit-projector-confirmation-20261010T043230Z",
+  "reference_state": "complete",
+  "targets": {
+    "affine_s32": "affine_s16",
+    "affine_s64": "affine_s16",
+    "silu_s32_h64": "linear_s32_h64"
+  },
+  "rate_grid": {
+    "affine_s32": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "affine_s64": [
+      0.125,
+      0.25,
+      0.5
+    ],
+    "silu_s32_h64": [
+      1.0,
+      2.0,
+      4.0
+    ]
+  },
+  "calibration_seeds": [
+    90,
+    91
+  ],
+  "quality_seeds": [
+    86,
+    87
+  ],
+  "maximum_pilot_runs": 22,
+  "pilot_steps": 500,
+  "quality_runs": 6,
+  "quality_steps": 30000,
+  "max_concurrent_workers": 2,
+  "base_lr": 0.0004,
+  "adapter_gain": "1/sqrt(8)",
+  "selection": "Paired fixed-input function-update ratios over steps50/100/250/500; closest log geometric-mean ratio among guarded candidates; no quality/loss selection",
+  "aggregate_relative_tolerance": 0.3,
+  "per_observation_ratio_bounds": [
+    0.5,
+    2.0
+  ],
+  "quality_withheld_if_calibration_misses": true,
+  "expected_storage_upper_bound_bytes": 4294967296,
+  "estimated_gpu_hours": "3\u20135 aggregate; about1.5\u20132.5 wall hours at two GPUs, availability dependent",
+  "artifact_purpose": "Frozen sources/configs/provenance, metrics and update diagnostics, recipes, logs and reports; expected compiler cache up to3GiB; six100-image final CFG1 grids",
+  "retention": "Declared evidence, compiler caches and grids until explicitly removed; reference artifacts and shared evaluators unchanged",
+  "checkpoints": false,
+  "weights_saved": false,
+  "official_test_evaluated": false,
+  "implementation_source_sha256": {
+    "dit_projector_lr_controls.py": "ffdc5a5aed9663874aa97b394d1cc7ec109d5922a412bea5fb1c5b6ec86291d5",
+    "test_dit_projector_lr_controls.py": "eb82f9944952261292b934b18399ad0661470f16404f6c9fe1fecee4672f01dd"
+  },
+  "cpu_validation": {
+    "passed": 17,
+    "log_sha256": "30f808a77f5e6e55ba5a7db17b155e194547897ff8828f24ddb74e0ef6bec514"
+  },
+  "launch_gate": "Completed and successfully audited projector comparison; reference worker supervisor closed; unchanged training sources; 8GiB shared free space",
+  "queued_utc": "2026-10-10T06:48:56.460526+00:00",
+  "queue_output": "/workspace/adalora/runs/dit-projector-lr-20261010T064856Z",
+  "study_output": "/workspace/adalora/runs/dit-projector-lr-20261010T064856Z/study",
+  "expected_total_storage_upper_bound_bytes": 5368709120,
+  "queue_wait_gpu_workers": 0,
+  "reference_audit_passed": true,
+  "released_utc": "2026-10-10T07:27:40.778399+00:00",
+  "status_checked_utc": "2026-10-10T07:32:05.108632+00:00",
+  "reference_report_sha256": "1b7c80b0ccee835bcf5c1beb88a561d8f8c5fda5e6623dda8b37e7104d6730b4",
+  "audit_passed": true,
+  "report_sha256": "f57f7affbd4c46d7e46775516cff94e4d3791e7900f0bb30b4c226e201439737"
+}

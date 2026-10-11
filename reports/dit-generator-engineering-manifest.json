@@ -1,0 +1,20 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-generators-20261008T031001Z",
+  "report_sha256": "e62f2f5edc557f296e778cccc48098c01765e94d7737c80566f4d76ae624ec11",
+  "audit_sha256": "6d6b41c26930ba71e198a2d63d9048ab40232b036e48e779d767a203ab40364a",
+  "summary_script_sha256": "44fd8776c0d575d14a7c6900e5465c5a318bce5d0487c030b93d6d70d158d33b",
+  "artifacts": {
+    "dit-generator-engineering.md": {
+      "sha256": "8fcab88d4fc35485d742235949b7d214ee325be1f6776566dd47e3554a090f40",
+      "bytes": 5707
+    },
+    "dit-generator-engineering.json": {
+      "sha256": "e62f2f5edc557f296e778cccc48098c01765e94d7737c80566f4d76ae624ec11",
+      "bytes": 1708246
+    },
+    "dit-generator-engineering-audit.json": {
+      "sha256": "6d6b41c26930ba71e198a2d63d9048ab40232b036e48e779d767a203ab40364a",
+      "bytes": 477
+    }
+  }
+}

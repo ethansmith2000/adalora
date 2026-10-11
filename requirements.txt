@@ -1,0 +1,9 @@
+torch>=2.4
+torchvision>=0.19
+datasets>=3.0
+numpy>=1.26
+pytest>=8.0
+matplotlib>=3.8
+diffusers>=0.30
+torchmetrics>=1.9
+torch-fidelity>=0.4

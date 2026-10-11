@@ -1,0 +1,151 @@
+{
+  "state": "complete",
+  "created_utc": "2026-10-10T01:46:10.209042+00:00",
+  "purpose": "Larger-model conditional-transform and static-capacity controls",
+  "repo_root": "/workspace/adalora",
+  "families": {
+    "plain": {
+      "variant": "adaln_zero",
+      "mlp_ratio": 4.0
+    },
+    "plain_ffn_budget": {
+      "variant": "adaln_zero",
+      "mlp_ratio": 5.3125
+    },
+    "dplr": {
+      "variant": "dplr",
+      "mlp_ratio": 4.0
+    }
+  },
+  "parameters": {
+    "plain": 9758768,
+    "plain_ffn_budget": 11137712,
+    "dplr": 11135280
+  },
+  "seeds": [
+    86,
+    87
+  ],
+  "ordered_cases": [
+    [
+      "plain",
+      86
+    ],
+    [
+      "dplr",
+      86
+    ],
+    [
+      "plain_ffn_budget",
+      86
+    ],
+    [
+      "plain_ffn_budget",
+      87
+    ],
+    [
+      "dplr",
+      87
+    ],
+    [
+      "plain",
+      87
+    ]
+  ],
+  "source_sha256": {
+    "train_dit_cifar10.py": "55ec1babe3bd205304f0c7a0cce99e292c4c296f360886dd0f256de36cca35de",
+    "dit_cifar10.py": "be86e77380239f7175a65a5349868cc7737e612dd4d5f284bd29f94fc656ec6c",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "dit_capacity.py": "1310b39a46e5993c484b65dff2d03dc73c84253e0becf6ca04fd7aeee91201e2",
+    "test_dit_capacity.py": "14239dcc4688fe92aa0cf2f299c989fe274eb8753cca28d83de11274c81d70f5",
+    "dit_optimizer_cfg.py": "3378d7c5134705d869e94b5c3cf4a6dcc4e658cc542b52f5b74b01777d2e6820",
+    "test_dit_optimizer_cfg.py": "009993b6614132bc66601e9f3f1517ebabdac5ff9624b3596bb10beb8101ba27",
+    "test_dit_training_options.py": "d4002ce783e70aab60f621b5dbd3197eabbea84a10a005eab03d950a4e871133",
+    "dit_quality_diagnostics.py": "e8af18303008d71d7a48207be0ed497b71ae71f70b036d33c276865431165a13",
+    "benchmark_dit_design.py": "f7c1fdc761d636356bbe87e1d07dd7c09938c67f8f110a2236196edb3130099d",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "summarize_dit_cifar10_screen.py": "6df07cca87e5a5028dbba38bb6533778876733ab33040a5fbc4ee4ca41888528",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3"
+  },
+  "max_concurrent_workers": 2,
+  "train_steps": 30000,
+  "width": 256,
+  "depth": 8,
+  "heads": 4,
+  "train_examples": 45000,
+  "validation_examples": 5000,
+  "lr": 0.0004,
+  "warmup_steps": 50,
+  "lr_schedule_steps": 30000,
+  "adapter_lr_multiplier": 1.0,
+  "class_dropout_prob": 0.1,
+  "intermediate_generation_steps": [
+    5000,
+    10000,
+    20000
+  ],
+  "intermediate_guidance_scale": 1.0,
+  "final_guidance_scales": [
+    1.0,
+    2.0
+  ],
+  "sampling_seed": 2028,
+  "evaluation_seed": 2027,
+  "split_seed": 123,
+  "sampling_steps": 50,
+  "fid_images": 5000,
+  "classifier_run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+  "auxiliary_classifier": {
+    "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+    "sha256": {
+      "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+      "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+      "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+      "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+      "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+    },
+    "weight_bytes": 13621221,
+    "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+    "retention": "one frozen evaluator and its compact training records until explicitly removed"
+  },
+  "evaluator_cache": {
+    "path": "/root/.cache/torch/hub/checkpoints/weights-inception-2015-12-05-6726825d.pth",
+    "bytes": 95628359,
+    "sha256": "6726825d0af5f729cebd5821db510b11b1cfad8faad88a03f1befd49fb9129b2"
+  },
+  "reference_workflow": "/workspace/adalora/runs/dit-optimizer-cfg-20261009T224730Z",
+  "reference_report_sha256": "cf280cd10286387de2fe40fbfebfb56dc1aec7d59002f0118533d521dcecce00",
+  "reference_audit_sha256": "7f4b5ea16e9a4599ebf71b3eb82db9b1f9eac7a926d50567acad50103ef9d97b",
+  "preflight": "DPLR and wider-FFN 12-step compiled BF16 checks; 328 train examples produce128/128/72 batches; full5k holdout/classifier",
+  "estimated_gpu_hours": "4\u20136 aggregate GPU-hours; approximately2\u20133 hours at two GPUs, availability dependent",
+  "disk_free_bytes_before_launch": 341336145920,
+  "expected_storage_upper_bound_bytes": 2147483648,
+  "artifact_purposes": {
+    "compact_evidence": "Frozen sources/configs/splits/metrics/logs/audits/reports",
+    "compiler_cache": "Compatibility and compilation evidence; expected at most1.5GiB",
+    "diagnostic_grids": "One100-image final EMA CFG1 grid per quality run; one10-image grid per preflight"
+  },
+  "retention": "Declared compact evidence, compiler caches and diagnostic grids until explicitly removed; existing evaluators unchanged",
+  "weights_saved": false,
+  "periodic_checkpoints": false,
+  "test_evaluated": false,
+  "ema": "In-memory .999; evaluations before process exit",
+  "limits": [
+    "Two paired seeds and one held-out split; sample SD is not a confidence interval.",
+    "Wider plain MLP matches DPLR parameters within0.022%, not FLOPs, activation shapes or identical initialization.",
+    "Plain ratio4 and DPLR share the same base initialization; all three share observed data/noise/effective-label traces.",
+    "LR and adapter gain/rate are held fixed, not recalibrated or optimized for the larger models.",
+    "Earlier small-model anchors use the same seeds and training implementation but were run in a separate cohort.",
+    "Intermediate quality uses CFG1; final scales1/2 share one EMA state and initial-noise seed.",
+    "5k-image held-out-train FID is not published50k-image FID; classifier agreement is an auxiliary proxy.",
+    "Compiled concurrent training is not an isolated speed benchmark.",
+    "Thirty thousand steps do not establish convergence or saturation."
+  ],
+  "started_utc": "2026-10-10T01:46:14.169222+00:00",
+  "preflight_complete_utc": "2026-10-10T01:48:01.970076+00:00",
+  "completed_utc": "2026-10-10T02:51:45.698385+00:00"
+}

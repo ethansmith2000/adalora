@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "eight_completed_runs": true,
+    "successful_exits_and_closed_worker_supervisors": true,
+    "frozen_source_and_evaluators": true,
+    "full_loader_common_recipe": true,
+    "paired_initialization_and_noise_label_traces": true,
+    "zero_start_gradient_wakeup": true,
+    "same_state_guidance_and_denominators": true,
+    "intermediate_generation_curve": true,
+    "claimed_hardware_matches_runtime": true,
+    "two_gpu_cap": true,
+    "no_checkpoints_or_test_evaluation": true,
+    "storage_within_bound": true
+  },
+  "bytes_retained": 458316884,
+  "report_sha256": "cf280cd10286387de2fe40fbfebfb56dc1aec7d59002f0118533d521dcecce00",
+  "classifier_real_accuracy": 0.807200014591217
+}

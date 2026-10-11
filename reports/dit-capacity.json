@@ -1,0 +1,3933 @@
+{
+  "raw_workflow": "/workspace/adalora/runs/dit-capacity-20261010T014610Z",
+  "aggregates": [
+    {
+      "family": "plain",
+      "parameters": 9758768,
+      "adapter_parameters": 0,
+      "forward_flops": 848822272,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 56.67103385925293,
+            "sd": 0.2105993726392353,
+            "values": [
+              56.522117614746094,
+              56.819950103759766
+            ]
+          },
+          "agreement_percent": {
+            "mean": 44.599999487400055,
+            "sd": 0.19799114290720135,
+            "values": [
+              44.74000036716461,
+              44.4599986076355
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 45.59206771850586,
+            "sd": 0.19976392364926657,
+            "values": [
+              45.45081329345703,
+              45.73332214355469
+            ]
+          },
+          "agreement_percent": {
+            "mean": 75.73999762535095,
+            "sd": 0.4525475712008736,
+            "values": [
+              75.41999816894531,
+              76.05999708175659
+            ]
+          }
+        }
+      },
+      "convergence": {
+        "5000": {
+          "fid": {
+            "mean": 158.12895965576172,
+            "sd": 3.9514403557373923,
+            "values": [
+              155.33486938476562,
+              160.9230499267578
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.0657687981247902,
+            "sd": 0.00015394925407608354,
+            "values": [
+              0.065877656686306,
+              0.06565993956327439
+            ]
+          }
+        },
+        "10000": {
+          "fid": {
+            "mean": 76.8321304321289,
+            "sd": 1.0891123290977676,
+            "values": [
+              77.60224914550781,
+              76.06201171875
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.06200760731995106,
+            "sd": 0.00013238755436595188,
+            "values": [
+              0.062101219457387925,
+              0.06191399518251419
+            ]
+          }
+        },
+        "20000": {
+          "fid": {
+            "mean": 59.39089584350586,
+            "sd": 0.06539032970246995,
+            "values": [
+              59.34465789794922,
+              59.4371337890625
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05992155418097973,
+            "sd": 5.381830974387211e-05,
+            "values": [
+              0.05995960947275162,
+              0.05988349888920784
+            ]
+          }
+        },
+        "30000": {
+          "fid": {
+            "mean": 56.67103385925293,
+            "sd": 0.2105993726392353,
+            "values": [
+              56.522117614746094,
+              56.819950103759766
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.059500485348701476,
+            "sd": 4.543094780559996e-05,
+            "values": [
+              0.05953260987997055,
+              0.059468360817432404
+            ]
+          }
+        }
+      },
+      "peak_allocated_mib": {
+        "mean": 1521.7705078125,
+        "sd": 0.0,
+        "values": [
+          1521.7705078125,
+          1521.7705078125
+        ]
+      }
+    },
+    {
+      "family": "plain_ffn_budget",
+      "parameters": 11137712,
+      "adapter_parameters": 0,
+      "forward_flops": 1024983040,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 53.835309982299805,
+            "sd": 0.7692791147115137,
+            "values": [
+              54.3792724609375,
+              53.29134750366211
+            ]
+          },
+          "agreement_percent": {
+            "mean": 46.220000088214874,
+            "sd": 0.2828411783293332,
+            "values": [
+              46.41999900341034,
+              46.02000117301941
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 42.90373611450195,
+            "sd": 0.694202427696876,
+            "values": [
+              43.39461135864258,
+              42.41286087036133
+            ]
+          },
+          "agreement_percent": {
+            "mean": 77.00999975204468,
+            "sd": 0.4949725889119395,
+            "values": [
+              77.35999822616577,
+              76.66000127792358
+            ]
+          }
+        }
+      },
+      "convergence": {
+        "5000": {
+          "fid": {
+            "mean": 144.50728607177734,
+            "sd": 5.322668178726833,
+            "values": [
+              140.74359130859375,
+              148.27098083496094
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.06519924800395965,
+            "sd": 0.00029997250669111785,
+            "values": [
+              0.06498713541030884,
+              0.06541136059761048
+            ]
+          }
+        },
+        "10000": {
+          "fid": {
+            "mean": 71.15958023071289,
+            "sd": 0.7531945286206042,
+            "values": [
+              71.69216918945312,
+              70.62699127197266
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.061491608780622486,
+            "sd": 3.708405948595921e-05,
+            "values": [
+              0.061465386390686036,
+              0.06151783117055893
+            ]
+          }
+        },
+        "20000": {
+          "fid": {
+            "mean": 56.54695129394531,
+            "sd": 0.7906559962762392,
+            "values": [
+              57.10602951049805,
+              55.98787307739258
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05943177830278873,
+            "sd": 6.72689959720487e-05,
+            "values": [
+              0.05947934466600418,
+              0.059384211939573286
+            ]
+          }
+        },
+        "30000": {
+          "fid": {
+            "mean": 53.835309982299805,
+            "sd": 0.7692791147115137,
+            "values": [
+              54.3792724609375,
+              53.29134750366211
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05901156726777554,
+            "sd": 7.004537747085824e-05,
+            "values": [
+              0.05906109682917595,
+              0.05896203770637512
+            ]
+          }
+        }
+      },
+      "peak_allocated_mib": {
+        "mean": 1645.5048828125,
+        "sd": 0.08838834764831845,
+        "values": [
+          1645.4423828125,
+          1645.5673828125
+        ]
+      }
+    },
+    {
+      "family": "dplr",
+      "parameters": 11135280,
+      "adapter_parameters": 1376512,
+      "forward_flops": 862060544,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 52.95237922668457,
+            "sd": 0.31449236574295336,
+            "values": [
+              53.17475891113281,
+              52.72999954223633
+            ]
+          },
+          "agreement_percent": {
+            "mean": 52.730000019073486,
+            "sd": 0.4949725889119395,
+            "values": [
+              52.38000154495239,
+              53.07999849319458
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 39.68133354187012,
+            "sd": 0.49600029766602916,
+            "values": [
+              40.03205871582031,
+              39.33060836791992
+            ]
+          },
+          "agreement_percent": {
+            "mean": 83.61999988555908,
+            "sd": 0.08485003542213186,
+            "values": [
+              83.67999792098999,
+              83.56000185012817
+            ]
+          }
+        }
+      },
+      "convergence": {
+        "5000": {
+          "fid": {
+            "mean": 133.75902557373047,
+            "sd": 0.5392962378547242,
+            "values": [
+              133.377685546875,
+              134.14036560058594
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.06488157650530338,
+            "sd": 1.0041145268248522e-05,
+            "values": [
+              0.06488867666721344,
+              0.06487447634339333
+            ]
+          }
+        },
+        "10000": {
+          "fid": {
+            "mean": 71.59213638305664,
+            "sd": 1.5200001290867104,
+            "values": [
+              72.66693878173828,
+              70.517333984375
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.061332437989115716,
+            "sd": 5.8078858795511e-05,
+            "values": [
+              0.0613735059440136,
+              0.061291370034217835
+            ]
+          }
+        },
+        "20000": {
+          "fid": {
+            "mean": 55.724212646484375,
+            "sd": 0.985909869960052,
+            "values": [
+              56.421356201171875,
+              55.027069091796875
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.059375823602080345,
+            "sd": 5.482008132738613e-05,
+            "values": [
+              0.05941458725333214,
+              0.05933705995082855
+            ]
+          }
+        },
+        "30000": {
+          "fid": {
+            "mean": 52.95237922668457,
+            "sd": 0.31449236574295336,
+            "values": [
+              53.17475891113281,
+              52.72999954223633
+            ]
+          },
+          "ema_noise_mse": {
+            "mean": 0.05897009161114693,
+            "sd": 5.911871005665033e-05,
+            "values": [
+              0.059011894851922986,
+              0.05892828837037087
+            ]
+          }
+        }
+      },
+      "peak_allocated_mib": {
+        "mean": 1171.3662109375,
+        "sd": 0.5745242597140698,
+        "values": [
+          1171.7724609375,
+          1170.9599609375
+        ]
+      }
+    }
+  ],
+  "paired_dplr_differences": {
+    "plain": {
+      "1.0": {
+        "fid_dplr_minus_control": {
+          "mean": -3.7186546325683594,
+          "sd": 0.5250917383821887,
+          "values": [
+            -3.3473587036132812,
+            -4.0899505615234375
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 8.130000531673431,
+          "sd": 0.6929637318191408,
+          "values": [
+            7.640001177787781,
+            8.619999885559082
+          ]
+        }
+      },
+      "2.0": {
+        "fid_dplr_minus_control": {
+          "mean": -5.910734176635742,
+          "sd": 0.6957642213152957,
+          "values": [
+            -5.418754577636719,
+            -6.402713775634766
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 7.88000226020813,
+          "sd": 0.5373976066230054,
+          "values": [
+            8.259999752044678,
+            7.500004768371582
+          ]
+        }
+      }
+    },
+    "plain_ffn_budget": {
+      "1.0": {
+        "fid_dplr_minus_control": {
+          "mean": -0.8829307556152344,
+          "sd": 0.45478674896856036,
+          "values": [
+            -1.2045135498046875,
+            -0.5613479614257812
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 6.509999930858612,
+          "sd": 0.7778137672412727,
+          "values": [
+            5.960002541542053,
+            7.059997320175171
+          ]
+        }
+      },
+      "2.0": {
+        "fid_dplr_minus_control": {
+          "mean": -3.222402572631836,
+          "sd": 0.19820213003084688,
+          "values": [
+            -3.3625526428222656,
+            -3.0822525024414062
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 6.610000133514404,
+          "sd": 0.41012255348980764,
+          "values": [
+            6.319999694824219,
+            6.90000057220459
+          ]
+        }
+      }
+    }
+  },
+  "audit": {
+    "checks": {
+      "six_completed_runs": true,
+      "successful_exits_closed_worker_supervisors": true,
+      "frozen_sources_evaluators": true,
+      "same_training_implementation_as_anchors": true,
+      "parameter_budget_matched": true,
+      "plain_dplr_equal_base_init": true,
+      "paired_data_noise_labels_including_anchors": true,
+      "zero_start_gradient_wakeup": true,
+      "correct_curves_and_guidance_denominators": true,
+      "claimed_gpu_matches_runtime": true,
+      "two_gpu_cap": true,
+      "no_weights_test_evaluation": true,
+      "storage_within_bound": true
+    },
+    "bytes_retained": 395116370,
+    "report_sha256": "a747e84d84d1e1c8a058c3ef7ba8b5ff60987b013f169c3ecddca5358ee3fb33"
+  },
+  "limits": [
+    "Two paired seeds and one held-out split; sample SD is not a confidence interval.",
+    "Wider plain MLP matches DPLR parameters within0.022%, not FLOPs, activation shapes or identical initialization.",
+    "Plain ratio4 and DPLR share the same base initialization; all three share observed data/noise/effective-label traces.",
+    "LR and adapter gain/rate are held fixed, not recalibrated or optimized for the larger models.",
+    "Earlier small-model anchors use the same seeds and training implementation but were run in a separate cohort.",
+    "Intermediate quality uses CFG1; final scales1/2 share one EMA state and initial-noise seed.",
+    "5k-image held-out-train FID is not published50k-image FID; classifier agreement is an auxiliary proxy.",
+    "Compiled concurrent training is not an isolated speed benchmark.",
+    "Thirty thousand steps do not establish convergence or saturation."
+  ],
+  "small_model_anchors": [
+    {
+      "family": "dplr_b09",
+      "seed": 86,
+      "parameters": 4954224,
+      "guidance": {
+        "1.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": false,
+          "guidance_scale": 1.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 61.99129867553711,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.4848000109195709,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                474,
+                306,
+                390,
+                733,
+                610,
+                499,
+                557,
+                347,
+                598,
+                486
+              ],
+              "per_class_agreement": [
+                0.434,
+                0.416,
+                0.262,
+                0.502,
+                0.494,
+                0.416,
+                0.636,
+                0.424,
+                0.682,
+                0.582
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  217,
+                  18,
+                  36,
+                  42,
+                  29,
+                  13,
+                  25,
+                  12,
+                  92,
+                  16
+                ],
+                [
+                  60,
+                  208,
+                  8,
+                  17,
+                  5,
+                  8,
+                  9,
+                  16,
+                  47,
+                  122
+                ],
+                [
+                  40,
+                  6,
+                  131,
+                  85,
+                  85,
+                  41,
+                  68,
+                  14,
+                  23,
+                  7
+                ],
+                [
+                  8,
+                  0,
+                  36,
+                  251,
+                  32,
+                  97,
+                  36,
+                  13,
+                  17,
+                  10
+                ],
+                [
+                  16,
+                  1,
+                  43,
+                  52,
+                  247,
+                  30,
+                  52,
+                  36,
+                  15,
+                  8
+                ],
+                [
+                  6,
+                  2,
+                  49,
+                  154,
+                  33,
+                  208,
+                  15,
+                  20,
+                  10,
+                  3
+                ],
+                [
+                  10,
+                  1,
+                  30,
+                  71,
+                  42,
+                  20,
+                  318,
+                  1,
+                  2,
+                  5
+                ],
+                [
+                  20,
+                  5,
+                  37,
+                  27,
+                  108,
+                  59,
+                  17,
+                  212,
+                  5,
+                  10
+                ],
+                [
+                  64,
+                  9,
+                  14,
+                  17,
+                  16,
+                  7,
+                  13,
+                  5,
+                  341,
+                  14
+                ],
+                [
+                  33,
+                  56,
+                  6,
+                  17,
+                  13,
+                  16,
+                  4,
+                  18,
+                  46,
+                  291
+                ]
+              ]
+            }
+          },
+          "seconds": 32.7682468140265
+        },
+        "2.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": true,
+          "guidance_scale": 2.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 49.593563079833984,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.7979999780654907,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                445,
+                460,
+                369,
+                547,
+                539,
+                507,
+                568,
+                468,
+                586,
+                511
+              ],
+              "per_class_agreement": [
+                0.758,
+                0.838,
+                0.542,
+                0.658,
+                0.838,
+                0.662,
+                0.962,
+                0.864,
+                0.962,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  379,
+                  4,
+                  20,
+                  6,
+                  3,
+                  1,
+                  2,
+                  0,
+                  81,
+                  4
+                ],
+                [
+                  14,
+                  419,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  7,
+                  58
+                ],
+                [
+                  18,
+                  0,
+                  271,
+                  62,
+                  67,
+                  24,
+                  49,
+                  3,
+                  6,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  18,
+                  329,
+                  8,
+                  125,
+                  13,
+                  6,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  18,
+                  13,
+                  419,
+                  7,
+                  20,
+                  20,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  0,
+                  28,
+                  126,
+                  5,
+                  331,
+                  3,
+                  5,
+                  0,
+                  0
+                ],
+                [
+                  2,
+                  0,
+                  6,
+                  7,
+                  3,
+                  1,
+                  481,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  4,
+                  1,
+                  8,
+                  3,
+                  34,
+                  18,
+                  0,
+                  432,
+                  0,
+                  0
+                ],
+                [
+                  19,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  481,
+                  0
+                ],
+                [
+                  6,
+                  36,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  9,
+                  448
+                ]
+              ]
+            }
+          },
+          "seconds": 33.03534294804558
+        }
+      }
+    },
+    {
+      "family": "adaln_b09",
+      "seed": 86,
+      "parameters": 4179888,
+      "guidance": {
+        "1.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": false,
+          "guidance_scale": 1.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 68.69073486328125,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.391400009393692,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                461,
+                267,
+                388,
+                782,
+                652,
+                471,
+                557,
+                342,
+                621,
+                459
+              ],
+              "per_class_agreement": [
+                0.334,
+                0.308,
+                0.21,
+                0.43,
+                0.412,
+                0.318,
+                0.542,
+                0.34,
+                0.576,
+                0.444
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  167,
+                  14,
+                  32,
+                  50,
+                  38,
+                  24,
+                  27,
+                  13,
+                  106,
+                  29
+                ],
+                [
+                  65,
+                  154,
+                  15,
+                  23,
+                  13,
+                  17,
+                  7,
+                  23,
+                  62,
+                  121
+                ],
+                [
+                  37,
+                  6,
+                  105,
+                  94,
+                  89,
+                  38,
+                  80,
+                  18,
+                  25,
+                  8
+                ],
+                [
+                  8,
+                  4,
+                  47,
+                  215,
+                  46,
+                  86,
+                  35,
+                  19,
+                  25,
+                  15
+                ],
+                [
+                  16,
+                  2,
+                  51,
+                  63,
+                  206,
+                  34,
+                  65,
+                  35,
+                  18,
+                  10
+                ],
+                [
+                  7,
+                  2,
+                  49,
+                  161,
+                  50,
+                  159,
+                  22,
+                  28,
+                  16,
+                  6
+                ],
+                [
+                  8,
+                  1,
+                  35,
+                  79,
+                  61,
+                  30,
+                  271,
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  27,
+                  5,
+                  33,
+                  42,
+                  111,
+                  52,
+                  29,
+                  170,
+                  9,
+                  22
+                ],
+                [
+                  85,
+                  19,
+                  14,
+                  20,
+                  23,
+                  11,
+                  14,
+                  6,
+                  288,
+                  20
+                ],
+                [
+                  41,
+                  60,
+                  7,
+                  35,
+                  15,
+                  20,
+                  7,
+                  26,
+                  67,
+                  222
+                ]
+              ]
+            }
+          },
+          "seconds": 24.981177774025127
+        },
+        "2.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": true,
+          "guidance_scale": 2.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 59.673423767089844,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.6669999957084656,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                414,
+                428,
+                336,
+                627,
+                572,
+                460,
+                609,
+                412,
+                652,
+                490
+              ],
+              "per_class_agreement": [
+                0.558,
+                0.684,
+                0.384,
+                0.6,
+                0.714,
+                0.514,
+                0.884,
+                0.7,
+                0.888,
+                0.744
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  279,
+                  10,
+                  24,
+                  14,
+                  11,
+                  4,
+                  12,
+                  3,
+                  135,
+                  8
+                ],
+                [
+                  29,
+                  342,
+                  1,
+                  1,
+                  0,
+                  2,
+                  1,
+                  2,
+                  23,
+                  99
+                ],
+                [
+                  25,
+                  0,
+                  192,
+                  86,
+                  75,
+                  22,
+                  79,
+                  4,
+                  15,
+                  2
+                ],
+                [
+                  3,
+                  0,
+                  27,
+                  300,
+                  12,
+                  127,
+                  16,
+                  11,
+                  2,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  28,
+                  24,
+                  357,
+                  13,
+                  49,
+                  26,
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  0,
+                  39,
+                  162,
+                  17,
+                  257,
+                  7,
+                  11,
+                  4,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  12,
+                  25,
+                  13,
+                  7,
+                  442,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  8,
+                  3,
+                  12,
+                  11,
+                  83,
+                  26,
+                  3,
+                  350,
+                  0,
+                  4
+                ],
+                [
+                  45,
+                  3,
+                  1,
+                  0,
+                  4,
+                  0,
+                  0,
+                  0,
+                  444,
+                  3
+                ],
+                [
+                  20,
+                  70,
+                  0,
+                  4,
+                  0,
+                  2,
+                  0,
+                  5,
+                  27,
+                  372
+                ]
+              ]
+            }
+          },
+          "seconds": 25.159105647006072
+        }
+      }
+    },
+    {
+      "family": "adaln_b09",
+      "seed": 87,
+      "parameters": 4179888,
+      "guidance": {
+        "1.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": false,
+          "guidance_scale": 1.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 68.57817077636719,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.40540000796318054,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                503,
+                268,
+                415,
+                752,
+                640,
+                481,
+                570,
+                342,
+                602,
+                427
+              ],
+              "per_class_agreement": [
+                0.356,
+                0.324,
+                0.214,
+                0.436,
+                0.434,
+                0.344,
+                0.562,
+                0.36,
+                0.584,
+                0.44
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  178,
+                  12,
+                  51,
+                  40,
+                  33,
+                  18,
+                  25,
+                  13,
+                  111,
+                  19
+                ],
+                [
+                  75,
+                  162,
+                  14,
+                  28,
+                  8,
+                  15,
+                  13,
+                  24,
+                  53,
+                  108
+                ],
+                [
+                  34,
+                  4,
+                  107,
+                  100,
+                  82,
+                  38,
+                  76,
+                  16,
+                  32,
+                  11
+                ],
+                [
+                  13,
+                  3,
+                  41,
+                  218,
+                  48,
+                  88,
+                  43,
+                  14,
+                  19,
+                  13
+                ],
+                [
+                  19,
+                  2,
+                  44,
+                  61,
+                  217,
+                  44,
+                  61,
+                  30,
+                  15,
+                  7
+                ],
+                [
+                  6,
+                  2,
+                  54,
+                  151,
+                  47,
+                  172,
+                  22,
+                  27,
+                  14,
+                  5
+                ],
+                [
+                  10,
+                  2,
+                  40,
+                  68,
+                  62,
+                  25,
+                  281,
+                  3,
+                  3,
+                  6
+                ],
+                [
+                  30,
+                  7,
+                  37,
+                  36,
+                  109,
+                  54,
+                  22,
+                  180,
+                  6,
+                  19
+                ],
+                [
+                  88,
+                  14,
+                  16,
+                  17,
+                  20,
+                  11,
+                  17,
+                  6,
+                  292,
+                  19
+                ],
+                [
+                  50,
+                  60,
+                  11,
+                  33,
+                  14,
+                  16,
+                  10,
+                  29,
+                  57,
+                  220
+                ]
+              ]
+            }
+          },
+          "seconds": 24.686897839070298
+        },
+        "2.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": true,
+          "guidance_scale": 2.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 58.43439483642578,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.6916000247001648,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                417,
+                415,
+                362,
+                633,
+                548,
+                450,
+                608,
+                428,
+                632,
+                507
+              ],
+              "per_class_agreement": [
+                0.602,
+                0.692,
+                0.412,
+                0.62,
+                0.72,
+                0.49,
+                0.93,
+                0.75,
+                0.91,
+                0.79
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  301,
+                  7,
+                  27,
+                  9,
+                  10,
+                  3,
+                  11,
+                  2,
+                  121,
+                  9
+                ],
+                [
+                  30,
+                  346,
+                  1,
+                  3,
+                  0,
+                  1,
+                  0,
+                  2,
+                  24,
+                  93
+                ],
+                [
+                  22,
+                  1,
+                  206,
+                  88,
+                  77,
+                  31,
+                  56,
+                  3,
+                  13,
+                  3
+                ],
+                [
+                  1,
+                  0,
+                  26,
+                  310,
+                  10,
+                  122,
+                  18,
+                  9,
+                  3,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  28,
+                  26,
+                  360,
+                  17,
+                  49,
+                  19,
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  1,
+                  48,
+                  170,
+                  14,
+                  245,
+                  8,
+                  11,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  12,
+                  13,
+                  7,
+                  2,
+                  465,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  5,
+                  2,
+                  14,
+                  9,
+                  67,
+                  24,
+                  0,
+                  375,
+                  0,
+                  4
+                ],
+                [
+                  38,
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  1,
+                  455,
+                  2
+                ],
+                [
+                  16,
+                  58,
+                  0,
+                  3,
+                  1,
+                  5,
+                  1,
+                  6,
+                  15,
+                  395
+                ]
+              ]
+            }
+          },
+          "seconds": 25.940559698967263
+        }
+      }
+    },
+    {
+      "family": "dplr_b09",
+      "seed": 87,
+      "parameters": 4954224,
+      "guidance": {
+        "1.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": false,
+          "guidance_scale": 1.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 62.22528839111328,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.4885999858379364,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                479,
+                302,
+                425,
+                688,
+                639,
+                467,
+                545,
+                349,
+                617,
+                489
+              ],
+              "per_class_agreement": [
+                0.474,
+                0.414,
+                0.306,
+                0.458,
+                0.5,
+                0.398,
+                0.634,
+                0.432,
+                0.7,
+                0.57
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  237,
+                  10,
+                  37,
+                  27,
+                  29,
+                  15,
+                  25,
+                  15,
+                  86,
+                  19
+                ],
+                [
+                  59,
+                  207,
+                  11,
+                  12,
+                  5,
+                  12,
+                  12,
+                  16,
+                  49,
+                  117
+                ],
+                [
+                  39,
+                  4,
+                  153,
+                  77,
+                  84,
+                  35,
+                  67,
+                  11,
+                  21,
+                  9
+                ],
+                [
+                  5,
+                  1,
+                  47,
+                  229,
+                  47,
+                  92,
+                  33,
+                  13,
+                  16,
+                  17
+                ],
+                [
+                  13,
+                  2,
+                  47,
+                  50,
+                  250,
+                  30,
+                  47,
+                  35,
+                  18,
+                  8
+                ],
+                [
+                  5,
+                  2,
+                  41,
+                  158,
+                  42,
+                  199,
+                  16,
+                  22,
+                  12,
+                  3
+                ],
+                [
+                  9,
+                  1,
+                  35,
+                  63,
+                  48,
+                  18,
+                  317,
+                  1,
+                  3,
+                  5
+                ],
+                [
+                  16,
+                  6,
+                  36,
+                  34,
+                  109,
+                  48,
+                  10,
+                  216,
+                  10,
+                  15
+                ],
+                [
+                  61,
+                  15,
+                  9,
+                  17,
+                  15,
+                  4,
+                  15,
+                  3,
+                  350,
+                  11
+                ],
+                [
+                  35,
+                  54,
+                  9,
+                  21,
+                  10,
+                  14,
+                  3,
+                  17,
+                  52,
+                  285
+                ]
+              ]
+            }
+          },
+          "seconds": 41.15055487200152
+        },
+        "2.0": {
+          "model_state": "EMA",
+          "sampler": "DDIM",
+          "eta": 0,
+          "sampling_steps": 50,
+          "sampling_seed": 2028,
+          "classifier_free_guidance": true,
+          "guidance_scale": 2.0,
+          "class_dropout_prob": 0.1,
+          "generated_images": 5000,
+          "sample_batch_size": 64,
+          "balanced_requested_class_counts": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fid": 49.41216278076172,
+          "fid_feature_dimension": 2048,
+          "fid_real_images": 5000,
+          "fid_fake_images": 5000,
+          "fid_reference": "held-out training split; official test untouched",
+          "fid_feature_input": "uint8 RGB [0,255]; float32 Inception, float64 moment accumulation; antialias=True",
+          "fid_interpretation": "finite-sample pilot; not directly comparable to published 50k-image FID",
+          "sample_grid_labels": [],
+          "saved_generated_dataset": false,
+          "class_agreement": {
+            "classifier": {
+              "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+              "sha256": {
+                "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+                "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+                "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+                "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+                "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+              },
+              "weight_bytes": 13621221,
+              "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+              "retention": "one frozen evaluator and its compact training records until explicitly removed"
+            },
+            "input": "unquantized RGB32 [0,1], CIFAR mean/std, FP32 classifier",
+            "interpretation": "Auxiliary classifier agreement, not human class accuracy; limited by classifier errors and domain shift.",
+            "uniform_chance_agreement": 0.1,
+            "real": {
+              "examples": 5000,
+              "agreement": 0.807200014591217,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                486,
+                496,
+                483,
+                561,
+                468,
+                486,
+                514,
+                491,
+                504,
+                511
+              ],
+              "per_class_agreement": [
+                0.82,
+                0.894,
+                0.722,
+                0.688,
+                0.756,
+                0.712,
+                0.848,
+                0.824,
+                0.912,
+                0.896
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  410,
+                  14,
+                  22,
+                  12,
+                  5,
+                  2,
+                  3,
+                  5,
+                  20,
+                  7
+                ],
+                [
+                  4,
+                  447,
+                  2,
+                  1,
+                  1,
+                  0,
+                  6,
+                  0,
+                  7,
+                  32
+                ],
+                [
+                  24,
+                  0,
+                  361,
+                  30,
+                  19,
+                  16,
+                  22,
+                  20,
+                  5,
+                  3
+                ],
+                [
+                  8,
+                  2,
+                  20,
+                  344,
+                  15,
+                  63,
+                  27,
+                  12,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  0,
+                  25,
+                  30,
+                  378,
+                  13,
+                  18,
+                  18,
+                  5,
+                  5
+                ],
+                [
+                  1,
+                  3,
+                  12,
+                  92,
+                  14,
+                  356,
+                  6,
+                  16,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  23,
+                  19,
+                  15,
+                  11,
+                  424,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  25,
+                  17,
+                  24,
+                  2,
+                  412,
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  10,
+                  5,
+                  5,
+                  0,
+                  0,
+                  4,
+                  2,
+                  456,
+                  5
+                ],
+                [
+                  10,
+                  16,
+                  5,
+                  3,
+                  4,
+                  1,
+                  2,
+                  5,
+                  6,
+                  448
+                ]
+              ]
+            },
+            "generated": {
+              "examples": 5000,
+              "agreement": 0.8015999794006348,
+              "class_counts": [
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500,
+                500
+              ],
+              "predicted_class_counts": [
+                417,
+                452,
+                392,
+                555,
+                547,
+                482,
+                569,
+                470,
+                603,
+                513
+              ],
+              "per_class_agreement": [
+                0.746,
+                0.818,
+                0.582,
+                0.684,
+                0.832,
+                0.658,
+                0.97,
+                0.864,
+                0.974,
+                0.888
+              ],
+              "confusion_rows_requested_columns_predicted": [
+                [
+                  373,
+                  4,
+                  22,
+                  7,
+                  3,
+                  2,
+                  5,
+                  1,
+                  78,
+                  5
+                ],
+                [
+                  7,
+                  409,
+                  1,
+                  1,
+                  0,
+                  2,
+                  0,
+                  0,
+                  16,
+                  64
+                ],
+                [
+                  18,
+                  0,
+                  291,
+                  46,
+                  66,
+                  19,
+                  48,
+                  4,
+                  8,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  20,
+                  342,
+                  12,
+                  105,
+                  14,
+                  6,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  22,
+                  16,
+                  416,
+                  11,
+                  14,
+                  19,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  20,
+                  134,
+                  7,
+                  329,
+                  3,
+                  7,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  6,
+                  4,
+                  3,
+                  1,
+                  485,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  10,
+                  4,
+                  39,
+                  13,
+                  0,
+                  432,
+                  0,
+                  0
+                ],
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  487,
+                  0
+                ],
+                [
+                  5,
+                  37,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  12,
+                  444
+                ]
+              ]
+            }
+          },
+          "seconds": 33.16696593898814
+        }
+      }
+    }
+  ]
+}

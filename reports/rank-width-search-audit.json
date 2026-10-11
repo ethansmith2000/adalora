@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "source_config_budget_reconstructed": true,
+    "initialization_reproduced": true,
+    "paired_batch_noise_traces": true,
+    "common_split_equal_shape_base": true,
+    "raw_scaled_detached_adapter_init": true,
+    "zero_init_gradient_wakeup": true,
+    "frozen_evaluators_denominators": true,
+    "claimed_hardware_runtime": true,
+    "successful_exits_supervisors_closed": true,
+    "no_weights_test_evaluation_speed_study": true,
+    "storage_within_bound": true
+  },
+  "rows": 64,
+  "bytes_retained": 71585356,
+  "recovery": {
+    "failed_attempt": "/workspace/adalora/runs/rank-width-20261008T082627Z",
+    "repeated_training_cases": [
+      "diffusion_r2_s6_seed58",
+      "diffusion_r2_s48_seed59",
+      "diffusion_r2_s12_seed58",
+      "diffusion_r2_s12_seed59",
+      "diffusion_r4_s6_seed59",
+      "diffusion_r4_s48_seed58"
+    ],
+    "config_batch_noise_traces_preserved": true,
+    "failed_evaluation_included_in_quality": false,
+    "failed_claimed_wall_gpu_hours": 0.41650250000000005
+  }
+}

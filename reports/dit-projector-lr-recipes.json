@@ -1,0 +1,10 @@
+{
+  "frozen_utc": "2026-10-10T07:47:23.151699+00:00",
+  "calibration_sha256": "183d538c72913567b3ff84d59cc547cc46e9e32f3f10ed09d00fdbf7974a2a99",
+  "multipliers": {
+    "affine_s32": 0.5,
+    "affine_s64": 0.25,
+    "silu_s32_h64": 2.0
+  },
+  "selection_uses_quality": false
+}

@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-10T07:31:04.162900+00:00",
+  "state": "complete",
+  "report_sha256": "1b7c80b0ccee835bcf5c1beb88a561d8f8c5fda5e6623dda8b37e7104d6730b4",
+  "automatic_audit_passed": true,
+  "controller_exit_code": 0,
+  "controller_closed": true,
+  "workers_closed": true,
+  "weights_saved": false,
+  "max_concurrent_workers": 2,
+  "next_workflow": "/workspace/adalora/runs/dit-projector-lr-20261010T064856Z",
+  "next_workflow_state": "study_running",
+  "next_study_state": "calibrating"
+}

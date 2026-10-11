@@ -1,0 +1,63 @@
+{
+  "raw_workflow": "/workspace/adalora/runs/dit-longer-confirmation-20261010T154131Z",
+  "raw_report_sha256": "d37d7d8dbc4d428578abb7b8aef6ef0c740d79b6a2fe4622ef09f53420a84609",
+  "source_sha256": {
+    "train_dit_cifar10.py": "55ec1babe3bd205304f0c7a0cce99e292c4c296f360886dd0f256de36cca35de",
+    "dit_cifar10.py": "be86e77380239f7175a65a5349868cc7737e612dd4d5f284bd29f94fc656ec6c",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "dit_longer_confirmation.py": "dfd27dccfcbf61a76ee70b0018d9234486580ce69a482d696c90649e574bd4cc",
+    "test_dit_longer_confirmation.py": "54922c65eb483aa2313b86b3da26d21ca5c229293214b13226d1147e904da160",
+    "dit_optimizer_cfg.py": "3378d7c5134705d869e94b5c3cf4a6dcc4e658cc542b52f5b74b01777d2e6820",
+    "dit_projector_confirmation.py": "b2bc56913b4d63a8ef3d7ccc33103f047eca3d2ad0569d1850b1398404b9d476",
+    "dit_capacity.py": "1310b39a46e5993c484b65dff2d03dc73c84253e0becf6ca04fd7aeee91201e2",
+    "test_dit_optimizer_cfg.py": "009993b6614132bc66601e9f3f1517ebabdac5ff9624b3596bb10beb8101ba27",
+    "test_dit_training_options.py": "d4002ce783e70aab60f621b5dbd3197eabbea84a10a005eab03d950a4e871133",
+    "dit_quality_diagnostics.py": "73768c4d543ce1232fb2888be07043cdbb695b258e074e123eac01b3c12f5b09",
+    "benchmark_dit_design.py": "f7c1fdc761d636356bbe87e1d07dd7c09938c67f8f110a2236196edb3130099d",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "summarize_dit_cifar10_screen.py": "6df07cca87e5a5028dbba38bb6533778876733ab33040a5fbc4ee4ca41888528",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3"
+  },
+  "exports": {
+    "dit-longer-confirmation.json": {
+      "sha256": "b79fce1603ab96059839e1dd60e8892181b18b894aeb8a775dbdd39b00607114",
+      "bytes": 14943
+    },
+    "dit-longer-confirmation-evidence.json": {
+      "sha256": "d37d7d8dbc4d428578abb7b8aef6ef0c740d79b6a2fe4622ef09f53420a84609",
+      "bytes": 3000335
+    },
+    "dit-longer-confirmation-audit.json": {
+      "sha256": "98275f1f5e9247456292211308d91a5c30497cd1c0b55bd8a691c07ab8a0fdd5",
+      "bytes": 683
+    },
+    "dit-longer-confirmation-protocol.json": {
+      "sha256": "999e6a6617e191b27ed833a9e0cb07a8ce5a0ff444debd23ff8b908338201feb",
+      "bytes": 7196
+    },
+    "dit-longer-confirmation-convergence.png": {
+      "sha256": "07e768318666fc3d70a840065d07b81eb287215f700ac4ecd09ed5e470c47db9",
+      "bytes": 119490
+    },
+    "dit-longer-confirmation-convergence.svg": {
+      "sha256": "d5f48ed117eca1b2ff78f72980bfd3d2925539feda81bca14a6cbceea7e68ef2",
+      "bytes": 64600
+    },
+    "dit-longer-confirmation-guidance.png": {
+      "sha256": "eec47d69a2644c719042b290b5a2eef4616ad98aa1c517c0e752fd07ed34a6a1",
+      "bytes": 145980
+    },
+    "dit-longer-confirmation-guidance.svg": {
+      "sha256": "153ce13391e45709dfa5e9b072cdb565f408cc7a9e6a7eb0a18262260cb9491b",
+      "bytes": 62619
+    },
+    "dit-longer-confirmation.md": {
+      "sha256": "9d901d742bb16fd25a25aa19d43ce7b3f27c8a65f4a39057737eb27eb3e8556b",
+      "bytes": 3059
+    }
+  }
+}

@@ -1,0 +1,899 @@
+{
+  "purpose": "Engineering validation before sustained quality experiments",
+  "quality_ranking_supported": false,
+  "settings": {
+    "steps": 100,
+    "batch_size": 64,
+    "precision": "bf16",
+    "seed": 42,
+    "split_seed": 123,
+    "validation_examples": 1000,
+    "warmup_steps_excluded": 10,
+    "official_test_evaluated": false,
+    "weights_saved": false
+  },
+  "verification": {
+    "research_self_tests": "passed",
+    "pytest_tests_passed": 18,
+    "compiled_basis_cuda_smoke": "passed",
+    "checkpointed_exact_basis_dplr_backward": "passed"
+  },
+  "training_screen": [
+    {
+      "variant": "basis",
+      "rank": 8,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 4.907505042036064,
+      "validation": {
+        "loss": 2.0338015518188475,
+        "accuracy": 0.246,
+        "examples": 1000,
+        "seconds": 0.35478574607986957,
+        "images_per_second": 2818.602525747693,
+        "tokens_per_second": 183209.16417360003
+      },
+      "best_validation_accuracy": 0.246,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 3.039412693004124,
+      "train_images_per_second": 1895.1029629039535,
+      "train_tokens_per_second": 123181.69258875698,
+      "parameters": 3464458,
+      "extra_parameters": 774336,
+      "base_parameters": 2690122,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 466338048,
+      "extra_forward_matmul_flops_per_token_estimate": 1548288.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 307537408,
+      "peak_training_reserved_bytes": 362807296,
+      "config_name": "basis-r8-k16",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/basis-r8-k16"
+    },
+    {
+      "variant": "diagonal",
+      "rank": 2,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 3.869692277046852,
+      "validation": {
+        "loss": 2.019503349304199,
+        "accuracy": 0.259,
+        "examples": 1000,
+        "seconds": 0.3285062829963863,
+        "images_per_second": 3044.08180835616,
+        "tokens_per_second": 197865.3175431504
+      },
+      "best_validation_accuracy": 0.259,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 2.1009458078769967,
+      "train_images_per_second": 2741.622358084749,
+      "train_tokens_per_second": 178205.45327550868,
+      "parameters": 3134794,
+      "extra_parameters": 444672,
+      "base_parameters": 2690122,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 423207168,
+      "extra_forward_matmul_flops_per_token_estimate": 884736.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 301166080,
+      "peak_training_reserved_bytes": 356515840,
+      "config_name": "diagonal",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/diagonal"
+    },
+    {
+      "variant": "dplr",
+      "rank": 8,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 4.4593689270550385,
+      "validation": {
+        "loss": 2.018754684448242,
+        "accuracy": 0.282,
+        "examples": 1000,
+        "seconds": 0.3313237290130928,
+        "images_per_second": 3018.196140006873,
+        "tokens_per_second": 196182.74910044676
+      },
+      "best_validation_accuracy": 0.282,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 2.645504464977421,
+      "train_images_per_second": 2177.2785025517474,
+      "train_tokens_per_second": 141523.10266586355,
+      "parameters": 3909130,
+      "extra_parameters": 1219008,
+      "base_parameters": 2690122,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 523845888,
+      "extra_forward_matmul_flops_per_token_estimate": 2433024.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 363189760,
+      "peak_training_reserved_bytes": 411041792,
+      "config_name": "dplr-r8-k16",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/dplr-r8-k16"
+    },
+    {
+      "variant": "exact",
+      "rank": 2,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 5.707832679967396,
+      "validation": {
+        "loss": 2.0640931243896485,
+        "accuracy": 0.224,
+        "examples": 1000,
+        "seconds": 0.32884546008426696,
+        "images_per_second": 3040.94208794535,
+        "tokens_per_second": 197661.23571644776
+      },
+      "best_validation_accuracy": 0.224,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 3.787195842829533,
+      "train_images_per_second": 1520.9142170204018,
+      "train_tokens_per_second": 98859.42410632611,
+      "parameters": 4901962,
+      "extra_parameters": 2211840,
+      "base_parameters": 2690122,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 653238528,
+      "extra_forward_matmul_flops_per_token_estimate": 4423680.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 305057280,
+      "peak_training_reserved_bytes": 337641472,
+      "config_name": "exact-r2",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/exact-r2"
+    },
+    {
+      "variant": "plain",
+      "rank": 2,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 3.8285005419747904,
+      "validation": {
+        "loss": 2.0291889419555664,
+        "accuracy": 0.271,
+        "examples": 1000,
+        "seconds": 0.3284901489969343,
+        "images_per_second": 3044.231320341155,
+        "tokens_per_second": 197875.03582217506
+      },
+      "best_validation_accuracy": 0.271,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 2.135242813033983,
+      "train_images_per_second": 2697.5854759185777,
+      "train_tokens_per_second": 175343.05593470755,
+      "parameters": 3399634,
+      "extra_parameters": 0,
+      "base_parameters": 3399634,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 459933984,
+      "extra_forward_matmul_flops_per_token_estimate": 0.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 290006016,
+      "peak_training_reserved_bytes": 362807296,
+      "config_name": "plain-w216",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/plain-w216"
+    },
+    {
+      "variant": "plain",
+      "rank": 2,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 4.10953088698443,
+      "validation": {
+        "loss": 1.9889656066894532,
+        "accuracy": 0.281,
+        "examples": 1000,
+        "seconds": 0.3150854520499706,
+        "images_per_second": 3173.7422134024964,
+        "tokens_per_second": 206293.24387116227
+      },
+      "best_validation_accuracy": 0.281,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 2.3628382519818842,
+      "train_images_per_second": 2437.746212703586,
+      "train_tokens_per_second": 158453.5038257331,
+      "parameters": 5067490,
+      "extra_parameters": 0,
+      "base_parameters": 5067490,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 680751456,
+      "extra_forward_matmul_flops_per_token_estimate": 0.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 366138368,
+      "peak_training_reserved_bytes": 406847488,
+      "config_name": "plain-w264",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/plain-w264"
+    },
+    {
+      "variant": "plain",
+      "rank": 2,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 3.64618988300208,
+      "validation": {
+        "loss": 2.0529415130615236,
+        "accuracy": 0.245,
+        "examples": 1000,
+        "seconds": 0.3177551979897544,
+        "images_per_second": 3147.0767632642905,
+        "tokens_per_second": 204559.98961217888
+      },
+      "best_validation_accuracy": 0.245,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 1.9942807719344273,
+      "train_images_per_second": 2888.2593068441774,
+      "train_tokens_per_second": 187736.85494487153,
+      "parameters": 2690122,
+      "extra_parameters": 0,
+      "base_parameters": 2690122,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 365699328,
+      "extra_forward_matmul_flops_per_token_estimate": 0.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 255980032,
+      "peak_training_reserved_bytes": 306184192,
+      "config_name": "plain",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/plain"
+    },
+    {
+      "variant": "static_lora_diagonal",
+      "rank": 8,
+      "n_basis": 16,
+      "seed": 42,
+      "completed_steps": 100,
+      "processed_images": 6400,
+      "elapsed_seconds": 4.757166406023316,
+      "validation": {
+        "loss": 2.026168128967285,
+        "accuracy": 0.26,
+        "examples": 1000,
+        "seconds": 0.3379568150267005,
+        "images_per_second": 2958.957936448165,
+        "tokens_per_second": 192332.26586913073
+      },
+      "best_validation_accuracy": 0.26,
+      "test": null,
+      "synthetic": false,
+      "benchmark_warmup_steps": 10,
+      "benchmark_images": 5760,
+      "benchmark_seconds": 2.94642862805631,
+      "train_images_per_second": 1954.9090533374763,
+      "train_tokens_per_second": 127069.08846693595,
+      "parameters": 3180874,
+      "extra_parameters": 490752,
+      "base_parameters": 2690122,
+      "tokens_per_image": 65,
+      "forward_matmul_flops_per_image_estimate": 429197568,
+      "extra_forward_matmul_flops_per_token_estimate": 976896.0,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization, backward",
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "peak_training_allocated_bytes": 313558528,
+      "peak_training_reserved_bytes": 356515840,
+      "config_name": "static-lora-r8-diagonal",
+      "run_dir": "/workspace/adalora/runs/engineering-cifar10-100/static-lora-r8-diagonal"
+    }
+  ],
+  "run_provenance": {
+    "basis-r8-k16": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "diagonal": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "dplr-r8-k16": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "exact-r2": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "plain-w216": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "plain-w264": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "plain": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    },
+    "static-lora-r8-diagonal": {
+      "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+      "python": "3.12.14",
+      "torch": "2.11.0+cu128",
+      "cuda_wheel": "12.8",
+      "source_sha256": {
+        "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+        "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+        "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+        "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6"
+      }
+    }
+  },
+  "layer_profiles": {
+    "fp32": {
+      "config": {
+        "device": "cuda:0",
+        "precision": "fp32",
+        "width": 192,
+        "mlp_ratio": 4.0,
+        "tokens": 4096,
+        "ranks": [
+          2,
+          8
+        ],
+        "chunks": [
+          256,
+          1024,
+          4096
+        ],
+        "n_basis": 16,
+        "warmup": 10,
+        "steps": 30,
+        "seed": 42,
+        "output": "runs/layer-profile-fp32-final.json"
+      },
+      "provenance": {
+        "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+        "python": "3.12.14",
+        "torch": "2.11.0+cu128",
+        "cuda_wheel": "12.8",
+        "source_sha256": {
+          "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+          "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+          "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+          "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6",
+          "profile_condlr.py": "b55bc9f9ffa84256d67d9daa627e1359953f3aadccd467be8ebae6ddb2ceaa32"
+        }
+      },
+      "saved_storage_note": "unique backing storages, original parameter storage excluded; includes autocast weight copies",
+      "records": [
+        {
+          "variant": "plain",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 148224,
+          "saved_nonparameter_storage_bytes": 3145728,
+          "milliseconds_per_forward_backward": 0.6742755649611354,
+          "train_tokens_per_second": 6074667.706868615,
+          "peak_allocated_bytes": 88674304,
+          "peak_reserved_bytes": 121634816
+        },
+        {
+          "variant": "diagonal",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 222336,
+          "saved_nonparameter_storage_bytes": 12582912,
+          "milliseconds_per_forward_backward": 1.3152695028111339,
+          "train_tokens_per_second": 3114190.659211358,
+          "peak_allocated_bytes": 95262208,
+          "peak_reserved_bytes": 159383552
+        },
+        {
+          "variant": "exact",
+          "rank": 2,
+          "chunk": 256,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 6324224,
+          "milliseconds_per_forward_backward": 13.911660535571476,
+          "train_tokens_per_second": 294429.2659763165,
+          "peak_allocated_bytes": 90181632,
+          "peak_reserved_bytes": 123731968
+        },
+        {
+          "variant": "exact",
+          "rank": 2,
+          "chunk": 1024,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 6324224,
+          "milliseconds_per_forward_backward": 5.841970699839294,
+          "train_tokens_per_second": 701133.2665726441,
+          "peak_allocated_bytes": 90181632,
+          "peak_reserved_bytes": 130023424
+        },
+        {
+          "variant": "exact",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 6324224,
+          "milliseconds_per_forward_backward": 2.739909233059734,
+          "train_tokens_per_second": 1494940.0332601096,
+          "peak_allocated_bytes": 90181632,
+          "peak_reserved_bytes": 130023424
+        },
+        {
+          "variant": "basis",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 185120,
+          "saved_nonparameter_storage_bytes": 7897088,
+          "milliseconds_per_forward_backward": 2.1439068989517787,
+          "train_tokens_per_second": 1910530.7240732603,
+          "peak_allocated_bytes": 90427904,
+          "peak_reserved_bytes": 123731968
+        },
+        {
+          "variant": "dplr",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 259232,
+          "saved_nonparameter_storage_bytes": 14188544,
+          "milliseconds_per_forward_backward": 3.3655978312405446,
+          "train_tokens_per_second": 1217020.0378606236,
+          "peak_allocated_bytes": 97016320,
+          "peak_reserved_bytes": 148897792
+        },
+        {
+          "variant": "static_lora_diagonal",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 224256,
+          "saved_nonparameter_storage_bytes": 12615680,
+          "milliseconds_per_forward_backward": 2.125650900416076,
+          "train_tokens_per_second": 1926939.1785820741,
+          "peak_allocated_bytes": 95302656,
+          "peak_reserved_bytes": 146800640
+        },
+        {
+          "variant": "naive",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 38076416,
+          "milliseconds_per_forward_backward": 2.936722334319105,
+          "train_tokens_per_second": 1394752.2215952636,
+          "peak_allocated_bytes": 121933824,
+          "peak_reserved_bytes": 159383552
+        },
+        {
+          "variant": "plain",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 148224,
+          "saved_nonparameter_storage_bytes": 3145728,
+          "milliseconds_per_forward_backward": 0.8892989989059666,
+          "train_tokens_per_second": 4605874.970104521,
+          "peak_allocated_bytes": 88674304,
+          "peak_reserved_bytes": 121634816
+        },
+        {
+          "variant": "diagonal",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 222336,
+          "saved_nonparameter_storage_bytes": 12582912,
+          "milliseconds_per_forward_backward": 1.5814688988029957,
+          "train_tokens_per_second": 2589997.187488314,
+          "peak_allocated_bytes": 95262208,
+          "peak_reserved_bytes": 159383552
+        },
+        {
+          "variant": "exact",
+          "rank": 8,
+          "chunk": 256,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 6422528,
+          "milliseconds_per_forward_backward": 14.53666346690928,
+          "train_tokens_per_second": 281770.29820659896,
+          "peak_allocated_bytes": 94703616,
+          "peak_reserved_bytes": 134217728
+        },
+        {
+          "variant": "exact",
+          "rank": 8,
+          "chunk": 1024,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 6422528,
+          "milliseconds_per_forward_backward": 5.535865734176089,
+          "train_tokens_per_second": 739902.3380774992,
+          "peak_allocated_bytes": 94703616,
+          "peak_reserved_bytes": 142606336
+        },
+        {
+          "variant": "exact",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 6422528,
+          "milliseconds_per_forward_backward": 3.159125401483228,
+          "train_tokens_per_second": 1296561.3831210702,
+          "peak_allocated_bytes": 135273472,
+          "peak_reserved_bytes": 159383552
+        },
+        {
+          "variant": "basis",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 277280,
+          "saved_nonparameter_storage_bytes": 11141120,
+          "milliseconds_per_forward_backward": 2.438158569081376,
+          "train_tokens_per_second": 1679956.3621258843,
+          "peak_allocated_bytes": 94040576,
+          "peak_reserved_bytes": 136314880
+        },
+        {
+          "variant": "dplr",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 351392,
+          "saved_nonparameter_storage_bytes": 17432576,
+          "milliseconds_per_forward_backward": 3.275575601340582,
+          "train_tokens_per_second": 1250467.2456113198,
+          "peak_allocated_bytes": 100628992,
+          "peak_reserved_bytes": 157286400
+        },
+        {
+          "variant": "static_lora_diagonal",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 230016,
+          "saved_nonparameter_storage_bytes": 12713984,
+          "milliseconds_per_forward_backward": 1.949592768990745,
+          "train_tokens_per_second": 2100951.575707985,
+          "peak_allocated_bytes": 95424000,
+          "peak_reserved_bytes": 146800640
+        },
+        {
+          "variant": "naive",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 133431296,
+          "milliseconds_per_forward_backward": 2.7511318679898977,
+          "train_tokens_per_second": 1488841.7555181475,
+          "peak_allocated_bytes": 272961536,
+          "peak_reserved_bytes": 335544320
+        }
+      ]
+    },
+    "bf16": {
+      "config": {
+        "device": "cuda:0",
+        "precision": "bf16",
+        "width": 192,
+        "mlp_ratio": 4.0,
+        "tokens": 4096,
+        "ranks": [
+          2,
+          8
+        ],
+        "chunks": [
+          256,
+          1024,
+          4096
+        ],
+        "n_basis": 16,
+        "warmup": 10,
+        "steps": 30,
+        "seed": 42,
+        "output": "runs/layer-profile-bf16.json"
+      },
+      "provenance": {
+        "git_revision": "fa02f204b7e007cda67eabacde06e128c7df3c15",
+        "python": "3.12.14",
+        "torch": "2.11.0+cu128",
+        "cuda_wheel": "12.8",
+        "source_sha256": {
+          "train_cifar10.py": "d367b3b4a9a5667c5288728f97051948145e9aa0e3298d7b75acbc689e194635",
+          "vit.py": "9c337ffdce5fe0253c92c066e3b95980f4d889bce972906a5e9efa700a774275",
+          "conditioning.py": "58043ea7d0603efb6fb393dc23bb987eff4f029d5a8ea2c6109fc23af9c26822",
+          "condlr.py": "d1186e40331443b686e7e828b0b52885d87555a150de4e1138e5dce1464a0cc6",
+          "profile_condlr.py": "b55bc9f9ffa84256d67d9daa627e1359953f3aadccd467be8ebae6ddb2ceaa32"
+        }
+      },
+      "saved_storage_note": "unique backing storages, original parameter storage excluded; includes autocast weight copies",
+      "records": [
+        {
+          "variant": "plain",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 148224,
+          "saved_nonparameter_storage_bytes": 1867776,
+          "milliseconds_per_forward_backward": 0.9029653000955781,
+          "train_tokens_per_second": 4536165.453496875,
+          "peak_allocated_bytes": 89755648,
+          "peak_reserved_bytes": 121634816
+        },
+        {
+          "variant": "diagonal",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 222336,
+          "saved_nonparameter_storage_bytes": 8306688,
+          "milliseconds_per_forward_backward": 1.9728760972308617,
+          "train_tokens_per_second": 2076156.736730282,
+          "peak_allocated_bytes": 94262784,
+          "peak_reserved_bytes": 134217728
+        },
+        {
+          "variant": "exact",
+          "rank": 2,
+          "chunk": 256,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 8175616,
+          "milliseconds_per_forward_backward": 17.112234731515247,
+          "train_tokens_per_second": 239360.9054728826,
+          "peak_allocated_bytes": 91246592,
+          "peak_reserved_bytes": 136314880
+        },
+        {
+          "variant": "exact",
+          "rank": 2,
+          "chunk": 1024,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 8175616,
+          "milliseconds_per_forward_backward": 6.999639297525088,
+          "train_tokens_per_second": 585173.0104790188,
+          "peak_allocated_bytes": 91246592,
+          "peak_reserved_bytes": 138412032
+        },
+        {
+          "variant": "exact",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 8175616,
+          "milliseconds_per_forward_backward": 3.2641782347733774,
+          "train_tokens_per_second": 1254833.4390460677,
+          "peak_allocated_bytes": 91246592,
+          "peak_reserved_bytes": 134217728
+        },
+        {
+          "variant": "basis",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 185120,
+          "saved_nonparameter_storage_bytes": 4333568,
+          "milliseconds_per_forward_backward": 2.7590505002687373,
+          "train_tokens_per_second": 1484568.6947741772,
+          "peak_allocated_bytes": 93286912,
+          "peak_reserved_bytes": 136314880
+        },
+        {
+          "variant": "dplr",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 259232,
+          "saved_nonparameter_storage_bytes": 10772480,
+          "milliseconds_per_forward_backward": 4.4717258657328784,
+          "train_tokens_per_second": 915977.4375678774,
+          "peak_allocated_bytes": 96877056,
+          "peak_reserved_bytes": 144703488
+        },
+        {
+          "variant": "static_lora_diagonal",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 224256,
+          "saved_nonparameter_storage_bytes": 9899776,
+          "milliseconds_per_forward_backward": 2.854865067638457,
+          "train_tokens_per_second": 1434743.8155415903,
+          "peak_allocated_bytes": 95863808,
+          "peak_reserved_bytes": 142606336
+        },
+        {
+          "variant": "naive",
+          "rank": 2,
+          "chunk": 4096,
+          "parameters": 516864,
+          "saved_nonparameter_storage_bytes": 19922944,
+          "milliseconds_per_forward_backward": 3.5838005676244697,
+          "train_tokens_per_second": 1142920.7409035717,
+          "peak_allocated_bytes": 109285376,
+          "peak_reserved_bytes": 146800640
+        },
+        {
+          "variant": "plain",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 148224,
+          "saved_nonparameter_storage_bytes": 1867776,
+          "milliseconds_per_forward_backward": 1.1919986301412184,
+          "train_tokens_per_second": 3436245.559707345,
+          "peak_allocated_bytes": 90673152,
+          "peak_reserved_bytes": 125829120
+        },
+        {
+          "variant": "diagonal",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 222336,
+          "saved_nonparameter_storage_bytes": 8306688,
+          "milliseconds_per_forward_backward": 2.0922092682061098,
+          "train_tokens_per_second": 1957739.1526957385,
+          "peak_allocated_bytes": 94262784,
+          "peak_reserved_bytes": 134217728
+        },
+        {
+          "variant": "exact",
+          "rank": 8,
+          "chunk": 256,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 8224768,
+          "milliseconds_per_forward_backward": 17.150822033484776,
+          "train_tokens_per_second": 238822.37201243686,
+          "peak_allocated_bytes": 95719424,
+          "peak_reserved_bytes": 138412032
+        },
+        {
+          "variant": "exact",
+          "rank": 8,
+          "chunk": 1024,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 8224768,
+          "milliseconds_per_forward_backward": 7.056349232637634,
+          "train_tokens_per_second": 580470.1361796024,
+          "peak_allocated_bytes": 95719424,
+          "peak_reserved_bytes": 136314880
+        },
+        {
+          "variant": "exact",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 8224768,
+          "milliseconds_per_forward_backward": 3.3019475328425565,
+          "train_tokens_per_second": 1240480.0376927448,
+          "peak_allocated_bytes": 129637376,
+          "peak_reserved_bytes": 159383552
+        },
+        {
+          "variant": "basis",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 277280,
+          "saved_nonparameter_storage_bytes": 6189056,
+          "milliseconds_per_forward_backward": 2.789422132385274,
+          "train_tokens_per_second": 1468404.4958435362,
+          "peak_allocated_bytes": 95511040,
+          "peak_reserved_bytes": 140509184
+        },
+        {
+          "variant": "dplr",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 351392,
+          "saved_nonparameter_storage_bytes": 12627968,
+          "milliseconds_per_forward_backward": 4.415879301571597,
+          "train_tokens_per_second": 927561.5840637325,
+          "peak_allocated_bytes": 100018688,
+          "peak_reserved_bytes": 148897792
+        },
+        {
+          "variant": "static_lora_diagonal",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 230016,
+          "saved_nonparameter_storage_bytes": 9960448,
+          "milliseconds_per_forward_backward": 2.841698401607573,
+          "train_tokens_per_second": 1441391.5275747974,
+          "peak_allocated_bytes": 95947264,
+          "peak_reserved_bytes": 142606336
+        },
+        {
+          "variant": "naive",
+          "rank": 8,
+          "chunk": 4096,
+          "parameters": 1622784,
+          "saved_nonparameter_storage_bytes": 69369856,
+          "milliseconds_per_forward_backward": 3.5708632320165634,
+          "train_tokens_per_second": 1147061.574152443,
+          "peak_allocated_bytes": 163155968,
+          "peak_reserved_bytes": 230686720
+        }
+      ]
+    }
+  },
+  "limits": [
+    "One short run per configuration; accuracy cannot select a winner.",
+    "End-to-end timing includes data loading and is sensitive to startup, hardware clocks and shared CPU activity.",
+    "No compiled-versus-eager performance comparison has been established.",
+    "Full-sequence external conditioning and diffusion have not been implemented yet."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "complete": true,
+    "successful_worker_exit": true,
+    "same_batches_noise_and_base_init": true,
+    "paired_adapter_init": true,
+    "frozen_source_verified": true,
+    "finite_metrics": true,
+    "budgets_verified": true,
+    "zero_init_and_gradient_wakeup": true,
+    "compiled_parity": true,
+    "weights_saved": false,
+    "test_evaluated": false
+  },
+  "bytes_retained": 2555686,
+  "report_sha256": "2662892e096ec0c16d2b7369d3991d83a95c5ef723eaf4e371a987c9ae751fd0"
+}

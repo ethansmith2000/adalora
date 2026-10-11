@@ -1,0 +1,43 @@
+{
+  "raw_workflow": "/workspace/adalora/runs/dit-rank2-20261008T010252Z",
+  "raw_report_sha256": "e529dcc5738c0dde1439f58fb3d3ae13245870b9a245a1eea3c618c181d41afb",
+  "artifacts": {
+    "dit-rank2-confirmation.json": {
+      "bytes": 29132,
+      "sha256": "d1da9f1d30e5d9d548855125635f82fb015ee346fd65e86b1c287107867ec0d9"
+    },
+    "dit-rank2-confirmation-audit.json": {
+      "bytes": 967,
+      "sha256": "fbae0702db2c68827d283428cf30c099d43433d03c9d0a100e19fb1d4da07136"
+    },
+    "dit-rank2-confirmation-evidence.json": {
+      "bytes": 4465641,
+      "sha256": "e529dcc5738c0dde1439f58fb3d3ae13245870b9a245a1eea3c618c181d41afb"
+    },
+    "dit-rank2-confirmation.png": {
+      "bytes": 106859,
+      "sha256": "1ed03d3d1bfffb0f5ae0d4baaf22b515ff4b52b6a2adf28f3b9cd0578fd0c352"
+    },
+    "dit-rank2-confirmation.svg": {
+      "bytes": 68461,
+      "sha256": "f2f3f1c40fc41d1eb8358b07ccac8e1d6709d75ecdcb65d4412ee27d8af0593c"
+    },
+    "dit-rank2-confirmation-updates.png": {
+      "bytes": 255724,
+      "sha256": "e2056c0e275e9c04559d751cf6149a85d0ea4638b23b76556844fa22290e144c"
+    },
+    "dit-rank2-confirmation-updates.svg": {
+      "bytes": 83214,
+      "sha256": "a7043c29c8f61a9108dd128cb18b131924d86910326ebe6f5d0df48ef14052bd"
+    },
+    "dit-rank2-confirmation.md": {
+      "bytes": 7384,
+      "sha256": "d945b5a760ff1f8b411697edbdc2d520904936e5602689d32cbd620196912a5e"
+    }
+  },
+  "analysis_source": {
+    "audit_dit_rank2.py": "97dd60e915bfb67eb4fae2a318d0747d946aea49ae7d667ae2b3ee96835b1bab",
+    "summarize_dit_rank2.py": "0420af0504e1096412c893983a669878272afa982448cafb1159110c002b7258"
+  },
+  "weights_saved": false
+}

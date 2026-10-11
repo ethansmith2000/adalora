@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "all_runs_complete": true,
+    "successful_worker_exits": true,
+    "finite_logged_metrics": true,
+    "same_split": true,
+    "split_disjoint_and_unique": true,
+    "evaluator_cache_unchanged": true,
+    "same_initial_validation_noise": true,
+    "same_source_runtime": true,
+    "same_training_evaluation_budget": true,
+    "weights_saved": false,
+    "test_evaluated": false,
+    "bytes_retained_under_screen": 12040019,
+    "frozen_recipes_recomputed": true,
+    "frozen_before_launch": true,
+    "same_diagnostic_batch_noise_digests": true,
+    "same_noise_rng_end_state": true,
+    "same_width192_base_initialization": true,
+    "paired_rank8_adapter_initialization": true,
+    "source_snapshots_verified": true,
+    "classifier_hashes_and_denominators": true,
+    "same_real_classifier_predictions": true,
+    "full_fp32_probes": true,
+    "zero_init_and_wakeup": true
+  },
+  "classifier_real_accuracy": 0.807200014591217,
+  "bytes_retained": 13847258,
+  "report_sha256": "0ad02256bb6ecc0fefd7df5db9cd580f8e54f4c1bcc7f2c8b37e9a53b1ea40ea"
+}

@@ -1,0 +1,49 @@
+{
+  "workflow": "/workspace/adalora/runs/dit-followup-20261007T174446Z",
+  "created_utc": "2026-10-07T18:46:47.615502+00:00",
+  "tuning": {
+    "all_runs_complete": true,
+    "successful_worker_exits": true,
+    "finite_logged_metrics": true,
+    "same_split": true,
+    "split_disjoint_and_unique": true,
+    "evaluator_cache_unchanged": true,
+    "same_initial_validation_noise": true,
+    "same_source_runtime": true,
+    "same_training_evaluation_budget": true,
+    "weights_saved": false,
+    "test_evaluated": false,
+    "bytes_retained_under_screen": 15511434
+  },
+  "confirmation": {
+    "all_runs_complete": true,
+    "successful_worker_exits": true,
+    "finite_logged_metrics": true,
+    "same_split": true,
+    "split_disjoint_and_unique": true,
+    "evaluator_cache_unchanged": true,
+    "same_initial_validation_noise": true,
+    "same_source_runtime": true,
+    "same_training_evaluation_budget": true,
+    "weights_saved": false,
+    "test_evaluated": false,
+    "bytes_retained_under_screen": 20371762
+  },
+  "checks": {
+    "selection_recomputed": true,
+    "selection_frozen_before_confirmation": true,
+    "three_paired_seeds_per_family": true,
+    "fixed_classifier_hashes": true,
+    "class_agreement_denominators": true,
+    "same_real_classifier_predictions": true,
+    "only_declared_evaluator_weights": true,
+    "no_test_evaluated": true,
+    "statistics_recomputed": true,
+    "stage_supervisors_shutdown": true
+  },
+  "classifier_real_fp32_accuracy": 0.807200014591217,
+  "classifier_weight_bytes": 13621221,
+  "bytes_retained_under_workflow": 52524090,
+  "audit_script_sha256": "b1300f27893574bb42cebfc91c832831f3791a876f4a528ffdb2eaf066e99905",
+  "report_sha256": "8c6f758903539105c1b16056b051f5cb026784e7bb89a7d5624e4798fdbd0689"
+}
