@@ -1,0 +1,346 @@
+{
+  "cells": [
+    {
+      "method": "plain",
+      "rate": 0.5,
+      "global_lr": 0.00025,
+      "seeds": [
+        106,
+        107,
+        108,
+        109
+      ],
+      "accuracy_percent": {
+        "values": [
+          79.58,
+          79.12,
+          79.7,
+          79.46
+        ],
+        "mean": 79.465,
+        "sd": 0.24999999999999858
+      },
+      "last_training_window_accuracy_percent_mean": 87.5491867785939,
+      "validation_loss_mean": 0.6619097493410111
+    },
+    {
+      "method": "plain",
+      "rate": 1.0,
+      "global_lr": 0.0005,
+      "seeds": [
+        106,
+        107,
+        108,
+        109
+      ],
+      "accuracy_percent": {
+        "values": [
+          79.56,
+          79.86,
+          79.25999999999999,
+          79.08
+        ],
+        "mean": 79.44,
+        "sd": 0.34292856398964716
+      },
+      "last_training_window_accuracy_percent_mean": 88.57883001049318,
+      "validation_loss_mean": 0.6645649434030056
+    },
+    {
+      "method": "dplr",
+      "rate": 0.5,
+      "global_lr": 0.00025,
+      "seeds": [
+        106,
+        107,
+        108,
+        109
+      ],
+      "accuracy_percent": {
+        "values": [
+          79.14,
+          79.12,
+          79.46,
+          79.67999999999999
+        ],
+        "mean": 79.35,
+        "sd": 0.2695675549220711
+      },
+      "last_training_window_accuracy_percent_mean": 92.33342077649527,
+      "validation_loss_mean": 0.6936911606132984
+    },
+    {
+      "method": "dplr",
+      "rate": 1.0,
+      "global_lr": 0.0005,
+      "seeds": [
+        106,
+        107,
+        108,
+        109
+      ],
+      "accuracy_percent": {
+        "values": [
+          79.10000000000001,
+          79.60000000000001,
+          79.7,
+          79.7
+        ],
+        "mean": 79.525,
+        "sd": 0.28722813232689914
+      },
+      "last_training_window_accuracy_percent_mean": 90.82502623294859,
+      "validation_loss_mean": 0.6664077112555504
+    }
+  ],
+  "paired_dplr_minus_plain": [
+    {
+      "rate": 0.5,
+      "seeds": [
+        106,
+        107,
+        108,
+        109
+      ],
+      "percentage_points": {
+        "values": [
+          -0.4399999999999977,
+          0.0,
+          -0.2400000000000091,
+          0.21999999999999886
+        ],
+        "mean": -0.11500000000000199,
+        "sd": 0.28676354952004157
+      }
+    },
+    {
+      "rate": 1.0,
+      "seeds": [
+        106,
+        107,
+        108,
+        109
+      ],
+      "percentage_points": {
+        "values": [
+          -0.45999999999999375,
+          -0.2599999999999909,
+          0.44000000000001194,
+          0.6200000000000045
+        ],
+        "mean": 0.08500000000000796,
+        "sd": 0.5254521862167861
+      }
+    }
+  ],
+  "interaction": {
+    "definition": "DPLR-minus-plain at LR1 minus DPLR-minus-plain at LR0.5",
+    "seeds": [
+      106,
+      107,
+      108,
+      109
+    ],
+    "percentage_points": {
+      "values": [
+        -0.01999999999999602,
+        -0.2599999999999909,
+        0.680000000000021,
+        0.4000000000000057
+      ],
+      "mean": 0.20000000000000995,
+      "sd": 0.4204759208325777
+    }
+  },
+  "recipe_selection": false,
+  "limits": [
+    "Follow-up proposed after inspection of the original confirmation; these seeds/holdout are not independent confirmation.",
+    "Reuse eight fully audited existing cells and train only the exact missing complement; no new winner or retuning.",
+    "Global LR changes base and conditional groups together; relative affine/low-rank multipliers stay1.",
+    "Same nominal LR is not matched function-update magnitude or architecture-specific optimal LR.",
+    "Thirty epochs, four seeds, one CIFAR10 research split; sample SD is not a confidence interval.",
+    "Shared-instance compute observations are not isolated speed benchmarks; no broader architecture claim."
+  ],
+  "diagnostics": [
+    {
+      "method": "dplr",
+      "seed": 107,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/dplr_selected_xavier_gelu_lr0.5_s107",
+      "last_training_window_accuracy_percent": 92.1825813221406,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6998725878953934,
+      "elapsed_seconds": 455.2556954340034,
+      "training_peak_MiB": 580.9736328125
+    },
+    {
+      "method": "plain",
+      "seed": 108,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/plain_selected_xavier_gelu_lr1_s108",
+      "last_training_window_accuracy_percent": 88.91657922350473,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6732806275844574,
+      "elapsed_seconds": 332.8210904820007,
+      "training_peak_MiB": 479.5859375
+    },
+    {
+      "method": "plain",
+      "seed": 109,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/plain_selected_xavier_gelu_lr1_s109",
+      "last_training_window_accuracy_percent": 87.35571878279119,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6722199749708175,
+      "elapsed_seconds": 304.0821525260035,
+      "training_peak_MiB": 395.30810546875
+    },
+    {
+      "method": "dplr",
+      "seed": 106,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/dplr_selected_xavier_gelu_lr0.5_s106",
+      "last_training_window_accuracy_percent": 93.27124868835257,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.7064931998729705,
+      "elapsed_seconds": 399.7280822660032,
+      "training_peak_MiB": 518.22900390625
+    },
+    {
+      "method": "plain",
+      "seed": 106,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/plain_selected_xavier_gelu_lr1_s106",
+      "last_training_window_accuracy_percent": 88.92969569779643,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6555426338195801,
+      "elapsed_seconds": 308.21703097200225,
+      "training_peak_MiB": 395.30810546875
+    },
+    {
+      "method": "dplr",
+      "seed": 108,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/dplr_selected_xavier_gelu_lr0.5_s108",
+      "last_training_window_accuracy_percent": 92.35309548793285,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6811200513839721,
+      "elapsed_seconds": 410.4156404719979,
+      "training_peak_MiB": 518.22900390625
+    },
+    {
+      "method": "dplr",
+      "seed": 109,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/dplr_selected_xavier_gelu_lr0.5_s109",
+      "last_training_window_accuracy_percent": 91.52675760755508,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6872788033008576,
+      "elapsed_seconds": 398.41434961600316,
+      "training_peak_MiB": 518.22900390625
+    },
+    {
+      "method": "plain",
+      "seed": 107,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/quality/plain_selected_xavier_gelu_lr1_s107",
+      "last_training_window_accuracy_percent": 89.11332633788038,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6572165372371673,
+      "elapsed_seconds": 310.506563971001,
+      "training_peak_MiB": 395.30810546875
+    },
+    {
+      "method": "plain",
+      "seed": 107,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/plain_xavier_gelu_lr0.5_s107",
+      "last_training_window_accuracy_percent": 87.06715634837356,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6579662763834,
+      "elapsed_seconds": 346.00176397599716,
+      "training_peak_MiB": 479.5859375
+    },
+    {
+      "method": "plain",
+      "seed": 108,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/plain_xavier_gelu_lr0.5_s108",
+      "last_training_window_accuracy_percent": 87.23767051416579,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6623421324253083,
+      "elapsed_seconds": 353.3677969700002,
+      "training_peak_MiB": 479.5859375
+    },
+    {
+      "method": "dplr",
+      "seed": 109,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/dplr_xavier_gelu_lr1_s109",
+      "last_training_window_accuracy_percent": 90.1495278069255,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6568944230556488,
+      "elapsed_seconds": 476.0707326940028,
+      "training_peak_MiB": 580.9736328125
+    },
+    {
+      "method": "plain",
+      "seed": 109,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/plain_xavier_gelu_lr0.5_s109",
+      "last_training_window_accuracy_percent": 87.60493179433368,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6643771067619324,
+      "elapsed_seconds": 322.5867448759964,
+      "training_peak_MiB": 395.30810546875
+    },
+    {
+      "method": "dplr",
+      "seed": 107,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/dplr_xavier_gelu_lr1_s107",
+      "last_training_window_accuracy_percent": 90.68730325288563,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6620883331537246,
+      "elapsed_seconds": 410.9108176450027,
+      "training_peak_MiB": 518.22900390625
+    },
+    {
+      "method": "dplr",
+      "seed": 108,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/dplr_xavier_gelu_lr1_s108",
+      "last_training_window_accuracy_percent": 91.39559286463799,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6639987202405929,
+      "elapsed_seconds": 415.3260316879969,
+      "training_peak_MiB": 518.22900390625
+    },
+    {
+      "method": "dplr",
+      "seed": 106,
+      "rate": 1.0,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/dplr_xavier_gelu_lr1_s106",
+      "last_training_window_accuracy_percent": 91.06768100734523,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6826493685722351,
+      "elapsed_seconds": 406.6514592730018,
+      "training_peak_MiB": 518.22900390625
+    },
+    {
+      "method": "plain",
+      "seed": 106,
+      "rate": 0.5,
+      "output_dir": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z/quality/plain_xavier_gelu_lr0.5_s106",
+      "last_training_window_accuracy_percent": 88.28698845750263,
+      "last_training_window_images": 7624,
+      "validation_loss": 0.6629534817934036,
+      "elapsed_seconds": 336.4163014720034,
+      "training_peak_MiB": 395.30810546875
+    }
+  ],
+  "raw_workflow": "/workspace/adalora/runs/vit-matched-lr-20261012T164445Z",
+  "report_sha256": "9a34cd338d7b399760b7a9c3bb26f8f08dda2219a8044a2c00f2a27793aeebf2",
+  "completed_utc": "2026-10-12T17:13:29.508162+00:00",
+  "new_worker_elapsed_gpu_hours": 0.8520365690538892
+}

@@ -1,0 +1,173 @@
+{
+  "state": "complete",
+  "created_utc": "2026-10-11T18:59:40.263944+00:00",
+  "repo_root": "/workspace/adalora",
+  "purpose": "Refine only missing intermediate calibration rates; retain the original bounds and original failed gate",
+  "forward_research_default": "factor_offsets=True for new condition-generated U/V methods; explicit false ablations retained",
+  "source_sha256": {
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+    "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79",
+    "dit_cifar10.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "summarize_dit_cifar10_screen.py": "187a761734f5ca2466860c2c620936545226bdde5b9d883b11b83fc10f8f7647",
+    "test_vit_factor_offsets.py": "6501396cbd07646e891b89da0102c7e276e623e8ea317d70c6761f8f4f21fe0d",
+    "test_vit_token_study.py": "e306c4a91b02f7780347d0c79b9fa11698ffc210f397d7b145c7ff9ecccfcca7",
+    "train_cifar10.py": "823abf08457b56373313f581ba2aa8946f0659fe5aec3ad01510016f95bb4c47",
+    "train_dit_cifar10.py": "e21fe0ed704569b799ec75b1b830abeb5fc2a638e8ccb52b1fac06e3dbc7e902",
+    "vit.py": "4adfc9b9b061e174d70e52265edbdaa191ce7e2197b5f9c506bbe64ab788ab13",
+    "vit_quality_diagnostics.py": "5e83aac014374d0cb93f279c3094f889e6c846f95134e7cf1e25cca490351122",
+    "vit_token_study.py": "c5e95daff46833dcbe1509336593b8cd39d64634b237853217d32b811acb1ac7",
+    "vit_token_refinement.py": "ad7a85b0e7ef35026491befb55fa1008709e1710766ef2f3eddcbf94cf7ce5b9",
+    "test_vit_token_refinement.py": "1fbeccc7b849a213b4da7409996af55e96975c0ee9676ed7c438b5cf7006ef34"
+  },
+  "families": {
+    "plain": {
+      "variant": "plain"
+    },
+    "diagonal": {
+      "variant": "diagonal"
+    },
+    "static_r8_diagonal": {
+      "variant": "static_lora_diagonal"
+    },
+    "static_capacity": {
+      "variant": "plain",
+      "mlp_ratio": 7.723958333333333
+    },
+    "s12": {
+      "variant": "dplr",
+      "n_basis": 12
+    },
+    "s24": {
+      "variant": "dplr",
+      "n_basis": 24
+    },
+    "s48": {
+      "variant": "dplr",
+      "n_basis": 48
+    },
+    "s24_detached": {
+      "variant": "dplr",
+      "n_basis": 24,
+      "detach_condition": true
+    }
+  },
+  "parameters": {
+    "plain": 2690122,
+    "diagonal": 3134794,
+    "static_r8_diagonal": 3180874,
+    "static_capacity": 4341772,
+    "s12": 3761626,
+    "s24": 4342378,
+    "s48": 5503882,
+    "s24_detached": 4342378
+  },
+  "pilot_seeds": [
+    96,
+    97
+  ],
+  "quality_seeds": [
+    98,
+    99
+  ],
+  "rate_grid": {
+    "s12": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "s48": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "s24_detached": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "static_r8_diagonal": [
+      0.25,
+      1.0,
+      4.0,
+      16.0
+    ]
+  },
+  "pilot_steps": 500,
+  "train_steps": 3520,
+  "lr_schedule_steps": 3520,
+  "epochs": 10,
+  "train_examples": 45000,
+  "validation_examples": 5000,
+  "split_seed": 123,
+  "max_concurrent_workers": 2,
+  "order_seed": 2036,
+  "planned_runs": {
+    "calibration": 8,
+    "quality": 16
+  },
+  "calibration_bounds": [
+    0.5,
+    2.0
+  ],
+  "calibration_probes": [
+    100,
+    250,
+    500
+  ],
+  "quality_gate": "Both GPU preflights, exact pilot grid, source/config/data/gradient audit and every selected calibration ratio in bounds",
+  "resources": {
+    "estimated_gpu_hours": "2\u20134 aggregate, approximately 1\u20132 wall hours with two available GPUs",
+    "max_our_gpus": 2,
+    "disk_free_bytes_before_launch": 333886279680,
+    "retained_artifact_bound_bytes": 4294967296,
+    "artifact_purposes": {
+      "compact_evidence": "frozen configs/sources/runtime/seed/split/metrics/logs/diagnostics/audits/reports",
+      "compiler_cache": "compatibility/performance provenance, expected at most 3 GiB"
+    },
+    "retention": "Compact evidence and declared compiler caches until explicitly removed"
+  },
+  "fresh_initialization": true,
+  "weights_saved": false,
+  "periodic_checkpoints": false,
+  "test_evaluated": false,
+  "dedicated_speed_benchmarks": false,
+  "quality_selected_by_accuracy": false,
+  "limits": [
+    "Two fresh quality seeds and reused research holdout; sample SD is not a confidence interval.",
+    "Offsets are the forward default by user preference; this study does not repeat the offset ablation.",
+    "s24 has the near-parameter-matched static-capacity control; s12/s48 are width trends with different budgets.",
+    "All norms retain static affine parameters across controls; attention remains ordinary self-attention.",
+    "Factor offsets are treated as biases with zero weight decay; learned factor bases retain weight decay .05.",
+    "No AdaLN residual gate is introduced into this existing ViT; identity is the zero adapter and zero initial classifier.",
+    "The adapter is parallel to the MLP input projection; normalized h drives both the branch and condition.",
+    "Activation mixing avoids per-token generated factors but costs O(B*T*s*r) activations and more token-wise GEMM work.",
+    "Calibration matches only early low-rank function updates; diagonal and full-network optimization may differ.",
+    "500-step pilots use a prefix of the 3520-step schedule; quality uses a complete ten-epoch schedule.",
+    "This is a short trend study, not an asymptotic quality comparison; concurrent throughput is not an isolated speed benchmark.",
+    "Eight additional rates are frozen after observing coarse-grid updates; no quality-based selection or relaxed bounds.",
+    "The original two preflights and 28 pilots are reused only after full audit and paired source/runtime/initialization/stream checks."
+  ],
+  "preflight_complete_utc": "2026-10-11T07:09:44.681008+00:00",
+  "reference_workflow": "/workspace/adalora/runs/vit-token-20261011T070503Z",
+  "reference_protocol_sha256": "fe73876d551c1f36f1a8851210eb47bbbf4eff6e992c7eb4e3afcbb3030b6c32",
+  "reference_calibration_sha256": "c6d7b83c25dcc6f9df588e66d44e357a61c58185c9faf81d6e0bc7a7c861930a",
+  "extra_rates": {
+    "s12": [
+      2.0
+    ],
+    "s48": [
+      0.5
+    ],
+    "static_r8_diagonal": [
+      8.0,
+      12.0
+    ]
+  },
+  "started_utc": "2026-10-11T18:59:48.773274+00:00",
+  "calibration_complete_utc": "2026-10-11T19:04:37.618545+00:00",
+  "calibration_sha256": "01f2af75f2b3e5f08c4bded4be5c5090e5165bfd500282e4993548b8bb312e60",
+  "completed_utc": "2026-10-11T19:26:43.803625+00:00"
+}

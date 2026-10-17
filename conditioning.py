@@ -11,6 +11,18 @@ from condlr import BasisMixLowRank, DPLRCond, ExactCondLowRank
 VARIANTS = ("plain", "diagonal", "exact", "basis", "dplr", "static_lora_diagonal")
 
 
+def condition_input(c, normalization="none", gradient_scale=1.0):
+    """Optional parameter-free RMS normalization and forward-identical gradient scaling."""
+    if normalization == "rms":
+        inv_rms = (c.float().square().mean(-1, keepdim=True) + 1e-6).rsqrt().to(c.dtype)
+        c = c * inv_rms
+    elif normalization != "none":
+        raise ValueError("Condition normalization must be none or rms")
+    if gradient_scale != 1.0:
+        c = c.detach() + gradient_scale * (c - c.detach())
+    return c
+
+
 class ConditionedLinear(nn.Module):
     """Replace a projection while preserving its base weights and bias.
 
@@ -20,7 +32,7 @@ class ConditionedLinear(nn.Module):
     """
 
     def __init__(self, base, variant, rank=2, n_basis=16, chunk=2048, gain=1.0,
-                 factor_offsets=False):
+                 factor_offsets=False, condition_normalization="none", condition_gradient_scale=1.0):
         super().__init__()
         if variant not in VARIANTS or variant == "plain":
             raise ValueError(f"Unsupported conditional variant: {variant}")
@@ -30,6 +42,12 @@ class ConditionedLinear(nn.Module):
         if type(factor_offsets) is not bool or (factor_offsets and variant not in ("basis", "dplr")):
             raise ValueError("Factor offsets require a basis/DPLR variant and a boolean setting")
         self.factor_offsets = factor_offsets
+        if condition_normalization not in ("none", "rms"):
+            raise ValueError("Invalid condition normalization")
+        if not math.isfinite(condition_gradient_scale) or not 0 <= condition_gradient_scale <= 1:
+            raise ValueError("Condition gradient scale must be finite and in [0,1]")
+        self.condition_normalization = condition_normalization
+        self.condition_gradient_scale = condition_gradient_scale
         if not math.isfinite(gain) or gain <= 0:
             raise ValueError("gain must be finite and positive")
         if variant in ("exact", "diagonal") and gain != 1:
@@ -60,6 +78,7 @@ class ConditionedLinear(nn.Module):
                 self.V = nn.Parameter(torch.zeros(rank, self.d_out))
 
     def forward(self, x, condition):
+        condition = condition_input(condition, self.condition_normalization, self.condition_gradient_scale)
         if self.variant in ("exact", "basis", "dplr"):
             return self.transform(x, condition)
         scale, shift = self.to_affine(condition).chunk(2, dim=-1)

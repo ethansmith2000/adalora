@@ -1,0 +1,191 @@
+{
+  "training_summary": [
+    {
+      "family": "plain",
+      "seed": 102,
+      "hidden_width": 768,
+      "final_augmented_train_accuracy_percent": 85.88222222222223,
+      "final_augmented_train_smoothed_loss": 0.8187669592115614,
+      "final_validation_accuracy_percent": 78.68,
+      "final_validation_loss": 0.6825760128498077,
+      "metrics_sha256": "5a42f59bb087f4a90d043d76e58f045a9c17f814a766bf18c263eb59bffa3320"
+    },
+    {
+      "family": "plain",
+      "seed": 103,
+      "hidden_width": 768,
+      "final_augmented_train_accuracy_percent": 84.98,
+      "final_augmented_train_smoothed_loss": 0.8385409055497911,
+      "final_validation_accuracy_percent": 78.22,
+      "final_validation_loss": 0.6794108012199401,
+      "metrics_sha256": "11cce045b53b9d2278b076abeeedeb09b5c5c586a25d6b8572cf5a3afa7188d6"
+    },
+    {
+      "family": "static_capacity",
+      "seed": 102,
+      "hidden_width": 1483,
+      "final_augmented_train_accuracy_percent": 83.29777777777778,
+      "final_augmented_train_smoothed_loss": 0.8727783162964715,
+      "final_validation_accuracy_percent": 77.4,
+      "final_validation_loss": 0.6967048319816589,
+      "metrics_sha256": "4d76617d7c4209bcb9b211980291834a1c38bc2e63a236afe89d8ef2be8f0d15"
+    },
+    {
+      "family": "static_capacity",
+      "seed": 103,
+      "hidden_width": 1483,
+      "final_augmented_train_accuracy_percent": 84.25555555555556,
+      "final_augmented_train_smoothed_loss": 0.8549276354153951,
+      "final_validation_accuracy_percent": 78.14,
+      "final_validation_loss": 0.6885680513858795,
+      "metrics_sha256": "8d418c752fd2971c6163d77f96cf4666169cc49d00ec21bdbc45c18394ca91d5"
+    }
+  ],
+  "initialization_probe": {
+    "dtype": "FP32 CPU",
+    "shape": [
+      2,
+      65,
+      192
+    ],
+    "probe_seed": 1200,
+    "input": "Identical normalized random tokens; untrained isolated MLP branches",
+    "hidden_widths": [
+      768,
+      1483
+    ],
+    "linear_init_std": 0.02,
+    "expected_initial_rms_ratio": 1.389600512137691,
+    "temporary_fc2_weight_multiplier": 0.7196312834266667,
+    "mean_observed_ratio": 1.3791788951414656,
+    "mean_rescaled_ratio": 0.9925002257890929,
+    "per_seed": [
+      {
+        "seed": 102,
+        "blocks": [
+          {
+            "block": 0,
+            "plain_rms": 0.08250126987695694,
+            "wide_rms": 0.11407274007797241,
+            "wide_plain_ratio": 1.3826785969246465,
+            "wide_fc2_rescaled_rms": 0.08209031075239182,
+            "rescaled_plain_ratio": 0.9950187539515691
+          },
+          {
+            "block": 1,
+            "plain_rms": 0.08151160180568695,
+            "wide_rms": 0.11275094002485275,
+            "wide_plain_ratio": 1.3832502064385426,
+            "wide_fc2_rescaled_rms": 0.08113910257816315,
+            "rescaled_plain_ratio": 0.9954301078708796
+          },
+          {
+            "block": 2,
+            "plain_rms": 0.08113748580217361,
+            "wide_rms": 0.11389409005641937,
+            "wide_plain_ratio": 1.4037172698955904,
+            "wide_fc2_rescaled_rms": 0.0819617435336113,
+            "rescaled_plain_ratio": 1.0101587783166879
+          },
+          {
+            "block": 3,
+            "plain_rms": 0.08147414028644562,
+            "wide_rms": 0.11319836974143982,
+            "wide_plain_ratio": 1.3893778976182947,
+            "wide_fc2_rescaled_rms": 0.08146107941865921,
+            "rescaled_plain_ratio": 0.9998396930886231
+          },
+          {
+            "block": 4,
+            "plain_rms": 0.08180972933769226,
+            "wide_rms": 0.11247418820858002,
+            "wide_plain_ratio": 1.3748265532613086,
+            "wide_fc2_rescaled_rms": 0.08093994110822678,
+            "rescaled_plain_ratio": 0.9893681566177148
+          },
+          {
+            "block": 5,
+            "plain_rms": 0.08178003132343292,
+            "wide_rms": 0.11295611411333084,
+            "wide_plain_ratio": 1.381218768021734,
+            "wide_fc2_rescaled_rms": 0.08128675818443298,
+            "rescaled_plain_ratio": 0.9939682935917561
+          }
+        ]
+      },
+      {
+        "seed": 103,
+        "blocks": [
+          {
+            "block": 0,
+            "plain_rms": 0.08226019144058228,
+            "wide_rms": 0.11511791497468948,
+            "wide_plain_ratio": 1.3994365069991457,
+            "wide_fc2_rescaled_rms": 0.08284244686365128,
+            "rescaled_plain_ratio": 1.007078216241322
+          },
+          {
+            "block": 1,
+            "plain_rms": 0.08718066662549973,
+            "wide_rms": 0.11266891658306122,
+            "wide_plain_ratio": 1.2923612647635612,
+            "wide_fc2_rescaled_rms": 0.08108007162809372,
+            "rescaled_plain_ratio": 0.9300235335018461
+          },
+          {
+            "block": 2,
+            "plain_rms": 0.0826927050948143,
+            "wide_rms": 0.11365068703889847,
+            "wide_plain_ratio": 1.3743737964381282,
+            "wide_fc2_rescaled_rms": 0.08178658783435822,
+            "rescaled_plain_ratio": 0.9890423555570332
+          },
+          {
+            "block": 3,
+            "plain_rms": 0.08180853724479675,
+            "wide_rms": 0.11298909783363342,
+            "wide_plain_ratio": 1.3811406686753813,
+            "wide_fc2_rescaled_rms": 0.08131048083305359,
+            "rescaled_plain_ratio": 0.9939119262057843
+          },
+          {
+            "block": 4,
+            "plain_rms": 0.08198430389165878,
+            "wide_rms": 0.11378493160009384,
+            "wide_plain_ratio": 1.3878867807484123,
+            "wide_fc2_rescaled_rms": 0.08188319206237793,
+            "rescaled_plain_ratio": 0.9987666928365402
+          },
+          {
+            "block": 5,
+            "plain_rms": 0.0812792256474495,
+            "wide_rms": 0.11378103494644165,
+            "wide_plain_ratio": 1.3998784319128421,
+            "wide_fc2_rescaled_rms": 0.08188038319349289,
+            "rescaled_plain_ratio": 1.0073962016893583
+          }
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "evidence_sha256": "4aeb34faf1fc02bd50a3ff9cc3d53d079436e8b8d05e2b6f90c2f4916c24952d",
+    "diagnostic_source_sha256": "280579f3a4a8ff9a8d64098bfaa97061842e3ccc671bb131e9235c8bd0563c0d",
+    "inspected_model_source_sha256": {
+      "train_cifar10.py": "6407a92e7235e795c497b5c0c04188fc1305bd1f52731411c13761973fee8498",
+      "vit.py": "4adfc9b9b061e174d70e52265edbdaa191ce7e2197b5f9c506bbe64ab788ab13",
+      "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+      "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79"
+    },
+    "torch": "2.11.0+cu128",
+    "cuda_initialized": false,
+    "new_gpu_jobs": 0,
+    "training_sources_modified": false
+  },
+  "limits": [
+    "Training metrics use augmentation and label smoothing; validation loss is unsmoothed. Do not compare train and validation loss directly.",
+    "Initial RMS uses synthetic normalized inputs, not trained hidden states or real images.",
+    "Temporary FC2 rescaling only checks initial magnitude; it was not used in any training run and proves no quality improvement.",
+    "Two seeds and an untuned common optimizer recipe; the scaling difference is a plausible confound, not an established cause."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "checked_utc": "2026-10-12T07:14:17.098586+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-initializers-20261012T070919Z",
+  "audit_passed": true,
+  "summary_sha256": "f13be10e5370ff333239f828c43f9ffb96b5f41990518deaf77b4bc43b317408",
+  "rows": [
+    {
+      "family": "dplr__fanin_gelu",
+      "seed": 104,
+      "global_lr": 0.001,
+      "completed_steps": 12,
+      "validation_examples": 5000,
+      "training_setup": {
+        "lr_schedule_steps": 12,
+        "warmup_steps": 2,
+        "adam_betas": [
+          0.9,
+          0.999
+        ],
+        "fused_adamw": true,
+        "model_compiled": true,
+        "adapter_lr_multipliers": {
+          "affine": 1.0,
+          "lowrank": 1.0
+        },
+        "mlp_init": "fanin_gelu"
+      },
+      "gradient_wakeup_max_step": 3,
+      "fixed_mlp_updates_recorded": true,
+      "evidence_sha256": {
+        "config.json": "dc97fa16693815ec0d0edf5df251881dedb5664e0b34185715fff16ec144d611",
+        "results.json": "7edba5bc8da8b53993de82acc83466a583e6bfddab44944a9f4cceea318018dc",
+        "metrics.jsonl": "d3c1a23b520c67544b2b40d3ab044b584757e5e63b98f39c77e7d94049501a21",
+        "dataset.json": "b5c34a24f44da2c62dbfb908938eab01fabfcc4bf245166eaf033a348e51bdfe",
+        "provenance.json": "cfb2a14686920f9dad3c13e36d26234b4a2cc4a9bb7e72a4a732eabb59e63100",
+        "artifact_manifest.json": "67feca9027fdc92852538c72349b1f55008f58c346dd92e770f0ad1ee00754fe"
+      }
+    },
+    {
+      "family": "wide__xavier_gelu",
+      "seed": 104,
+      "global_lr": 0.001,
+      "completed_steps": 12,
+      "validation_examples": 5000,
+      "training_setup": {
+        "lr_schedule_steps": 12,
+        "warmup_steps": 2,
+        "adam_betas": [
+          0.9,
+          0.999
+        ],
+        "fused_adamw": true,
+        "model_compiled": true,
+        "mlp_init": "xavier_gelu"
+      },
+      "gradient_wakeup_max_step": null,
+      "fixed_mlp_updates_recorded": true,
+      "evidence_sha256": {
+        "config.json": "2ff25d6150134051e807927815b2a4f1e4afb373378c860f9e24fd8bc55f06d1",
+        "results.json": "d627ca5d88886b407de5d31136fa49be4c6d5afad63897aa4f543fb2544ef90f",
+        "metrics.jsonl": "f62e8f1e4b73ae27333e329a63f1ccdb64c1467862f5efc0e927439ea0afeb0a",
+        "dataset.json": "b5c34a24f44da2c62dbfb908938eab01fabfcc4bf245166eaf033a348e51bdfe",
+        "provenance.json": "cfb2a14686920f9dad3c13e36d26234b4a2cc4a9bb7e72a4a732eabb59e63100",
+        "artifact_manifest.json": "d9ffd52ccbbec9139e38e08e40bf2f60b74f42ba294521e3f851c3408668d979"
+      }
+    }
+  ]
+}

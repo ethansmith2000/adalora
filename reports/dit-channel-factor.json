@@ -1,0 +1,1770 @@
+{
+  "aggregates": [
+    {
+      "design": "dense_s32",
+      "adapter_lr_multiplier": 1.0,
+      "family": "dense_s32_a1",
+      "parameters": 12593712,
+      "statistics": {
+        "parameters": 12593712,
+        "adapter_parameters": 2834944,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 864813056,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 48,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 131584,
+        "decoder_parameters": 2703360,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates"
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 47.17449188232422,
+            "sd": 0.8997603629046322,
+            "values": [
+              46.538265228271484,
+              47.81071853637695
+            ]
+          },
+          "agreement_percent": {
+            "mean": 57.600000500679016,
+            "sd": 1.187938428073506,
+            "values": [
+              58.43999981880188,
+              56.76000118255615
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 33.59244918823242,
+            "sd": 0.7334441782336112,
+            "values": [
+              33.07382583618164,
+              34.1110725402832
+            ]
+          },
+          "agreement_percent": {
+            "mean": 88.58000040054321,
+            "sd": 0.31112803570741976,
+            "values": [
+              88.80000114440918,
+              88.35999965667725
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2888.4513885277056,
+        "sd": 1.4290037035028755,
+        "values": [
+          2889.461846736793,
+          2887.440930318618
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1254513664,
+        "sd": 208534.2750532871,
+        "values": [
+          1254366208,
+          1254661120
+        ]
+      }
+    },
+    {
+      "design": "dense_s32",
+      "adapter_lr_multiplier": 4.0,
+      "family": "dense_s32_a4",
+      "parameters": 12593712,
+      "statistics": {
+        "parameters": 12593712,
+        "adapter_parameters": 2834944,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 864813056,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 48,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 131584,
+        "decoder_parameters": 2703360,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates"
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 63.66010856628418,
+            "sd": 22.360344894423143,
+            "values": [
+              47.84895706176758,
+              79.47126007080078
+            ]
+          },
+          "agreement_percent": {
+            "mean": 42.239999771118164,
+            "sd": 21.835456135263385,
+            "values": [
+              57.67999887466431,
+              26.80000066757202
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 54.08380699157715,
+            "sd": 28.756102856317842,
+            "values": [
+              33.75017166137695,
+              74.41744232177734
+            ]
+          },
+          "agreement_percent": {
+            "mean": 66.41999930143356,
+            "sd": 30.4055899894413,
+            "values": [
+              87.91999816894531,
+              44.920000433921814
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2874.7351262035354,
+        "sd": 72.37730598245963,
+        "values": [
+          2925.913610067746,
+          2823.5566423393243
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1254513664,
+        "sd": 208534.2750532871,
+        "values": [
+          1254661120,
+          1254366208
+        ]
+      }
+    },
+    {
+      "design": "cp_s32_p128",
+      "adapter_lr_multiplier": 1.0,
+      "family": "cp_s32_p128_a1",
+      "parameters": 11364912,
+      "statistics": {
+        "parameters": 11364912,
+        "adapter_parameters": 1606144,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 880672768,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 80,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 131584,
+        "decoder_parameters": 1474560,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "cp",
+        "decoder_cp_width": 128,
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 47.719003677368164,
+            "sd": 0.3870469853426991,
+            "values": [
+              47.9926872253418,
+              47.44532012939453
+            ]
+          },
+          "agreement_percent": {
+            "mean": 57.01000094413757,
+            "sd": 0.15556401785370988,
+            "values": [
+              57.12000131607056,
+              56.90000057220459
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 34.247690200805664,
+            "sd": 0.3765810799204739,
+            "values": [
+              34.513973236083984,
+              33.981407165527344
+            ]
+          },
+          "agreement_percent": {
+            "mean": 87.38999962806702,
+            "sd": 0.014144482360256037,
+            "values": [
+              87.3799979686737,
+              87.40000128746033
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2661.359092760111,
+        "sd": 34.50814610790244,
+        "values": [
+          2685.760036879185,
+          2636.958148641037
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1237457920,
+        "sd": 0.0,
+        "values": [
+          1237457920,
+          1237457920
+        ]
+      }
+    },
+    {
+      "design": "cp_s32_p128",
+      "adapter_lr_multiplier": 4.0,
+      "family": "cp_s32_p128_a4",
+      "parameters": 11364912,
+      "statistics": {
+        "parameters": 11364912,
+        "adapter_parameters": 1606144,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 880672768,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 80,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 131584,
+        "decoder_parameters": 1474560,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "cp",
+        "decoder_cp_width": 128,
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 228.766939163208,
+            "sd": 255.30727945751562,
+            "values": [
+              409.29644775390625,
+              48.237430572509766
+            ]
+          },
+          "agreement_percent": {
+            "mean": 33.810000494122505,
+            "sd": 32.96531930132693,
+            "values": [
+              10.499999672174454,
+              57.12000131607056
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 219.06201934814453,
+            "sd": 261.0650730489681,
+            "values": [
+              403.66290283203125,
+              34.46113586425781
+            ]
+          },
+          "agreement_percent": {
+            "mean": 48.900001123547554,
+            "sd": 54.758350418879246,
+            "values": [
+              10.180000215768814,
+              87.6200020313263
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2545.1919181618305,
+        "sd": 0.4422467409535375,
+        "values": [
+          2544.8792024923446,
+          2545.5046338313164
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1237457920,
+        "sd": 0.0,
+        "values": [
+          1237457920,
+          1237457920
+        ]
+      }
+    },
+    {
+      "design": "channel_static",
+      "adapter_lr_multiplier": 1.0,
+      "family": "channel_static_a1",
+      "parameters": 9922608,
+      "statistics": {
+        "parameters": 9922608,
+        "adapter_parameters": 163840,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 859308032,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 32,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 0,
+        "decoder_parameters": 163840,
+        "factor_generation": "static factors and offsets; common AdaLN remains conditional",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "channel_static",
+        "decoder_channel_mode": "static",
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 50.34431457519531,
+            "sd": 0.6585104533291224,
+            "values": [
+              50.80995178222656,
+              49.87867736816406
+            ]
+          },
+          "agreement_percent": {
+            "mean": 49.13000017404556,
+            "sd": 0.7778179819261238,
+            "values": [
+              48.579999804496765,
+              49.68000054359436
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 38.35428428649902,
+            "sd": 0.4861440042606655,
+            "values": [
+              38.69804000854492,
+              38.010528564453125
+            ]
+          },
+          "agreement_percent": {
+            "mean": 79.4299989938736,
+            "sd": 0.4949768035967906,
+            "values": [
+              79.07999753952026,
+              79.78000044822693
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 3321.3737710571313,
+        "sd": 60.17651460022463,
+        "values": [
+          3363.9249925991217,
+          3278.8225495151414
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1439201280,
+        "sd": 0.0,
+        "values": [
+          1439201280,
+          1439201280
+        ]
+      }
+    },
+    {
+      "design": "channel_static",
+      "adapter_lr_multiplier": 4.0,
+      "family": "channel_static_a4",
+      "parameters": 9922608,
+      "statistics": {
+        "parameters": 9922608,
+        "adapter_parameters": 163840,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 859308032,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 32,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 0,
+        "decoder_parameters": 163840,
+        "factor_generation": "static factors and offsets; common AdaLN remains conditional",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "channel_static",
+        "decoder_channel_mode": "static",
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 48.761850357055664,
+            "sd": 0.21993776557009706,
+            "values": [
+              48.9173698425293,
+              48.60633087158203
+            ]
+          },
+          "agreement_percent": {
+            "mean": 50.19000172615051,
+            "sd": 0.04242501771106593,
+            "values": [
+              50.22000074386597,
+              50.16000270843506
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 37.03738212585449,
+            "sd": 0.2831000442728871,
+            "values": [
+              37.23756408691406,
+              36.83720016479492
+            ]
+          },
+          "agreement_percent": {
+            "mean": 81.13000094890594,
+            "sd": 0.18384876788937085,
+            "values": [
+              81.26000165939331,
+              81.00000023841858
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 3319.463949852116,
+        "sd": 59.38178421153779,
+        "values": [
+          3277.4746875571814,
+          3361.4532121470506
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1439201280,
+        "sd": 0.0,
+        "values": [
+          1439201280,
+          1439201280
+        ]
+      }
+    },
+    {
+      "design": "channel_s32",
+      "adapter_lr_multiplier": 1.0,
+      "family": "channel_s32_a1",
+      "parameters": 10381872,
+      "statistics": {
+        "parameters": 10381872,
+        "adapter_parameters": 623104,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 860225536,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 64,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 131584,
+        "decoder_parameters": 491520,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "channel_modulated",
+        "decoder_channel_mode": "modulated",
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 49.95560836791992,
+            "sd": 0.5608052919363798,
+            "values": [
+              50.35215759277344,
+              49.559059143066406
+            ]
+          },
+          "agreement_percent": {
+            "mean": 49.21000003814697,
+            "sd": 0.24041826796069282,
+            "values": [
+              49.03999865055084,
+              49.3800014257431
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 38.043636322021484,
+            "sd": 0.2796932302140545,
+            "values": [
+              38.24140930175781,
+              37.845863342285156
+            ]
+          },
+          "agreement_percent": {
+            "mean": 79.71000075340271,
+            "sd": 0.46669205356112964,
+            "values": [
+              80.04000186920166,
+              79.37999963760376
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2771.4822494035443,
+        "sd": 27.24020827654129,
+        "values": [
+          2752.220513410268,
+          2790.7439853968203
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1217518592,
+        "sd": 0.0,
+        "values": [
+          1217518592,
+          1217518592
+        ]
+      }
+    },
+    {
+      "design": "channel_s32",
+      "adapter_lr_multiplier": 4.0,
+      "family": "channel_s32_a4",
+      "parameters": 10381872,
+      "statistics": {
+        "parameters": 10381872,
+        "adapter_parameters": 623104,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 860225536,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 64,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 131584,
+        "decoder_parameters": 491520,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "channel_modulated",
+        "decoder_channel_mode": "modulated",
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 48.678354263305664,
+            "sd": 0.14964356574968757,
+            "values": [
+              48.7841682434082,
+              48.572540283203125
+            ]
+          },
+          "agreement_percent": {
+            "mean": 53.79999876022339,
+            "sd": 0.19798903556477582,
+            "values": [
+              53.65999937057495,
+              53.939998149871826
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 35.61432647705078,
+            "sd": 0.36063675854140864,
+            "values": [
+              35.359317779541016,
+              35.86933517456055
+            ]
+          },
+          "agreement_percent": {
+            "mean": 84.8800003528595,
+            "sd": 0.05656950007132197,
+            "values": [
+              84.92000102996826,
+              84.83999967575073
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2871.566120349099,
+        "sd": 49.322384441681436,
+        "values": [
+          2906.442312852102,
+          2836.6899278460965
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1217518592,
+        "sd": 0.0,
+        "values": [
+          1217518592,
+          1217518592
+        ]
+      }
+    },
+    {
+      "design": "channel_s64",
+      "adapter_lr_multiplier": 1.0,
+      "family": "channel_s64_a1",
+      "parameters": 10841136,
+      "statistics": {
+        "parameters": 10841136,
+        "adapter_parameters": 1082368,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 861143040,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 64,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 263168,
+        "decoder_parameters": 819200,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "channel_modulated",
+        "decoder_channel_mode": "modulated",
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 49.637651443481445,
+            "sd": 0.4017100425270332,
+            "values": [
+              49.353599548339844,
+              49.92170333862305
+            ]
+          },
+          "agreement_percent": {
+            "mean": 49.66999888420105,
+            "sd": 0.38183780345414664,
+            "values": [
+              49.39999878406525,
+              49.93999898433685
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 37.71954917907715,
+            "sd": 0.3763922620391451,
+            "values": [
+              37.453399658203125,
+              37.98569869995117
+            ]
+          },
+          "agreement_percent": {
+            "mean": 80.66999912261963,
+            "sd": 0.04242501771106593,
+            "values": [
+              80.64000010490417,
+              80.69999814033508
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2827.1654578319494,
+        "sd": 70.6461613288054,
+        "values": [
+          2777.2110780915523,
+          2877.1198375723466
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1225907200,
+        "sd": 0.0,
+        "values": [
+          1225907200,
+          1225907200
+        ]
+      }
+    },
+    {
+      "design": "channel_s64",
+      "adapter_lr_multiplier": 4.0,
+      "family": "channel_s64_a4",
+      "parameters": 10841136,
+      "statistics": {
+        "parameters": 10841136,
+        "adapter_parameters": 1082368,
+        "tokens_per_image": 64,
+        "forward_matmul_flops_per_image_estimate": 861143040,
+        "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+        "adapter_input": "normalized",
+        "adapter_gain": 0.35355339059327373,
+        "core_factor_rank": null,
+        "projector_groups": 8,
+        "projector_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "coefficient_activation": "linear",
+        "coefficient_hidden": 0,
+        "factor_offsets": true,
+        "decoder_groups": 8,
+        "decoder_group_layers": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "adapter_parameter_tensors": 64,
+        "unconditional_class_embedding": true,
+        "coefficient_parameters": 263168,
+        "decoder_parameters": 819200,
+        "factor_generation": "once per sample; factors reused across image tokens",
+        "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+        "decoder_parameterization": "channel_modulated",
+        "decoder_channel_mode": "modulated",
+        "decoder_dense_bases_materialized": false
+      },
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 47.51087188720703,
+            "sd": 0.21392526474892698,
+            "values": [
+              47.662139892578125,
+              47.35960388183594
+            ]
+          },
+          "agreement_percent": {
+            "mean": 54.37999963760376,
+            "sd": 0.4525475712008736,
+            "values": [
+              54.06000018119812,
+              54.6999990940094
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 34.644025802612305,
+            "sd": 0.18931150521856485,
+            "values": [
+              34.510162353515625,
+              34.777889251708984
+            ]
+          },
+          "agreement_percent": {
+            "mean": 85.19999980926514,
+            "sd": 0.11313900014264394,
+            "values": [
+              85.11999845504761,
+              85.28000116348267
+            ]
+          }
+        }
+      },
+      "mean_train_images_per_second": {
+        "mean": 2777.235633378148,
+        "sd": 9.138222912742833,
+        "values": [
+          2770.7739339885534,
+          2783.697332767743
+        ]
+      },
+      "peak_allocated_bytes": {
+        "mean": 1225907200,
+        "sd": 0.0,
+        "values": [
+          1225907200,
+          1225907200
+        ]
+      }
+    }
+  ],
+  "paired_fid_contrasts_at_same_rate": {
+    "cp_s32_p128_a1": {
+      "dense_s32_a1": {
+        "1.0": {
+          "mean": 0.5445117950439453,
+          "sd": 1.2868073482473315,
+          "values": [
+            1.4544219970703125,
+            -0.3653984069824219
+          ]
+        },
+        "2.0": {
+          "mean": 0.6552410125732422,
+          "sd": 1.110025258154085,
+          "values": [
+            1.4401473999023438,
+            -0.12966537475585938
+          ]
+        }
+      }
+    },
+    "cp_s32_p128_a4": {
+      "dense_s32_a4": {
+        "1.0": {
+          "mean": 165.10683059692383,
+          "sd": 277.6676243519388,
+          "values": [
+            361.4474906921387,
+            -31.233829498291016
+          ]
+        },
+        "2.0": {
+          "mean": 164.97821235656738,
+          "sd": 289.82117590528594,
+          "values": [
+            369.9127311706543,
+            -39.95630645751953
+          ]
+        }
+      }
+    },
+    "channel_static_a1": {
+      "dense_s32_a1": {
+        "1.0": {
+          "mean": 3.1698226928710938,
+          "sd": 1.5582708162337546,
+          "values": [
+            4.271686553955078,
+            2.0679588317871094
+          ]
+        },
+        "2.0": {
+          "mean": 4.761835098266602,
+          "sd": 1.2195881824942767,
+          "values": [
+            5.624214172363281,
+            3.899456024169922
+          ]
+        }
+      }
+    },
+    "channel_static_a4": {
+      "dense_s32_a4": {
+        "1.0": {
+          "mean": -14.898258209228516,
+          "sd": 22.58028265999324,
+          "values": [
+            1.0684127807617188,
+            -30.86492919921875
+          ]
+        },
+        "2.0": {
+          "mean": -17.046424865722656,
+          "sd": 29.03920290059073,
+          "values": [
+            3.4873924255371094,
+            -37.58024215698242
+          ]
+        }
+      }
+    },
+    "channel_s32_a1": {
+      "dense_s32_a1": {
+        "1.0": {
+          "mean": 2.781116485595703,
+          "sd": 1.460565654841012,
+          "values": [
+            3.813892364501953,
+            1.7483406066894531
+          ]
+        },
+        "2.0": {
+          "mean": 4.4511871337890625,
+          "sd": 1.0131374084476656,
+          "values": [
+            5.167583465576172,
+            3.734790802001953
+          ]
+        }
+      },
+      "channel_static_a1": {
+        "1.0": {
+          "mean": -0.3887062072753906,
+          "sd": 0.09770516139274263,
+          "values": [
+            -0.457794189453125,
+            -0.31961822509765625
+          ]
+        },
+        "2.0": {
+          "mean": -0.31064796447753906,
+          "sd": 0.20645077404661097,
+          "values": [
+            -0.4566307067871094,
+            -0.16466522216796875
+          ]
+        }
+      },
+      "cp_s32_p128_a1": {
+        "1.0": {
+          "mean": 2.236604690551758,
+          "sd": 0.1737583065936807,
+          "values": [
+            2.3594703674316406,
+            2.113739013671875
+          ]
+        },
+        "2.0": {
+          "mean": 3.7959461212158203,
+          "sd": 0.09688784970641938,
+          "values": [
+            3.727436065673828,
+            3.8644561767578125
+          ]
+        }
+      }
+    },
+    "channel_s32_a4": {
+      "dense_s32_a4": {
+        "1.0": {
+          "mean": -14.981754302978516,
+          "sd": 22.50998846017283,
+          "values": [
+            0.935211181640625,
+            -30.898719787597656
+          ]
+        },
+        "2.0": {
+          "mean": -18.469480514526367,
+          "sd": 28.395466097776435,
+          "values": [
+            1.6091461181640625,
+            -38.5481071472168
+          ]
+        }
+      },
+      "channel_static_a4": {
+        "1.0": {
+          "mean": -0.08349609375,
+          "sd": 0.0702941998204095,
+          "values": [
+            -0.13320159912109375,
+            -0.03379058837890625
+          ]
+        },
+        "2.0": {
+          "mean": -1.423055648803711,
+          "sd": 0.6437368028142958,
+          "values": [
+            -1.8782463073730469,
+            -0.967864990234375
+          ]
+        }
+      },
+      "cp_s32_p128_a4": {
+        "1.0": {
+          "mean": -180.08858489990234,
+          "sd": 255.15763589176595,
+          "values": [
+            -360.51227951049805,
+            0.3351097106933594
+          ]
+        },
+        "2.0": {
+          "mean": -183.44769287109375,
+          "sd": 261.42570980750946,
+          "values": [
+            -368.30358505249023,
+            1.4081993103027344
+          ]
+        }
+      }
+    },
+    "channel_s64_a1": {
+      "dense_s32_a1": {
+        "1.0": {
+          "mean": 2.4631595611572266,
+          "sd": 0.49805032037759905,
+          "values": [
+            2.8153343200683594,
+            2.1109848022460938
+          ]
+        },
+        "2.0": {
+          "mean": 4.127099990844727,
+          "sd": 0.3570519161944661,
+          "values": [
+            4.379573822021484,
+            3.8746261596679688
+          ]
+        }
+      },
+      "channel_static_a1": {
+        "1.0": {
+          "mean": -0.7066631317138672,
+          "sd": 1.0602204958561556,
+          "values": [
+            -1.4563522338867188,
+            0.043025970458984375
+          ]
+        },
+        "2.0": {
+          "mean": -0.634735107421875,
+          "sd": 0.8625362662998106,
+          "values": [
+            -1.2446403503417969,
+            -0.024829864501953125
+          ]
+        }
+      },
+      "cp_s32_p128_a1": {
+        "1.0": {
+          "mean": 1.9186477661132812,
+          "sd": 0.7887570278697323,
+          "values": [
+            1.3609123229980469,
+            2.4763832092285156
+          ]
+        },
+        "2.0": {
+          "mean": 3.4718589782714844,
+          "sd": 0.7529733419596191,
+          "values": [
+            2.9394264221191406,
+            4.004291534423828
+          ]
+        }
+      }
+    },
+    "channel_s64_a4": {
+      "dense_s32_a4": {
+        "1.0": {
+          "mean": -16.14923667907715,
+          "sd": 22.574270159172073,
+          "values": [
+            -0.18681716918945312,
+            -32.111656188964844
+          ]
+        },
+        "2.0": {
+          "mean": -19.439781188964844,
+          "sd": 28.56679135109928,
+          "values": [
+            0.7599906921386719,
+            -39.63955307006836
+          ]
+        }
+      },
+      "channel_static_a4": {
+        "1.0": {
+          "mean": -1.2509784698486328,
+          "sd": 0.006012500821170099,
+          "values": [
+            -1.2552299499511719,
+            -1.2467269897460938
+          ]
+        },
+        "2.0": {
+          "mean": -2.3933563232421875,
+          "sd": 0.472411549491452,
+          "values": [
+            -2.7274017333984375,
+            -2.0593109130859375
+          ]
+        }
+      },
+      "cp_s32_p128_a4": {
+        "1.0": {
+          "mean": -181.25606727600098,
+          "sd": 255.0933541927667,
+          "values": [
+            -361.6343078613281,
+            -0.8778266906738281
+          ]
+        },
+        "2.0": {
+          "mean": -184.41799354553223,
+          "sd": 261.25438455418663,
+          "values": [
+            -369.1527404785156,
+            0.3167533874511719
+          ]
+        }
+      }
+    }
+  },
+  "adapter_lr_four_minus_unit_fid": {
+    "dense_s32": {
+      "1.0": {
+        "mean": 16.48561668395996,
+        "sd": 21.460584531518514,
+        "values": [
+          1.3106918334960938,
+          31.660541534423828
+        ]
+      },
+      "2.0": {
+        "mean": 20.491357803344727,
+        "sd": 28.02265867808423,
+        "values": [
+          0.6763458251953125,
+          40.30636978149414
+        ]
+      }
+    },
+    "cp_s32_p128": {
+      "1.0": {
+        "mean": 181.04793548583984,
+        "sd": 254.92023247217293,
+        "values": [
+          361.30376052856445,
+          0.7921104431152344
+        ]
+      },
+      "2.0": {
+        "mean": 184.81432914733887,
+        "sd": 260.6884919690476,
+        "values": [
+          369.14892959594727,
+          0.47972869873046875
+        ]
+      }
+    },
+    "channel_static": {
+      "1.0": {
+        "mean": -1.5824642181396484,
+        "sd": 0.43857268775902536,
+        "values": [
+          -1.8925819396972656,
+          -1.2723464965820312
+        ]
+      },
+      "2.0": {
+        "mean": -1.3169021606445312,
+        "sd": 0.20304395998777838,
+        "values": [
+          -1.4604759216308594,
+          -1.1733283996582031
+        ]
+      }
+    },
+    "channel_s32": {
+      "1.0": {
+        "mean": -1.2772541046142578,
+        "sd": 0.4111617261866922,
+        "values": [
+          -1.5679893493652344,
+          -0.9865188598632812
+        ]
+      },
+      "2.0": {
+        "mean": -2.429309844970703,
+        "sd": 0.6403299887554632,
+        "values": [
+          -2.882091522216797,
+          -1.9765281677246094
+        ]
+      }
+    },
+    "channel_s64": {
+      "1.0": {
+        "mean": -2.126779556274414,
+        "sd": 0.6156353072759602,
+        "values": [
+          -1.6914596557617188,
+          -2.5620994567871094
+        ]
+      },
+      "2.0": {
+        "mean": -3.0755233764648438,
+        "sd": 0.18708075682058026,
+        "values": [
+          -2.9432373046875,
+          -3.2078094482421875
+        ]
+      }
+    }
+  },
+  "limits": [
+    "Five designs \u00d7 two adapter LRs \u00d7 two fresh seeds \u00d7 full30k; no automatic selection, longer confirmation or grid expansion.",
+    "Produced transform rank8, normalized value input and parallel MLP delta remain; channel scales act only inside the adapter, not on the base scale/shift output.",
+    "Input/output channel scales move static factor subspaces with condition, unlike rank-only gains; this is a different restriction from dense/CP factor generation.",
+    "Static control is condition-independent only in its transform; the common AdaLN and upstream hidden states remain class/time conditioned.",
+    "Static offsets stay enabled in all designs. Static control has redundant factor/offset slots to match the modulated branch initialization and shared parameter routes.",
+    "Identity channel scales and zero delta do not establish trained variance preservation or matched initial Jacobians against dense/CP; multiplicative and offset gauges remain.",
+    "Global LR8e-4, gain1/sqrt(8), rank8 fixed; adapter multipliers1/4 apply to all adapter parameters, including heads, scales and offsets.",
+    "All designs get equal two-point adapter-LR budgets. The dense/CP/static/modulated models are not parameter or FLOP matched.",
+    "Every cell trains anew. Two seeds and a reused research holdout/evaluation noise limit conclusions; historical quality outcomes are context only.",
+    "Primary comparisons use final30k CFG2 EMA FID; CFG1/class agreement and intermediate convergence also reported. No best-intermediate selection.",
+    "Whole-training allocation and concurrent throughput are descriptive. No per-token execution or dedicated speed benchmark is launched.",
+    "No output normalization, new gain, muP rule, weights/checkpoints, official test, evaluator downloads, causal retrieval/LM launch or implicit resume."
+  ]
+}

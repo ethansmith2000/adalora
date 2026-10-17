@@ -15,7 +15,8 @@ import sys
 import time
 
 from dit_followup import private_supervisor
-from train_cifar10 import Config, build_model, learning_rate_scale, load_config, model_stats, write_json
+from train_cifar10 import (Config, build_model, learning_rate_scale, load_config, model_stats, write_json,
+                          training_setup, make_optimizer, optimizer_group_manifest)
 from train_dit_cifar10 import SOURCE_FILES
 
 PILOT_SEEDS = (96, 97)
@@ -190,7 +191,7 @@ def prepare(output, launch=False):
     return dict(output=str(output), launched=launch, parameters=parameters, max_our_gpus=2)
 
 
-def execute_stage(output, name, cases):
+def execute_stage(output, name, cases, auditor=None):
     stage = output/name; stage.mkdir(); configs = stage/'configs'; configs.mkdir()
     jobs = []; programs = []
     for family, seed, rate, cfg in cases:
@@ -228,16 +229,17 @@ def execute_stage(output, name, cases):
             time.sleep(20)
     finally:
         if control: subprocess.run(['supervisorctl', '-c', control, 'shutdown'], check=True)
-    rows = audit_stage(output, name)
+    rows = (auditor or audit_stage)(output, name)
     write_json(stage/'summary.json', dict(rows=rows, audit_passed=True))
     return rows
 
 
-def audit_stage(output, name):
+def audit_stage(output, name, config_factory=None, preflight_configs=None):
     import torch
     from vit_quality_diagnostics import parameter_digest
     torch.set_num_threads(2)
     p = json.loads((output/'protocol.json').read_text()); stage = output/name
+    config_factory = config_factory or make_config
     screen = json.loads((stage/'screen.json').read_text()); claims = json.loads((stage/'hardware_claims.json').read_text())
     log = (stage/'supervisord.log').read_text(); assert not (stage/'supervisor.sock').exists()
     assert len(screen['jobs']) == p['planned_runs'][name] and set(claims) == {j['service'] for j in screen['jobs']}
@@ -247,7 +249,9 @@ def audit_stage(output, name):
         out = Path(job['output_dir']); cfg = json.loads((out/'config.json').read_text()); result = json.loads((out/'results.json').read_text())
         recorded = json.loads(Path(job['config']).read_text()); assert cfg == recorded
         if name != 'preflight':
-            assert cfg == asdict(make_config(job['family'], job['seed'], out, job['rate'], name == 'calibration'))
+            assert cfg == asdict(config_factory(job['family'], job['seed'], out, job['rate'], name == 'calibration'))
+        elif preflight_configs is not None:
+            assert cfg == preflight_configs[job['family'], job['seed'], job['rate']]
         else:
             assert job['family'] in ('s48', 'static_capacity') and job['seed'] == 96 and job['rate'] == 1.
             expected = replace(make_config(job['family'],96,out), max_steps=12, lr_schedule_steps=12,
@@ -284,7 +288,8 @@ def audit_stage(output, name):
         assert all(stats[k] == result[k] for k in stats)
         assert result['parameters'] == p['parameters'][job['family']]
         assert parameter_digest(model) == diag['base_initialization_sha256'] and parameter_digest(model, True) == diag['adapter_initialization_sha256']
-        if cfg['mlp_ratio'] == 4.: base.setdefault(cfg['seed'], []).append(diag['base_initialization_sha256'])
+        if cfg['mlp_ratio'] == 4.:
+            base.setdefault((cfg['seed'], cfg.get('mlp_init', 'legacy')), []).append(diag['base_initialization_sha256'])
         from train_cifar10 import hyperparameter_ids
         ids = hyperparameter_ids(model); expected_gradients = {n for n,v in model.named_parameters() if id(v) in ids}
         assert set(diag['first_nonzero_gradient']) == expected_gradients and all(v <= 10 for v in diag['first_nonzero_gradient'].values())
@@ -293,11 +298,19 @@ def audit_stage(output, name):
         streams.setdefault(cfg['seed'], []).append(trace)
         n = len(train_indices); q, remainder = divmod(cfg['max_steps'], math.ceil(n/cfg['batch_size']))
         assert result['processed_images'] == q*n+min(remainder*cfg['batch_size'], n)
-        assert result['training_setup'] == dict(lr_schedule_steps=cfg['lr_schedule_steps'], warmup_steps=int(cfg['lr_schedule_steps']*cfg['warmup_ratio']), adam_betas=[.9,.999], fused_adamw=True, model_compiled=True)
+        assert result['training_setup'] == training_setup(Config(**cfg),cfg['lr_schedule_steps'])
+        if 'optimizer_groups' in result:
+            assert result['optimizer_groups'] == optimizer_group_manifest(model, make_optimizer(model,Config(**cfg)))
         assert all(e['examples'] == 5000 for e in events if e['event']=='validation')
         assert [e['step'] for e in events if e['event']=='validation'] == sorted(set([min(k*math.ceil(n/cfg['batch_size']),cfg['max_steps']) for k in range(1,math.ceil(cfg['max_steps']/math.ceil(n/cfg['batch_size']))+1)]))
         for e in events:
-            if e['event'] == 'train': assert math.isclose(e['lr'], cfg['lr']*learning_rate_scale(Config(**cfg), e['step']-1, cfg['lr_schedule_steps']), rel_tol=1e-12)
+            if e['event'] == 'train':
+                scale = learning_rate_scale(Config(**cfg), e['step']-1, cfg['lr_schedule_steps'])
+                assert math.isclose(e['lr'], cfg['lr']*scale, rel_tol=1e-12)
+                if 'optimizer_lrs' in e:
+                    expected = [g['initial_lr']*scale for g in result['optimizer_groups']]
+                    assert len(e['optimizer_lrs']) == len(expected)
+                    assert all(math.isclose(a,b,rel_tol=1e-12)for a,b in zip(e['optimizer_lrs'],expected))
         rows.append(evidence_row(job, cfg, result, out))
     assert all(len(set(values)) == 1 for values in base.values())
     assert all(all(v == traces[0] for v in traces) for traces in streams.values())

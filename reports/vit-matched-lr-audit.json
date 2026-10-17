@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "original_reference_evidence_preserved_and_quality_reaudited": true,
+    "exact_eight_missing_cells_and_sixteen_combined_cells": true,
+    "unchanged_sources_runtime_config_optimizer_and_split": true,
+    "paired_base_adapter_probe_initialization_and_observed_streams": true,
+    "complete_thirty_epoch_diagnostics_and_validation": true,
+    "two_gpu_worker_cap_and_claim_identity": true,
+    "no_recipe_selection_weights_test_or_storage_overrun": true
+  },
+  "report_sha256": "9a34cd338d7b399760b7a9c3bb26f8f08dda2219a8044a2c00f2a27793aeebf2",
+  "bytes_retained": 146613096
+}

@@ -1,0 +1,901 @@
+{
+  "state": "quality",
+  "created_utc": "2026-10-17T04:50:43.568957+00:00",
+  "repo_root": "/workspace/adalora",
+  "purpose": "Condition-generated TT operators at two parameter budgets, with diagonal/lowrank/block square controls and rectangular quality reference",
+  "reference_workflow": "/workspace/adalora/runs/dit-structured-20261016T203614Z",
+  "reference_files_sha256": {
+    "protocol.json": "20c528006b58d6a15eb555b3294ac73eb973023d894ea7c83cccb7d5efc00c9f",
+    "report.json": "b5fac598f613c7ecb2d638c59788f7c31c0185278fee42ee4613e369bde95bd7",
+    "audit.json": "b46c4b4b4da8b6a3ad141709c4cfa2821a7b31c4f76624d594250b1c411cfab3",
+    "comparison.json": "05c74f9661836ad2a4a4100ac202e266a7e1d64ca69de56918ffa198d21a3b3c"
+  },
+  "source_sha256": {
+    "train_dit_cifar10.py": "9d50ba640f1535b37b6ff6ea78543795e322562b4da47c4fdac47f3e1e5c5aed",
+    "dit_cifar10.py": "0105bb56d05f3362d4a10cf5ad856227338dc9ce3b9765feabb91c7e71d1a834",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "dit_factor_offset_study.py": "c69c8c032d597bd4f144531272e928d42e8c1c600087706a4ceaa062e97d3414",
+    "test_dit_factor_offset_study.py": "4028581e353d612b26246010c916e94951a76e61e2f8a58224c937de942b4572",
+    "test_dit_factor_offsets.py": "32b756ffe798f155d19e783669db4d778602dc711eadc49d7d109761bd0d5e00",
+    "dit_optimizer_cfg.py": "a2daaf443698b5eb1e4801e56e15375127161795472c82473efbcabfe43f0345",
+    "dit_projector_confirmation.py": "b2bc56913b4d63a8ef3d7ccc33103f047eca3d2ad0569d1850b1398404b9d476",
+    "dit_capacity.py": "1310b39a46e5993c484b65dff2d03dc73c84253e0becf6ca04fd7aeee91201e2",
+    "test_dit_optimizer_cfg.py": "009993b6614132bc66601e9f3f1517ebabdac5ff9624b3596bb10beb8101ba27",
+    "test_dit_training_options.py": "d4002ce783e70aab60f621b5dbd3197eabbea84a10a005eab03d950a4e871133",
+    "dit_quality_diagnostics.py": "b3ffd3efff9313de4d9f2c6ee58824cd17114401fc4db290379b231ba3cd2310",
+    "benchmark_dit_design.py": "e87820014cf680c940be3f34b72c806265cf9c009308a0f2323789dfa2abccc6",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "summarize_dit_cifar10_screen.py": "2757c3c3ffb994fb6b56fc67b62c2ab49859ad3bba26726637a3d450aed300fa",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "offset_baseline_model.py": "be86e77380239f7175a65a5349868cc7737e612dd4d5f284bd29f94fc656ec6c",
+    "dit_external_lr_study.py": "eb2564ae717ebf883890a71e2c2ef41bc53f53ded96d4fbac7ccf058a9371d09",
+    "test_dit_external_lr_study.py": "074304e7ff55c60cd1daebeaf1a0461eff100776fb7d5ca6dc742f5b0f196f76",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "dit_decoder_compression_study.py": "fe02f7df6a9c3b3c8eee43204213c62f24293ae83fbb9dfe67b330192da620b4",
+    "test_dit_decoder_compression_study.py": "5a706be2af95d6b1aa160f577e3a027a7b6175b4d3cc748c0b62dd77711ece5e",
+    "test_dit_cp_decoders.py": "fdbe67b047522b2b4a722652541e94bca0873836748ad849958548a53f9cefd9",
+    "cp_baseline_model.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_decoder_core_study.py": "95c64fd7fb53c80a8ceefa50e8ad9645a2961ad7ee7925d4d270f31b26a8b9a9",
+    "test_dit_decoder_core_study.py": "55f16475fb11988d68acdfe12f1ec697ce07e73d9cef8ca63b7158833639f2bb",
+    "test_dit_tucker_decoders.py": "76ba938c010fe8785c0a86f44f4b4e0182348f94a857a630d5e720f2209af79b",
+    "cp_decoder_baseline_model.py": "576daabffd9865010461dc1f80031f23ee9f3a195966e1912972514cb1070858",
+    "dit_channel_factor_study.py": "87a7b6d8ba44d987f72d3bd1b7527be4547ee4bb8d242e14f785e7f1380b4fdf",
+    "test_dit_channel_factor_study.py": "1706235662e03263a1ca49cdcbb680208bffe3c1ea91fd662522730cb8a50acc",
+    "test_dit_channel_factors.py": "453b36e9f3f12dbc4d2779fbe31d661fd0aee18dfe1574b33b20e566d1a0b79e",
+    "channel_factor_baseline_model.py": "4f1d48769b8fec0b31773b7dbf5c74246117f8c5fc9b0b7488890ac563229166",
+    "dit_channel_lr_study.py": "08a0906627e97c6aab8af875d5e8cbdea35ea9ba21eb4c413bc61e9e8e70b954",
+    "test_dit_channel_lr_study.py": "0419931e6517fa56b15bc6deb5c712937655416f473bae3026a81a000b775316",
+    "structured_operators.py": "e98f279613f2499485e541800def3fee0919974f755d512d7fcf7210165cc883",
+    "structured_baseline_model.py": "4e50e8c9d477fcb41cb3ad08549fc2660ffe50c6d1745acebea5aadd358ec10b",
+    "test_structured_operators.py": "3b90748dc660b6ce0886385343785bcc58eb56e747c6fc978c43e1bd7b6c1487",
+    "dit_structured_study.py": "8d6ab31f1a64059474d6756e3d69775a40f56138b4cbc6b56fd40ba22f32bbbf",
+    "test_dit_structured_study.py": "79aa616d649638545d3cfbbc6b5c252bcd1daea24136b8af49a23fbb8835ae9a",
+    "conditional_tt.py": "3adcff615824cbfbe759bc40e6b3a1dc913cdb0e33fddef99c6ca4a738c638b7",
+    "test_conditional_tt.py": "938a2a68b5095d2aa385c7f13778e2cfbd048c9ccaf2c66b54021a5556efe80a",
+    "dit_tt_study.py": "59ebf4064b1131ab3c4567c816d087762e81ee925f939d50c2358fa1fa2fb233",
+    "test_dit_tt_study.py": "c48023d1fd44dc27be10d76cd52b53c73de6abadbaa5b4de5bcc5d5bbf74704f"
+  },
+  "training_source_sha256": {
+    "train_dit_cifar10.py": "9d50ba640f1535b37b6ff6ea78543795e322562b4da47c4fdac47f3e1e5c5aed",
+    "dit_cifar10.py": "0105bb56d05f3362d4a10cf5ad856227338dc9ce3b9765feabb91c7e71d1a834",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "structured_operators.py": "e98f279613f2499485e541800def3fee0919974f755d512d7fcf7210165cc883",
+    "conditional_tt.py": "3adcff615824cbfbe759bc40e6b3a1dc913cdb0e33fddef99c6ca4a738c638b7",
+    "dit_quality_diagnostics.py": "b3ffd3efff9313de4d9f2c6ee58824cd17114401fc4db290379b231ba3cd2310",
+    "benchmark_dit_design.py": "e87820014cf680c940be3f34b72c806265cf9c009308a0f2323789dfa2abccc6"
+  },
+  "unchanged_training_source_sha256": {
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "dit_quality_diagnostics.py": "b3ffd3efff9313de4d9f2c6ee58824cd17114401fc4db290379b231ba3cd2310",
+    "benchmark_dit_design.py": "e87820014cf680c940be3f34b72c806265cf9c009308a0f2323789dfa2abccc6"
+  },
+  "declared_overlays": [
+    "dit_cifar10.py",
+    "train_dit_cifar10.py",
+    "structured_operators.py",
+    "conditional_tt.py",
+    "summarize_dit_cifar10_screen.py",
+    "test_conditional_tt.py",
+    "dit_tt_study.py",
+    "test_dit_tt_study.py"
+  ],
+  "designs": {
+    "rectangular_lowrank": {
+      "structured_operator": "none",
+      "adapter_gain": 0.35355339059327373
+    },
+    "square_lowrank": {
+      "structured_operator": "lowrank",
+      "adapter_gain": 0.35355339059327373
+    },
+    "square_diagonal": {
+      "structured_operator": "diagonal",
+      "adapter_gain": 1.0,
+      "n_basis": 96
+    },
+    "square_block16": {
+      "structured_operator": "block",
+      "adapter_gain": 0.25
+    },
+    "square_tt6": {
+      "structured_operator": "tt",
+      "tt_bond_rank": 6,
+      "adapter_gain": 1.0
+    },
+    "square_tt11": {
+      "structured_operator": "tt",
+      "tt_bond_rank": 11,
+      "adapter_gain": 1.0
+    }
+  },
+  "parameters": {
+    "rectangular_lowrank": 12593712,
+    "square_lowrank": 10971696,
+    "square_diagonal": 10154800,
+    "square_block16": 10905904,
+    "square_tt6": 10179376,
+    "square_tt11": 10939696
+  },
+  "unchanged_reference_source_sha256": {
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "dit_factor_offset_study.py": "c69c8c032d597bd4f144531272e928d42e8c1c600087706a4ceaa062e97d3414",
+    "test_dit_factor_offset_study.py": "4028581e353d612b26246010c916e94951a76e61e2f8a58224c937de942b4572",
+    "test_dit_factor_offsets.py": "32b756ffe798f155d19e783669db4d778602dc711eadc49d7d109761bd0d5e00",
+    "dit_optimizer_cfg.py": "a2daaf443698b5eb1e4801e56e15375127161795472c82473efbcabfe43f0345",
+    "dit_projector_confirmation.py": "b2bc56913b4d63a8ef3d7ccc33103f047eca3d2ad0569d1850b1398404b9d476",
+    "dit_capacity.py": "1310b39a46e5993c484b65dff2d03dc73c84253e0becf6ca04fd7aeee91201e2",
+    "test_dit_optimizer_cfg.py": "009993b6614132bc66601e9f3f1517ebabdac5ff9624b3596bb10beb8101ba27",
+    "test_dit_training_options.py": "d4002ce783e70aab60f621b5dbd3197eabbea84a10a005eab03d950a4e871133",
+    "dit_quality_diagnostics.py": "b3ffd3efff9313de4d9f2c6ee58824cd17114401fc4db290379b231ba3cd2310",
+    "benchmark_dit_design.py": "e87820014cf680c940be3f34b72c806265cf9c009308a0f2323789dfa2abccc6",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "offset_baseline_model.py": "be86e77380239f7175a65a5349868cc7737e612dd4d5f284bd29f94fc656ec6c",
+    "dit_external_lr_study.py": "eb2564ae717ebf883890a71e2c2ef41bc53f53ded96d4fbac7ccf058a9371d09",
+    "test_dit_external_lr_study.py": "074304e7ff55c60cd1daebeaf1a0461eff100776fb7d5ca6dc742f5b0f196f76",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "dit_decoder_compression_study.py": "fe02f7df6a9c3b3c8eee43204213c62f24293ae83fbb9dfe67b330192da620b4",
+    "test_dit_decoder_compression_study.py": "5a706be2af95d6b1aa160f577e3a027a7b6175b4d3cc748c0b62dd77711ece5e",
+    "test_dit_cp_decoders.py": "fdbe67b047522b2b4a722652541e94bca0873836748ad849958548a53f9cefd9",
+    "cp_baseline_model.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_decoder_core_study.py": "95c64fd7fb53c80a8ceefa50e8ad9645a2961ad7ee7925d4d270f31b26a8b9a9",
+    "test_dit_decoder_core_study.py": "55f16475fb11988d68acdfe12f1ec697ce07e73d9cef8ca63b7158833639f2bb",
+    "test_dit_tucker_decoders.py": "76ba938c010fe8785c0a86f44f4b4e0182348f94a857a630d5e720f2209af79b",
+    "cp_decoder_baseline_model.py": "576daabffd9865010461dc1f80031f23ee9f3a195966e1912972514cb1070858",
+    "dit_channel_factor_study.py": "87a7b6d8ba44d987f72d3bd1b7527be4547ee4bb8d242e14f785e7f1380b4fdf",
+    "test_dit_channel_factor_study.py": "1706235662e03263a1ca49cdcbb680208bffe3c1ea91fd662522730cb8a50acc",
+    "test_dit_channel_factors.py": "453b36e9f3f12dbc4d2779fbe31d661fd0aee18dfe1574b33b20e566d1a0b79e",
+    "channel_factor_baseline_model.py": "4f1d48769b8fec0b31773b7dbf5c74246117f8c5fc9b0b7488890ac563229166",
+    "dit_channel_lr_study.py": "08a0906627e97c6aab8af875d5e8cbdea35ea9ba21eb4c413bc61e9e8e70b954",
+    "test_dit_channel_lr_study.py": "0419931e6517fa56b15bc6deb5c712937655416f473bae3026a81a000b775316",
+    "structured_baseline_model.py": "4e50e8c9d477fcb41cb3ad08549fc2660ffe50c6d1745acebea5aadd358ec10b",
+    "test_structured_operators.py": "3b90748dc660b6ce0886385343785bcc58eb56e747c6fc978c43e1bd7b6c1487",
+    "dit_structured_study.py": "8d6ab31f1a64059474d6756e3d69775a40f56138b4cbc6b56fd40ba22f32bbbf",
+    "test_dit_structured_study.py": "79aa616d649638545d3cfbbc6b5c252bcd1daea24136b8af49a23fbb8835ae9a"
+  },
+  "model_statistics": {
+    "rectangular_lowrank": {
+      "parameters": 12593712,
+      "adapter_parameters": 2834944,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 864813056,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.35355339059327373,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 48,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 131584,
+      "decoder_parameters": 2703360,
+      "factor_generation": "once per sample; factors reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates"
+    },
+    "square_lowrank": {
+      "parameters": 10971696,
+      "adapter_parameters": 1212928,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 855375872,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.35355339059327373,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 48,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 131584,
+      "decoder_parameters": 1081344,
+      "factor_generation": "once per sample; square factors/diagonals/blocks reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "structured_operator": "lowrank",
+      "structured_block_size": 16,
+      "adapter_placement": "parallel square delta before shared MLP input projection",
+      "generated_operator_rank_bound": 8,
+      "butterfly_additions_per_image": 0
+    },
+    "square_diagonal": {
+      "parameters": 10154800,
+      "adapter_parameters": 396032,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 849608704,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 1.0,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 32,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 197376,
+      "decoder_parameters": 198656,
+      "factor_generation": "once per sample; square factors/diagonals/blocks reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "structured_operator": "diagonal",
+      "structured_block_size": 16,
+      "adapter_placement": "parallel square delta before shared MLP input projection",
+      "generated_operator_rank_bound": 256,
+      "butterfly_additions_per_image": 0
+    },
+    "square_block16": {
+      "parameters": 10905904,
+      "adapter_parameters": 1147136,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 855244800,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.25,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 32,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 65792,
+      "decoder_parameters": 1081344,
+      "factor_generation": "once per sample; square factors/diagonals/blocks reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "structured_operator": "block",
+      "structured_block_size": 16,
+      "adapter_placement": "parallel square delta before shared MLP input projection",
+      "generated_operator_rank_bound": 256,
+      "butterfly_additions_per_image": 0
+    },
+    "square_tt6": {
+      "parameters": 10179376,
+      "adapter_parameters": 420608,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 937721856,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 1.0,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 80,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 65792,
+      "decoder_parameters": 354816,
+      "factor_generation": "one affine latent per sample, independent affine TT-core decoders with static offsets; broadcast across tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "structured_operator": "tt",
+      "structured_block_size": 16,
+      "adapter_placement": "parallel square delta before shared MLP input projection",
+      "generated_operator_rank_bound": 256,
+      "butterfly_additions_per_image": 0,
+      "tt_modes": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "tt_bond_rank": 6,
+      "generated_core_values_per_sample": 1344,
+      "largest_contraction_state_values_per_image": 98304,
+      "dense_operator_materialized_in_training": false
+    },
+    "square_tt11": {
+      "parameters": 10939696,
+      "adapter_parameters": 1180928,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 1127940096,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 1.0,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 80,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 65792,
+      "decoder_parameters": 1115136,
+      "factor_generation": "one affine latent per sample, independent affine TT-core decoders with static offsets; broadcast across tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "structured_operator": "tt",
+      "structured_block_size": 16,
+      "adapter_placement": "parallel square delta before shared MLP input projection",
+      "generated_operator_rank_bound": 256,
+      "butterfly_additions_per_image": 0,
+      "tt_modes": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "tt_bond_rank": 11,
+      "generated_core_values_per_sample": 4224,
+      "largest_contraction_state_values_per_image": 180224,
+      "dense_operator_materialized_in_training": false
+    }
+  },
+  "seeds": [
+    130,
+    131
+  ],
+  "adapter_lr_grid": [
+    1.0,
+    2.0
+  ],
+  "train_steps": 30000,
+  "lr_schedule_steps": 30000,
+  "planned_runs": {
+    "preflight": 6,
+    "quality": 24
+  },
+  "max_concurrent_workers": 2,
+  "classifier_run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+  "auxiliary_classifier": {
+    "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+    "sha256": {
+      "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+      "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+      "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+      "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+      "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+    },
+    "weight_bytes": 13621221,
+    "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+    "retention": "one frozen evaluator and its compact training records until explicitly removed"
+  },
+  "evaluator_cache": {
+    "path": "/root/.cache/torch/hub/checkpoints/weights-inception-2015-12-05-6726825d.pth",
+    "bytes": 95628359,
+    "sha256": "6726825d0af5f729cebd5821db510b11b1cfad8faad88a03f1befd49fb9129b2"
+  },
+  "expected_storage_upper_bound_bytes": 4294967296,
+  "disk_free_bytes_before_launch": 313707495424,
+  "estimated_gpu_hours": "12\u201320 aggregate GPU-hours; approximately 6\u201310 wall hours with two available GPUs; TT cost is unmeasured",
+  "weights_saved": false,
+  "periodic_checkpoints": false,
+  "test_evaluated": false,
+  "selection_metric": null,
+  "artifact_purposes": {
+    "compact_evidence": "configs/sources/runtime/seeds/splits/metrics/diagnostics/logs/audits/reports",
+    "compiler_cache": "compatibility/performance provenance, expected at most 3 GiB",
+    "diagnostic_grids": "twenty-four final 100-image EMA CFG1 grids plus six 10-image preflight grids"
+  },
+  "retention": "Declared evidence, caches and grids until explicitly removed; prior evidence/evaluator unchanged",
+  "initialization": {
+    "square_placement": "mlp_in(h_mod + operator_delta(norm_h,c)); one base GEMM; common AdaLN gates/heads retained",
+    "zero_delta": "lowrank V and offsets zero; diagonal/block output decoder and offsets zero; TT final core decoder/offset zero, earlier static cores nonzero",
+    "coefficient_heads": "nonzero independent affine heads; decoder biases/static offsets enabled",
+    "tt": "four paired [4,4] modes, bonds6 or11; one affine q256->s32 latent, independent affine core decoders with offsets; all core decoders start zero",
+    "tt_static_core_init": "first three offsets independent normal std1/sqrt(input_mode*left_bond); last offset zero; fan-in variance convention, not trained variance preservation",
+    "gain": "1/sqrt(8) lowrank; 1/sqrt(16) block; 1 diagonal/TT; conventions, not matched function updates or trained variance guarantees",
+    "pairing": "identical base/null weights and zero branch; different operator Jacobians and head coordinates remain"
+  },
+  "initial_design_pairing": [
+    {
+      "seed": 130,
+      "base_initialization_paired": true,
+      "parameters_identical_across_rates": true,
+      "records": [
+        {
+          "design": "rectangular_lowrank",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "rectangular_lowrank",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_lowrank",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_lowrank",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_diagonal",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_diagonal",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_block16",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_block16",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt6",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt6",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt11",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt11",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        }
+      ],
+      "precision": "zero delta in FP32 and BF16 eager CPU; compiled CUDA parity is not asserted"
+    },
+    {
+      "seed": 131,
+      "base_initialization_paired": true,
+      "parameters_identical_across_rates": true,
+      "records": [
+        {
+          "design": "rectangular_lowrank",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "rectangular_lowrank",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_lowrank",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_lowrank",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_diagonal",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_diagonal",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_block16",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_block16",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt6",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt6",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt11",
+          "rate": 1.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        },
+        {
+          "design": "square_tt11",
+          "rate": 2.0,
+          "initial_delta_zero": true,
+          "adapter_buffers_sha256": {}
+        }
+      ],
+      "precision": "zero delta in FP32 and BF16 eager CPU; compiled CUDA parity is not asserted"
+    }
+  ],
+  "references": {
+    "tensor_train": "https://papers.nips.cc/paper/2015/file/6855456e2fe46a9d49d3d3af4f57443d-Paper.pdf",
+    "interpretation": "Novikov et al. use static TT matrices; condition-generated cores are our adaptation"
+  },
+  "limits": [
+    "Six adapter designs, rates1/2 and two fresh seeds130/131:24 full30k runs; no new broad LR sweep or automatic selection.",
+    "TT6 uses420608 adapter parameters versus diagonal396032; TT11 uses1180928 versus block1147136 and square lowrank1212928. Approximate parameter matches, not FLOP or Jacobian matches.",
+    "Square operators share mlp_in(h_mod+delta(norm_h,c)); rectangular DPLR is a contextual reference with different placement and output-subspace freedom.",
+    "No new plain-AdaLN or Hadamard runs: their previous study remains contextual evidence, not paired fresh-seed controls.",
+    "TT bond rank is not ordinary matrix rank. Channel order [4,4,4,4] is an arbitrary tensorization; no permutation or mode-order search.",
+    "One affine latent is shared across TT core decoders; generated cores multiply, so condition dependence is degree up to4 versus quadratic lowrank and affine diagonal/block.",
+    "No dense TT matrix in training; contraction states can reach B*T*256*bond_rank. Report actual whole-training allocation, not only generated-core size.",
+    "Common base/AdaLN non-affine norms, class/time broadcast and zero-delta start. TT has internal gauges and initialization-dependent Jacobians; no muP or trained variance guarantee.",
+    "Actual optimizer ownership/schedules are audited; global LR8e-4, adapter multipliers1/2. Rates need not be optimal or function-update matched.",
+    "Equal quality/evaluation budget; report every final endpoint including finite poor quality. No resume or grid expansion.",
+    "Primary final30k CFG2 FID; retain CFG1, class agreement, both seeds and paired same-placement/cross-placement gaps.",
+    "Same reused research holdout and noise; two seeds do not establish independent final-quality evidence.",
+    "Fixed FP32 projected function probes include shared MLP-weight motion; BF16 live rounding residuals logged separately.",
+    "Only declared TT integration source overlays; historical training helpers, evaluation and unchanged controls are preserved.",
+    "No isolated speed benchmarks; concurrent throughput and whole-training allocations are descriptive.",
+    "No checkpoints/model weights, official test, downloads, rectangular TT, FFT, shared/nonlinear trunk, retrieval or LM launch."
+  ],
+  "started_utc": "2026-10-17T04:51:56.748046+00:00",
+  "preflight_complete_utc": "2026-10-17T04:58:02.607692+00:00"
+}

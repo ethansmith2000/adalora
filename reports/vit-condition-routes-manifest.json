@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-10-13T03:06:06.579976+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-condition-routes-20261013T010835Z",
+  "raw_report_sha256": "ddfecc4a08a3d90b0bd6367a0e96719026b0d974c464595a886be936780ae642",
+  "raw_files_sha256": {
+    "report.json": "ddfecc4a08a3d90b0bd6367a0e96719026b0d974c464595a886be936780ae642",
+    "comparison.json": "03f5c989c3c1d832bd5a4adf458a86ce4fe657ce867aaa9550fb6fb59a06034f",
+    "audit.json": "8232cafa9b35d8cbb60584949705a3467bcdb576a7641af8d9650f864adcc087",
+    "protocol.json": "149ae268913cfe74ee8059b766fbeef22913832935fb17b7de4a7adf95d51253"
+  },
+  "exports": {
+    "reports/vit-condition-routes.md": {
+      "sha256": "033bc38164f77351bb9ed0f06cdbece979d032cfa885bfcd0e977a2e8bca1e93",
+      "bytes": 7010
+    },
+    "reports/vit-condition-routes.json": {
+      "sha256": "beb605719ded164e79cb5a641ce9ce68017748ba2acba8e9f11e644fbc5f4c7a",
+      "bytes": 267833
+    },
+    "reports/vit-condition-routes-evidence.json": {
+      "sha256": "d334e776b1ae7417818e216ed2086a3bf4b8bdf0b3f41786ec821b983d3004c8",
+      "bytes": 24057
+    },
+    "reports/vit-condition-routes-audit.json": {
+      "sha256": "8232cafa9b35d8cbb60584949705a3467bcdb576a7641af8d9650f864adcc087",
+      "bytes": 583
+    },
+    "reports/vit-condition-routes-protocol.json": {
+      "sha256": "149ae268913cfe74ee8059b766fbeef22913832935fb17b7de4a7adf95d51253",
+      "bytes": 4738
+    },
+    "reports/vit-condition-route-plan.json": {
+      "sha256": "2b6103c125d2c9d34a2de663b9aecb3021f569f5d501a48bd2468b4a306e714a",
+      "bytes": 1808
+    },
+    "reports/vit-condition-route-plan.md": {
+      "sha256": "e9f701bd6d7fe2a964302333e1cd1ec685a436411555c6fc5de93123caa2f658",
+      "bytes": 6001
+    },
+    "README.md": {
+      "sha256": "00e95c14848656b0928b97be316c0ea849234b325f1ecc182d23d0311d9366f7",
+      "bytes": 103167
+    },
+    "DESIGN_NOTES.md": {
+      "sha256": "c53abbc3182b891d041160b0c7f4011af7c1fd053631c8e09c41f1700fdbeb54",
+      "bytes": 217343
+    }
+  },
+  "all_audits_passed": true,
+  "controller_supervisor_closed": true,
+  "active_our_workers": 0,
+  "quality_runs": 0,
+  "recipe_selection": false,
+  "weights_saved": false,
+  "test_evaluated": false,
+  "bytes_retained_at_audit": 272429671
+}

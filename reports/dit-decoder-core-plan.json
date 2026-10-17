@@ -1,0 +1,30 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/dit-decoder-core-20261014T071618Z",
+  "maximum_our_gpus": 2,
+  "planned_runs": {
+    "preflight": 5,
+    "quality": 20
+  },
+  "workspace_cpu_checks_passed": 93,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "frozen_snapshot_checks_passed": 24,
+  "configs_verified": 25,
+  "quality_models_verified": 20,
+  "source_hashes_verified": 32,
+  "updated_utc": "2026-10-14T17:30:07.790460+00:00",
+  "started_utc": "2026-10-14T07:19:45.151135+00:00",
+  "preflights_complete": 5,
+  "quality_runs_complete": 20,
+  "active_our_workers": 0,
+  "controller_supervisor": "/workspace/adalora/runs/dit-decoder-core-20261014T071618Z/controller.conf",
+  "preflight_audit_passed": true,
+  "preflight_complete_utc": "2026-10-14T07:25:05.716524+00:00",
+  "quality_runs_started": 2,
+  "completed_utc": "2026-10-14T12:13:51.157158+00:00",
+  "final_audit_passed": true,
+  "final_audit_checks_passed": 9,
+  "controller_supervisor_closed": true,
+  "report": "/workspace/adalora/reports/dit-decoder-core.md"
+}

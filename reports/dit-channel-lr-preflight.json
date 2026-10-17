@@ -1,0 +1,143 @@
+{
+  "created_utc": "2026-10-15T06:17:54.382438+00:00",
+  "raw_workflow": "/workspace/adalora/runs/dit-channel-lr-20261015T061259Z",
+  "independent_frozen_replay_passed": true,
+  "preflight_workers_completed": 3,
+  "rows": [
+    {
+      "name": "dense_s32_a4_s126",
+      "parameters": 12593712,
+      "adapter_parameters": 2834944,
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 4.0,
+      "adapter_gradient_tensors": 48,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 512,
+          "initial_lr": 0.0032,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 2834432,
+          "initial_lr": 0.0032,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    },
+    {
+      "name": "cp_s32_p128_a4_s126",
+      "parameters": 11364912,
+      "adapter_parameters": 1606144,
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 4.0,
+      "adapter_gradient_tensors": 80,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 512,
+          "initial_lr": 0.0032,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1605632,
+          "initial_lr": 0.0032,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    },
+    {
+      "name": "channel_s64_a4_s126",
+      "parameters": 10841136,
+      "adapter_parameters": 1082368,
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 4.0,
+      "adapter_gradient_tensors": 64,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1024,
+          "initial_lr": 0.0032,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1081344,
+          "initial_lr": 0.0032,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    }
+  ],
+  "runtime": {
+    "package_versions": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "diffusers": "0.40.0",
+      "datasets": "5.0.1",
+      "torchmetrics": "1.9.0",
+      "torch-fidelity": "0.4.0"
+    },
+    "cuda_wheel": "12.8"
+  },
+  "source_sha256": {
+    "train_dit_cifar10.py": "525c28b28a7877015d5660873ce68659cfe36f013d603a9cc6c5b197fcdf07db",
+    "dit_cifar10.py": "4e50e8c9d477fcb41cb3ad08549fc2660ffe50c6d1745acebea5aadd358ec10b",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "dit_quality_diagnostics.py": "2a29a069be74b5def51a11460194366f59d21e0fc8dc3de90ad744b73db494e1",
+    "benchmark_dit_design.py": "894c2f9a1f0aedb8cc907a8c08a0151e234378050674308193579b210cec505d"
+  },
+  "quality_audit_pending": true
+}

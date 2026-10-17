@@ -3449,3 +3449,670 @@ checkpoints are saved. The quality comparison and final audit are pending; the
 original coarse-grid failure remains preserved.
 
 [Audited calibration selection](reports/vit-token-refinement-calibration.json).
+
+ViT quality completed on 2026-10-11 at 19:26 UTC: all16 runs and the frozen
+workflow audit passed. Mean validation accuracy is65.96% plain,69.04% diagonal,
+66.64% static rank8+diagonal,63.16% matched static capacity,68.40% DPLR s12,
+69.82% s24,70.05% s48 and68.72% detached s24. s24 beats diagonal in both seeds
+by0.48/1.08 points; s48 versus s24 is mixed (−0.56/+1.02). Fresh-seed early
+update bounds transfer, but the static control's12× adapter LR also scales
+its affine head, and endpoint combined/base RMS is11.69–19.68. Separate
+affine/low-rank rates before stronger claims. s24 remains a provisional
+practical choice; these two-seed ten-epoch results do not settle long-run
+quality. All private controllers are closed and our claims released; no
+weights/checkpoints/test evaluation or additional GPU runs.
+
+[Completed comparison and limitations](reports/vit-token-refinement.md).
+
+The next ViT study is launched in `runs/vit-split-lr-20261011T214507Z`.
+`train_cifar10.Config` now supports optional `affine_lr_multiplier` and
+`lowrank_lr_multiplier`; each falls back to the historical shared multiplier
+when unset. Affine means the condition-generated scale/shift heads. Low rank
+includes the coefficient projector, learned U/V bases and factor offsets, or
+static U/V. Original LayerNorm affine parameters retain the base rate. No
+architecture, parameter-count or transform-memory change is introduced.
+Explicit unit rates are recorded in the new forward ViT templates, while
+legacy unspecified recipes retain the same optimizer topology and updates.
+
+The frozen plan runs two compiled GPU preflights, 20 fresh calibration pilots
+on seeds 100/101, then 16 fresh 30-epoch quality runs on seeds 102/103 if all
+selected low-rank ratios stay within 0.5–2. Affine LR is fixed at 1 except
+for the declared static joint12 diagnostic. Plain, diagonal, matched static
+capacity, DPLR s24/s48, static unit/split/joint12 controls are included.
+Pilots use 1,200 steps of the full 10,560-step schedule; old pilots and weights
+are not reused. The detached-condition diagnostic is not repeated here.
+
+The 58-pass CPU test log includes legacy trajectory equivalence, split role
+coverage/decay, group schedule prefixes and quality failure guards; one
+CUDA-specific exact-layer check is skipped. At most two of our GPUs are used,
+with an estimated 3–5 aggregate GPU-hours and a 4 GiB artifact bound. No
+weights, checkpoints or official-test evaluation; prior evidence is preserved.
+
+[Independent-rate protocol](reports/vit-split-lr-plan.md) · [Live state](reports/vit-split-lr-plan.json).
+
+Both compiled GPU preflights finished and passed the frozen evidence audit.
+All applicable adapter parameters received nonzero gradients by step3. The
+20 fresh calibration pilots are now underway; the 16 longer quality runs
+remain gated on the declared update bounds. No sources or recipes changed
+after launch.
+
+[Audited preflight evidence](reports/vit-split-lr-preflight.json).
+
+The original 30-epoch study was interrupted after four completed quality runs.
+At the October 12 check, the container had started at 01:21:47 UTC, every old
+worker was dead, and its last recorded progress was October 11 at 22:12:57 UTC.
+The exact interruption time/cause is unknown. Calibration passed: s48 low-rank
+LR 0.5 and static split LR 16, with affine LR 1. The original stale `quality`
+protocol and all completed/partial outputs remain unchanged.
+
+Recovery runs in `runs/vit-split-lr-recovery-20261012T013129Z`. Both original
+preflights, all 20 pilots and the four completed workers passed a fresh audit.
+The remaining 12 cases restart from original seeds/recipes without weights,
+using a byte-identical original training snapshot and at most two GPU workers.
+Thirty-two recovery/split-rate CPU checks passed. The wider static control's
+completed accuracies are 77.40%/78.14% (mean 77.77%); static split seed 102 is 78.72%
+and joint12 seed 103 is 78.68%. DPLR endpoints are still pending, so there is no
+complete method ranking. Original/recovery cohorts are checked for matching
+sources/runtime/split/initialization and observed streams at final completion.
+No model weights, checkpoints, retuned rates or additional quality cases.
+
+[Recovery plan and preserved evidence](reports/vit-split-lr-recovery-plan.md).
+
+The recovered 30-epoch study completed on October 12 at 02:13 UTC. All 16 cases
+and all seven final recovery audit checks passed. Mean validation accuracy:
+plain 78.45%, diagonal 78.56%, matched static capacity 77.77%, DPLR s24 79.94%,
+s48 79.19%, static unit 79.17%, static split 78.55% and static joint12 78.80%.
+s24 minus diagonal is +1.54/+1.22 points across the two seeds; versus unit
+static it is +1.52/+0.02. s48 adds parameters without improving the mean.
+Selected early update bounds transfer to the fresh seeds, while keeping the
+affine LR at 1 keeps static split's endpoint combined/base RMS 2.21–2.63 versus
+13.80–21.02 for joint12. The low-rank rates differ too, so this is not an
+affine-only ablation. Unit static is the stronger static quality control,
+despite much smaller early low-rank updates. Confirm against that control
+and diagonal with more fresh seeds before larger projector searches.
+Recovery supervisors are closed, our GPU workers are inactive, and no weights/
+checkpoints/test evaluation or new GPU jobs were produced by this status check.
+Original interruption evidence and partial/completed worker files are unchanged.
+
+[Completed comparison and diagnostics](reports/vit-split-lr.md).
+
+The wider static MLP's below-plain result warrants an optimization control
+before stronger capacity claims. Last-epoch augmented training accuracy is
+85.43% plain versus 83.78% wider, with validation 78.45% versus 77.77%. Fixed
+Linear initialization std 0.02 leaves wider fc2 fan-in 1483 versus 768; an
+untrained CPU probe measured 1.379× greater initial MLP output RMS. A temporary
+reference-gain correction gives 0.993×, but no training used it and it proves
+no quality improvement. The revised next priority is a bounded LR/initial-gain
+check for plain and wider controls, then fresh-seed confirmation with comparable
+tuning budgets. Preserve the original recipes and historical evidence.
+
+[Wider-control diagnostic and revised priority](reports/vit-capacity-diagnostic.md).
+
+The wider-control plan now includes Xavier, explicit fan-in/Kaiming scaling
+and named layer-specific mixes, with LR retained as an independent axis.
+Fan-in scaling keeps fc1 scale fixed as hidden width changes and compensates
+fc2 fan-in; Xavier also changes fc1 scale through fan-out. Neither choice
+establishes width-invariant training or selects the GELU/residual gain. Probe
+absolute branch RMS as well as the wide/narrow ratio, then freeze a bounded
+initializer-by-LR comparison with comparable tuning budgets. Preserve the
+conditional zero-init rules. No initializer default or training source changed
+and no new GPU jobs were launched.
+
+[Initializer and LR candidate plan](reports/vit-capacity-initializer-plan.md).
+
+The initializer/LR control study completed in
+`runs/vit-initializers-20261012T070919Z`. Plain, wider plain and DPLR s24
+each receive four distinct initializer functions × three global LRs × two
+tuning seeds, all trained for 30 epochs. Both corrected compiled GPU
+preflights passed their audits; 72 CPU checks passed with one CUDA-specific
+exact-layer check skipped. The mixed recipe uses an explicit sqrt(2) input
+gain before GELU plus a Xavier output std and Gaussian-GELU output-gain
+anchoring; the first gain 1 mix was caught as a duplicate of fan-in at narrow
+width before tuning. Its preliminary preflights/source/logs remain preserved,
+with zero tuning runs launched there. The corrected screen has 72 eligible
+plus two diagnostic reference-gain runs. Four fresh confirmation seeds and
+legacy anchors follow frozen selection, with no repeated identical cases.
+
+Initialization only rescales base MLP weights, preserving other base values,
+RNG draws and zero conditional/classifier initialization. It adds no parameters
+or runtime operators. Fixed-token complete MLP function updates now accompany
+the existing low-rank probes for all models. The CPU initial RMS probe records
+plain legacy ≈0.0815, wider legacy ≈0.1134, wider reference/fan-in ≈0.0816/0.0818,
+wider Xavier ≈0.0618 and wider mixed ≈0.0861. Gaussian anchoring is a model of
+initial scale, not exact learned-distribution or update invariance.
+
+The frozen budget is 10–16 aggregate GPU-hours with at most two of our GPUs
+and a 4 GiB artifact bound for the corrected workflow; no weights/checkpoints,
+official-test evaluation or evaluator downloads. Historical runs and the
+legacy initializer default remain unchanged.
+
+[Initializer/LR protocol](reports/vit-initializer-study-plan.md) · [Live plan](reports/vit-initializer-study-plan.json).
+
+The initializer study completed October 12 at 12:15 UTC: 74 full-horizon
+tuning/diagnostic cases and 24 fresh confirmation cases, all seven audits passed.
+Four-seed selected validation means ± sample SD are plain 79.44 ± 0.34%,
+wider 78.64 ± 0.54%, DPLR 79.35 ± 0.27%. Xavier improves plain on every
+confirmation seed and improves wider on three of four, but wider still trails
+plain on all four. Legacy DPLR averages 79.445%, essentially equal to selected
+plain. There is no demonstrated DPLR advantage against equally tuned plain
+here despite about 61% more parameters; previous cohorts remain historical
+evidence, not confirmation against this stronger control. Selection remains
+frozen and defaults unchanged. Same-holdout tuning and four seeds limit the
+claim. Review optimization/generalization and matched-recipe controls before
+expanding projector capacity. Our private supervisors are closed and GPU
+workers inactive; no new jobs, weights, checkpoints or official-test evaluation.
+
+[Completed initializer/LR comparison](reports/vit-initializers.md).
+
+The fixed diagnostic completed the Xavier plain/DPLR × global-LR matrix
+on seeds 106–109. Eight audited matching cells are reused; only eight missing
+30-epoch cells are added: plain at 2.5e-4 and DPLR at 5e-4. Both paired method
+gaps and their LR interaction are reported, without a new recipe selection.
+These seeds and the holdout were already inspected, so this is an exploratory
+follow-up. Training sources/runtime and all other settings remain identical.
+The workflow `runs/vit-matched-lr-20261012T164445Z` is limited to two of our
+GPUs, 1–2 estimated aggregate GPU-hours, a 4 GiB artifact bound and no weights,
+checkpoints or official-test evaluation. Fifty-eight CPU checks and a read-only
+reference quality audit passed before launch.
+
+[Matched Xavier/LR protocol](reports/vit-matched-lr-plan.md) ·
+[Live plan](reports/vit-matched-lr-plan.json).
+
+The matched-Xavier/LR follow-up completed October 12 at 17:13 UTC, with
+eight new runs and eight audited reused cells. All seven final audits passed.
+Plain/DPLR four-seed means are 79.465%/79.350% at 2.5e-4 and
+79.440%/79.525% at 5e-4. Paired method gaps −0.115/+0.085 points are small;
+the large two-tuning-seed LR flip did not reproduce. No new recipe winner
+is selected. DPLR fits augmented training better at both LRs without clear
+validation improvement, keeping generalization/regularization and stronger
+diagonal/static controls ahead of projector expansion. These seeds and the
+holdout were already inspected, so this is exploratory. Private supervisors
+are closed; our GPU workers are inactive, with no weights or test evaluation.
+
+[Completed matched-LR comparison](reports/vit-matched-lr.md).
+
+The completed bounded check measures condition magnitude and separate value,
+affine-condition and low-rank-condition task-loss gradients. Current DPLR,
+condition-only RMS normalization and condition-gradient scale 0.5 each get
+two new seeds and 1,200 steps of the existing 10,560-step schedule. Two compiled
+GPU preflights gate all six diagnostic prefixes; no early accuracy selection
+or automatic longer training. The raw-model probes use four fixed validation
+images in FP32 eval-mode, with forward/gradient reconstruction and explicit
+undefined alignment for zero routes. Ninety-seven CPU checks passed, including
+unchanged training trajectories with diagnostics on/off. Defaults preserve
+the prior function and RNG; historical audits use their frozen runners.
+
+Workflow `runs/vit-condition-routes-20261013T010835Z` retains the two-GPU cap,
+a 4 GiB artifact bound and no weights, checkpoints or official-test evaluation.
+These interventions have no established benefit; this tests the mechanism.
+[Condition-route protocol](reports/vit-condition-route-plan.md) ·
+[Live plan](reports/vit-condition-route-plan.json).
+
+The condition-route check completed October 13 at 01:17 UTC: two compiled
+preflights, six 1,200-step prefixes and all seven final audits passed. Reference
+condition RMS at step 1,200 averages 0.976, condition/value gradient norm ratio
+0.614, and cosine +0.297. All 36 reference block-level global cosines at steps
+100/500/1200 are positive; some token-level opposition exists. Extra condition
+RMS normalization slows early learning in both seeds (mean −4.96 points);
+half-gradient scaling is mixed (−1.16/+0.82). These are local FP32 fixed-image
+early probes, not final-quality selection or proof of absent gradient conflict.
+Keep defaults unchanged and defer longer intervention training; external
+conditioning remains a separate next question. Private supervisors are closed
+and our GPU workers inactive, with no weights, checkpoints or test evaluation.
+
+[Completed condition-route measurements](reports/vit-condition-routes.md).
+
+The external-conditioning track now checks global-LR fairness before a broader
+architecture claim. Plain AdaLN-Zero, wider AdaLN and offset-enabled DPLR r8/s32
+each receive three LRs (2e-4/4e-4/8e-4) × two complete 30k tuning seeds. Frozen
+final CFG2 FID selection gates twelve 30k confirmation runs on four fresh seeds.
+Both CFG1/2 and paired differences are retained. Wider hidden width 1715 matches
+DPLR within 920 parameters (0.0074%). The original DiT training/data/diagnostic
+snapshot is reused byte-for-byte; recent ViT changes are excluded. The condition
+remains normalized class-plus-timestep `[B,256]`, broadcast over image tokens.
+
+Workflow `runs/dit-external-lr-20261013T070213Z`: two compiled preflights gate
+18 tuning +12 confirmation runs, at most two of our GPUs, estimated 10–15
+aggregate GPU-hours and a 4 GiB artifact bound. Fifty-four CPU checks and eight
+checks inside the frozen snapshot passed; no training weights, checkpoints,
+official-test evaluation or evaluator downloads. This is a bounded LR search
+on the reused research holdout, rather than sequence-conditioned attention.
+[External-conditioning LR protocol](reports/dit-external-lr-plan.md) ·
+[Live plan](reports/dit-external-lr-plan.json).
+
+
+The external-conditioning LR study completed October 13 at 12:59 UTC: two
+compiled preflights, 18 tuning runs and 12 fresh-seed confirmation runs.
+All nine final audits passed, including replay from the frozen runner. All
+methods selected 8e-4, the highest tested LR; this grid does not establish
+LR optima. Final four-seed CFG2 FID is 38.38 ± 0.62 for plain AdaLN,
+37.20 ± 1.20 for parameter-matched wider AdaLN, and 33.89 ± 0.67 for DPLR.
+DPLR beats both guided controls on all four seeds; class agreement is
+79.76%/80.58%/89.01%. Unguided DPLR beats wider AdaLN on three of four seeds.
+Measured concurrent training throughput is about 23% lower than wider AdaLN,
+so the quality gain has an operational cost. These are 5k-image research
+holdout metrics for one broadcast class/timestep-conditioned DiT, with no
+sequence-conditioning or cross-attention conclusion. Private supervisors
+are closed and our GPU claims released; no weights or checkpoints were saved.
+No further GPU runs were launched.
+
+[Completed external-conditioning LR comparison](reports/dit-external-lr.md).
+
+## Roadmap steering: causal context and generator compression (2026-10-13)
+
+Raise economical factor generators ahead of the sequence-conditioning pilot.
+The current DiT adapter has 131,584 coefficient-head parameters versus
+2,703,360 decoder/offset parameters; compression should target the latter,
+while retaining a dense reference and measuring actual parameter, activation
+and training-time costs. CP/Tucker or block compression of the factor decoders
+and channel-modulated static factors are candidates. Diagonal-plus-low-rank
+generator maps require an explicit coordinate/skip definition for rectangular
+outputs. These choices change the generator function class; they are not
+automatically equivalent replacements. Wider s can spend any demonstrated
+savings. Retain zero-delta initialization and verify all trainable routes wake
+up. No new implementation or GPU study is launched by this update.
+
+The sequence-conditioning proposal is a controlled test of context access and
+channel transformation. For example, a causal prefix can contain `(A,7)`,
+`(B,3)` and `(C,9)`, followed by a query for B; the next-token target is 3.
+The other key/value entries are distractors. Vary their number, distance and
+key similarity under a frozen task-generation protocol, with held-out random
+assignments. A transform fed only the current contextual token is a different
+information-access design from a module that explicitly reads the prefix.
+Do not attribute this access difference to transform expressivity.
+
+Prefer a causal, unpooled initial pilot. Compare ordinary causal attention,
+query-dependent masked retrieval feeding a diagonal conditioner or DPLR, and
+retrieval without the additional conditional transform. Where cross-attention
+reads a separate context sequence, every context state must have an explicit
+availability boundary for the target position. Future tokens, future answer
+states and bidirectionally encoded same-stream context must remain inaccessible.
+Matched retrieval pathways isolate the diagonal-versus-low-rank question;
+separately varying the access path addresses retrieval itself. The old
+pooled-context comparison is no longer the preferred initial design.
+
+An additional self-conditioning hypothesis is to reuse a causal early-layer
+hidden sequence as the condition at later layers:
+
+```python
+c_anchor = anchor_norm(h_anchor)       # [B,T,q], causal contextual states
+for layer in later_layers:
+    h = layer.norm(x)                  # [B,T,d], current value states
+    c = layer.condition_head(c_anchor) # aligned positions; no time mixing
+    x = layer.forward_with_condition(x, h, c)
+```
+
+Each token receives its own aligned anchor state, rather than a last-token
+vector broadcast to earlier positions. Anchor states must precede their
+consumers and be computed with causal attention. Reuse separates the current
+value representation from the condition representation at downstream layers,
+but does not remove competing optimization demands: an attached anchor still
+receives downstream value-path gradients and summed condition-path gradients.
+A detached-anchor control removes the latter while retaining forward
+conditioning. Earlier detached ViT results do not establish how this different
+design would behave. Reuse can save repeated condition-trunk work if that trunk
+is also shared, but does not by itself remove layer-specific decoders, factor
+application costs or retained anchor activations. A separate condition stream
+is another, more expensive hypothesis. No efficacy claim is made for these
+unimplemented variants.
+
+Keep external LR-boundary/control follow-ups as bounded studies. Generator
+compression now takes higher priority; causal retrieval and the anchored
+self-conditioning variant remain subsequent options. Dedicated isolated speed
+benchmarking stays deferred, the two-GPU cap remains, and generic checkpoints
+and final weights remain disabled.
+
+## CP decoder compression: implementation and first screen (2026-10-13)
+
+The first decoder-compression implementation keeps the existing independent
+affine coefficient heads and sample-wise generated factors. Each dense
+`[s,channel_dim,r]` basis is replaced by CP factors over its coefficient,
+channel and transform-rank axes. The new `decoder_cp_width=p` is distinct from
+coefficient width s and produced-transform rank r. Default p=0 preserves the
+dense model function, state layout, RNG and tested training trajectory.
+
+For U, learned arrays have shapes `[d_in,p]`, `[s,p]`, `[p,r]`; for V,
+`[s,p]`, `[p,r]`, `[p,d_out]`. Weighted rank components have shape `[B,p,r]`,
+and the produced U/V retain `[B,d_in,r]` / `[B,r,d_out]`. Training never
+reconstructs the dense decoder basis tensors. Static U/V factor offsets remain
+enabled, and generated transforms retain rank at most r=8. The CP channel
+subspaces constrain expressivity; increasing s does not remove that constraint.
+Three multiplicative factors also introduce additional scale gauges.
+
+Input factor initialization matches dense marginal basis-entry variance in
+expectation, with a zero output channel factor and nonzero companion factors.
+All adapter routes wake in the CPU trainer checks. This is not a trained
+variance-preservation or matched-functional-update claim. CP factor draws use
+an isolated generator; identical coefficient heads and global RNG trajectories
+are preserved within each s by discarding temporary dense initialization
+tensors on CPU before moving the model to CUDA.
+
+Workflow `runs/dit-decoder-compression-20261013T181112Z` launches five compiled
+preflights, then ten complete 30k runs on two new seeds (120/121), gated by the
+preflight evidence audit. Designs are dense s32, dense s64, CP s32/p64,
+CP s32/p128 and CP s64/p128. Adapter counts are 2,834,944 / 5,587,968 /
+909,824 / 1,606,144 / 1,803,264 respectively. The last spends some savings on
+wider coefficients while retaining fewer parameters than the dense s32
+reference. Both dense controls are freshly trained.
+
+All designs use the same existing broadcast-conditioned DiT, offsets, rank8
+gain, normalized adapter value input, global LR8e-4, relative adapter LR1,
+BF16/compiled/fused training, 30k schedule and fixed CFG1/2 evaluation budgets.
+No per-design optimizer calibration, selection, automatic expansion or longer
+confirmation is launched. CP can increase decoder FLOPs despite parameter
+savings; ordinary training time/memory and magnitude/update diagnostics remain
+important. Dedicated speed benchmarking remains deferred.
+
+Sixty-nine workspace CPU checks and twenty checks inside the frozen runner
+passed, including explicit expanded-CP output/every-gradient equivalence,
+gradcheck, default-dense trajectory parity, BF16 dtype, gradient wake-up,
+diagnostic trajectory invariance, exact grids/configs and failure gating.
+Original DiT training helpers are copied from the completed external-LR
+snapshot; declared model/trainer/diagnostic/reporting integration changes are
+pinned separately. Fifteen configs and all ten quality-model initializations
+were verified on CPU without creating a CUDA context before launch.
+
+At most two claimed workers including queued preflights; estimated 4–7
+aggregate GPU-hours and a 4 GiB artifact bound. No weights/checkpoints,
+official test evaluation, new evaluator downloads or causal retrieval/LM work.
+[Frozen design and artifact protocol](reports/dit-decoder-compression-plan.md) ·
+[Live plan](reports/dit-decoder-compression-plan.json).
+
+
+All five compiled preflights completed and passed the frozen evidence audit,
+including replay. Every adapter parameter tensor received a nonzero gradient
+by step5 in every design. The ten full30k quality runs are now queued/running
+under the two-worker cap. No quality conclusion is available from preflights.
+
+
+The CP compression screen completed October13 at20:41 UTC; all eight audits
+passed on frozen-runner replay. Guided FID is33.56±0.07 /32.81±0.29 for dense
+s32/s64 and34.95±0.80 /34.34±0.50 /34.33±0.40 for CP s32/p64,
+s32/p128 ands64/p128. CP saves36–68% of adapter parameters versus dense s32,
+with worse guided FID in both paired seeds, about8–15% lower observed training
+throughput and only1–3% lower whole-training peak allocation. Wider CP
+coefficients have mixed FID effects. Fixed-probe function updates differ by
+several-fold early, so optimization remains a confound. Keep dense as the
+reference; test a freer channel-factorized decoder with bounded adapter-LR
+controls next. Supervisors closed; no weights/checkpoints or official test.
+[Completed CP compression results](reports/dit-decoder-compression.md).
+
+## Channel-mode decoder core and adapter-LR screen (2026-10-14)
+
+The next compression study releases CP's coefficient/rank core restriction
+while keeping the same channel-basis width p128 and transform rank r8.
+`decoder_tucker_width` selects a channel-mode Tucker-style factorization with
+independent U/V cores `[s,p,r]`. They start as the paired CP basis/rank
+products and then learn freely. This is distinct from the earlier conditional
+r×r-core model with static outer factors. No original dense decoder basis is
+reconstructed during training; generated factors remain sample-wise and
+broadcast. Static offsets and zero V_channel initialization remain.
+
+Initial CP/core channel matrices, coefficient heads and FP32 factor functions
+are paired within arithmetic tolerance, with unchanged base/null weights and
+RNG trajectories. BF16 reassociation and changed optimizer geometry remain
+confounds. Channel/core maps retain a general invertible channel-basis gauge;
+fewer multiplicative stages do not imply fewer gauges or easier optimization.
+No new output normalization, gain or muP rule is introduced.
+
+Workflow `runs/dit-decoder-core-20261014T071618Z` contains five compiled
+preflights and twenty full30k runs: dense s32, CP s32/s64 at p128, and
+channel-core s32/s64 at p128, each at adapter LR0.25/1 on fresh seeds122/123.
+The quarter-rate point tests sensitivity suggested by CP's several-fold
+larger early fixed-probe updates; it is not a calibrated update match. All
+designs receive equal rate budgets, including dense. Actual optimizer group
+ownership, counts, initial rates and logged schedule rates are audited.
+All adapter parameters, including coefficient heads and offsets, share the
+multiplier; common AdaLN/base parameters remain at global LR8e-4.
+
+Adapter parameters are2.83M dense,1.61M/1.80M CP s32/s64, and2.05M/2.70M
+channel-core s32/s64. The wider core total12,463,152 is1.04% below dense
+s32's12,593,712; this is approximate rather than exact matching. p64 is
+not expanded in this first core study. Keep the common30k schedule,
+compiled/fused/BF16 training and final same-state CFG1/2 evaluation budgets.
+All twenty cells train anew; no historical quality outcomes reused, no
+automatic selection, longer confirmation or grid expansion.
+
+Ninety-three workspace CPU checks and twenty-four frozen-runner checks passed,
+including explicit expanded-decoder every-gradient equivalence, gradcheck,
+dense/CP training compatibility, core pairing, BF16 dtype, quarter-rate
+gradient wake-up/routing, diagnostic trajectory invariance and failure gates.
+All twenty-five configs and twenty quality-model initializations/optimizer
+routes were verified before launch without a CUDA context. The frozen source
+snapshot preserves original data/training helpers with declared integration
+and compact LR-logging overlays.
+
+At most two of our GPU workers; estimated8–12 aggregate GPU-hours, about4–6
+wall hours with two available GPUs, and a4GiB artifact bound. No weights,
+checkpoints, official test, new evaluator downloads or causal retrieval/LM
+launch. Dedicated speed benchmarking remains deferred.
+[Channel-core/LR protocol](reports/dit-decoder-core-plan.md) ·
+[Live plan](reports/dit-decoder-core-plan.json).
+
+
+All five channel-core/LR compiled preflights passed the independent evidence
+audit and frozen-runner replay. Every adapter tensor received gradients by
+step5, including all64 tensors in each new channel-core model. Actual
+optimizer group ownership/rates, initial core pairing and observed streams
+were verified. The twenty full30k workers are now queued/running under the
+two-worker cap. Preflights supply compatibility evidence, not quality results.
+
+
+The channel-core/LR study completed October14 at12:13 UTC; all nine audits
+passed on replay. Unit-rate CFG2 FID is33.34 dense s32,33.75 CP s32,33.98
+CP s64,33.84 channel-core s32 and37.55±4.63 channel-core s64. Freer cores
+show no consistent guided-FID improvement over CP. Quarter-rate effects are
+mixed for wider designs and worse in both seeds for dense/CP/core s32.
+The wide-core spread is a poor-quality outcome with finite completed evidence,
+not a numerical failure. Keep dense as the reference and move to cheaper
+channel-modulated static factors with static/dense/CP controls. No new default
+selected. Supervisors closed; no weights/checkpoints or official test.
+[Completed channel-core/LR results](reports/dit-decoder-core.md).
+
+
+## Channel-modulated static factors (2026-10-14)
+
+The completed core/LR screen motivates a cheaper restriction of the factor
+generator, with fresh controls rather than a new default. Separate channel
+scales multiply static input/output factors; they act inside the parallel
+adapter delta and do not consume the base AdaLN scale/shift output. See the
+[full tensor design and initialization](reports/dit-channel-factor-plan.md).
+
+```python
+# c [B,256], h [B,T,256]; r=8; output width1024
+a, b = coefficients(c).chunk(2, dim=-1)  # each [B,s]
+gu = 1 + a @ U_scale_basis               # [B,256]
+gv = 1 + b @ V_scale_basis               # [B,1024]
+U = gu[..., None] * U_static + U_offset  # [B,256,8]
+V = gv[:, None, :] * V_static + V_offset # [B,8,1024]
+pre_act = mlp_in(scale_shift(h,c)) + (h @ U @ V) / sqrt(8)
+```
+
+The scale bases start zero, coefficient heads nonzero, static U has variance
+1/256, and static V plus both offsets start zero. Identity scales and a zero
+delta preserve the starting function; trained variance preservation is not
+established. Multiplicative and offset gauges remain. The static control
+removes condition heads/scale bases while retaining paired static factors and
+offset slots. It is condition independent only in this transform; common
+AdaLN and upstream states remain class/time conditioned. Initial factors match
+between static and both modulated widths in FP32/BF16; dense/CP Jacobians are
+not matched to the channel designs. Rank remains at most8, including offsets.
+
+Adapter counts: static163,840; channel s32/s64 623,104/1,082,368; CP s32/p128
+1,606,144; dense s32 2,834,944. Two adapter LR points1/4 apply to every adapter
+parameter, leaving common base/AdaLN at8e-4. All designs receive both points
+and fresh seeds124/125. This tests a higher-rate direction after quarter-rate
+mostly hurt earlier s32 recipes; it does not calibrate operator updates.
+Five compiled higher-rate preflights gate twenty full30k runs. Report final
+paired CFG1/2 quality, modulation-minus-static/dense/CP and fourfold-minus-unit
+results, retaining both seeds. No automatic selection or grid expansion.
+
+One hundred eighteen workspace and twenty-five frozen CPU checks passed,
+including expanded outputs/every-gradient equivalence, gradcheck, identity
+scales, all-route wake-up, BF16, old model/Adam compatibility, initialization
+and RNG pairing, actual optimizer rates and failure gates. GPU preflights and
+their independent audit are pending. Frozen sources and all25 configs are
+pinned. Workflow `runs/dit-channel-factors-20261014T175748Z` uses at most two
+GPU workers or claim waiters, no weights/checkpoints or official-test data,
+a4GiB artifact bound and estimated4–6 wall hours. Per-token implicit execution,
+causal retrieval/LM and dedicated speed benchmarking remain future work.
+
+
+All five channel-factor compiled preflights passed the independent evidence
+audit and frozen-runner replay. Every adapter parameter tensor received a
+nonzero gradient by step5, including all64 tensors in each modulated model
+and32 in the static control. Actual optimizer ownership/rates, paired initial
+factors/base/head weights, data/noise/dropout streams and evaluator budgets
+were verified. The twenty full30k quality runs have opened under the two-worker
+cap. Preflight success is compatibility evidence, not a quality conclusion.
+[Preflight replay](reports/dit-channel-factor-preflight.json).
+
+
+The channel-factor study completed October14 at22:40 UTC; all nine audits
+passed in independent frozen-runner replay. Dense s32/CP s32 at adapter LR1
+reach33.59/34.25 CFG2 FID. Static/channel s32/channel s64 at adapter LR4
+reach37.04/35.61/34.64. Higher LR improves every static/modulated seed,
+and modulation beats static at4 in both seeds. Channel s64 uses61.8% fewer
+adapter parameters than dense, but remains1.05 mean FID worse at these
+different operating rates. LR4 severely degrades one dense and one CP seed;
+retain both poor finite endpoints. No new default or automatic follow-up.
+All20 full30k runs completed; supervisors closed, adalora claims released,
+no weights/checkpoints or official test.
+[Completed channel-factor results](reports/dit-channel-factor.md).
+
+
+A focused adapter-LR follow-up launched October15 in
+`runs/dit-channel-lr-20261015T061259Z`: dense s32, CP s32/p128 and channel s64
+with equal multipliers1/2/4 on fresh seeds126/127, eighteen full30k runs.
+The intermediate rate brackets the previous endpoints; repeating1/4 checks
+seed sensitivity and whether severe high-rate degradation recurs. Three
+compiled higher-rate preflights gate quality training; their audit is pending.
+All36 reference files are preserved exactly; only controller/tests are added.
+Thirty-six workspace and36 frozen CPU checks passed, all21 configs and18
+model initializations/actual optimizer groups verified. At most two GPUs,
+estimated4–5 wall hours,4GiB artifact bound, no weights/checkpoints or test.
+The channel width was selected using the prior screen; this is fresh-seed
+replication with a reused holdout, not independent architecture selection.
+[LR follow-up protocol](reports/dit-channel-lr-plan.md) ·
+[Live plan](reports/dit-channel-lr-plan.json).
+
+
+All three adapter-LR follow-up compiled preflights passed the controller
+evidence audit and independent frozen-runner replay. Every adapter tensor
+received gradients by step5:48 dense,80 CP and64 channel s64. Actual optimizer
+ownership/rates, paired initialization, observed streams, source and evaluator
+budgets were verified. Eighteen full30k quality runs are queued, with two
+active under the cap. Quality and final audits remain pending; early gradient
+wake-up does not establish long-run stability.
+[LR preflight evidence](reports/dit-channel-lr-preflight.json).
+
+
+The fresh-seed adapter-LR follow-up completed October15 at10:28 UTC; all nine
+audits passed on independent replay. Dense at1 reaches33.65 mean CFG2 FID;
+CP at1/2 reaches34.18/33.90. Channel s64 at1/2/4 reaches36.82/35.78/35.58.
+CP benefits modestly from2 in both seeds; channel2-to4 gains only0.20 mean.
+Channel4 remains1.92 FID worse than dense1 with61.8% fewer adapter parameters.
+One dense and one CP seed again severely degrade at4; all finite endpoints
+are retained. No new default, automatic grid expansion or further runs.
+All18 full30k workers finished, supervisors closed, adalora claims released,
+no weights/checkpoints or official test.
+[Completed fresh-seed LR follow-up](reports/dit-channel-lr.md).
+
+
+## Structured generated operators: implementation and first screen (2026-10-16)
+
+The research objective remains useful conditional expressivity for generator
+parameters, activation memory and execution cost. Broader generated-operator
+architectures are now prioritized after the compression/LR studies. Synthetic
+retrieval and a new LM benchmark are deferred; keep the established diffusion
+setup while changing the architecture.
+
+The new square block and conditional Hadamard operators share a parallel
+feature delta before the existing MLP input projection, with square diagonal
+and low-rank controls. Sum before one shared projection GEMM; common AdaLN,
+non-affine norms and gates remain. The old rectangular DPLR is a separate
+reference, with different placement/output-subspace freedom. Block16 uses
+1,147,136 adapter parameters versus1,212,928 for square rank8/s32 low-rank.
+Hadamard uses400,128 versus396,032 for the wider square-diagonal s96 control;
+its96-output coefficient heads start identically. Hadamard is a learned
+conditional two-transform/three-diagonal/permutation chain inspired by
+Fastfood, not the original random-feature kernel construction. All branches
+start at zero; no trained variance/gain guarantee or speed benefit is assumed.
+
+Workflow `runs/dit-structured-20261016T203614Z` has six compiled preflights
+and22 fresh full30k runs on seeds128/129. Every adapter gets multipliers1/2;
+plain AdaLN runs once per seed. Ninety workspace and90 frozen CPU checks
+passed, including independent dense operators/every-gradient equivalence,
+Hadamard norm checks, zero-delta/base pairing, one-projection integration,
+BF16 diagnostic trajectory invariance, gradient wake-up, legacy Adam/RNG
+compatibility, actual groups, finite grid and failure gates. Dynamic CPU
+tracing of a nonzero Hadamard model passed. All28 configs/22 initial models,
+43 frozen files,33 unchanged reference sources and package versions verified.
+GPU preflight audit is pending.
+
+At most two GPUs, estimated5–7 wall hours,4GiB artifact bound, compact evidence
+and declared diagnostic grids only. No checkpoints/weights, official test or
+evaluator downloads; isolated speed work, TT/FFT, shared nonlinear trunks
+and causal retrieval/LM launches stay outside this bounded study.
+[Structured operator protocol](reports/dit-structured-plan.md) ·
+[Live plan](reports/dit-structured-plan.json).
+
+
+All six structured-operator compiled preflights passed the controller audit
+and independent frozen-runner replay. Every adapter tensor received a nonzero
+gradient by step5, including all64 Hadamard tensors and32 block tensors.
+Source/config/initialization/buffer pairing, actual optimizer groups/rates,
+observed streams and evaluator budgets were verified. The22 full30k quality
+runs have opened under the two-worker cap. Final quality/audit remain pending;
+preflight success establishes compatibility, not a quality improvement.
+[Structured preflight evidence](reports/dit-structured-preflight.json).
+
+
+The structured-operator screen completed October17 at01:38 UTC; all nine
+audits passed on independent replay. Plain AdaLN reaches39.43 CFG2 FID;
+rectangular DPLR1/2 reaches33.93/33.59. Square low-rank1 reaches35.20; block2
+35.63 and Hadamard2 36.62. At LR2, Hadamard beats its nearly budget-matched
+diagonal38.38 in both seeds (−0.97/−2.56 FID), with22.1% lower observed
+training throughput and lower peak allocation. At LR1 its FID gaps are mixed.
+Block2 versus square-low-rank1 gives mixed paired quality,8.8% higher observed
+throughput and19.0% higher allocation. Square low-rank2 includes one poor
+finite endpoint51.15 FID. Retain all rates/seeds; no new default or follow-up.
+All22 full30k runs finished; supervisors closed, adalora claims released,
+no weights/checkpoints or official test.
+[Completed structured-operator results](reports/dit-structured.md).
+
+
+Conditional tensor-train operators are now implemented for the next bounded
+DiT study. Four paired channel modes `[4,4,4,4]`, TT bonds6/11 and one shared
+affine latent32 give420,608/1,180,928 adapter parameters. TT bond rank is not
+ordinary matrix rank. Training applies mode contractions without a dense
+operator; token-axis contraction intermediates still require measurement.
+A zero final core gives an exact zero delta, with nonzero earlier static cores
+and audited gradient wake-up. The24-run plan uses diagonal, square low-rank
+and block controls plus the contextual rectangular reference, two fresh seeds
+and the existing two adapter rates. Two-GPU cap, no weights/checkpoints.
+Validation and compiled GPU preflight must pass before quality begins.
+[Conditional TT protocol](reports/dit-tt-plan.md).
+
+
+TT workflow `dit-tt-20261017T045056Z` has launched its six compiled CUDA
+preflights; the24 full30k runs are gated on their audit. All109 workspace
+and109 frozen CPU checks pass. Thirty configs,24 initial models/optimizer
+groups,47 frozen source files and39 unchanged reference files verified.
+Nonzero TT11 dynamic fullgraph CPU tracing/backward passed in BF16 at batch2/3;
+CUDA compatibility and quality remain pending. Package versions match the
+completed structured screen. Retention remains4GiB, two-GPU cap, no weights.
+[TT CPU validation](reports/dit-tt-cpu-validation.json) ·
+[TT live plan](reports/dit-tt-plan.json).
+
+
+All six TT-study CUDA preflights passed both the controller audit and an
+independent frozen-runner replay. Every adapter tensor received a nonzero
+gradient by step5, including all80 tensors in each TT variant. Source/config,
+paired streams/initializations, actual optimizer groups/rates, claim identity
+and evaluator budgets verified. Short-preflight whole-run peak allocations
+were1.91GiB (TT6) and2.37GiB (TT11); these are not sustained quality-training
+resource results. The24 full30k quality runs are now open under the two-worker
+cap. Final quality and audit remain pending; no model weights/checkpoints.
+[TT preflight evidence](reports/dit-tt-preflight.json) ·
+[TT startup status](reports/dit-tt-startup.json).

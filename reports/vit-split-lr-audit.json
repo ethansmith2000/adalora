@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "original_protocol_partial_records_and_completed_workers_preserved": true,
+    "original_preflights_and_calibration_reaudited_without_new_selection": true,
+    "exact_remaining_cases_restart_from_seed": true,
+    "unchanged_training_sources_runtime_split_and_cross_cohort_initialization_streams": true,
+    "sixteen_combined_quality_cases_and_original_group_rates": true,
+    "all_new_workers_and_two_gpu_cap": true,
+    "no_weights_test_and_storage_bound": true
+  },
+  "report_sha256": "4aeb34faf1fc02bd50a3ff9cc3d53d079436e8b8d05e2b6f90c2f4916c24952d",
+  "bytes_retained": 262154295
+}

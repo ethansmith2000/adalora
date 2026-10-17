@@ -1,0 +1,30 @@
+{
+  "checked_utc": "2026-10-11T21:48:04.359136+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-split-lr-20261011T214507Z",
+  "protocol_snapshot_sha256": "e0c9a13e00e83a299b23175de0a878f12159f665d79c8975f1502f2a6ea44d1f",
+  "protocol_state_at_snapshot": "calibration",
+  "source_sha256": {
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+    "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79",
+    "dit_cifar10.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "summarize_dit_cifar10_screen.py": "187a761734f5ca2466860c2c620936545226bdde5b9d883b11b83fc10f8f7647",
+    "test_vit_factor_offsets.py": "6501396cbd07646e891b89da0102c7e276e623e8ea317d70c6761f8f4f21fe0d",
+    "test_vit_split_lr.py": "ac3f6a4b0ff90fe6cf05c2a12b15a85d0aad994ee2eccb8e1545c22d05aa6d24",
+    "test_vit_token_study.py": "e306c4a91b02f7780347d0c79b9fa11698ffc210f397d7b145c7ff9ecccfcca7",
+    "train_cifar10.py": "6407a92e7235e795c497b5c0c04188fc1305bd1f52731411c13761973fee8498",
+    "train_dit_cifar10.py": "e21fe0ed704569b799ec75b1b830abeb5fc2a638e8ccb52b1fac06e3dbc7e902",
+    "vit.py": "4adfc9b9b061e174d70e52265edbdaa191ce7e2197b5f9c506bbe64ab788ab13",
+    "vit_quality_diagnostics.py": "5e83aac014374d0cb93f279c3094f889e6c846f95134e7cf1e25cca490351122",
+    "vit_split_lr_study.py": "053c04085a3b9ea46b97ca20116d2460b18ad5012cdb71d64bab496c2100875d",
+    "vit_token_study.py": "46bd7411fb6c979c2a7d823282160ec7160c0c80ec76f5308529743a14b3da63"
+  },
+  "exports": {
+    "vit-split-lr-plan.md": "e308a340b1df72cf4169dc9eb984fce0e62f963b2cd5f3fed0398cc9d1fbb31d",
+    "vit-split-lr-plan.json": "84984d5507a20110da029d65dd7763578ee49354b09de92e30c2031f189eb6d7",
+    "vit-split-lr-preflight.json": "a287b905dbd92e9e765cae253568e11f376d5537307bcdeca24b7bc5e56486ef",
+    "vit-split-lr-tests.log": "09ef224418aff10bf72ec57fa0aed99b0545851fbeb4d1053ef52b5b94719920"
+  }
+}

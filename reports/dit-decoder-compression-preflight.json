@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "name": "dense_s32_s120",
+      "parameters": 12593712,
+      "completed_steps": 12,
+      "processed_images": 1312,
+      "gradient_tensors": 48,
+      "latest_gradient_wake_step": 5
+    },
+    {
+      "name": "dense_s64_s120",
+      "parameters": 15346736,
+      "completed_steps": 12,
+      "processed_images": 1312,
+      "gradient_tensors": 48,
+      "latest_gradient_wake_step": 5
+    },
+    {
+      "name": "cp_s32_p64_s120",
+      "parameters": 10668592,
+      "completed_steps": 12,
+      "processed_images": 1312,
+      "gradient_tensors": 80,
+      "latest_gradient_wake_step": 5
+    },
+    {
+      "name": "cp_s32_p128_s120",
+      "parameters": 11364912,
+      "completed_steps": 12,
+      "processed_images": 1312,
+      "gradient_tensors": 80,
+      "latest_gradient_wake_step": 5
+    },
+    {
+      "name": "cp_s64_p128_s120",
+      "parameters": 11562032,
+      "completed_steps": 12,
+      "processed_images": 1312,
+      "gradient_tensors": 80,
+      "latest_gradient_wake_step": 5
+    }
+  ]
+}

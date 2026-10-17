@@ -302,13 +302,14 @@
     "reference_calibration_sha256": "c6d7b83c25dcc6f9df588e66d44e357a61c58185c9faf81d6e0bc7a7c861930a",
     "calibration_sha256": "01f2af75f2b3e5f08c4bded4be5c5090e5165bfd500282e4993548b8bb312e60",
     "quality_progress_snapshot": {
-      "utc": "2026-10-11T19:09:33.560945+00:00",
+      "utc": "2026-10-11T19:26:42.161118+00:00",
       "stage": "quality",
-      "completed": 2,
-      "submitted": 4,
+      "completed": 16,
+      "submitted": 16,
       "total": 16,
-      "active": 2
+      "active": 0
     },
-    "quality_stage_final_audit_pending": true
+    "quality_stage_final_audit_pending": false,
+    "final_audit_report": "reports/vit-token-refinement-audit.json"
   }
 }

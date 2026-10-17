@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/venv/main/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "test_dit_tucker_decoders.py",
+    "test_dit_decoder_core_study.py",
+    "test_dit_cp_decoders.py",
+    "test_dit_decoder_compression_study.py",
+    "test_dit_factor_offsets.py",
+    "test_dit_training_options.py",
+    "test_dit_optimizer_cfg.py",
+    "test_dit_external_lr_study.py"
+  ],
+  "result": "93 passed, 14 deprecation warnings in 15.85s",
+  "workspace_source_sha256": {
+    "dit_cifar10.py": "4f1d48769b8fec0b31773b7dbf5c74246117f8c5fc9b0b7488890ac563229166",
+    "train_dit_cifar10.py": "d88e8e2c8668b56d749f72b5e3f0958813e00d616dedc3361df5adce0915d093",
+    "dit_quality_diagnostics.py": "b138af89e51dafefeb25dbded5517dc68af903e10c502619dfff697a33f4b853",
+    "benchmark_dit_design.py": "a3a7819c35b34e71330bf1e2d30245d961f73ab2c22f9bc3b5fca8913a57a861",
+    "summarize_dit_cifar10_screen.py": "6c32d14b422de2396bc79b0595dca5b48a492f534ac8d9a1331b10ce3e96f9be",
+    "dit_decoder_core_study.py": "95c64fd7fb53c80a8ceefa50e8ad9645a2961ad7ee7925d4d270f31b26a8b9a9",
+    "test_dit_decoder_core_study.py": "55f16475fb11988d68acdfe12f1ec697ce07e73d9cef8ca63b7158833639f2bb",
+    "test_dit_tucker_decoders.py": "76ba938c010fe8785c0a86f44f4b4e0182348f94a857a630d5e720f2209af79b"
+  },
+  "frozen_tests_log": "/workspace/adalora/runs/dit-decoder-core-20261014T071618Z/frozen-protocol-tests.log",
+  "frozen_checks_passed": 24
+}

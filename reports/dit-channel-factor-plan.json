@@ -1,0 +1,42 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/dit-channel-factors-20261014T175748Z",
+  "maximum_our_gpus": 2,
+  "planned_runs": {
+    "preflight": 5,
+    "quality": 20
+  },
+  "workspace_cpu_checks_passed": 118,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "frozen_snapshot_checks_passed": 25,
+  "configs_verified": 25,
+  "quality_models_verified": 20,
+  "source_hashes_verified": 36,
+  "updated_utc": "2026-10-15T04:59:35.406091+00:00",
+  "started_utc": "2026-10-14T18:05:39.609666+00:00",
+  "preflight_audit_pending": false,
+  "final_audit_pending": false,
+  "preflight_independent_replay_passed": true,
+  "preflight_workers_completed": 5,
+  "preflight_complete_utc": "2026-10-14T18:10:40.311296+00:00",
+  "quality_runs_submitted_at_verification": 2,
+  "quality_runs_completed_at_verification": 0,
+  "active_workers_at_verification": 2,
+  "completed_utc": "2026-10-14T22:40:56.994964+00:00",
+  "final_audit_checks": {
+    "all_twenty_five_workers_sources_configs_and_exits_audited": true,
+    "unchanged_training_helpers_and_evaluators_preserved": true,
+    "exact_five_design_two_lr_two_seed_full_horizon_grid": true,
+    "paired_base_heads_static_factor_functions_data_noise_and_dropout_streams": true,
+    "actual_optimizer_group_rates_and_ownership": true,
+    "zero_start_and_all_decoder_gradients_wake": true,
+    "same_state_guidance_and_equal_evaluation_budgets": true,
+    "two_gpu_cap_and_claim_identity": true,
+    "no_weights_checkpoints_test_or_storage_overrun": true
+  },
+  "quality_runs_completed": 20,
+  "active_workers": 0,
+  "controller_supervisor_closed": true,
+  "bytes_retained_at_audit": 1417196246
+}

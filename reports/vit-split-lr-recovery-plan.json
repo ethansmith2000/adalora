@@ -1,0 +1,37 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/vit-split-lr-recovery-20261012T013129Z",
+  "reference_workflow": "/workspace/adalora/runs/vit-split-lr-20261011T214507Z",
+  "protocol": "/workspace/adalora/runs/vit-split-lr-recovery-20261012T013129Z/protocol.json",
+  "launch_validation": "/workspace/adalora/runs/vit-split-lr-recovery-20261012T013129Z/launch_validation.json",
+  "reused_quality_runs_complete": 4,
+  "replacement_quality_runs_planned": 12,
+  "replacement_quality_runs_complete": 12,
+  "combined_quality_runs_complete": 16,
+  "combined_quality_runs_total": 16,
+  "maximum_our_gpus": 2,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "estimated_aggregate_gpu_hours": [
+    2,
+    4
+  ],
+  "cpu_checks_passed": 32,
+  "old_raw_protocol_preserved": true,
+  "updated_utc": "2026-10-12T04:58:46.400387+00:00",
+  "started_utc": "2026-10-12T01:33:26.870607+00:00",
+  "progress_snapshot": {
+    "utc": "2026-10-12T02:13:04.230669+00:00",
+    "stage": "quality",
+    "completed": 12,
+    "submitted": 12,
+    "total": 12,
+    "active": 0
+  },
+  "replacement_quality_runs_started": 12,
+  "completed_utc": "2026-10-12T02:13:05.474696+00:00",
+  "final_combined_quality_audit_passed": true,
+  "recovery_supervisors_closed": true,
+  "active_our_gpu_workers": 0,
+  "results_report": "reports/vit-split-lr.md"
+}

@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-12T06:30:58.549284+00:00",
+  "source_evidence_sha256": "4aeb34faf1fc02bd50a3ff9cc3d53d079436e8b8d05e2b6f90c2f4916c24952d",
+  "inspected_training_source_sha256": {
+    "train_cifar10.py": "6407a92e7235e795c497b5c0c04188fc1305bd1f52731411c13761973fee8498",
+    "vit.py": "4adfc9b9b061e174d70e52265edbdaa191ce7e2197b5f9c506bbe64ab788ab13",
+    "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+    "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79"
+  },
+  "exports": {
+    "vit-capacity-diagnostic.json": "357de0dba65428d923c22e9f79da6394bf4bb091bc33cf832fc5756b4cdf6c0a",
+    "vit-capacity-diagnostic.md": "90dea6666aa58b4c8c03df987df7e62012b236f45647586b130018e68aa1195f"
+  },
+  "diagnostic_source_sha256": "280579f3a4a8ff9a8d64098bfaa97061842e3ccc671bb131e9235c8bd0563c0d",
+  "new_gpu_jobs": 0,
+  "historical_results_unchanged": true
+}

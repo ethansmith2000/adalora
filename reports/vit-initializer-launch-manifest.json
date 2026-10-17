@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-12T07:14:17.098586+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-initializers-20261012T070919Z",
+  "source_sha256": {
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+    "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79",
+    "dit_cifar10.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "summarize_dit_cifar10_screen.py": "187a761734f5ca2466860c2c620936545226bdde5b9d883b11b83fc10f8f7647",
+    "test_vit_initializer_study.py": "367db4f7df3715bf6ef81d71551cf6a210e3a660b35763672bf9ce74cf710658",
+    "train_cifar10.py": "726b46aff37028ac936bdf9ccf55ff905506d21877d3ac9126fa13254af6f24f",
+    "train_dit_cifar10.py": "63248eba427b2c541dc10d7864c4562ce34f051740c855956cfebabd27213ad2",
+    "vit.py": "4651b3d13c178a52216c3964ae53d0aa820e6fe1d12f5d0fbe41c882d7d5983f",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "vit_initializer_study.py": "688229e23e2297b1ec2920d98e6be7e87db126ef8005fe5659ad4040c17f2576",
+    "vit_quality_diagnostics.py": "6631402ab335e09a668db65ecd84268a3fd8b39ea61b9f43e8ea699b0bc1b60f",
+    "vit_token_study.py": "e8e20d900ba5b6b2767fc3cdb259bbd3409e7cc1dfc627fd7130cfdafa70f6f9"
+  },
+  "protocol_snapshot_sha256": "1e9fc923d1043383419f865dcee2938d9579617b13c18170cb59e21c98ddf78c",
+  "exports": {
+    "vit-initializer-study-plan.md": "709327269dd93974ef401317795fe914e5aa67abb3952bc475baba1b3b19a78b",
+    "vit-initializer-study-plan.json": "92fc3a6988fa5b6ae856912c459f9430392f5140ca23f96b7a3445c322476cdb",
+    "vit-initializer-probe.json": "d74aa8b63cb86a01ef32227849c590ac8a14a5207f11e4ba4b78aa23a3364a4e",
+    "vit-initializer-preflight.json": "57dff9c38092572638f68b03716a127f60d9124cc4705b8aed697627c06652f2",
+    "vit-initializer-tests.log": "ae33a52dca2c86329022e8e8ad813b66693dad317683230b38ab2ffc81c55da5"
+  },
+  "preliminary_workflow": "runs/vit-initializers-20261012T070149Z",
+  "preliminary_tuning_runs_launched": 0,
+  "corrected_preflight_audited": true,
+  "final_confirmation_audit_pending": true
+}

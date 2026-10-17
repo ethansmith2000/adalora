@@ -1,0 +1,43 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/dit-structured-20261016T203614Z",
+  "maximum_our_gpus": 2,
+  "planned_runs": {
+    "preflight": 6,
+    "quality": 22
+  },
+  "workspace_cpu_checks_passed": 90,
+  "artifact_bound_bytes": 4294967296,
+  "weights_saved": false,
+  "preflight_audit_pending": false,
+  "final_audit_pending": false,
+  "updated_utc": "2026-10-17T02:04:32.405654+00:00",
+  "frozen_snapshot_checks_passed": 90,
+  "configs_verified": 28,
+  "quality_models_verified": 22,
+  "source_hashes_verified": 43,
+  "unchanged_reference_sources_verified": 33,
+  "started_utc": "2026-10-16T20:39:44.104155+00:00",
+  "preflight_independent_replay_passed": true,
+  "preflight_workers_completed": 6,
+  "preflight_complete_utc": "2026-10-16T20:45:49.972910+00:00",
+  "quality_runs_submitted_at_verification": 2,
+  "quality_runs_completed_at_verification": 0,
+  "active_workers_at_verification": 2,
+  "completed_utc": "2026-10-17T01:38:44.646411+00:00",
+  "final_audit_checks": {
+    "all_twenty_eight_workers_sources_configs_and_exits_audited": true,
+    "unchanged_training_helpers_and_evaluators_preserved": true,
+    "exact_six_design_equal_adapter_rate_two_seed_full_horizon_grid": true,
+    "paired_base_heads_across_rate_initialization_data_noise_and_dropout_streams": true,
+    "actual_optimizer_group_rates_and_ownership": true,
+    "zero_start_and_all_decoder_gradients_wake": true,
+    "same_state_guidance_and_equal_evaluation_budgets": true,
+    "two_gpu_cap_and_claim_identity": true,
+    "no_weights_checkpoints_test_or_storage_overrun": true
+  },
+  "quality_runs_completed": 22,
+  "active_workers": 0,
+  "controller_supervisor_closed": true,
+  "bytes_retained_at_audit": 1622510644
+}

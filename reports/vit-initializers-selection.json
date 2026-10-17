@@ -1,0 +1,537 @@
+{
+  "selected": {
+    "plain": {
+      "initializer": "xavier_gelu",
+      "rate": 1.0
+    },
+    "wide": {
+      "initializer": "xavier_gelu",
+      "rate": 1.0
+    },
+    "dplr": {
+      "initializer": "xavier_gelu",
+      "rate": 0.5
+    }
+  },
+  "candidates": {
+    "plain": [
+      {
+        "initializer": "legacy",
+        "rate": 0.5,
+        "accuracies": [
+          0.7814,
+          0.7856
+        ],
+        "losses": [
+          0.6757359888553619,
+          0.6685147834539413
+        ],
+        "mean_accuracy": 0.7835,
+        "mean_loss": 0.6721253861546517
+      },
+      {
+        "initializer": "legacy",
+        "rate": 1.0,
+        "accuracies": [
+          0.7942,
+          0.7858
+        ],
+        "losses": [
+          0.6484166391372681,
+          0.6642506200790406
+        ],
+        "mean_accuracy": 0.79,
+        "mean_loss": 0.6563336296081543
+      },
+      {
+        "initializer": "legacy",
+        "rate": 2.0,
+        "accuracies": [
+          0.7764,
+          0.7766
+        ],
+        "losses": [
+          0.707090411567688,
+          0.6963560737133027
+        ],
+        "mean_accuracy": 0.7765,
+        "mean_loss": 0.7017232426404953
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.8026,
+          0.7896
+        ],
+        "losses": [
+          0.6523305168867112,
+          0.6726021415472031
+        ],
+        "mean_accuracy": 0.7961,
+        "mean_loss": 0.6624663292169571
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.7898,
+          0.7904
+        ],
+        "losses": [
+          0.691083767414093,
+          0.6782555851459503
+        ],
+        "mean_accuracy": 0.7901,
+        "mean_loss": 0.6846696762800217
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.79,
+          0.7702
+        ],
+        "losses": [
+          0.6813985602855682,
+          0.7038913773536682
+        ],
+        "mean_accuracy": 0.7801,
+        "mean_loss": 0.6926449688196182
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.7908,
+          0.7918
+        ],
+        "losses": [
+          0.6642223397016526,
+          0.6512989450454711
+        ],
+        "mean_accuracy": 0.7912999999999999,
+        "mean_loss": 0.6577606423735618
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.7988,
+          0.7936
+        ],
+        "losses": [
+          0.6544305512428283,
+          0.6527947564125061
+        ],
+        "mean_accuracy": 0.7962,
+        "mean_loss": 0.6536126538276672
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7828,
+          0.7624
+        ],
+        "losses": [
+          0.684621652507782,
+          0.7266027177810669
+        ],
+        "mean_accuracy": 0.7726,
+        "mean_loss": 0.7056121851444244
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.7812,
+          0.7822
+        ],
+        "losses": [
+          0.6875747892141342,
+          0.7021263006210328
+        ],
+        "mean_accuracy": 0.7817000000000001,
+        "mean_loss": 0.6948505449175835
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.789,
+          0.7796
+        ],
+        "losses": [
+          0.6712183503866196,
+          0.6937884578704834
+        ],
+        "mean_accuracy": 0.7843,
+        "mean_loss": 0.6825034041285515
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7774,
+          0.776
+        ],
+        "losses": [
+          0.695824739408493,
+          0.7069662453651429
+        ],
+        "mean_accuracy": 0.7767,
+        "mean_loss": 0.701395492386818
+      }
+    ],
+    "wide": [
+      {
+        "initializer": "legacy",
+        "rate": 0.5,
+        "accuracies": [
+          0.7578,
+          0.7688
+        ],
+        "losses": [
+          0.7415397094726562,
+          0.7007958987236023
+        ],
+        "mean_accuracy": 0.7633000000000001,
+        "mean_loss": 0.7211678040981293
+      },
+      {
+        "initializer": "legacy",
+        "rate": 1.0,
+        "accuracies": [
+          0.769,
+          0.776
+        ],
+        "losses": [
+          0.7110142958641053,
+          0.6854410380601883
+        ],
+        "mean_accuracy": 0.7725,
+        "mean_loss": 0.6982276669621468
+      },
+      {
+        "initializer": "legacy",
+        "rate": 2.0,
+        "accuracies": [
+          0.7656,
+          0.763
+        ],
+        "losses": [
+          0.7105955788135528,
+          0.7288087847709656
+        ],
+        "mean_accuracy": 0.7643,
+        "mean_loss": 0.7197021817922592
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.7848,
+          0.7858
+        ],
+        "losses": [
+          0.686993236541748,
+          0.6824451098680496
+        ],
+        "mean_accuracy": 0.7853000000000001,
+        "mean_loss": 0.6847191732048988
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.7798,
+          0.7912
+        ],
+        "losses": [
+          0.6786236965179443,
+          0.6721457188606262
+        ],
+        "mean_accuracy": 0.7855000000000001,
+        "mean_loss": 0.6753847076892853
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7788,
+          0.7584
+        ],
+        "losses": [
+          0.6900806889533997,
+          0.7404731547355652
+        ],
+        "mean_accuracy": 0.7686,
+        "mean_loss": 0.7152769218444824
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.7832,
+          0.7874
+        ],
+        "losses": [
+          0.6706517147779465,
+          0.659466607093811
+        ],
+        "mean_accuracy": 0.7853,
+        "mean_loss": 0.6650591609358787
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.7814,
+          0.7918
+        ],
+        "losses": [
+          0.6700851141452789,
+          0.6582962872028351
+        ],
+        "mean_accuracy": 0.7866,
+        "mean_loss": 0.664190700674057
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7882,
+          0.7834
+        ],
+        "losses": [
+          0.6740809076786042,
+          0.6836780191421509
+        ],
+        "mean_accuracy": 0.7858,
+        "mean_loss": 0.6788794634103775
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.777,
+          0.7804
+        ],
+        "losses": [
+          0.6963693562030793,
+          0.6995097360610962
+        ],
+        "mean_accuracy": 0.7787,
+        "mean_loss": 0.6979395461320878
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.7862,
+          0.7716
+        ],
+        "losses": [
+          0.7037206726074219,
+          0.725901238155365
+        ],
+        "mean_accuracy": 0.7788999999999999,
+        "mean_loss": 0.7148109553813935
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7688,
+          0.6506
+        ],
+        "losses": [
+          0.710197981929779,
+          1.0018925132274628
+        ],
+        "mean_accuracy": 0.7097,
+        "mean_loss": 0.8560452475786209
+      }
+    ],
+    "dplr": [
+      {
+        "initializer": "legacy",
+        "rate": 0.5,
+        "accuracies": [
+          0.7944,
+          0.7888
+        ],
+        "losses": [
+          0.6637687572479248,
+          0.6847100540161133
+        ],
+        "mean_accuracy": 0.7916,
+        "mean_loss": 0.6742394056320191
+      },
+      {
+        "initializer": "legacy",
+        "rate": 1.0,
+        "accuracies": [
+          0.7966,
+          0.7836
+        ],
+        "losses": [
+          0.67639843583107,
+          0.7014322320461274
+        ],
+        "mean_accuracy": 0.7901,
+        "mean_loss": 0.6889153339385987
+      },
+      {
+        "initializer": "legacy",
+        "rate": 2.0,
+        "accuracies": [
+          0.7764,
+          0.7744
+        ],
+        "losses": [
+          0.7032524673461914,
+          0.7013516744613647
+        ],
+        "mean_accuracy": 0.7754,
+        "mean_loss": 0.702302070903778
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.791,
+          0.7808
+        ],
+        "losses": [
+          0.7050515059947967,
+          0.7316482358217239
+        ],
+        "mean_accuracy": 0.7859,
+        "mean_loss": 0.7183498709082603
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.794,
+          0.7834
+        ],
+        "losses": [
+          0.6848179179191589,
+          0.7191489090919495
+        ],
+        "mean_accuracy": 0.7887,
+        "mean_loss": 0.7019834135055543
+      },
+      {
+        "initializer": "fanin_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7842,
+          0.7824
+        ],
+        "losses": [
+          0.689446971321106,
+          0.6968290406227112
+        ],
+        "mean_accuracy": 0.7833,
+        "mean_loss": 0.6931380059719086
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.8012,
+          0.7916
+        ],
+        "losses": [
+          0.6857185144901276,
+          0.7010248373031617
+        ],
+        "mean_accuracy": 0.7964,
+        "mean_loss": 0.6933716758966446
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.7878,
+          0.7894
+        ],
+        "losses": [
+          0.6994770372390747,
+          0.6826732765197754
+        ],
+        "mean_accuracy": 0.7886,
+        "mean_loss": 0.6910751568794251
+      },
+      {
+        "initializer": "xavier_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7816,
+          0.7656
+        ],
+        "losses": [
+          0.6938103828430175,
+          0.7226550049781799
+        ],
+        "mean_accuracy": 0.7736,
+        "mean_loss": 0.7082326939105987
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 0.5,
+        "accuracies": [
+          0.783,
+          0.7784
+        ],
+        "losses": [
+          0.7172409656763077,
+          0.7232032677650452
+        ],
+        "mean_accuracy": 0.7807,
+        "mean_loss": 0.7202221167206764
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 1.0,
+        "accuracies": [
+          0.782,
+          0.7786
+        ],
+        "losses": [
+          0.7165400568962097,
+          0.7063259052276611
+        ],
+        "mean_accuracy": 0.7803,
+        "mean_loss": 0.7114329810619354
+      },
+      {
+        "initializer": "mixed_gelu",
+        "rate": 2.0,
+        "accuracies": [
+          0.7824,
+          0.7682
+        ],
+        "losses": [
+          0.7022216032981873,
+          0.7314418287277221
+        ],
+        "mean_accuracy": 0.7753,
+        "mean_loss": 0.7168317160129547
+      }
+    ]
+  },
+  "tuning_seeds": [
+    104,
+    105
+  ],
+  "candidates_per_method": 12,
+  "runs_per_method": 24,
+  "diagnostic_reference_fanin_selected": false,
+  "criterion": "Final 30-epoch mean validation accuracy; ties use mean loss, closest unit LR, lower LR and declared initializer order",
+  "limits": "Selection and confirmation reuse the research holdout; four fresh confirmation seeds separate seed overfitting, not holdout overfitting."
+}

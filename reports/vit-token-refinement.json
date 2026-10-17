@@ -1,0 +1,430 @@
+{
+  "aggregates": [
+    {
+      "family": "plain",
+      "parameters": 2690122,
+      "rate": 1.0,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            66.06,
+            65.86
+          ],
+          "mean": 65.96000000000001,
+          "sd": 0.1414213562373115
+        },
+        "training_peak_mib": {
+          "values": [
+            459.19677734375,
+            395.44677734375
+          ],
+          "mean": 427.32177734375,
+          "sd": 45.078057300642406
+        },
+        "loss": {
+          "values": [
+            0.9841209858894349,
+            0.9912976515769959
+          ],
+          "mean": 0.9877093187332153,
+          "sd": 0.005074668973983224
+        }
+      }
+    },
+    {
+      "family": "diagonal",
+      "parameters": 3134794,
+      "rate": 1.0,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            70.02000000000001,
+            68.06
+          ],
+          "mean": 69.04,
+          "sd": 1.3859292911256387
+        },
+        "training_peak_mib": {
+          "values": [
+            438.591796875,
+            518.8271484375
+          ],
+          "mean": 478.70947265625,
+          "sd": 56.7349611807304
+        },
+        "loss": {
+          "values": [
+            0.9022593008041382,
+            0.9381106552124023
+          ],
+          "mean": 0.9201849780082703,
+          "sd": 0.025350735816805803
+        }
+      }
+    },
+    {
+      "family": "static_r8_diagonal",
+      "parameters": 3180874,
+      "rate": 12.0,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            67.24,
+            66.03999999999999
+          ],
+          "mean": 66.63999999999999,
+          "sd": 0.848528137423859
+        },
+        "training_peak_mib": {
+          "values": [
+            460.01611328125,
+            531.6669921875
+          ],
+          "mean": 495.841552734375,
+          "sd": 50.66482235258553
+        },
+        "loss": {
+          "values": [
+            0.9533394603729248,
+            0.9799116937637329
+          ],
+          "mean": 0.9666255770683289,
+          "sd": 0.018789406421911983
+        }
+      }
+    },
+    {
+      "family": "static_capacity",
+      "parameters": 4341772,
+      "rate": 1.0,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            63.38,
+            62.94
+          ],
+          "mean": 63.16,
+          "sd": 0.3111269837220843
+        },
+        "training_peak_mib": {
+          "values": [
+            583.5576171875,
+            647.5390625
+          ],
+          "mean": 615.54833984375,
+          "sd": 45.24171385058499
+        },
+        "loss": {
+          "values": [
+            1.0679799508094787,
+            1.0762048941612243
+          ],
+          "mean": 1.0720924224853516,
+          "sd": 0.005815913218894537
+        }
+      }
+    },
+    {
+      "family": "s12",
+      "parameters": 3761626,
+      "rate": 2.0,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            68.94,
+            67.86
+          ],
+          "mean": 68.4,
+          "sd": 0.7636753236814702
+        },
+        "training_peak_mib": {
+          "values": [
+            538.5693359375,
+            492.43408203125
+          ],
+          "mean": 515.501708984375,
+          "sd": 32.62255088887253
+        },
+        "loss": {
+          "values": [
+            0.9090883798599243,
+            0.9256567560195923
+          ],
+          "mean": 0.9173725679397583,
+          "sd": 0.011715611135750769
+        }
+      }
+    },
+    {
+      "family": "s24",
+      "parameters": 4342378,
+      "rate": 1.0,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            70.5,
+            69.14
+          ],
+          "mean": 69.82,
+          "sd": 0.9616652224137042
+        },
+        "training_peak_mib": {
+          "values": [
+            518.22900390625,
+            555.3564453125
+          ],
+          "mean": 536.792724609375,
+          "sd": 26.25306558646558
+        },
+        "loss": {
+          "values": [
+            0.8715755363464356,
+            0.9128241894721985
+          ],
+          "mean": 0.8921998629093171,
+          "sd": 0.029167202340038605
+        }
+      }
+    },
+    {
+      "family": "s48",
+      "parameters": 5503882,
+      "rate": 0.5,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            69.94,
+            70.16
+          ],
+          "mean": 70.05,
+          "sd": 0.15556349186103965
+        },
+        "training_peak_mib": {
+          "values": [
+            614.4716796875,
+            576.61083984375
+          ],
+          "mean": 595.541259765625,
+          "sd": 26.77165659493345
+        },
+        "loss": {
+          "values": [
+            0.898298700618744,
+            0.8847168161392212
+          ],
+          "mean": 0.8915077583789826,
+          "sd": 0.009603842616762894
+        }
+      }
+    },
+    {
+      "family": "s24_detached",
+      "parameters": 4342378,
+      "rate": 1.0,
+      "metrics": {
+        "accuracy_percent": {
+          "values": [
+            68.60000000000001,
+            68.84
+          ],
+          "mean": 68.72,
+          "sd": 0.16970562748476778
+        },
+        "training_peak_mib": {
+          "values": [
+            517.27978515625,
+            560.3388671875
+          ],
+          "mean": 538.809326171875,
+          "sd": 30.447368895964694
+        },
+        "loss": {
+          "values": [
+            0.9152907732009887,
+            0.9230653858184814
+          ],
+          "mean": 0.9191780795097351,
+          "sd": 0.0054974813029275696
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Two fresh quality seeds and reused research holdout; sample SD is not a confidence interval.",
+    "Offsets are the forward default by user preference; this study does not repeat the offset ablation.",
+    "s24 has the near-parameter-matched static-capacity control; s12/s48 are width trends with different budgets.",
+    "All norms retain static affine parameters across controls; attention remains ordinary self-attention.",
+    "Factor offsets are treated as biases with zero weight decay; learned factor bases retain weight decay .05.",
+    "No AdaLN residual gate is introduced into this existing ViT; identity is the zero adapter and zero initial classifier.",
+    "The adapter is parallel to the MLP input projection; normalized h drives both the branch and condition.",
+    "Activation mixing avoids per-token generated factors but costs O(B*T*s*r) activations and more token-wise GEMM work.",
+    "Calibration matches only early low-rank function updates; diagonal and full-network optimization may differ.",
+    "500-step pilots use a prefix of the 3520-step schedule; quality uses a complete ten-epoch schedule.",
+    "This is a short trend study, not an asymptotic quality comparison; concurrent throughput is not an isolated speed benchmark.",
+    "Eight additional rates are frozen after observing coarse-grid updates; no quality-based selection or relaxed bounds.",
+    "The original two preflights and 28 pilots are reused only after full audit and paired source/runtime/initialization/stream checks."
+  ],
+  "paired_contrasts": {
+    "s24_minus_plain": {
+      "seeds": [
+        98,
+        99
+      ],
+      "accuracy_difference_pp": [
+        4.4399999999999995,
+        3.280000000000005
+      ],
+      "mean_difference_pp": 3.860000000000002
+    },
+    "s24_minus_diagonal": {
+      "seeds": [
+        98,
+        99
+      ],
+      "accuracy_difference_pp": [
+        0.47999999999999154,
+        1.0800000000000032
+      ],
+      "mean_difference_pp": 0.7799999999999974
+    },
+    "s48_minus_s24": {
+      "seeds": [
+        98,
+        99
+      ],
+      "accuracy_difference_pp": [
+        -0.5599999999999938,
+        1.0199999999999987
+      ],
+      "mean_difference_pp": 0.23000000000000242
+    },
+    "s24_minus_s24_detached": {
+      "seeds": [
+        98,
+        99
+      ],
+      "accuracy_difference_pp": [
+        1.8999999999999906,
+        0.30000000000000027
+      ],
+      "mean_difference_pp": 1.0999999999999954
+    },
+    "s24_minus_static_capacity": {
+      "seeds": [
+        98,
+        99
+      ],
+      "accuracy_difference_pp": [
+        7.119999999999993,
+        6.2000000000000055
+      ],
+      "mean_difference_pp": 6.659999999999999
+    },
+    "s24_minus_static_r8_diagonal": {
+      "seeds": [
+        98,
+        99
+      ],
+      "accuracy_difference_pp": [
+        3.2599999999999962,
+        3.1000000000000028
+      ],
+      "mean_difference_pp": 3.1799999999999997
+    }
+  },
+  "calibration_transfer": {
+    "s12": {
+      "early_ratios_seed98_then99_steps100_250_500": [
+        0.9482396977658875,
+        1.1952490811387162,
+        0.9478096032093977,
+        1.2008835006136984,
+        1.4598856219248981,
+        1.2483447893795236
+      ],
+      "all_early_ratios_within_bounds": true,
+      "endpoint_combined_to_base_rms_range": [
+        2.2078974166371337,
+        5.728414995993287
+      ]
+    },
+    "s24": {
+      "early_ratios_seed98_then99_steps100_250_500": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "all_early_ratios_within_bounds": true,
+      "endpoint_combined_to_base_rms_range": [
+        1.4512741502446027,
+        3.6694820613846493
+      ]
+    },
+    "s48": {
+      "early_ratios_seed98_then99_steps100_250_500": [
+        0.9938265572187271,
+        1.0599673658745226,
+        1.0255854049997304,
+        1.3747529904311808,
+        1.4372293386405823,
+        1.2442159128456904
+      ],
+      "all_early_ratios_within_bounds": true,
+      "endpoint_combined_to_base_rms_range": [
+        1.173456501192048,
+        2.3661396290359535
+      ]
+    },
+    "s24_detached": {
+      "early_ratios_seed98_then99_steps100_250_500": [
+        0.9426487372865435,
+        0.9575382391993382,
+        0.9536554084119022,
+        1.1393269658691956,
+        1.2149490879672968,
+        1.2043891503249327
+      ],
+      "all_early_ratios_within_bounds": true,
+      "endpoint_combined_to_base_rms_range": [
+        1.542371914336444,
+        3.3502784206966982
+      ]
+    },
+    "static_r8_diagonal": {
+      "early_ratios_seed98_then99_steps100_250_500": [
+        0.8675677275871608,
+        1.4124468234748242,
+        0.8462963669760472,
+        1.0164014526697112,
+        1.445773997192815,
+        0.9422828074179829
+      ],
+      "all_early_ratios_within_bounds": true,
+      "endpoint_combined_to_base_rms_range": [
+        11.686270756630028,
+        19.6783541802551
+      ]
+    }
+  },
+  "status": {
+    "state": "complete",
+    "completed_utc": "2026-10-11T19:26:43.803625+00:00",
+    "checked_utc": "2026-10-11T21:37:30.333317+00:00",
+    "quality_runs": 16,
+    "seeds": [
+      98,
+      99
+    ],
+    "maximum_our_gpus": 2,
+    "our_active_gpu_claims": 0,
+    "controllers_closed": true,
+    "weights_saved": false,
+    "official_test_evaluated": false,
+    "bytes_retained": 549811172,
+    "quality_elapsed_gpu_hours": 0.6444100382455185,
+    "additional_pilot_elapsed_gpu_hours": 0.09724343007973706
+  }
+}

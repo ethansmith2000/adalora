@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-12T06:37:04.206902+00:00",
+  "plan_sha256": "3c1e6978cff81ac407fb2132aa03440e4d20a997a3e41e51dd30f87d84e42e71",
+  "training_source_sha256": {
+    "train_cifar10.py": "6407a92e7235e795c497b5c0c04188fc1305bd1f52731411c13761973fee8498",
+    "vit.py": "4adfc9b9b061e174d70e52265edbdaa191ce7e2197b5f9c506bbe64ab788ab13",
+    "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+    "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79"
+  },
+  "initializer_selected": false,
+  "training_grid_frozen": false,
+  "new_gpu_jobs": 0,
+  "official_reference": "https://docs.pytorch.org/docs/2.11/nn.init.html"
+}

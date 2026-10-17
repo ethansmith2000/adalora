@@ -56,7 +56,11 @@ def gradient_groups(model):
     for name, p in model.named_parameters():
         key = "base"
         if ".adapter." in name:
-            key = "adapter_input" if name.endswith((".U", ".U_offset")) else "adapter_output" if name.endswith((".V", ".V_offset")) else "adapter_generator"
+            key = "adapter_input" if name.endswith((".U", ".U_offset", ".U_channel", ".U_basis", ".U_rank", ".U_core", ".U_static", ".U_scale_basis")) else "adapter_output" if name.endswith((".V", ".V_offset", ".V_channel", ".V_basis", ".V_rank", ".V_core", ".V_static", ".V_scale_basis")) else "adapter_generator"
+            if name.endswith((".input_basis", ".input_offset", ".middle_basis", ".middle_offset")):
+                key = "adapter_input"
+            elif name.endswith((".output_basis", ".output_offset")):
+                key = "adapter_output"
         groups[key].append((name, p))
     return groups
 
@@ -95,9 +99,20 @@ class BranchDiagnostics:
             def mod_hook(module, args, out, state=state):
                 shift, scale, gate = out.chunk(6, -1)[3:]
                 state.update(shift=shift.detach(), scale=scale.detach(), gate=gate.detach())
-            def base_hook(module, args, out, state=state):
-                state.update(base=out.detach(), h_mod=args[0].detach())
+            def base_hook(module, args, out, state=state, block=block):
+                if getattr(block.adapter, "is_square", False):
+                    h_mod = state["h"]*(1+state["scale"][:,None])+state["shift"][:,None]
+                    base = F.linear(h_mod, module.weight, module.bias).detach()
+                    delta = F.linear(state["square_delta"], module.weight, None).detach()
+                    state.update(base=base, delta=delta, h_mod=h_mod,
+                                 actual_pre_activation=out.detach(),
+                                 projection_rounding_residual_rms=rms(out.float()-base.float()-delta.float()))
+                else:
+                    state.update(base=out.detach(), h_mod=args[0].detach())
             def delta_hook(module, args, out, state=state, block=block):
+                if getattr(block.adapter, "is_square", False):
+                    state.update(square_delta=out.detach(), adapter_input=state["h"])
+                    return
                 inp = (state["h"] if block.adapter_input == "normalized" else state["h_mod"]) if hasattr(block, "adapter_delta") else args[0].detach()
                 state.update(delta=out.detach(), adapter_input=inp)
             def out_hook(module, args, out, state=state):
@@ -118,14 +133,17 @@ class BranchDiagnostics:
             records.append({"normalized_input_rms": rms(state["h"]), "modulated_input_rms": rms(state["h_mod"]),
                             "adapter_input_rms": rms(state.get("adapter_input", state["h"])),
                             "base_rms": rms(base), "delta_rms": rms(delta),
-                            "pre_activation_rms": rms(base + delta),
-                            "combined_to_base_rms": rms(base + delta) / max(rms(base), 1e-12),
+                            "pre_activation_rms": rms(state.get("actual_pre_activation", base + delta)),
+                            "combined_to_base_rms": rms(state.get("actual_pre_activation", base + delta)) / max(rms(base), 1e-12),
                             "delta_mean": delta.mean().item(),
                             "delta_to_base_rms": rms(delta) / max(rms(base), 1e-12),
                             "base_delta_correlation": (bc * dc).sum().item() / denom.item() if denom.item() > 0 else None,
                             "scale_rms": rms(state["scale"]), "shift_rms": rms(state["shift"]),
                             "gate_rms": rms(state["gate"]),
                             "gated_residual_to_input_rms": rms(state["gate"][:, None] * state["out"]) / max(rms(state["tokens"]), 1e-12)})
+            if "square_delta" in state:
+                records[-1].update(square_feature_delta_rms=rms(state["square_delta"]),
+                                   projection_rounding_residual_rms=state["projection_rounding_residual_rms"])
         return records
 
     def close(self):
@@ -167,7 +185,10 @@ def _factor_probe(model, h, c):
         if block.adapter_input == "modulated":
             shift, scale = block.modulation(c).chunk(6, -1)[3:5]
             inp = h * (1 + scale[:, None]) + shift[:, None]
-        deltas.append(block.adapter(inp, c).float().cpu())
+        delta = block.adapter(inp, c)
+        if getattr(block.adapter, "is_square", False):
+            delta = F.linear(delta, block.mlp_in.weight, None)
+        deltas.append(delta.float().cpu())
     return deltas
 
 
@@ -188,6 +209,10 @@ class ProjectionProbe(nn.Module):
         shift, scale = modulation.chunk(6, -1)[3:5]
         h = self.norm(x)
         h_mod = h * (1 + scale) + shift
+        if getattr(self.adapter, "is_square", False):
+            if c.ndim != 2:
+                raise ValueError("Square operator token execution is not implemented")
+            return self.base(h_mod + self.adapter(h,c))
         out = self.base(h_mod)
         if self.adapter is not None:
             inp = h if self.adapter_input == "normalized" else h_mod

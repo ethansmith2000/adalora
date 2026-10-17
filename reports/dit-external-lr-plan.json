@@ -1,0 +1,37 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/dit-external-lr-20261013T070213Z",
+  "protocol": "/workspace/adalora/runs/dit-external-lr-20261013T070213Z/protocol.json",
+  "maximum_our_gpus": 2,
+  "planned_runs": {
+    "preflight": 2,
+    "tuning": 18,
+    "quality": 12
+  },
+  "preflights_complete": 2,
+  "tuning_runs_complete": 18,
+  "confirmation_runs_complete": 12,
+  "cpu_checks_passed": 54,
+  "frozen_snapshot_protocol_checks_passed": 8,
+  "frozen_training_source_hashes_verified": 9,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "updated_utc": "2026-10-13T17:32:47.206873+00:00",
+  "started_utc": "2026-10-13T07:18:13.916868+00:00",
+  "controller_supervisor": "/workspace/adalora/runs/dit-external-lr-20261013T070213Z/controller.conf",
+  "preflight_audit_passed": true,
+  "preflight_complete_utc": "2026-10-13T07:20:02.274653+00:00",
+  "tuning_runs_started": 18,
+  "active_our_workers": 0,
+  "completed_utc": "2026-10-13T12:58:58.722210+00:00",
+  "final_audit_passed": true,
+  "final_audit_checks_passed": 9,
+  "controller_supervisor_closed": true,
+  "selected_global_lrs": {
+    "plain": 0.0008,
+    "wide": 0.0008,
+    "dplr": 0.0008
+  },
+  "bytes_retained_at_audit": 1616043131,
+  "report": "/workspace/adalora/reports/dit-external-lr.md"
+}

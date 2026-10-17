@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-12T16:22:07.430360+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-initializers-20261012T070919Z",
+  "raw_report_sha256": "9275769336eba98b39ab086d4425ae0fb1e62f926487306d2340d021f5504eed",
+  "audit_all_passed": true,
+  "raw_files": {
+    "report.json": "9275769336eba98b39ab086d4425ae0fb1e62f926487306d2340d021f5504eed",
+    "audit.json": "1e8862cbe1168c8fe4699de24977689daf0c5d041ccea5d4c4c56479300e1af2",
+    "protocol.json": "689618506c46ae9c74e7368e187e056be93f3fe92e090119b96fa287231f723f",
+    "selection.json": "4b9a28d9bef7bc3457b10cc8c4e327124308441e577440fe810ecef4200de2dc",
+    "comparison.json": "dd164dc86add9ffefc983381863745755616257a9496e7b4f0329d3ed400b9f0"
+  },
+  "exports": {
+    "reports/vit-initializers.md": {
+      "sha256": "4c410d73f4188e284f4aac0184f600acac69635bf7d41bd35612bfc93270f08d",
+      "bytes": 7642
+    },
+    "reports/vit-initializers.json": {
+      "sha256": "4db528b1ac9615fd9a2075c8857be429c61288c67632d4758299564e42b4481f",
+      "bytes": 28167
+    },
+    "reports/vit-initializers-evidence.json": {
+      "sha256": "2e0e67afd9791233e07a6307921df56eeab1fdec691f5bb35751c1477009bda7",
+      "bytes": 268859
+    },
+    "reports/vit-initializers-audit.json": {
+      "sha256": "1e8862cbe1168c8fe4699de24977689daf0c5d041ccea5d4c4c56479300e1af2",
+      "bytes": 649
+    },
+    "reports/vit-initializers-protocol.json": {
+      "sha256": "689618506c46ae9c74e7368e187e056be93f3fe92e090119b96fa287231f723f",
+      "bytes": 6552
+    },
+    "reports/vit-initializers-selection.json": {
+      "sha256": "4b9a28d9bef7bc3457b10cc8c4e327124308441e577440fe810ecef4200de2dc",
+      "bytes": 11871
+    },
+    "reports/vit-initializers-comparison.png": {
+      "sha256": "9d1062aec9678f0fa3ff9c8a08f0b311cbcd319e55d3e4a0af476f95654f4da0",
+      "bytes": 167177
+    },
+    "reports/vit-initializers-comparison.svg": {
+      "sha256": "00e9e1346f2e9043ac92a9805f15362f047b3a101aa38b5031a27a72eee6f37d",
+      "bytes": 85378
+    },
+    "reports/vit-initializer-study-plan.json": {
+      "sha256": "3d92b5939801c3923cd39bb8f7c5099fb3370ca44cc21503e4ae56ee1238ebaf",
+      "bytes": 3155
+    },
+    "reports/vit-initializer-study-plan.md": {
+      "sha256": "ce51055ca3f86da3d5171606446ffb4964410a2a02a12ebdd89e6aa25b4511aa",
+      "bytes": 9548
+    },
+    "README.md": {
+      "sha256": "e4fc988d9fb7bf2f503027f08dd44acab65e634ce3069adedfd54aa79bfc0fc0",
+      "bytes": 99444
+    },
+    "DESIGN_NOTES.md": {
+      "sha256": "72f5556d8afcf796c1e777b470bb5b495d2ebbf25f33a0c12413a9bfe06d985a",
+      "bytes": 213620
+    }
+  },
+  "controller_supervisor_closed": true,
+  "active_our_workers": 0,
+  "weights_saved": false,
+  "official_test_evaluated": false,
+  "raw_workflow_bytes_at_audit": 557402770,
+  "aggregate_worker_elapsed_hours": 9.500507553472778,
+  "plot_source": "Validated 30 validation events per quality worker from metrics.jsonl; hashes match audited report; endpoint means/sample SD reproduced from four paired seeds."
+}

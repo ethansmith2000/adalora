@@ -23,7 +23,7 @@ def common_config(configs, phase):
     """Allow declared architecture axes while retaining training/evaluation checks."""
     allowed_differences = {"variant", "width", "rank", "n_basis", "mlp_ratio", "core_rank",
                            "adapter_lr_multiplier", "adapter_gain", "output_dir", "projector_groups", "coefficient_activation",
-                           "decoder_groups", "coefficient_hidden", "factor_offsets"}
+                           "decoder_groups", "coefficient_hidden", "factor_offsets", "decoder_cp_width", "decoder_tucker_width", "decoder_channel_mode", "structured_operator", "structured_block_size", "tt_modes", "tt_bond_rank"}
     if phase in ("tuning", "confirmation", "screen", "calibration"):
         allowed_differences.update(("lr", "seed"))
     if phase == "optimizer_cfg":

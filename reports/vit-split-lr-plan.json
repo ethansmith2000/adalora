@@ -1,0 +1,53 @@
+{
+  "state": "interrupted",
+  "raw_workflow": "/workspace/adalora/runs/vit-split-lr-20261011T214507Z",
+  "protocol": "/workspace/adalora/runs/vit-split-lr-20261011T214507Z/protocol.json",
+  "launch_validation": "/workspace/adalora/runs/vit-split-lr-20261011T214507Z/launch_validation.json",
+  "maximum_our_gpus": 2,
+  "planned_runs": {
+    "preflight": 2,
+    "calibration": 20,
+    "quality": 16
+  },
+  "quality_runs_started": 6,
+  "quality_runs_complete": 4,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "estimated_aggregate_gpu_hours": [
+    3,
+    5
+  ],
+  "cpu_checks_passed": 58,
+  "cuda_specific_check_skipped": 1,
+  "updated_utc": "2026-10-12T04:58:46.400387+00:00",
+  "started_utc": "2026-10-11T21:46:03.595844+00:00",
+  "progress_snapshot": {
+    "utc": "2026-10-11T22:12:57.240962+00:00",
+    "stage": "quality",
+    "completed": 4,
+    "submitted": 6,
+    "total": 16,
+    "active": 2
+  },
+  "preflight_runs_complete": 2,
+  "preflight_audit_passed": true,
+  "preflight_complete_utc": "2026-10-11T21:47:31.127467+00:00",
+  "preflight_report": "reports/vit-split-lr-preflight.json",
+  "calibration_pilots_complete": 20,
+  "calibration_gate_passed": true,
+  "selected_rates": {
+    "s24": 1.0,
+    "static_unit": 1.0,
+    "static_joint_12": 12.0,
+    "s48": 0.5,
+    "static_split": 16.0
+  },
+  "current_active_workers": 0,
+  "followup_workflow": "/workspace/adalora/runs/vit-split-lr-recovery-20261012T013129Z",
+  "followup_plan": "reports/vit-split-lr-recovery-plan.json",
+  "interruption_report": "reports/vit-split-lr-interruption.json",
+  "followup_state": "complete",
+  "combined_quality_runs_complete": 16,
+  "final_combined_quality_audit_passed": true,
+  "results_report": "reports/vit-split-lr.md"
+}

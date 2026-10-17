@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "all_workers_sources_runtime_configs_optimizer_groups_and_splits_audited": true,
+    "shared_shape_initializer_pairing_observed_streams_and_zero_gradient_rules": true,
+    "equal_tuning_budgets_exact_74_grid_and_diagnostic_exclusion": true,
+    "full_30_epoch_selection_and_frozen_fresh_confirmation": true,
+    "explicit_legacy_anchors_and_no_duplicate_quality_cases": true,
+    "fixed_mlp_functions_and_lowrank_update_diagnostics": true,
+    "two_gpu_worker_cap_and_no_weights_test_storage_bound": true
+  },
+  "report_sha256": "9275769336eba98b39ab086d4425ae0fb1e62f926487306d2340d021f5504eed",
+  "bytes_retained": 557402770
+}

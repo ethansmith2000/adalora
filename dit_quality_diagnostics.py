@@ -31,14 +31,10 @@ class QualityDiagnostics:
         names = {id(p):name for name,p in model.named_parameters()}
         self.projector_gradients = {str(i):[(names[id(p)],p) for p in adapter.parameters()]
                                    for i,(_,adapter) in enumerate(self.projector_groups)}
-        self.decoder_gradients = {str(i):[(names[id(adapter.U)],adapter.U),(names[id(adapter.V)],adapter.V)]
+        self.decoder_gradients = {str(i):[(names[id(p)],p) for _,p in adapter.decoder_named_parameters()]
                                   for i,(_,adapter) in enumerate(model.grouped_decoders())}
-        for i,(_,adapter) in enumerate(model.grouped_decoders()):
-            if adapter.factor_offsets:
-                self.decoder_gradients[str(i)].extend(
-                    (names[id(p)],p) for p in (adapter.U_offset,adapter.V_offset))
         self.head_gradients = {str(i):[(names[id(p)],p) for p in adapter.coefficients.parameters()]
-                              for i,(_,adapter) in enumerate(self.projector_groups) if adapter.variant == "dplr"}
+                              for i,(_,adapter) in enumerate(self.projector_groups) if adapter.variant == "dplr" and hasattr(adapter,"coefficients")}
         self.base_hash = digest_parameters(model)
         self.adapter_hash = digest_parameters(model, True)
         self.first_nonzero = {}
@@ -72,6 +68,9 @@ class QualityDiagnostics:
             torch.set_float32_matmul_precision("highest")
             result = []
             for index,(layers,adapter) in enumerate(self.projector_groups):
+                if hasattr(adapter, "operator_diagnostics"):
+                    result.append(dict(group=index,layers=layers,**adapter.operator_diagnostics(self.c)))
+                    continue
                 if adapter.variant not in ("dplr", "exact"):
                     continue
                 u,v = adapter.factors(self.c)
@@ -79,9 +78,24 @@ class QualityDiagnostics:
                 entry = dict(group=index,layers=layers,input_factor_rms=rms(u),output_factor_rms=rms(v),
                              transform_frobenius_mean=adapter.gain*norm2.sqrt().mean().item())
                 if adapter.variant == "dplr":
-                    a,b = adapter.coefficient_values(self.c).chunk(2,-1)
-                    entry.update(input_coefficient_rms=rms(a),output_coefficient_rms=rms(b),
-                                 input_basis_parameter_rms=rms(adapter.U),output_basis_parameter_rms=rms(adapter.V))
+                    if hasattr(adapter,"coefficients"):
+                        a,b = adapter.coefficient_values(self.c).chunk(2,-1)
+                        entry.update(input_coefficient_rms=rms(a),output_coefficient_rms=rms(b))
+                    if hasattr(adapter,"channel_mode"):
+                        entry.update(decoder_parameterization="channel_"+adapter.channel_mode,
+                                     decoder_parameter_rms={n:rms(p) for n,p in adapter.decoder_named_parameters()})
+                        if adapter.channel_mode == "modulated":
+                            gu,gv=adapter.channel_scales(self.c)
+                            entry.update(input_channel_scale_rms=rms(gu),output_channel_scale_rms=rms(gv),
+                                         input_channel_scale_delta_rms=rms(gu-1),output_channel_scale_delta_rms=rms(gv-1))
+                    elif hasattr(adapter, "cp_width"):
+                        entry.update(decoder_parameterization="cp", decoder_cp_width=adapter.cp_width,
+                                     decoder_parameter_rms={n:rms(p) for n,p in adapter.decoder_named_parameters()})
+                    elif hasattr(adapter, "tucker_width"):
+                        entry.update(decoder_parameterization="tucker_channel", decoder_tucker_width=adapter.tucker_width,
+                                     decoder_parameter_rms={n:rms(p) for n,p in adapter.decoder_named_parameters()})
+                    else:
+                        entry.update(input_basis_parameter_rms=rms(adapter.U),output_basis_parameter_rms=rms(adapter.V))
                     if adapter.factor_offsets:
                         entry.update(input_factor_offset_rms=rms(adapter.U_offset),
                                      output_factor_offset_rms=rms(adapter.V_offset))
@@ -121,7 +135,7 @@ class QualityDiagnostics:
         missing = sorted(set(names) - set(self.first_nonzero))
         if missing:
             raise ValueError(f"Adapter gradients never observed active: {missing}")
-        return {"base_initialization_sha256": self.base_hash, "adapter_initialization_sha256": self.adapter_hash,
+        result = {"base_initialization_sha256": self.base_hash, "adapter_initialization_sha256": self.adapter_hash,
                 "fixed_function_probe_precision": "FP32 tensors and highest FP32 matmul precision; no autocast",
                 "fixed_input_seed": 2032, "diagnostic_observation_steps": sorted(self.steps), "model_state": "raw",
                 "noise_rng_final_state_sha256": digest_tensor(generator.get_state()),
@@ -134,6 +148,11 @@ class QualityDiagnostics:
                 "projector_gradient_scope": "per adapter; shared decoder tensors repeat across adapters; separate decoder/head groups count unique tensors",
                 "diagnostics": self.events,
                 "scope": "fixed independent normalized inputs/conditions; live diagnostic validation images; not EMA updates"}
+        if getattr(self.model,"structured_operator","none") != "none":
+            result.update(structured_operator=self.model.structured_operator,
+                          adapter_buffers_sha256={n:digest_tensor(b) for n,b in self.model.named_buffers() if ".adapter." in n},
+                          fixed_function_probe_scope="projected conditional branch in MLP preactivation units; includes shared MLP-weight motion for square operators")
+        return result
 
 
 def diagnostic_source_hashes():

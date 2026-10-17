@@ -1,0 +1,170 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "name": "dense_s32_a1_s122",
+      "parameters": 12593712,
+      "completed_steps": 12,
+      "gradient_tensors": 48,
+      "latest_gradient_wake_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 512,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 2834432,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        }
+      ]
+    },
+    {
+      "name": "cp_s32_p128_a1_s122",
+      "parameters": 11364912,
+      "completed_steps": 12,
+      "gradient_tensors": 80,
+      "latest_gradient_wake_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 512,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1605632,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        }
+      ]
+    },
+    {
+      "name": "cp_s64_p128_a1_s122",
+      "parameters": 11562032,
+      "completed_steps": 12,
+      "gradient_tensors": 80,
+      "latest_gradient_wake_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1024,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1802240,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        }
+      ]
+    },
+    {
+      "name": "tucker_s32_p128_a1_s122",
+      "parameters": 11807280,
+      "completed_steps": 12,
+      "gradient_tensors": 64,
+      "latest_gradient_wake_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 512,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 2048000,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        }
+      ]
+    },
+    {
+      "name": "tucker_s64_p128_a1_s122",
+      "parameters": 12463152,
+      "completed_steps": 12,
+      "gradient_tensors": 64,
+      "latest_gradient_wake_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1024,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 2703360,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        }
+      ]
+    }
+  ]
+}

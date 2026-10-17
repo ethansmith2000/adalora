@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-10-12T01:34:39.418599+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-split-lr-recovery-20261012T013129Z",
+  "source_sha256": {
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "conditioning.py": "b2cd888ecce06aa19f240a4a261ba1836c69b4cb75d0745e1c959dce99ddaad0",
+    "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79",
+    "dit_cifar10.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "summarize_dit_cifar10_screen.py": "187a761734f5ca2466860c2c620936545226bdde5b9d883b11b83fc10f8f7647",
+    "test_vit_factor_offsets.py": "6501396cbd07646e891b89da0102c7e276e623e8ea317d70c6761f8f4f21fe0d",
+    "test_vit_split_lr.py": "ac3f6a4b0ff90fe6cf05c2a12b15a85d0aad994ee2eccb8e1545c22d05aa6d24",
+    "test_vit_token_study.py": "e306c4a91b02f7780347d0c79b9fa11698ffc210f397d7b145c7ff9ecccfcca7",
+    "train_cifar10.py": "6407a92e7235e795c497b5c0c04188fc1305bd1f52731411c13761973fee8498",
+    "train_dit_cifar10.py": "e21fe0ed704569b799ec75b1b830abeb5fc2a638e8ccb52b1fac06e3dbc7e902",
+    "vit.py": "4adfc9b9b061e174d70e52265edbdaa191ce7e2197b5f9c506bbe64ab788ab13",
+    "vit_quality_diagnostics.py": "5e83aac014374d0cb93f279c3094f889e6c846f95134e7cf1e25cca490351122",
+    "vit_split_lr_study.py": "053c04085a3b9ea46b97ca20116d2460b18ad5012cdb71d64bab496c2100875d",
+    "vit_token_study.py": "46bd7411fb6c979c2a7d823282160ec7160c0c80ec76f5308529743a14b3da63",
+    "recover_vit_split_lr.py": "a7ed22e8323b4dbcf2891c73d763cb229c228ab84f17d69c302685e8958f7d8c",
+    "test_recover_vit_split_lr.py": "f228c19c8f6a39aeb7fee7a014a06e8b52c0c9751e6fc80ceb0eae76b5e80c74"
+  },
+  "original_reference_files_sha256": {
+    "protocol.json": "8c3af185be9076a64520ccbe9face82f759c7e9b41bb9a51c80c607a704e0cdc",
+    "calibration.json": "3f7bd55697ef56cd689cab53254a8701e5fdda6487141773951aa7e735e903c8",
+    "preflight/summary.json": "98e39ce6aef354c9f77ebc38e732cd4c1280d6c4afcc2fb48aa07150313ff6da",
+    "calibration/summary.json": "b803aad4aac4ada4231a8ac81a40036e98cbf59848adff89fce91979a166db08",
+    "quality/screen.json": "81ac7b6d3d7749b7aab4d6a9d69cd580ce85b366d584a8ac20891de7be063261",
+    "quality/hardware_claims.json": "401aaf13fd9bccbfcc3ed30ee1cdf95f6d72688cc2570e45c515dc421bc158b4",
+    "quality/supervisord.log": "309736ce4772089016628761b1c0c2ae1c6c7bde15899ad19a68fc0d9885e175",
+    "progress.jsonl": "86cfc6ad319258994aeb928f5aded7351e941a113c87f303b7e66d699071d129"
+  },
+  "original_partial_file_sha256": {
+    "s24_s103": {
+      "config.json": "daab94f12cbf59312ac617a8a1a0419a4c43509fe62aaddc8dfc884c2494133c",
+      "provenance.json": "6550cb9aa64895a8d5917480d1b195d27a7c5754a3762f1d91dfdf292c8b3314",
+      "artifact_manifest.json": "02592b98e6ca68e8929516f923d56cdf6f02e2e66c1470a7f204b305e3e183bb",
+      "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+      "metrics.jsonl": "2b4aad3e7592f0728285c5fa92b5deafb9d3effff7ad19a1d46631cf348d1e3c"
+    },
+    "static_unit_s103": {
+      "config.json": "2292f7a2c8dc92d3d9a1450d25430d44570eb57a030371805d00d344ad893fec",
+      "provenance.json": "6550cb9aa64895a8d5917480d1b195d27a7c5754a3762f1d91dfdf292c8b3314",
+      "artifact_manifest.json": "f19ab4897fee580f65df765336e0154c0a9331f7321a7aa04a4849d270bdd04d",
+      "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+      "metrics.jsonl": "b7b3c019d72744aee3c45cf4f5fc4a88042d69466cc28b67946370df8e79e43d"
+    }
+  },
+  "reused_quality_sha256": "ed32bb9eac104d63b96a17577a221a1ae965edf18206f001d80be50a28392c78",
+  "exports": {
+    "vit-split-lr-recovery-plan.md": "6984302ffdcefa6a3b6ae53fcc8a95184ba094f5dc90787fc2d4be13534b0cd1",
+    "vit-split-lr-recovery-plan.json": "ef68e86b0e86799c238006536bda51e86a2c87ecc59abb05fc0382381c412293",
+    "vit-split-lr-interruption.json": "291479bfd204991183ea36b46ca10a524c7954c07ce2d25cfdba45e6a59fc666",
+    "vit-split-lr-recovery-tests.log": "258c00211ea341202bc2c3542bd6be28d9bbea9a4232680082b9a5e361ce93ac"
+  },
+  "final_combined_quality_audit_pending": true
+}

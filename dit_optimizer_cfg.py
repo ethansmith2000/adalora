@@ -121,7 +121,7 @@ def prepare(output, launch=False):
     return dict(output=str(output), launched=launch, jobs=len(ordered), max_concurrent_workers=2)
 
 
-def execute_stage(output, protocol, name, cases, stage_examples=(45000, 5000)):
+def execute_stage(output, protocol, name, cases, stage_examples=(45000, 5000), phase="optimizer_cfg"):
     """Finite workers; at most two submissions hold or wait for GPU claims."""
     stage = output/name; stage.mkdir()
     source = stage/"source"; shutil.copytree(output/"runner",source,ignore=shutil.ignore_patterns("__pycache__"))
@@ -137,7 +137,7 @@ def execute_stage(output, protocol, name, cases, stage_examples=(45000, 5000)):
                    "--override_json",str(path)]
         job = dict(name=case,family=family,config=str(path),output_dir=cfg.output_dir,service=service,command=command)
         jobs.append(job);programs.append((service,command))
-    write_json(stage/"screen.json",dict(phase="optimizer_cfg",stage=name,created_utc=now(),jobs=jobs,
+    write_json(stage/"screen.json",dict(phase=phase,stage=name,created_utc=now(),jobs=jobs,
                evaluator_cache=protocol["evaluator_cache"],
                protocol=dict(train_examples=stage_examples[0],validation_examples=stage_examples[1],test_evaluated=False)))
     cap = protocol["max_concurrent_workers"]

@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "all_twenty_one_workers_sources_configs_and_exits_audited": true,
+    "unchanged_training_helpers_and_evaluators_preserved": true,
+    "exact_three_design_three_lr_two_seed_full_horizon_grid": true,
+    "paired_base_heads_across_rate_initialization_data_noise_and_dropout_streams": true,
+    "actual_optimizer_group_rates_and_ownership": true,
+    "zero_start_and_all_decoder_gradients_wake": true,
+    "same_state_guidance_and_equal_evaluation_budgets": true,
+    "two_gpu_cap_and_claim_identity": true,
+    "no_weights_checkpoints_test_or_storage_overrun": true
+  },
+  "report_sha256": "e98130ab8048a9043583d2c46ca10856066d0cfe37c5df4cd974fe73fe6aca52",
+  "bytes_retained": 1203977857
+}

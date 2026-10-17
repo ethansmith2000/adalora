@@ -30,6 +30,7 @@ from torchvision import datasets, transforms
 
 from conditioning import ConditionedLinear, VARIANTS
 from vit import ViT
+from vit_initialization import MLP_INITIALIZERS
 
 
 @dataclass
@@ -40,6 +41,9 @@ class Config:
     n_basis: int = 16
     chunk: int = 2048
     detach_condition: bool = False
+    condition_normalization: str = "none"
+    condition_gradient_scale: float = 1.0
+    routing_diagnostics: bool = False
     adapter_gain: float = 1.0
     factor_offsets: bool = False
     diagnostic_steps: str = ""
@@ -48,6 +52,7 @@ class Config:
     heads: int = 3
     patch_size: int = 4
     mlp_ratio: float = 4.0
+    mlp_init: str = "legacy"
     qk_norm: bool = False
     drop_rate: float = 0.0
     gradient_checkpointing: bool = False
@@ -57,6 +62,8 @@ class Config:
     batch_size: int = 128
     lr: float = 5e-4
     hyper_lr_multiplier: float = 1.0
+    affine_lr_multiplier: float | None = None
+    lowrank_lr_multiplier: float | None = None
     weight_decay: float = 0.05
     warmup_ratio: float = 0.05
     min_lr_ratio: float = 0.01
@@ -95,7 +102,9 @@ def load_config(argv=None):
         if isinstance(value, bool):
             parser.add_argument(flag, action=argparse.BooleanOptionalAction, default=None)
         else:
-            kind = int if name in ("max_steps", "lr_schedule_steps", "train_limit", "val_limit") else type(value) if value is not None else str
+            kind = (float if name in ("affine_lr_multiplier", "lowrank_lr_multiplier") else
+                    int if name in ("max_steps", "lr_schedule_steps", "train_limit", "val_limit") else
+                    type(value) if value is not None else str)
             parser.add_argument(flag, type=kind, default=None)
     args = vars(parser.parse_args(argv))
     path = args.pop("override_json")
@@ -118,6 +127,20 @@ def load_config(argv=None):
             raise ValueError(f"{name} must be positive or null")
     if cfg.width % cfg.heads or 32 % cfg.patch_size or cfg.mlp_ratio <= 0:
         raise ValueError("Invalid model dimensions")
+    if cfg.mlp_init not in MLP_INITIALIZERS:
+        raise ValueError('Invalid MLP initializer')
+    if cfg.condition_normalization not in ("none", "rms"):
+        raise ValueError('Invalid condition normalization')
+    if not math.isfinite(cfg.condition_gradient_scale) or not 0 <= cfg.condition_gradient_scale <= 1:
+        raise ValueError('Condition gradient scale must be finite and in [0,1]')
+    if type(cfg.routing_diagnostics) is not bool:
+        raise ValueError('routing_diagnostics must be boolean')
+    if (cfg.condition_normalization != 'none' or cfg.condition_gradient_scale != 1.) and cfg.variant != 'dplr':
+        raise ValueError('Condition interventions currently require DPLR')
+    if cfg.detach_condition and cfg.condition_gradient_scale != 1.:
+        raise ValueError('Use detach_condition or gradient scaling, rather than both')
+    if cfg.routing_diagnostics and (not cfg.diagnostic_steps or cfg.placement != 'mlp_in' or cfg.variant not in ('plain','dplr')):
+        raise ValueError('Routing diagnostics require diagnostic_steps and plain/DPLR MLP-input placement')
     if cfg.precision not in ("fp32", "bf16") or cfg.data_source not in ("huggingface", "torchvision"):
         raise ValueError("Invalid precision or data_source")
     if not 0 < cfg.val_fraction < 1 or not 0 <= cfg.warmup_ratio < 1:
@@ -126,6 +149,10 @@ def load_config(argv=None):
         raise ValueError("Invalid LR floor or label smoothing")
     if cfg.lr <= 0 or cfg.hyper_lr_multiplier <= 0 or cfg.max_grad_norm <= 0 or cfg.weight_decay < 0:
         raise ValueError("Invalid optimizer settings")
+    for name in ("affine_lr_multiplier", "lowrank_lr_multiplier"):
+        value = getattr(cfg, name)
+        if value is not None and (type(value) not in (int, float) or not math.isfinite(value) or value <= 0):
+            raise ValueError(f"{name} must be finite and positive or null")
     if not math.isfinite(cfg.adapter_gain) or cfg.adapter_gain <= 0:
         raise ValueError("Adapter gain must be finite and positive")
     if cfg.variant in ("plain", "diagonal", "exact") and cfg.adapter_gain != 1:
@@ -242,7 +269,9 @@ def build_model(cfg):
                conditioning=cfg.variant, conditioning_placement=cfg.placement,
                condition_rank=cfg.rank, condition_n_basis=cfg.n_basis, condition_chunk=cfg.chunk,
                detach_condition=cfg.detach_condition, condition_gain=cfg.adapter_gain,
-               condition_factor_offsets=cfg.factor_offsets)
+               condition_factor_offsets=cfg.factor_offsets, mlp_init=cfg.mlp_init,
+               condition_normalization=cfg.condition_normalization,
+               condition_gradient_scale=cfg.condition_gradient_scale)
 
 
 def hyperparameter_ids(model):
@@ -278,15 +307,72 @@ def make_optimizer(model, cfg):
     hyper_ids = hyperparameter_ids(model)
     factor_bias_ids = {id(p) for name, p in model.named_parameters()
                        if name.endswith(('U_offset', 'V_offset'))}
+    # Preserve the legacy grouping and shared rate exactly unless split rates
+    # are requested. Scale/shift belongs to the affine group; coefficient heads,
+    # factor bases and offsets all belong to the low-rank group.
+    split = cfg.affine_lr_multiplier is not None or cfg.lowrank_lr_multiplier is not None
+    affine_ids = affine_parameter_ids(model) if split else set()
+    def role(p):
+        if id(p) not in hyper_ids: return "base"
+        return "affine" if id(p) in affine_ids else "lowrank"
+    roles = ("base", "affine", "lowrank") if split else (False, True)
+    multipliers = adapter_lr_multipliers(cfg)
     groups = []
-    for hyper in (False, True):
+    for category in roles:
         for decay in (False, True):
-            params = [p for p in model.parameters() if (id(p) in hyper_ids) == hyper
+            params = [p for p in model.parameters() if (role(p) == category if split else (id(p) in hyper_ids) == category)
                       and (p.ndim >= 2 and id(p) not in factor_bias_ids) == decay]
             if params:
-                groups.append({"params": params, "lr": cfg.lr * (cfg.hyper_lr_multiplier if hyper else 1),
-                               "weight_decay": cfg.weight_decay if decay else 0})
+                if split:
+                    multiplier = 1 if category == "base" else multipliers[category]
+                else:
+                    multiplier = cfg.hyper_lr_multiplier if category else 1
+                group = {"params": params, "lr": cfg.lr * multiplier,
+                         "weight_decay": cfg.weight_decay if decay else 0}
+                if split: group["lr_role"] = category
+                groups.append(group)
     return torch.optim.AdamW(groups, betas=(0.9, 0.999), fused=cfg.device.startswith("cuda"))
+
+
+def affine_parameter_ids(model):
+    ids = set()
+    for module in model.modules():
+        if isinstance(module, ConditionedLinear):
+            if module.variant in ("diagonal", "static_lora_diagonal"):
+                heads = (module.to_affine,)
+            elif module.variant == "dplr":
+                heads = (module.transform.to_scale, module.transform.to_shift)
+            else:
+                continue
+            ids.update(id(p) for head in heads if head is not None for p in head.parameters())
+    return ids
+
+
+def adapter_lr_multipliers(cfg):
+    return {"affine": cfg.hyper_lr_multiplier if cfg.affine_lr_multiplier is None else cfg.affine_lr_multiplier,
+            "lowrank": cfg.hyper_lr_multiplier if cfg.lowrank_lr_multiplier is None else cfg.lowrank_lr_multiplier}
+
+
+def training_setup(cfg, schedule_steps):
+    result = dict(lr_schedule_steps=schedule_steps, warmup_steps=int(schedule_steps*cfg.warmup_ratio),
+                  adam_betas=[.9, .999], fused_adamw=cfg.device.startswith("cuda"), model_compiled=cfg.compile)
+    if cfg.affine_lr_multiplier is not None or cfg.lowrank_lr_multiplier is not None:
+        result["adapter_lr_multipliers"] = adapter_lr_multipliers(cfg)
+    if cfg.mlp_init != "legacy":
+        result['mlp_init'] = cfg.mlp_init
+    if cfg.condition_normalization != 'none' or cfg.condition_gradient_scale != 1.:
+        result['condition_input_policy'] = dict(normalization=cfg.condition_normalization,
+                                                gradient_scale=cfg.condition_gradient_scale)
+    if cfg.routing_diagnostics:
+        result['routing_diagnostics'] = True
+    return result
+
+
+def optimizer_group_manifest(model, optimizer):
+    names = {id(p): name for name, p in model.named_parameters()}
+    return [dict(role=group.get("lr_role", "legacy"), initial_lr=group["lr"],
+                 weight_decay=group["weight_decay"], parameters=sum(p.numel() for p in group["params"]),
+                 parameter_names=[names[id(p)] for p in group["params"]]) for group in optimizer.param_groups]
 
 
 def learning_rate_scale(cfg, step, schedule_steps):
@@ -354,6 +440,7 @@ def provenance():
     except subprocess.CalledProcessError:
         revision = None
     source_names = ["train_cifar10.py", "vit.py", "conditioning.py", "condlr.py"]
+    source_names.append('vit_initialization.py')
     if (root / "vit_quality_diagnostics.py").exists():
         source_names.append("vit_quality_diagnostics.py")
     packages = {name: importlib.metadata.version(name) for name in ("torch", "torchvision", "numpy", "datasets", "pillow")}
@@ -405,6 +492,7 @@ def main(argv=None):
         raise ValueError("LR schedule horizon must cover the actual training budget")
     model = model.to(device)
     optimizer = make_optimizer(model, cfg)
+    optimizer_manifest = optimizer_group_manifest(model, optimizer)
     base_lrs = [group["lr"] for group in optimizer.param_groups]
     hyper_ids = hyperparameter_ids(model)
     if cfg.compile:
@@ -496,6 +584,7 @@ def main(argv=None):
                             "images_per_second": window_images / elapsed,
                             "tokens_per_second": window_images * tokens / elapsed,
                             "benchmark_window": measured, "lr": optimizer.param_groups[0]["lr"],
+                            "optimizer_lrs": [group["lr"] for group in optimizer.param_groups],
                             "grad_norm_before_clip": grad_norm.item(), "hyper_grad_norm_before_clip": hyper_grad_norm,
                             **memory_stats(device)})
                     window_images, window_loss, window_correct = 0, 0.0, 0
@@ -524,10 +613,8 @@ def main(argv=None):
             torch.save(raw.state_dict(), output / "model.pt")
         results = {"variant": cfg.variant, "rank": cfg.rank, "n_basis": cfg.n_basis,
                    "factor_offsets": cfg.factor_offsets,
-                   "training_setup": {"lr_schedule_steps": schedule_steps,
-                                      "warmup_steps": int(schedule_steps * cfg.warmup_ratio),
-                                      "adam_betas": [0.9, 0.999], "fused_adamw": cfg.device.startswith("cuda"),
-                                      "model_compiled": cfg.compile},
+                   "training_setup": training_setup(cfg, schedule_steps),
+                   "optimizer_groups": optimizer_manifest,
                    "seed": cfg.seed, "completed_steps": step, "processed_images": processed,
                    "elapsed_seconds": time.perf_counter() - run_start, "validation": last_val,
                    "best_validation_accuracy": best_accuracy, "test": test_metrics,

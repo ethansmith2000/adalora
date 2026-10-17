@@ -25,12 +25,12 @@ from torch.nn import functional as F
 from torchvision import transforms
 from torchvision.utils import save_image
 
-from dit_cifar10 import ADAPTER_INPUTS, CIFAR10DiT, VARIANTS
+from dit_cifar10 import ADAPTER_INPUTS, CIFAR10DiT, VARIANTS, CHANNEL_MODES
 from train_cifar10 import (Config as DataConfig, SyntheticImages, TransformedSubset, _hf_split,
                           make_loader, memory_stats, stratified_split, synchronize)
 
 
-SOURCE_FILES = ("train_dit_cifar10.py", "dit_cifar10.py", "train_cifar10.py", "vit.py", "conditioning.py", "condlr.py", "class_fidelity.py")
+SOURCE_FILES = ("train_dit_cifar10.py", "dit_cifar10.py", "train_cifar10.py", "vit.py", "conditioning.py", "condlr.py", "class_fidelity.py", "vit_initialization.py", "structured_operators.py", "conditional_tt.py")
 
 
 @dataclass
@@ -51,6 +51,13 @@ class Config:
     decoder_groups: int = 0
     coefficient_hidden: int = 0
     factor_offsets: bool = False
+    decoder_cp_width: int = 0
+    decoder_tucker_width: int = 0
+    decoder_channel_mode: str = "none"
+    structured_operator: str = "none"
+    structured_block_size: int = 16
+    tt_modes: str = "4,4,4,4"
+    tt_bond_rank: int = 6
     max_steps: int = 10000
     batch_size: int = 128
     lr: float = 2e-4
@@ -127,6 +134,13 @@ def load_config(argv=None):
         values.update(supplied)
     values.update({k: v for k, v in args.items() if v is not None})
     cfg = Config(**values)
+    from structured_operators import validate_operator
+    validate_operator(cfg.structured_operator, cfg.width, cfg.structured_block_size,
+        variant=cfg.variant, adapter_input=cfg.adapter_input, factor_offsets=cfg.factor_offsets,
+        projector_groups=cfg.projector_groups, depth=cfg.depth, decoder_groups=cfg.decoder_groups,
+        decoder_cp_width=cfg.decoder_cp_width, decoder_tucker_width=cfg.decoder_tucker_width,
+        decoder_channel_mode=cfg.decoder_channel_mode, coefficient_hidden=cfg.coefficient_hidden,
+        coefficient_activation=cfg.coefficient_activation, tt_modes=cfg.tt_modes, tt_bond_rank=cfg.tt_bond_rank)
     if cfg.diagnostic_steps:
         from dit_quality_diagnostics import parse_steps
         steps = parse_steps(cfg.diagnostic_steps, cfg.max_steps)
@@ -151,6 +165,15 @@ def load_config(argv=None):
             raise ValueError(f"{name} must be boolean")
     if type(cfg.factor_offsets) is not bool or (cfg.factor_offsets and cfg.variant != "dplr"):
         raise ValueError("Factor offsets require DPLR and a boolean setting")
+    if (type(cfg.decoder_cp_width) is not int or cfg.decoder_cp_width < 0
+            or (cfg.decoder_cp_width and (cfg.variant != "dplr" or cfg.decoder_groups))):
+        raise ValueError("CP decoder width requires DPLR without decoder sharing and a nonnegative integer")
+    if (type(cfg.decoder_tucker_width) is not int or cfg.decoder_tucker_width < 0
+            or (cfg.decoder_tucker_width and (cfg.variant != "dplr" or cfg.decoder_groups or cfg.decoder_cp_width))):
+        raise ValueError("Tucker decoder width requires DPLR, no decoder sharing/CP width, and a nonnegative integer")
+    if (cfg.decoder_channel_mode not in CHANNEL_MODES or
+            (cfg.decoder_channel_mode != "none" and (cfg.variant != "dplr" or cfg.decoder_groups or cfg.decoder_cp_width or cfg.decoder_tucker_width))):
+        raise ValueError("Channel mode requires DPLR without other decoder parameterizations or sharing")
     scales = evaluation_guidance_scales(cfg)
     generation_steps = intermediate_generation_steps(cfg)
     if generation_steps and not (cfg.sample_images or cfg.fid_images):
@@ -223,7 +246,11 @@ def make_model(cfg):
                       adapter_input=cfg.adapter_input, adapter_gain=cfg.adapter_gain, core_rank=cfg.core_rank,
                       projector_groups=cfg.projector_groups, coefficient_activation=cfg.coefficient_activation,
                       decoder_groups=cfg.decoder_groups, coefficient_hidden=cfg.coefficient_hidden,
-                      enable_unconditional=cfg.class_dropout_prob > 0, factor_offsets=cfg.factor_offsets)
+                      enable_unconditional=cfg.class_dropout_prob > 0, factor_offsets=cfg.factor_offsets,
+                      decoder_cp_width=cfg.decoder_cp_width, decoder_tucker_width=cfg.decoder_tucker_width,
+                      decoder_channel_mode=cfg.decoder_channel_mode,
+                      structured_operator=cfg.structured_operator, structured_block_size=cfg.structured_block_size,
+                      tt_modes=cfg.tt_modes, tt_bond_rank=cfg.tt_bond_rank)
 
 
 def adapter_ids(model):
@@ -241,6 +268,18 @@ def make_optimizer(model, cfg):
                                "weight_decay": cfg.weight_decay if decay else 0})
     return torch.optim.AdamW(groups, betas=(cfg.adam_beta1, cfg.adam_beta2),
                             fused=cfg.fused_adamw and cfg.device.startswith("cuda"))
+
+
+def optimizer_group_metadata(model, optimizer):
+    ids = adapter_ids(model)
+    result = []
+    for group in optimizer.param_groups:
+        routes = {id(p) in ids for p in group["params"]}
+        if len(routes) != 1:
+            raise ValueError("Optimizer group mixes base and adapter parameters")
+        result.append(dict(is_adapter=routes.pop(), parameter_count=sum(p.numel() for p in group["params"]),
+                           initial_lr=group["lr"], weight_decay=group["weight_decay"]))
+    return result
 
 
 def training_callable(model, cfg):
@@ -504,6 +543,7 @@ def main(argv=None):
     stats = model.statistics()
     ema = copy.deepcopy(model).requires_grad_(False).eval()
     optimizer = make_optimizer(model, cfg)
+    optimizer_metadata = optimizer_group_metadata(model, optimizer)
     train_model = training_callable(model, cfg)
     base_lrs = [g["lr"] for g in optimizer.param_groups]
     scheduler = make_noise_scheduler(cfg)
@@ -605,6 +645,7 @@ def main(argv=None):
                 record({"event": "train", "step": step, "noise_mse": float(loss.detach()),
                         "grad_norm_before_clip": float(grad), "adapter_grad_norm_before_clip": adapter_norm,
                         "base_lr": optimizer.param_groups[0]["lr"], "images_per_second": window_images / max(duration, 1e-9),
+                        "optimizer_group_lrs": [g["lr"] for g in optimizer.param_groups],
                         "benchmark_window": measured, "processed_images": total_images})
                 window_start, window_images = time.perf_counter(), 0
                 excluded_diagnostic_seconds = 0.0
@@ -646,6 +687,7 @@ def main(argv=None):
                   "training_memory_includes": "model, in-memory EMA, gradients, optimizer and training activations; excludes FID",
                   **peak, "weights_saved": False, "test_evaluated": False}
         result["training_setup"] = {"adam_betas": [cfg.adam_beta1,cfg.adam_beta2],
+                                   "optimizer_groups": optimizer_metadata,
                                    "fused_adamw": optimizer.defaults["fused"],
                                    "model_compiled": cfg.compile_model, "compile_mode": cfg.compile_mode,
                                    "compile_dynamic": cfg.compile_dynamic,

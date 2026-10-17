@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-11T21:37:30.333317+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z",
+  "report_sha256": "df116773bdbf439dc27147b1eee0d48461d310f595bd900fc1d8834b431c749f",
+  "exports": {
+    "vit-token-refinement.md": "67841c415b3a0fa5f96793b2e22de39a4f559c87670b698347ca313f74ff21e8",
+    "vit-token-refinement.json": "00932b0957c5eefa4618579287582a7a2f054e2848903c62cc8bfb995730a16f",
+    "vit-token-refinement-evidence.json": "df116773bdbf439dc27147b1eee0d48461d310f595bd900fc1d8834b431c749f",
+    "vit-token-refinement-audit.json": "bfdcd7407869a945272c04689e6eb7b882090644fbe012a57f69a57674dbaf29",
+    "vit-token-refinement-protocol.json": "f77141fc0e228fb8ab3208719591c554fb97b269ec4884b4da8c00c80615f57f",
+    "vit-token-refinement-calibration.json": "4d40152ffb1f808066c51223151a933c8f818615a088798255bc3404d9469aef",
+    "vit-token-refinement-plan.json": "ec1f229f7e8971404d05264ed187042127755b2fe826ab3ab4280496e59c4d82",
+    "vit-token-refinement-plan.md": "25d8601067f7cff0555444dfa24cc1465c39a225b4a5b71b9d829dec9bd2b710"
+  },
+  "source_files": {
+    "report.json": "df116773bdbf439dc27147b1eee0d48461d310f595bd900fc1d8834b431c749f",
+    "audit.json": "bfdcd7407869a945272c04689e6eb7b882090644fbe012a57f69a57674dbaf29",
+    "protocol.json": "f77141fc0e228fb8ab3208719591c554fb97b269ec4884b4da8c00c80615f57f"
+  },
+  "original_failed_gate_preserved": true
+}

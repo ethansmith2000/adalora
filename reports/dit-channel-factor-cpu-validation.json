@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/venv/main/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "test_dit_channel_factors.py",
+    "test_dit_channel_factor_study.py",
+    "test_dit_tucker_decoders.py",
+    "test_dit_decoder_core_study.py",
+    "test_dit_cp_decoders.py",
+    "test_dit_decoder_compression_study.py",
+    "test_dit_factor_offsets.py",
+    "test_dit_training_options.py",
+    "test_dit_optimizer_cfg.py",
+    "test_dit_external_lr_study.py"
+  ],
+  "result": "118 passed, 14 deprecation warnings in 19.42s",
+  "workspace_source_sha256": {
+    "dit_cifar10.py": "4e50e8c9d477fcb41cb3ad08549fc2660ffe50c6d1745acebea5aadd358ec10b",
+    "train_dit_cifar10.py": "525c28b28a7877015d5660873ce68659cfe36f013d603a9cc6c5b197fcdf07db",
+    "dit_quality_diagnostics.py": "2a29a069be74b5def51a11460194366f59d21e0fc8dc3de90ad744b73db494e1",
+    "benchmark_dit_design.py": "894c2f9a1f0aedb8cc907a8c08a0151e234378050674308193579b210cec505d",
+    "summarize_dit_cifar10_screen.py": "7e8823b197b1eef83acc2e09bf3e9f44deed454b6219af51505626ec93db9783",
+    "dit_channel_factor_study.py": "87a7b6d8ba44d987f72d3bd1b7527be4547ee4bb8d242e14f785e7f1380b4fdf",
+    "test_dit_channel_factor_study.py": "1706235662e03263a1ca49cdcbb680208bffe3c1ea91fd662522730cb8a50acc",
+    "test_dit_channel_factors.py": "453b36e9f3f12dbc4d2779fbe31d661fd0aee18dfe1574b33b20e566d1a0b79e"
+  },
+  "frozen_tests_log": "/workspace/adalora/runs/dit-channel-factors-20261014T175748Z/frozen-protocol-tests.log",
+  "frozen_checks_passed": 25
+}

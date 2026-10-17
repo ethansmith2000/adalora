@@ -1,0 +1,87 @@
+{
+  "state": "complete",
+  "created_utc": "2026-10-13T01:08:36.043663+00:00",
+  "repo_root": "/workspace/adalora",
+  "purpose": "Measure condition magnitude and local task-loss gradient routes with two minimal interventions",
+  "source_sha256": {
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "conditioning.py": "a27d68790cf674ba5823b27bb6cc083df4c64add8f4edfb10186e98823a42ad4",
+    "condlr.py": "bc704c2a426c6ec4a55c1b409a53085e5ec220624b40200308f5f20cc9af3a79",
+    "dit_cifar10.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "summarize_dit_cifar10_screen.py": "187a761734f5ca2466860c2c620936545226bdde5b9d883b11b83fc10f8f7647",
+    "test_vit_condition_route_study.py": "2d8d64eecdb39c5ef86f3e4be6e2fc6f4ddedc23b4df5ec3a433e03522f88a6a",
+    "test_vit_condition_routes.py": "0697d26e3b040b12753e451698f84c2623b9895fcea319d1715f349254c7df47",
+    "train_cifar10.py": "1dbebf4b5b8f784c1fbdf0247e2c607a0d791f6979b7c0ef9b8cefdfd2136792",
+    "train_dit_cifar10.py": "63248eba427b2c541dc10d7864c4562ce34f051740c855956cfebabd27213ad2",
+    "vit.py": "89d944180cff12f3def10ba368bfd17eea0c034ac4112fdc0232cda646e75dc0",
+    "vit_condition_route_study.py": "b50ee5ebe4126e768f06581f3821a53da16b527e36cf73f4627c9f10f2e2f758",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "vit_initializer_study.py": "688229e23e2297b1ec2920d98e6be7e87db126ef8005fe5659ad4040c17f2576",
+    "vit_quality_diagnostics.py": "098972a096e08e6d6786151510c77f842b5e8322079938aa83d00c8a4503794c",
+    "vit_token_study.py": "e8e20d900ba5b6b2767fc3cdb259bbd3409e7cc1dfc627fd7130cfdafa70f6f9"
+  },
+  "parameters": {
+    "current": 4342378,
+    "condition_rms": 4342378,
+    "half_condition_gradient": 4342378,
+    "combined_preflight": 4342378
+  },
+  "families": {
+    "current": {
+      "condition_normalization": "none",
+      "condition_gradient_scale": 1.0
+    },
+    "condition_rms": {
+      "condition_normalization": "rms",
+      "condition_gradient_scale": 1.0
+    },
+    "half_condition_gradient": {
+      "condition_normalization": "none",
+      "condition_gradient_scale": 0.5
+    }
+  },
+  "pilot_seeds": [
+    110,
+    111
+  ],
+  "pilot_steps": 1200,
+  "lr_schedule_steps": 10560,
+  "max_concurrent_workers": 2,
+  "planned_runs": {
+    "preflight": 2,
+    "calibration": 6
+  },
+  "recipe_selection": false,
+  "quality_runs": 0,
+  "quality_gate": "None: no automatic long training or accuracy-based candidate selection",
+  "weights_saved": false,
+  "periodic_checkpoints": false,
+  "test_evaluated": false,
+  "resources": {
+    "max_our_gpus": 2,
+    "estimated_gpu_hours": "0.2\u20130.6 aggregate; roughly 10\u201320 wall minutes including cold compilation",
+    "disk_free_bytes_before_launch": 328796487680,
+    "retained_artifact_bound_bytes": 4294967296,
+    "artifact_purposes": {
+      "compact_evidence": "frozen sources/configs/runtime/seeds/splits/metrics/logs/audits and diagnostic route/magnitude records",
+      "compiler_cache": "compatibility/performance provenance, expected at most 3 GiB"
+    },
+    "retention": "Compact evidence and declared compiler caches until explicitly removed; historical retention unchanged"
+  },
+  "limits": [
+    "Two new seeds, 1200-step prefixes of the same 30-epoch schedule; not a final-quality or generalization comparison.",
+    "Condition-only RMS normalization and gradient scale0.5 affect both affine and low-rank heads; routes are measured separately.",
+    "Normalization is parameter-free and preserves direction, while removing condition RMS information.",
+    "Gradient scaling preserves the forward function and parameter gradients at a fixed state, but changes the training trajectory.",
+    "VJPs use the actual smoothed task loss on four fixed validation images in FP32 eager eval-mode; not training-batch or whole-network conflict.",
+    "Raw and applied condition gradients are retained; zero-gradient alignment is undefined, rather than an apparent cosine0.",
+    "Measured cosine/opposition is descriptive; no theorem or rule that negative alignment harms optimization.",
+    "No gradient/magnitude threshold selects a recipe; no early accuracy winner or automatic longer follow-up.",
+    "Historical weights/runs are not reused; default training behavior and old frozen snapshots remain unchanged."
+  ],
+  "started_utc": "2026-10-13T01:10:13.429037+00:00",
+  "preflight_complete_utc": "2026-10-13T01:12:01.303642+00:00",
+  "completed_utc": "2026-10-13T01:17:25.664975+00:00"
+}

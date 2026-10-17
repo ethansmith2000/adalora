@@ -1,0 +1,86 @@
+{
+  "checked_utc": "2026-10-12T01:33:17.986021+00:00",
+  "raw_workflow": "/workspace/adalora/runs/vit-split-lr-20261011T214507Z",
+  "raw_protocol_preserved_state": "quality",
+  "raw_protocol_sha256": "8c3af185be9076a64520ccbe9face82f759c7e9b41bb9a51c80c607a704e0cdc",
+  "observations": {
+    "container_pid1_started_utc": "2026-10-12T01:21:47Z",
+    "last_original_progress": {
+      "utc": "2026-10-11T22:12:57.240962+00:00",
+      "stage": "quality",
+      "completed": 4,
+      "submitted": 6,
+      "total": 16,
+      "active": 2
+    },
+    "original_controller_socket_refused_connection": true,
+    "old_worker_pids_dead": true,
+    "exact_interruption_time_and_cause": "unknown"
+  },
+  "preflight_audit_passed": true,
+  "calibration_audit_passed": true,
+  "selected_rates": {
+    "s24": 1.0,
+    "static_unit": 1.0,
+    "static_joint_12": 12.0,
+    "s48": 0.5,
+    "static_split": 16.0
+  },
+  "completed_quality_rows": [
+    {
+      "family": "static_capacity",
+      "seed": 103,
+      "accuracy_percent": 78.14,
+      "evidence_sha256": {
+        "config.json": "753c582921caf269a48379cd727bb416a35393577047fc0a412039f7b12922f1",
+        "results.json": "531396957681ce379f7a89e70559589dcea7c19c12c0d0f3acad5ce9fea1ac11",
+        "metrics.jsonl": "8d418c752fd2971c6163d77f96cf4666169cc49d00ec21bdbc45c18394ca91d5",
+        "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+        "provenance.json": "6550cb9aa64895a8d5917480d1b195d27a7c5754a3762f1d91dfdf292c8b3314",
+        "artifact_manifest.json": "bdc1f13918de3c8ebc9dc7b030a35a3614c3873a3b65c8013b75cc2ef1b5e742"
+      }
+    },
+    {
+      "family": "static_joint_12",
+      "seed": 103,
+      "accuracy_percent": 78.68,
+      "evidence_sha256": {
+        "config.json": "8e14d4b9166e4edb1e1f2f823ac2272b809cb91d0441b608b278dc97a77a0969",
+        "results.json": "bdf155346f42c08fc6bb521d84fe702ae8cb51fb48d879f5e1ccac06c1b53631",
+        "metrics.jsonl": "148d9873f6ace4c2d2ce2806f8846fbdf7687deed7898d75408dcf2d2edab8d4",
+        "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+        "provenance.json": "6550cb9aa64895a8d5917480d1b195d27a7c5754a3762f1d91dfdf292c8b3314",
+        "artifact_manifest.json": "071c6ec86c91cae873971970cd5f28d60370fc4afdc68d9ed58afb21b5135c22"
+      }
+    },
+    {
+      "family": "static_split",
+      "seed": 102,
+      "accuracy_percent": 78.72,
+      "evidence_sha256": {
+        "config.json": "01582a3b11a15cc037dee9ea29b8d93afe1da84b047369ee9d005230e0b64ae3",
+        "results.json": "f5ff0a8da836bb288fc0b48619a09cf22348b0804159d1c925916cee67b9ed12",
+        "metrics.jsonl": "076511ba9f19979cd2b8e2ed6d252024b94b42cc12ca082351d33255ff762ffe",
+        "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+        "provenance.json": "6550cb9aa64895a8d5917480d1b195d27a7c5754a3762f1d91dfdf292c8b3314",
+        "artifact_manifest.json": "16977d6fd424df5f5c8f2c6572868d62c0cefad9044f649862a82e73d9116802"
+      }
+    },
+    {
+      "family": "static_capacity",
+      "seed": 102,
+      "accuracy_percent": 77.4,
+      "evidence_sha256": {
+        "config.json": "80a38d15cd9058600ba5772dabf641e35f8470a255b93e058da41fb5ebd392e9",
+        "results.json": "80671131597569f699533705f41643f415cd45c8730edec8b2d2c1618af66d54",
+        "metrics.jsonl": "4d76617d7c4209bcb9b211980291834a1c38bc2e63a236afe89d8ef2be8f0d15",
+        "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+        "provenance.json": "6550cb9aa64895a8d5917480d1b195d27a7c5754a3762f1d91dfdf292c8b3314",
+        "artifact_manifest.json": "c372362c1eb59af409204088ead85a2ab841134d32c4be73ba170ac722e77a90"
+      }
+    }
+  ],
+  "remaining_quality": 12,
+  "recovery_workflow": "/workspace/adalora/runs/vit-split-lr-recovery-20261012T013129Z",
+  "no_weights_saved": true
+}

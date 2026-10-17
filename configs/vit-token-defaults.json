@@ -48,5 +48,7 @@
   "evaluate_test": false,
   "output_dir": "/workspace/adalora/runs/vit-token-default-recipe",
   "save_weights": false,
-  "artifact_purpose": null
+  "artifact_purpose": null,
+  "affine_lr_multiplier": 1.0,
+  "lowrank_lr_multiplier": 1.0
 }

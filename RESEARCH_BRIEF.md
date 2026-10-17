@@ -663,3 +663,49 @@ basis-r2 versus FFN agreement result, while exposing a large quality loss from
 the cheaper conditional cores and later function-update drift. The earlier
 raw-r8 FID ordering does not reproduce on the new seeds. Historical cohorts
 are kept separate rather than pooled or substituted for current controls.
+
+
+**2026-10-16 objective and operator-space update:** The goal covers both making
+conditional low-rank transforms practical and exploring alternative generated
+operators. The next implemented study changes the operator itself: square
+block structure and conditional Hadamard mixing, with approximately matched
+square low-rank/diagonal controls and the established rectangular reference.
+It retains broadcast diffusion, common AdaLN and a zero-delta parallel branch;
+no toy retrieval or new LM benchmark is launched. The six-preflight/22-run
+protocol, PyTorch shapes, gains, generation/application costs, limitations and
+resource/artifact policy are in [the structured-operator plan](reports/dit-structured-plan.md).
+
+
+**2026-10-17 structured-operator results:** The first22-run screen completed
+with all nine audits passing. Conditional Hadamard at adapter LR2 improves
+on its nearly budget-matched square diagonal control in both seeds, but
+loses observed training throughput; block structure offers a different
+quality/throughput/allocation tradeoff against square low-rank. Rectangular
+DPLR remains the quality reference. No general operator winner or new default
+is established. See [the complete structured-operator report](reports/dit-structured.md)
+for every rate/seed, matched-placement gaps, costs and limitations.
+
+
+Conditional tensor-train operators are now implemented for the next bounded
+DiT study. Four paired channel modes `[4,4,4,4]`, TT bonds6/11 and one shared
+affine latent32 give420,608/1,180,928 adapter parameters. TT bond rank is not
+ordinary matrix rank. Training applies mode contractions without a dense
+operator; token-axis contraction intermediates still require measurement.
+A zero final core gives an exact zero delta, with nonzero earlier static cores
+and audited gradient wake-up. The24-run plan uses diagonal, square low-rank
+and block controls plus the contextual rectangular reference, two fresh seeds
+and the existing two adapter rates. Two-GPU cap, no weights/checkpoints.
+Validation and compiled GPU preflight must pass before quality begins.
+[Conditional TT protocol](reports/dit-tt-plan.md).
+
+
+All six TT-study CUDA preflights passed both the controller audit and an
+independent frozen-runner replay. Every adapter tensor received a nonzero
+gradient by step5, including all80 tensors in each TT variant. Source/config,
+paired streams/initializations, actual optimizer groups/rates, claim identity
+and evaluator budgets verified. Short-preflight whole-run peak allocations
+were1.91GiB (TT6) and2.37GiB (TT11); these are not sustained quality-training
+resource results. The24 full30k quality runs are now open under the two-worker
+cap. Final quality and audit remain pending; no model weights/checkpoints.
+[TT preflight evidence](reports/dit-tt-preflight.json) ·
+[TT startup status](reports/dit-tt-startup.json).

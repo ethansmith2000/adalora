@@ -1,0 +1,39 @@
+{
+  "command": [
+    "/venv/main/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "test_dit_structured_study.py",
+    "test_structured_operators.py",
+    "test_dit_channel_factors.py",
+    "test_dit_channel_lr_study.py",
+    "test_dit_training_options.py",
+    "test_dit_optimizer_cfg.py"
+  ],
+  "result": "90 passed, 14 deprecation warnings in 20.59s",
+  "workspace_source_sha256": {
+    "dit_cifar10.py": "38c6af44bdc984a841321d94613cf6e71aa3f5dbf6c6d5b1d69777ec9ac4ed0c",
+    "train_dit_cifar10.py": "7a2b47ddb2d0ed4ef0cf9b347cd1a1ebc47cf9deeb07e2e6f474b48210b14a81",
+    "structured_operators.py": "dbe87df0ae75c83b2ebf291e91b9a4aa4f108cdfaa0453585064a79a8a6fba8d",
+    "benchmark_dit_design.py": "e87820014cf680c940be3f34b72c806265cf9c009308a0f2323789dfa2abccc6",
+    "dit_quality_diagnostics.py": "b3ffd3efff9313de4d9f2c6ee58824cd17114401fc4db290379b231ba3cd2310",
+    "summarize_dit_cifar10_screen.py": "162aa8e95d710e1449b29ce9352391aeb7a3fa36feeb704d449928b9d4a927e2",
+    "structured_baseline_model.py": "4e50e8c9d477fcb41cb3ad08549fc2660ffe50c6d1745acebea5aadd358ec10b",
+    "test_structured_operators.py": "3b90748dc660b6ce0886385343785bcc58eb56e747c6fc978c43e1bd7b6c1487",
+    "dit_structured_study.py": "8d6ab31f1a64059474d6756e3d69775a40f56138b4cbc6b56fd40ba22f32bbbf",
+    "test_dit_structured_study.py": "79aa616d649638545d3cfbbc6b5c252bcd1daea24136b8af49a23fbb8835ae9a"
+  },
+  "frozen_checks_passed": 90,
+  "frozen_tests_log": "/workspace/adalora/runs/dit-structured-20261016T203614Z/frozen-protocol-tests.log",
+  "symbolic_hadamard_model_tracing_verified": [
+    {
+      "batch": 2,
+      "max_absolute_error": 0.0
+    },
+    {
+      "batch": 3,
+      "max_absolute_error": 0.0
+    }
+  ]
+}

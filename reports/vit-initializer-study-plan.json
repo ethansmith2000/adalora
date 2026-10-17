@@ -1,0 +1,86 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/vit-initializers-20261012T070919Z",
+  "protocol": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/protocol.json",
+  "launch_validation": "/workspace/adalora/runs/vit-initializers-20261012T070919Z/launch_validation.json",
+  "maximum_our_gpus": 2,
+  "planned_runs": {
+    "preflight": 2,
+    "calibration": 74,
+    "quality": 24
+  },
+  "minimum_quality_runs": 12,
+  "maximum_quality_runs": 24,
+  "tuning_runs_complete": 74,
+  "confirmation_runs_complete": 24,
+  "cpu_checks_passed": 72,
+  "cuda_specific_check_skipped": 1,
+  "initializer_probe_sha256": "d74aa8b63cb86a01ef32227849c590ac8a14a5207f11e4ba4b78aa23a3364a4e",
+  "initial_mean_mlp_output_rms": {
+    "plain__legacy": 0.08147655489544074,
+    "plain__fanin_gelu": 0.08119029862185319,
+    "plain__xavier_gelu": 0.08131730929017067,
+    "plain__mixed_gelu": 0.08110173605382442,
+    "wide__legacy": 0.11341038532555103,
+    "wide__fanin_gelu": 0.08179556826750438,
+    "wide__xavier_gelu": 0.06184743531048298,
+    "wide__mixed_gelu": 0.0861076849202315,
+    "wide__reference_fanin": 0.08161365675429504,
+    "dplr__legacy": 0.08147655489544074,
+    "dplr__fanin_gelu": 0.08119029862185319,
+    "dplr__xavier_gelu": 0.08131730929017067,
+    "dplr__mixed_gelu": 0.08110173605382442
+  },
+  "four_distinct_initial_functions_verified": true,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "estimated_aggregate_gpu_hours": [
+    10,
+    16
+  ],
+  "preliminary_workflow_superseded": "/workspace/adalora/runs/vit-initializers-20261012T070149Z",
+  "preliminary_tuning_runs_launched": 0,
+  "updated_utc": "2026-10-12T16:22:07.428340+00:00",
+  "started_utc": "2026-10-12T07:11:19.273391+00:00",
+  "preflight_runs_complete": 2,
+  "preflight_audit_passed": true,
+  "preflight_complete_utc": "2026-10-12T07:12:47.101472+00:00",
+  "progress_snapshot": {
+    "stage": "quality",
+    "completed": 24,
+    "submitted": 24,
+    "total": 24,
+    "active": 0
+  },
+  "tuning_runs_started": 74,
+  "selected": {
+    "plain": {
+      "initializer": "xavier_gelu",
+      "rate": 1.0
+    },
+    "wide": {
+      "initializer": "xavier_gelu",
+      "rate": 1.0
+    },
+    "dplr": {
+      "initializer": "xavier_gelu",
+      "rate": 0.5
+    }
+  },
+  "final_audit_passed": true,
+  "final_audit_checks": {
+    "all_workers_sources_runtime_configs_optimizer_groups_and_splits_audited": true,
+    "shared_shape_initializer_pairing_observed_streams_and_zero_gradient_rules": true,
+    "equal_tuning_budgets_exact_74_grid_and_diagnostic_exclusion": true,
+    "full_30_epoch_selection_and_frozen_fresh_confirmation": true,
+    "explicit_legacy_anchors_and_no_duplicate_quality_cases": true,
+    "fixed_mlp_functions_and_lowrank_update_diagnostics": true,
+    "two_gpu_worker_cap_and_no_weights_test_storage_bound": true
+  },
+  "report_sha256": "9275769336eba98b39ab086d4425ae0fb1e62f926487306d2340d021f5504eed",
+  "controller_supervisor_closed": true,
+  "active_our_workers": 0,
+  "completed_utc": "2026-10-12T12:15:47.865198+00:00",
+  "retained_workflow_bytes": 557402770,
+  "report": "/workspace/adalora/reports/vit-initializers.md"
+}

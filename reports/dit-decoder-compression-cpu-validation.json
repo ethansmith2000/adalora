@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/venv/main/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "test_dit_cp_decoders.py",
+    "test_dit_decoder_compression_study.py",
+    "test_dit_factor_offsets.py",
+    "test_dit_training_options.py",
+    "test_dit_optimizer_cfg.py",
+    "test_dit_external_lr_study.py"
+  ],
+  "result": "69 passed, 14 deprecation warnings in 12.72s",
+  "source_sha256": {
+    "dit_cifar10.py": "576daabffd9865010461dc1f80031f23ee9f3a195966e1912972514cb1070858",
+    "train_dit_cifar10.py": "57fdcba438449acd065a51166920625c8bafce92b4ac6c0c6308036275564b33",
+    "dit_quality_diagnostics.py": "2c9f8c237c164ea450cf401946c9a6abf66bb8b3576681a82f16b5d7cc3f303d",
+    "benchmark_dit_design.py": "7aa061d53003935dc1023690a500afc551a027614b95dccdea157863bfb6e7bb",
+    "summarize_dit_cifar10_screen.py": "d382cfeea82ac99b6f656f84f1604b8a7fa3ba6c8af8d87041a9f65da4965059",
+    "dit_decoder_compression_study.py": "fe02f7df6a9c3b3c8eee43204213c62f24293ae83fbb9dfe67b330192da620b4",
+    "test_dit_cp_decoders.py": "fdbe67b047522b2b4a722652541e94bca0873836748ad849958548a53f9cefd9",
+    "test_dit_decoder_compression_study.py": "5a706be2af95d6b1aa160f577e3a027a7b6175b4d3cc748c0b62dd77711ece5e"
+  },
+  "frozen_tests_log": "/workspace/adalora/runs/dit-decoder-compression-20261013T181112Z/frozen-protocol-tests.log",
+  "frozen_checks_passed": 20
+}

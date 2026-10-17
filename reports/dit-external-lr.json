@@ -1,0 +1,469 @@
+{
+  "aggregates": [
+    {
+      "method": "plain",
+      "parameters": 9758768,
+      "global_lr": 0.0008,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 50.309438705444336,
+            "sd": 0.6771047610849572,
+            "values": [
+              50.74203872680664,
+              50.986759185791016,
+              49.99274826049805,
+              49.51620864868164
+            ]
+          },
+          "agreement_percent": {
+            "mean": 49.07999932765961,
+            "sd": 0.5607132945994097,
+            "values": [
+              48.39999973773956,
+              48.93999993801117,
+              49.23999905586243,
+              49.73999857902527
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 38.377800941467285,
+            "sd": 0.6206540756018413,
+            "values": [
+              38.99589157104492,
+              38.826087951660156,
+              37.8896484375,
+              37.79957580566406
+            ]
+          },
+          "agreement_percent": {
+            "mean": 79.76499944925308,
+            "sd": 0.5068532369466647,
+            "values": [
+              79.50000166893005,
+              79.29999828338623,
+              79.79999780654907,
+              80.46000003814697
+            ]
+          }
+        }
+      }
+    },
+    {
+      "method": "wide",
+      "parameters": 12594632,
+      "global_lr": 0.0008,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 48.87093544006348,
+            "sd": 1.1542310091037475,
+            "values": [
+              50.06663513183594,
+              48.143333435058594,
+              47.655029296875,
+              49.618743896484375
+            ]
+          },
+          "agreement_percent": {
+            "mean": 49.71500039100647,
+            "sd": 0.48232131205933254,
+            "values": [
+              49.23999905586243,
+              49.36000108718872,
+              50.16000270843506,
+              50.09999871253967
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 37.201294898986816,
+            "sd": 1.2043975328836485,
+            "values": [
+              38.829227447509766,
+              36.23822021484375,
+              36.343021392822266,
+              37.394710540771484
+            ]
+          },
+          "agreement_percent": {
+            "mean": 80.57999908924103,
+            "sd": 0.46932540476014756,
+            "values": [
+              80.15999794006348,
+              80.68000078201294,
+              81.19999766349792,
+              80.27999997138977
+            ]
+          }
+        }
+      }
+    },
+    {
+      "method": "dplr",
+      "parameters": 12593712,
+      "global_lr": 0.0008,
+      "final_guidance": {
+        "1.0": {
+          "fid": {
+            "mean": 47.426180839538574,
+            "sd": 0.864005560897135,
+            "values": [
+              47.239540100097656,
+              48.6937141418457,
+              46.80243682861328,
+              46.969032287597656
+            ]
+          },
+          "agreement_percent": {
+            "mean": 58.56499969959259,
+            "sd": 0.2918334431492534,
+            "values": [
+              58.52000117301941,
+              58.17999839782715,
+              58.70000123977661,
+              58.85999798774719
+            ]
+          }
+        },
+        "2.0": {
+          "fid": {
+            "mean": 33.889803886413574,
+            "sd": 0.667885053876002,
+            "values": [
+              33.71034240722656,
+              34.87261962890625,
+              33.39488220214844,
+              33.58137130737305
+            ]
+          },
+          "agreement_percent": {
+            "mean": 89.01499956846237,
+            "sd": 0.4186869859903156,
+            "values": [
+              89.6399974822998,
+              88.85999917984009,
+              88.76000046730042,
+              88.80000114440918
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "paired_contrasts": {
+    "plain": {
+      "1.0": {
+        "fid_dplr_minus_control": {
+          "mean": -2.8832578659057617,
+          "sd": 0.5594768286266387,
+          "values": [
+            -3.5024986267089844,
+            -2.2930450439453125,
+            -3.1903114318847656,
+            -2.5471763610839844
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 9.485000371932983,
+          "sd": 0.446132603583979,
+          "values": [
+            10.120001435279846,
+            9.239998459815979,
+            9.460002183914185,
+            9.119999408721924
+          ]
+        }
+      },
+      "2.0": {
+        "fid_dplr_minus_control": {
+          "mean": -4.487997055053711,
+          "sd": 0.5758021006490079,
+          "values": [
+            -5.285549163818359,
+            -3.9534683227539062,
+            -4.4947662353515625,
+            -4.218204498291016
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 9.25000011920929,
+          "sd": 0.7746804818747599,
+          "values": [
+            10.139995813369751,
+            9.560000896453857,
+            8.960002660751343,
+            8.340001106262207
+          ]
+        }
+      }
+    },
+    "wide": {
+      "1.0": {
+        "fid_dplr_minus_control": {
+          "mean": -1.4447546005249023,
+          "sd": 1.6014584337551947,
+          "values": [
+            -2.8270950317382812,
+            0.5503807067871094,
+            -0.8525924682617188,
+            -2.6497116088867188
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 8.84999930858612,
+          "sd": 0.3109142556826389,
+          "values": [
+            9.280002117156982,
+            8.819997310638428,
+            8.539998531341553,
+            8.75999927520752
+          ]
+        }
+      },
+      "2.0": {
+        "fid_dplr_minus_control": {
+          "mean": -3.311491012573242,
+          "sd": 1.574488160969283,
+          "values": [
+            -5.118885040283203,
+            -1.3656005859375,
+            -2.948139190673828,
+            -3.8133392333984375
+          ]
+        },
+        "agreement_pp_dplr_minus_control": {
+          "mean": 8.435000479221344,
+          "sd": 0.8020588409736775,
+          "values": [
+            9.479999542236328,
+            8.179998397827148,
+            7.56000280380249,
+            8.52000117301941
+          ]
+        }
+      }
+    }
+  },
+  "selection": {
+    "selected_rates": {
+      "plain": 2.0,
+      "wide": 2.0,
+      "dplr": 2.0
+    },
+    "candidates": {
+      "plain": [
+        {
+          "rate": 0.5,
+          "global_lr": 0.0002,
+          "cfg2_fid": {
+            "mean": 61.90817070007324,
+            "sd": 0.9469297670588724,
+            "values": [
+              61.238590240478516,
+              62.57775115966797
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.06145265678465366,
+            "sd": 0.0001006585975874583,
+            "values": [
+              0.06138148040771484,
+              0.06152383316159248
+            ]
+          }
+        },
+        {
+          "rate": 1.0,
+          "global_lr": 0.0004,
+          "cfg2_fid": {
+            "mean": 45.544416427612305,
+            "sd": 0.08291532648808779,
+            "values": [
+              45.48578643798828,
+              45.60304641723633
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.05941781886816025,
+            "sd": 2.023549433083454e-05,
+            "values": [
+              0.059432127523422244,
+              0.059403510212898254
+            ]
+          }
+        },
+        {
+          "rate": 2.0,
+          "global_lr": 0.0008,
+          "cfg2_fid": {
+            "mean": 38.52769470214844,
+            "sd": 0.5331839332962803,
+            "values": [
+              38.90471267700195,
+              38.15067672729492
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.058292059266567234,
+            "sd": 1.3247066373650125e-05,
+            "values": [
+              0.05830142635703087,
+              0.058282692176103594
+            ]
+          }
+        }
+      ],
+      "wide": [
+        {
+          "rate": 0.5,
+          "global_lr": 0.0002,
+          "cfg2_fid": {
+            "mean": 50.7235107421875,
+            "sd": 0.24047845366036638,
+            "values": [
+              50.553466796875,
+              50.8935546875
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.060255447366833685,
+            "sd": 0.0001174245802076135,
+            "values": [
+              0.0601724156498909,
+              0.06033847908377647
+            ]
+          }
+        },
+        {
+          "rate": 1.0,
+          "global_lr": 0.0004,
+          "cfg2_fid": {
+            "mean": 41.735713958740234,
+            "sd": 0.11108965178065022,
+            "values": [
+              41.657161712646484,
+              41.814266204833984
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.05883532012701034,
+            "sd": 8.42612945246545e-05,
+            "values": [
+              0.0587757383942604,
+              0.05889490185976028
+            ]
+          }
+        },
+        {
+          "rate": 2.0,
+          "global_lr": 0.0008,
+          "cfg2_fid": {
+            "mean": 36.55166053771973,
+            "sd": 0.7414797277833042,
+            "values": [
+              36.0273551940918,
+              37.075965881347656
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.057950690340995786,
+            "sd": 0.00015152159560185703,
+            "values": [
+              0.05784354839324951,
+              0.05805783228874207
+            ]
+          }
+        }
+      ],
+      "dplr": [
+        {
+          "rate": 0.5,
+          "global_lr": 0.0002,
+          "cfg2_fid": {
+            "mean": 47.82198715209961,
+            "sd": 0.4004395679255208,
+            "values": [
+              48.105140686035156,
+              47.53883361816406
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.060396747705340384,
+            "sd": 6.267868997765964e-05,
+            "values": [
+              0.060441068232059476,
+              0.06035242717862129
+            ]
+          }
+        },
+        {
+          "rate": 1.0,
+          "global_lr": 0.0004,
+          "cfg2_fid": {
+            "mean": 38.49099159240723,
+            "sd": 1.509973899588151,
+            "values": [
+              39.5587043762207,
+              37.42327880859375
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.05884996931552887,
+            "sd": 0.00015294120261213751,
+            "values": [
+              0.05895811507701874,
+              0.058741823554039
+            ]
+          }
+        },
+        {
+          "rate": 2.0,
+          "global_lr": 0.0008,
+          "cfg2_fid": {
+            "mean": 33.33700942993164,
+            "sd": 0.2279679203231807,
+            "values": [
+              33.498207092285156,
+              33.175811767578125
+            ]
+          },
+          "ema_mse": {
+            "mean": 0.05792797775864601,
+            "sd": 2.0595377840898528e-05,
+            "values": [
+              0.057913414627313614,
+              0.05794254088997841
+            ]
+          }
+        }
+      ]
+    },
+    "tuning_seeds": [
+      114,
+      115
+    ],
+    "candidates_per_method": 3,
+    "runs_per_method": 6,
+    "criterion": "Final 30k mean CFG2 EMA FID; ties use final EMA noise MSE, closest unit rate, lower rate",
+    "limits": "Two tuning seeds and reused 5k research holdout/noise; no intermediate best-state selection"
+  },
+  "limits": [
+    "Three global LRs \u00d7 two complete 30k tuning seeds per method; no early/best-state accuracy/FID selection.",
+    "The same 30k schedule in tuning and confirmation; no resume or automatic grid expansion.",
+    "Four fresh confirmation seeds address seed variability, not overfitting to the reused research holdout/evaluation noise.",
+    "Baseline and DPLR share narrow base initialization; wider shape changes RNG/initialization, while each method is paired across rates.",
+    "Wider hidden1715 matches offset-enabled DPLR within920 parameters (0.0074%); no claim of FLOP or function equivalence.",
+    "All base Linear weights already use Xavier initialization; no new initializer or architecture search.",
+    "External condition is a normalized class-plus-timestep vector, broadcast over tokens; sequence-conditioned cross-attention is not tested.",
+    "DPLR r8/s32, offsets on, affine independent projector and gain1/sqrt(8), relative adapter LR1 stay fixed.",
+    "Primary selection uses CFG2; final CFG1 and CFG2 share one EMA state and sampling noise. All guided and unguided results are reported.",
+    "5k-image held-out-train FID and frozen auxiliary classifier agreement are research proxies, not official50k-image test metrics.",
+    "Historical training/evaluation records are context only; no historical quality cell is reused.",
+    "The complete original DiT trainer/model/data/diagnostic source snapshot is reused; recent ViT source changes are excluded.",
+    "Compiled concurrent throughput is descriptive; no dedicated speed benchmark or new evaluator/model-weight artifact."
+  ]
+}

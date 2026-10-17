@@ -10,6 +10,7 @@ import torch.nn.functional as F
 from torch.utils.checkpoint import checkpoint
 
 from conditioning import ConditionedLinear, VARIANTS, project
+from vit_initialization import MLP_INITIALIZERS, initialize_mlp
 
 
 class PatchEmbed(nn.Module):
@@ -125,11 +126,17 @@ class ViT(nn.Module):
         detach_condition=False,
         condition_gain=1.0,
         condition_factor_offsets=False,
+        mlp_init="legacy",
+        condition_normalization="none",
+        condition_gradient_scale=1.0,
     ):
         super().__init__()
         self.num_classes = num_classes
         self.embed_dim = embed_dim
         self.gradient_checkpointing = gradient_checkpointing
+        if mlp_init not in MLP_INITIALIZERS:
+            raise ValueError('Invalid MLP initializer')
+        self.mlp_init = mlp_init
         if conditioning not in VARIANTS:
             raise ValueError(f"conditioning must be one of {VARIANTS}")
         if conditioning_placement not in ("mlp_in", "qkv", "both"):
@@ -158,6 +165,9 @@ class ViT(nn.Module):
         
         # Initialize weights
         self._init_weights()
+        if mlp_init != "legacy":
+            for block in self.blocks:
+                initialize_mlp(block.mlp, embed_dim, mlp_init)
         # Attach adapters after base initialization so generic Linear init cannot
         # overwrite zero scale/shift heads. The base is identical across variants
         # built with the same seed, including the classifier and patch embedding.
@@ -169,7 +179,8 @@ class ViT(nn.Module):
                         setattr(module, attr, ConditionedLinear(
                             getattr(module, attr), conditioning, condition_rank,
                             condition_n_basis, condition_chunk, condition_gain,
-                            condition_factor_offsets))
+                            condition_factor_offsets, condition_normalization,
+                            condition_gradient_scale))
     
     def _init_weights(self):
         # Position embedding

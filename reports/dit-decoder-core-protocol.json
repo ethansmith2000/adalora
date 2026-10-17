@@ -1,0 +1,591 @@
+{
+  "state": "complete",
+  "created_utc": "2026-10-14T07:16:18.975659+00:00",
+  "repo_root": "/workspace/adalora",
+  "purpose": "Free channel-mode decoder cores versus CP, with equal adapter-LR sensitivity and wider coefficient controls",
+  "reference_workflow": "/workspace/adalora/runs/dit-decoder-compression-20261013T181112Z",
+  "reference_files_sha256": {
+    "protocol.json": "2a86e801df9d76bb2889460d3947e07952d3798db1f72115581db88a5eab45ab",
+    "report.json": "2a01ff3cc0b62ea68234daff6569539efa8085c2c3f880bfb3965f0422c48cf7",
+    "audit.json": "619e06c86b1afa4944dee3889023ca92b8d3e5361bfd7507bfbbc81dd4a6aca6",
+    "comparison.json": "b8b0b2aec0d38cc75c46b4ceefcececadcf23b81062f2d24427c2ebd5ef8498e"
+  },
+  "source_sha256": {
+    "train_dit_cifar10.py": "d88e8e2c8668b56d749f72b5e3f0958813e00d616dedc3361df5adce0915d093",
+    "dit_cifar10.py": "4f1d48769b8fec0b31773b7dbf5c74246117f8c5fc9b0b7488890ac563229166",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "dit_factor_offset_study.py": "c69c8c032d597bd4f144531272e928d42e8c1c600087706a4ceaa062e97d3414",
+    "test_dit_factor_offset_study.py": "4028581e353d612b26246010c916e94951a76e61e2f8a58224c937de942b4572",
+    "test_dit_factor_offsets.py": "32b756ffe798f155d19e783669db4d778602dc711eadc49d7d109761bd0d5e00",
+    "dit_optimizer_cfg.py": "a2daaf443698b5eb1e4801e56e15375127161795472c82473efbcabfe43f0345",
+    "dit_projector_confirmation.py": "b2bc56913b4d63a8ef3d7ccc33103f047eca3d2ad0569d1850b1398404b9d476",
+    "dit_capacity.py": "1310b39a46e5993c484b65dff2d03dc73c84253e0becf6ca04fd7aeee91201e2",
+    "test_dit_optimizer_cfg.py": "009993b6614132bc66601e9f3f1517ebabdac5ff9624b3596bb10beb8101ba27",
+    "test_dit_training_options.py": "d4002ce783e70aab60f621b5dbd3197eabbea84a10a005eab03d950a4e871133",
+    "dit_quality_diagnostics.py": "b138af89e51dafefeb25dbded5517dc68af903e10c502619dfff697a33f4b853",
+    "benchmark_dit_design.py": "a3a7819c35b34e71330bf1e2d30245d961f73ab2c22f9bc3b5fca8913a57a861",
+    "dit_followup.py": "79f4a02247029f13c765716012e8365c33b796fe98a72630fd7568bf08d7da15",
+    "summarize_dit_cifar10_screen.py": "6c32d14b422de2396bc79b0595dca5b48a492f534ac8d9a1331b10ce3e96f9be",
+    "requirements.txt": "2b61ef59394bd0c7d6054abf8485d6724f12e143dddcde937ac5e31aaee8e1d3",
+    "offset_baseline_model.py": "be86e77380239f7175a65a5349868cc7737e612dd4d5f284bd29f94fc656ec6c",
+    "dit_external_lr_study.py": "eb2564ae717ebf883890a71e2c2ef41bc53f53ded96d4fbac7ccf058a9371d09",
+    "test_dit_external_lr_study.py": "074304e7ff55c60cd1daebeaf1a0461eff100776fb7d5ca6dc742f5b0f196f76",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "dit_decoder_compression_study.py": "fe02f7df6a9c3b3c8eee43204213c62f24293ae83fbb9dfe67b330192da620b4",
+    "test_dit_decoder_compression_study.py": "5a706be2af95d6b1aa160f577e3a027a7b6175b4d3cc748c0b62dd77711ece5e",
+    "test_dit_cp_decoders.py": "fdbe67b047522b2b4a722652541e94bca0873836748ad849958548a53f9cefd9",
+    "cp_baseline_model.py": "b420bb68ec3b47bf4f9d1193964689894a9f9bb358ea0a22b323a9306093498f",
+    "dit_decoder_core_study.py": "95c64fd7fb53c80a8ceefa50e8ad9645a2961ad7ee7925d4d270f31b26a8b9a9",
+    "test_dit_decoder_core_study.py": "55f16475fb11988d68acdfe12f1ec697ce07e73d9cef8ca63b7158833639f2bb",
+    "test_dit_tucker_decoders.py": "76ba938c010fe8785c0a86f44f4b4e0182348f94a857a630d5e720f2209af79b",
+    "cp_decoder_baseline_model.py": "576daabffd9865010461dc1f80031f23ee9f3a195966e1912972514cb1070858"
+  },
+  "training_source_sha256": {
+    "train_dit_cifar10.py": "d88e8e2c8668b56d749f72b5e3f0958813e00d616dedc3361df5adce0915d093",
+    "dit_cifar10.py": "4f1d48769b8fec0b31773b7dbf5c74246117f8c5fc9b0b7488890ac563229166",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "dit_quality_diagnostics.py": "b138af89e51dafefeb25dbded5517dc68af903e10c502619dfff697a33f4b853",
+    "benchmark_dit_design.py": "a3a7819c35b34e71330bf1e2d30245d961f73ab2c22f9bc3b5fca8913a57a861"
+  },
+  "unchanged_training_source_sha256": {
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd"
+  },
+  "declared_overlays": [
+    "dit_cifar10.py",
+    "train_dit_cifar10.py",
+    "dit_quality_diagnostics.py",
+    "benchmark_dit_design.py",
+    "summarize_dit_cifar10_screen.py",
+    "dit_decoder_core_study.py",
+    "test_dit_decoder_core_study.py",
+    "test_dit_tucker_decoders.py"
+  ],
+  "designs": {
+    "dense_s32": [
+      32,
+      0,
+      0
+    ],
+    "cp_s32_p128": [
+      32,
+      128,
+      0
+    ],
+    "cp_s64_p128": [
+      64,
+      128,
+      0
+    ],
+    "tucker_s32_p128": [
+      32,
+      0,
+      128
+    ],
+    "tucker_s64_p128": [
+      64,
+      0,
+      128
+    ]
+  },
+  "parameters": {
+    "dense_s32": 12593712,
+    "cp_s32_p128": 11364912,
+    "cp_s64_p128": 11562032,
+    "tucker_s32_p128": 11807280,
+    "tucker_s64_p128": 12463152
+  },
+  "model_statistics": {
+    "dense_s32": {
+      "parameters": 12593712,
+      "adapter_parameters": 2834944,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 864813056,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.35355339059327373,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 48,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 131584,
+      "decoder_parameters": 2703360,
+      "factor_generation": "once per sample; factors reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates"
+    },
+    "cp_s32_p128": {
+      "parameters": 11364912,
+      "adapter_parameters": 1606144,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 880672768,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.35355339059327373,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 80,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 131584,
+      "decoder_parameters": 1474560,
+      "factor_generation": "once per sample; factors reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "decoder_parameterization": "cp",
+      "decoder_cp_width": 128,
+      "decoder_dense_bases_materialized": false
+    },
+    "cp_s64_p128": {
+      "parameters": 11562032,
+      "adapter_parameters": 1803264,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 881065984,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.35355339059327373,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 80,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 263168,
+      "decoder_parameters": 1540096,
+      "factor_generation": "once per sample; factors reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "decoder_parameterization": "cp",
+      "decoder_cp_width": 128,
+      "decoder_dense_bases_materialized": false
+    },
+    "tucker_s32_p128": {
+      "parameters": 11807280,
+      "adapter_parameters": 2048512,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 881590272,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.35355339059327373,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 64,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 131584,
+      "decoder_parameters": 1916928,
+      "factor_generation": "once per sample; factors reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "decoder_parameterization": "tucker_channel",
+      "decoder_tucker_width": 128,
+      "decoder_dense_bases_materialized": false
+    },
+    "tucker_s64_p128": {
+      "parameters": 12463152,
+      "adapter_parameters": 2704384,
+      "tokens_per_image": 64,
+      "forward_matmul_flops_per_image_estimate": 882900992,
+      "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
+      "adapter_input": "normalized",
+      "adapter_gain": 0.35355339059327373,
+      "core_factor_rank": null,
+      "projector_groups": 8,
+      "projector_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "coefficient_activation": "linear",
+      "coefficient_hidden": 0,
+      "factor_offsets": true,
+      "decoder_groups": 8,
+      "decoder_group_layers": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "adapter_parameter_tensors": 64,
+      "unconditional_class_embedding": true,
+      "coefficient_parameters": 263168,
+      "decoder_parameters": 2441216,
+      "factor_generation": "once per sample; factors reused across image tokens",
+      "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates",
+      "decoder_parameterization": "tucker_channel",
+      "decoder_tucker_width": 128,
+      "decoder_dense_bases_materialized": false
+    }
+  },
+  "seeds": [
+    122,
+    123
+  ],
+  "adapter_lr_grid": [
+    0.25,
+    1.0
+  ],
+  "train_steps": 30000,
+  "lr_schedule_steps": 30000,
+  "planned_runs": {
+    "preflight": 5,
+    "quality": 20
+  },
+  "max_concurrent_workers": 2,
+  "classifier_run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+  "auxiliary_classifier": {
+    "run": "/workspace/adalora/runs/dit-followup-20261007T174446Z/classifier/classifier_config",
+    "sha256": {
+      "model.pt": "e40c5f500fbd20b8095e907cee63486459c51f29e3e8509fa93559c951433e78",
+      "config.json": "500206e3e1b4181c3ef5f5dca3c1ca8cabab7c77c69c7810f5845359f630502c",
+      "dataset.json": "df2cb7a4b970769d726c31422059d84427b582e8944bc4cb25553e029dc24e8a",
+      "provenance.json": "751bb82aa7674d91287015572e80d768ed041dbec76bc702a3ef33cdf31a1d97",
+      "results.json": "c2b79427f17266207dcc2e22d31700dbd22ba174abc3134dc14b5db2df751736"
+    },
+    "weight_bytes": 13621221,
+    "purpose": "fixed auxiliary evaluator of generated requested-class agreement",
+    "retention": "one frozen evaluator and its compact training records until explicitly removed"
+  },
+  "evaluator_cache": {
+    "path": "/root/.cache/torch/hub/checkpoints/weights-inception-2015-12-05-6726825d.pth",
+    "bytes": 95628359,
+    "sha256": "6726825d0af5f729cebd5821db510b11b1cfad8faad88a03f1befd49fb9129b2"
+  },
+  "expected_storage_upper_bound_bytes": 4294967296,
+  "disk_free_bytes_before_launch": 323238760448,
+  "estimated_gpu_hours": "8\u201312 aggregate GPU-hours; approximately 4\u20136 wall hours with two available GPUs",
+  "weights_saved": false,
+  "periodic_checkpoints": false,
+  "test_evaluated": false,
+  "selection_metric": null,
+  "artifact_purposes": {
+    "compact_evidence": "configs/sources/runtime/seeds/splits/metrics/diagnostics/logs/audits/reports",
+    "compiler_cache": "compatibility/performance provenance, expected at most 3 GiB",
+    "diagnostic_grids": "twenty final 100-image EMA CFG1 grids plus five 10-image preflight grids"
+  },
+  "retention": "Declared evidence, caches and grids until explicitly removed; prior evidence/evaluator unchanged",
+  "initialization": {
+    "core_initialization": "Unrestricted Tucker cores begin as the paired CP U_basis*U_rank and V_basis*V_rank products",
+    "zero_factor": "V_channel in CP and Tucker; companions nonzero, offsets zero",
+    "generator_seed": "training seed + 100000 + adapter index; isolated CPU generator",
+    "pairing": "identical base/null initialization; same-s coefficient heads and RNG trajectory; CP/Tucker paired channel matrices and initial factor functions within FP32 tolerance",
+    "temporary_initialization": "Dense U/V and then CP components may exist temporarily on CPU; discarded before CUDA transfer"
+  },
+  "initial_core_pairing": [
+    {
+      "seed": 122,
+      "s": 32,
+      "paired_channel_heads_and_expanded_cores": true,
+      "max_input_factor_absolute_error": 2.980232238769531e-07,
+      "precision": "FP32 CPU arithmetic, not a BF16 factor-function equality claim"
+    },
+    {
+      "seed": 122,
+      "s": 64,
+      "paired_channel_heads_and_expanded_cores": true,
+      "max_input_factor_absolute_error": 3.8743019104003906e-07,
+      "precision": "FP32 CPU arithmetic, not a BF16 factor-function equality claim"
+    },
+    {
+      "seed": 123,
+      "s": 32,
+      "paired_channel_heads_and_expanded_cores": true,
+      "max_input_factor_absolute_error": 2.682209014892578e-07,
+      "precision": "FP32 CPU arithmetic, not a BF16 factor-function equality claim"
+    },
+    {
+      "seed": 123,
+      "s": 64,
+      "paired_channel_heads_and_expanded_cores": true,
+      "max_input_factor_absolute_error": 4.76837158203125e-07,
+      "precision": "FP32 CPU arithmetic, not a BF16 factor-function equality claim"
+    }
+  ],
+  "limits": [
+    "Five fixed designs \u00d7 two adapter LRs \u00d7 two fresh seeds \u00d7 full30k; no automatic selection, longer confirmation or grid expansion.",
+    "Global LR8e-4, gain1/sqrt(8), transform rank8 and channel width128 stay fixed; adapter LR multiplier0.25/1 applies to every adapter parameter, including offsets and heads.",
+    "Tucker-style factorization compresses only the channel mode, with unrestricted [s,p,r] cores. This is distinct from the existing conditional r\u00d7r-core variant.",
+    "CP and Tucker initial factor functions are paired in FP32 within tolerance; BF16 reassociation and different optimizer geometry remain confounds.",
+    "Two-factor channel/core maps retain general invertible channel-basis gauges; they are not gauge-free or guaranteed easier to optimize.",
+    "Both s32/s64 have fresh paired CP/Tucker controls. Dense s32 supplies a common baseline at both adapter rates; s64 Tucker uses about1% fewer total parameters than dense s32, not exact matching.",
+    "Initial marginal-variance pairing and LR sensitivity do not establish variance preservation or muP scaling. No output normalization or new gain is applied.",
+    "All designs receive the same two-point adapter-LR budget. Per-rate and best-observed-within-grid differences are exploratory with only two seeds, not independently confirmed optima.",
+    "The research holdout/evaluation noise and cached evaluators are reused; historical quality cells are context only.",
+    "Generation at10k/20k tracks convergence; primary comparisons use final30k CFG2 EMA FID. CFG1 and auxiliary class agreement are also reported.",
+    "Concurrent throughput/whole-training allocation are descriptive; dedicated speed work remains deferred.",
+    "No weights/checkpoints, official test, new evaluator downloads, causal retrieval/LM launch or implicit resume."
+  ],
+  "started_utc": "2026-10-14T07:19:45.151135+00:00",
+  "preflight_complete_utc": "2026-10-14T07:25:05.716524+00:00",
+  "completed_utc": "2026-10-14T12:13:51.157158+00:00"
+}

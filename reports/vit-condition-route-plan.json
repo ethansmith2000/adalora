@@ -1,0 +1,46 @@
+{
+  "state": "complete",
+  "raw_workflow": "/workspace/adalora/runs/vit-condition-routes-20261013T010835Z",
+  "protocol": "/workspace/adalora/runs/vit-condition-routes-20261013T010835Z/protocol.json",
+  "maximum_our_gpus": 2,
+  "planned_runs": {
+    "preflight": 2,
+    "calibration": 6
+  },
+  "cpu_checks_passed": 97,
+  "preflights_complete": 2,
+  "diagnostic_prefixes_complete": 6,
+  "quality_runs": 0,
+  "recipe_selection": false,
+  "weights_saved": false,
+  "artifact_bound_bytes": 4294967296,
+  "updated_utc": "2026-10-13T03:06:06.577987+00:00",
+  "started_utc": "2026-10-13T01:10:13.429037+00:00",
+  "controller_supervisor": "/workspace/adalora/runs/vit-condition-routes-20261013T010835Z/controller.conf",
+  "progress_snapshot": {
+    "utc": "2026-10-13T01:17:24.811615+00:00",
+    "stage": "calibration",
+    "completed": 6,
+    "submitted": 6,
+    "total": 6,
+    "active": 0
+  },
+  "preflight_audit_passed": true,
+  "preflight_complete_utc": "2026-10-13T01:12:01.303642+00:00",
+  "active_our_workers": 0,
+  "completed_utc": "2026-10-13T01:17:25.664975+00:00",
+  "final_audit_passed": true,
+  "final_audit_checks": {
+    "compiled_preflights_and_exact_six_prefixes": true,
+    "source_runtime_config_optimizer_split_and_observed_streams": true,
+    "paired_initialization_and_fixed_probe_images_labels": true,
+    "local_task_loss_gradient_and_forward_reconstruction": true,
+    "zero_start_and_finite_nonzero_condition_routes": true,
+    "two_gpu_worker_cap_and_claim_identity": true,
+    "no_recipe_selection_quality_weights_or_test_and_storage_bound": true
+  },
+  "report_sha256": "ddfecc4a08a3d90b0bd6367a0e96719026b0d974c464595a886be936780ae642",
+  "controller_supervisor_closed": true,
+  "retained_workflow_bytes": 272429671,
+  "results": "/workspace/adalora/reports/vit-condition-routes.md"
+}

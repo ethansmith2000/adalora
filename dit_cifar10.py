@@ -16,6 +16,7 @@ VARIANTS = ("adaln_zero", "static_lora", "exact", "dplr", "conditional_bottlenec
             "conditional_core", "conditional_dplr_core")
 ADAPTER_INPUTS = ("normalized", "modulated")
 COEFFICIENT_ACTIVATIONS = ("linear", "silu")
+CHANNEL_MODES = ("none", "static", "modulated")
 
 
 class BroadcastLowRank(nn.Module):
@@ -83,6 +84,10 @@ class BroadcastLowRank(nn.Module):
         values = self.coefficients(condition)
         return F.silu(values) if self.coefficient_activation == "silu" and not self.coefficient_hidden else values
 
+    def decoder_named_parameters(self):
+        names = ("U", "V", "U_offset", "V_offset") if self.factor_offsets else ("U", "V")
+        return [(name, getattr(self, name)) for name in names]
+
     def factors(self, condition):
         if condition.ndim != 2 or condition.shape[-1] != self.d_condition:
             raise ValueError("Expected one condition vector per sample: (B, d_condition)")
@@ -147,6 +152,167 @@ class BroadcastLowRank(nn.Module):
         return apply + head + 2 * k * r * (d + o)
 
 
+class CPBroadcastLowRank(BroadcastLowRank):
+    """CP-compressed factor decoders; transform rank remains `rank`.
+
+    U[i,s,k] = sum_p U_channel[i,p] * U_basis[s,p] * U_rank[p,k].
+    V[s,k,o] has the analogous three factors. Only sample-wise U/V are
+    materialized during forward, never the dense decoder basis tensors.
+    """
+
+    def __init__(self, *args, cp_width, initialization_seed, **kwargs):
+        if type(cp_width) is not int or cp_width < 1:
+            raise ValueError("CP width must be a positive integer")
+        super().__init__(*args, **kwargs)
+        if self.variant != "dplr":
+            raise ValueError("CP decoders require DPLR")
+        self.cp_width = cp_width
+        # Reuse the dense initialization's head and RNG trajectory. These two
+        # temporary CPU tensors are discarded before moving the model to CUDA.
+        del self.U, self.V
+        generator = torch.Generator().manual_seed(initialization_seed)
+        rand = lambda *shape: torch.randn(*shape, generator=generator)
+        p, s, r, d, o = cp_width, self.n_basis, self.rank, self.d_in, self.d_out
+        self.U_channel = nn.Parameter(rand(d, p) / math.sqrt(d))
+        self.U_basis = nn.Parameter(rand(s, p))
+        self.U_rank = nn.Parameter(rand(p, r) / math.sqrt(p))
+        self.V_basis = nn.Parameter(rand(s, p))
+        self.V_rank = nn.Parameter(rand(p, r))
+        self.V_channel = nn.Parameter(torch.zeros(p, o))
+        # E[U[i,s,k]^2]=1/d under independent initialization draws, matching
+        # dense U's entry variance. Zero V_channel preserves the zero delta;
+        # its two companion factors are nonzero so it can receive gradients.
+
+    def decoder_named_parameters(self):
+        names = ("U_channel", "U_basis", "U_rank", "V_basis", "V_rank", "V_channel")
+        if self.factor_offsets:
+            names += ("U_offset", "V_offset")
+        return [(name, getattr(self, name)) for name in names]
+
+    def factors(self, condition):
+        if condition.ndim != 2 or condition.shape[-1] != self.d_condition:
+            raise ValueError("Expected one condition vector per sample: (B, d_condition)")
+        a, b = self.coefficient_values(condition).chunk(2, dim=-1)
+        u_coeff = a @ self.U_basis
+        v_coeff = b @ self.V_basis
+        u_weights = u_coeff.unsqueeze(-1) * self.U_rank.to(dtype=u_coeff.dtype)
+        v_weights = v_coeff.unsqueeze(-1) * self.V_rank.to(dtype=v_coeff.dtype)
+        u = torch.matmul(self.U_channel, u_weights)
+        v = torch.matmul(v_weights.transpose(-1, -2), self.V_channel)
+        if self.factor_offsets:
+            u = u + self.U_offset.to(dtype=u.dtype)
+            v = v + self.V_offset.to(dtype=v.dtype)
+        return u, v
+
+    def forward_matmul_flops(self, tokens):
+        d, o, c, r, s, p = self.d_in, self.d_out, self.d_condition, self.rank, self.n_basis, self.cp_width
+        head = 2 * self.coefficient_hidden * (c + 2*s) if self.coefficient_hidden else 4*c*s
+        return 2*tokens*r*(d+o) + head + 4*s*p + 2*p*r*(d+o)
+
+
+class TuckerBroadcastLowRank(CPBroadcastLowRank):
+    """Factor only the channel mode; learn unrestricted [s,p,r] cores.
+
+    Cores start as expanded CP products to pair initial channel bases and
+    condition-to-factor functions with CP (up to arithmetic reassociation).
+    This is a Tucker-style channel-mode factorization, not a conditional r×r
+    core between static outer factors.
+    """
+
+    def __init__(self, *args, tucker_width, initialization_seed, **kwargs):
+        super().__init__(*args, cp_width=tucker_width, initialization_seed=initialization_seed, **kwargs)
+        self.tucker_width = tucker_width
+        self.U_core = nn.Parameter((self.U_basis.unsqueeze(-1) * self.U_rank).detach())
+        self.V_core = nn.Parameter((self.V_basis.unsqueeze(-1) * self.V_rank).detach())
+        del self.U_basis, self.U_rank, self.V_basis, self.V_rank, self.cp_width
+
+    def decoder_named_parameters(self):
+        names = ("U_channel", "U_core", "V_core", "V_channel")
+        if self.factor_offsets:
+            names += ("U_offset", "V_offset")
+        return [(name, getattr(self, name)) for name in names]
+
+    def factors(self, condition):
+        if condition.ndim != 2 or condition.shape[-1] != self.d_condition:
+            raise ValueError("Expected one condition vector per sample: (B, d_condition)")
+        a, b = self.coefficient_values(condition).chunk(2, dim=-1)
+        u_weights = (a @ self.U_core.flatten(1)).unflatten(-1, (self.tucker_width, self.rank))
+        v_weights = (b @ self.V_core.flatten(1)).unflatten(-1, (self.tucker_width, self.rank))
+        u = torch.matmul(self.U_channel, u_weights)
+        v = torch.matmul(v_weights.transpose(-1, -2), self.V_channel)
+        if self.factor_offsets:
+            u = u + self.U_offset.to(dtype=u.dtype)
+            v = v + self.V_offset.to(dtype=v.dtype)
+        return u, v
+
+    def forward_matmul_flops(self, tokens):
+        d, o, c, r, s, p = self.d_in, self.d_out, self.d_condition, self.rank, self.n_basis, self.tucker_width
+        head = 2*self.coefficient_hidden*(c+2*s) if self.coefficient_hidden else 4*c*s
+        return 2*tokens*r*(d+o) + head + 4*s*p*r + 2*p*r*(d+o)
+
+
+class ChannelModulatedLowRank(BroadcastLowRank):
+    """Condition-driven row/column scales around static rank-r factors.
+
+    Static control uses the same factor/offset slots but removes all unused
+    condition-head parameters. The model's common AdaLN remains conditional.
+    """
+
+    def __init__(self, *args, channel_mode, initialization_seed, **kwargs):
+        if channel_mode not in ("static", "modulated"):
+            raise ValueError("Expected static or modulated channel mode")
+        super().__init__(*args, **kwargs)
+        if self.variant != "dplr":
+            raise ValueError("Channel factors require DPLR")
+        self.channel_mode = channel_mode
+        del self.U, self.V
+        generator = torch.Generator().manual_seed(initialization_seed)
+        self.U_static = nn.Parameter(torch.randn(self.d_in,self.rank,generator=generator)/math.sqrt(self.d_in))
+        self.V_static = nn.Parameter(torch.zeros(self.rank,self.d_out))
+        if channel_mode == "modulated":
+            self.U_scale_basis = nn.Parameter(torch.zeros(self.n_basis,self.d_in))
+            self.V_scale_basis = nn.Parameter(torch.zeros(self.n_basis,self.d_out))
+        else:
+            del self.coefficients
+
+    def decoder_named_parameters(self):
+        names = ("U_static", "V_static")
+        if self.channel_mode == "modulated":
+            names += ("U_scale_basis", "V_scale_basis")
+        if self.factor_offsets:
+            names += ("U_offset", "V_offset")
+        return [(name,getattr(self,name)) for name in names]
+
+    def channel_scales(self, condition):
+        if self.channel_mode != "modulated":
+            raise ValueError("Static control has no condition heads")
+        a,b = self.coefficient_values(condition).chunk(2,-1)
+        return 1 + a @ self.U_scale_basis, 1 + b @ self.V_scale_basis
+
+    def factors(self, condition):
+        if condition.ndim != 2 or condition.shape[-1] != self.d_condition:
+            raise ValueError("Expected one condition vector per sample: (B, d_condition)")
+        if self.channel_mode == "modulated":
+            gu,gv = self.channel_scales(condition)
+            u = self.U_static.to(dtype=gu.dtype).unsqueeze(0) * gu.unsqueeze(-1)
+            v = self.V_static.to(dtype=gv.dtype).unsqueeze(0) * gv.unsqueeze(1)
+        else:
+            dtype = torch.get_autocast_dtype(condition.device.type) if torch.is_autocast_enabled(condition.device.type) else condition.dtype
+            u = self.U_static.to(dtype=dtype).unsqueeze(0).expand(condition.shape[0],-1,-1)
+            v = self.V_static.to(dtype=dtype).unsqueeze(0).expand(condition.shape[0],-1,-1)
+        if self.factor_offsets:
+            u = u + self.U_offset.to(dtype=u.dtype)
+            v = v + self.V_offset.to(dtype=v.dtype)
+        return u,v
+
+    def forward_matmul_flops(self, tokens):
+        d,o,c,r,s = self.d_in,self.d_out,self.d_condition,self.rank,self.n_basis
+        apply = 2*tokens*r*(d+o)
+        if self.channel_mode == "static":return apply
+        head = 2*self.coefficient_hidden*(c+2*s) if self.coefficient_hidden else 4*c*s
+        return apply + head + 2*s*(d+o)
+
+
 def sinusoidal(values, width):
     half = width // 2
     frequency = torch.exp(-math.log(10000) * torch.arange(half, device=values.device, dtype=torch.float32) / half)
@@ -181,8 +347,12 @@ class DiTBlock(nn.Module):
         tokens = tokens + gate_a * self.attention_out(attention)
         h = self.norm_mlp(tokens)
         h_mod = h * (1 + scale_m) + shift_m
-        projected = self.mlp_in(h_mod)
-        if self.adapter is not None:
+        if self.adapter is not None and getattr(self.adapter, "is_square", False):
+            # Parallel feature delta, summed before one shared base GEMM.
+            projected = self.mlp_in(h_mod + self.adapter_delta(self.adapter(h, condition, adapter_factors)))
+        else:
+            projected = self.mlp_in(h_mod)
+        if self.adapter is not None and not getattr(self.adapter, "is_square", False):
             adapter_input = h if self.adapter_input == "normalized" else h_mod
             projected = projected + self.adapter_delta(self.adapter(adapter_input, condition, adapter_factors))
         return tokens + gate_m * self.mlp_out(F.gelu(projected, approximate="tanh"))
@@ -193,7 +363,8 @@ class CIFAR10DiT(nn.Module):
                  variant="adaln_zero", rank=8, n_basis=16, image_size=32,
                  adapter_input="normalized", adapter_gain=1.0, core_rank=2,
                  projector_groups=0, coefficient_activation="linear", decoder_groups=0,
-                 coefficient_hidden=0, enable_unconditional=False, factor_offsets=False):
+                 coefficient_hidden=0, enable_unconditional=False, factor_offsets=False, decoder_cp_width=0,
+                 decoder_tucker_width=0, decoder_channel_mode="none", structured_operator="none", structured_block_size=16, tt_modes="4,4,4,4", tt_bond_rank=6):
         super().__init__()
         if variant not in VARIANTS or adapter_input not in ADAPTER_INPUTS or width % heads or width % 4 or image_size % patch_size:
             raise ValueError("Invalid DiT variant or dimensions")
@@ -224,6 +395,29 @@ class CIFAR10DiT(nn.Module):
         if type(factor_offsets) is not bool or (factor_offsets and variant != "dplr"):
             raise ValueError("Factor offsets require DPLR and a boolean setting")
         self.factor_offsets = factor_offsets
+        if (type(decoder_cp_width) is not int or decoder_cp_width < 0
+                or (decoder_cp_width and (variant != "dplr" or decoder_groups))):
+            raise ValueError("CP decoder width requires DPLR without decoder sharing and a nonnegative integer")
+        self.decoder_cp_width = decoder_cp_width
+        if (type(decoder_tucker_width) is not int or decoder_tucker_width < 0
+                or (decoder_tucker_width and (variant != "dplr" or decoder_groups or decoder_cp_width))):
+            raise ValueError("Tucker decoder width requires DPLR, no decoder sharing/CP width, and a nonnegative integer")
+        self.decoder_tucker_width = decoder_tucker_width
+        if (decoder_channel_mode not in CHANNEL_MODES or
+                (decoder_channel_mode != "none" and (variant != "dplr" or decoder_groups or decoder_cp_width or decoder_tucker_width))):
+            raise ValueError("Channel mode requires DPLR without other decoder parameterizations or sharing")
+        self.decoder_channel_mode = decoder_channel_mode
+        if structured_operator != "none":
+            from structured_operators import validate_operator
+            validate_operator(structured_operator, width, structured_block_size, variant=variant,
+                adapter_input=adapter_input, factor_offsets=factor_offsets, projector_groups=projector_groups,
+                depth=depth, decoder_groups=decoder_groups, decoder_cp_width=decoder_cp_width,
+                decoder_tucker_width=decoder_tucker_width, decoder_channel_mode=decoder_channel_mode,
+                coefficient_hidden=coefficient_hidden, coefficient_activation=coefficient_activation,
+                tt_modes=tt_modes, tt_bond_rank=tt_bond_rank)
+        elif type(structured_block_size) is not int or structured_block_size < 1:
+            raise ValueError("Invalid structured operator options")
+        self.structured_operator, self.structured_block_size = structured_operator, structured_block_size
         if not math.isfinite(adapter_gain) or adapter_gain <= 0:
             raise ValueError("Adapter gain must be finite and positive")
         self.adapter_gain = float(adapter_gain)
@@ -249,8 +443,23 @@ class CIFAR10DiT(nn.Module):
             nn.init.zeros_(layer.bias)
         # Preserve identical base, AdaLN and embedding initialization across variants.
         if variant != "adaln_zero":
-            adapters = [BroadcastLowRank(width, int(width * mlp_ratio), width, variant, rank, n_basis,
-                        adapter_gain, core_rank, coefficient_activation, coefficient_hidden, factor_offsets) for _ in range(self.projector_groups)]
+            adapter_class = ChannelModulatedLowRank if decoder_channel_mode != "none" else TuckerBroadcastLowRank if decoder_tucker_width else CPBroadcastLowRank if decoder_cp_width else BroadcastLowRank
+            structured_width = decoder_tucker_width or decoder_cp_width
+            width_key = "tucker_width" if decoder_tucker_width else "cp_width"
+            if structured_operator != "none":
+                from structured_operators import ConditionalStructured, SquareLowRank
+                from conditional_tt import ConditionalTT
+                adapters = [(ConditionalTT(width, width, n_basis, tt_modes, tt_bond_rank, adapter_gain) if structured_operator == "tt" else
+                             SquareLowRank(width, width, width, variant, rank, n_basis, adapter_gain,
+                                          factor_offsets=True) if structured_operator == "lowrank" else
+                             ConditionalStructured(width, width, n_basis, structured_operator, structured_block_size,
+                                 adapter_gain, torch.initial_seed()+200000+i)) for i in range(self.projector_groups)]
+            else:
+                adapters = [adapter_class(width, int(width * mlp_ratio), width, variant, rank, n_basis,
+                        adapter_gain, core_rank, coefficient_activation, coefficient_hidden, factor_offsets,
+                        **({"channel_mode": decoder_channel_mode,"initialization_seed": torch.initial_seed()+100000+i}
+                           if decoder_channel_mode != "none" else {width_key: structured_width,"initialization_seed": torch.initial_seed()+100000+i}
+                           if structured_width else {})) for i in range(self.projector_groups)]
             for index, block in enumerate(self.blocks):
                 # References to one module per group; named_parameters deduplicates aliases.
                 block.adapter = adapters[index // (depth // self.projector_groups)]
@@ -283,7 +492,8 @@ class CIFAR10DiT(nn.Module):
             adapter = block.adapter
             if adapter is None or adapter.variant != "dplr":
                 continue
-            if groups and groups[-1][1].U is adapter.U and groups[-1][1].V is adapter.V:
+            identity = tuple(id(p) for _, p in adapter.decoder_named_parameters())
+            if groups and tuple(id(p) for _, p in groups[-1][1].decoder_named_parameters()) == identity:
                 groups[-1][0].append(index)
             else:
                 groups.append(([index], adapter))
@@ -331,7 +541,7 @@ class CIFAR10DiT(nn.Module):
                       + 4 * d * d + 2 * t * d * self.patch_size**2 * 3)
         apply = 2 * t * adapters[0].rank * (d+h) if adapters else 0
         adapter_flops = sum(a.forward_matmul_flops(t) for a in adapters) + (self.depth-len(adapters))*apply if adapters else 0
-        return {"parameters": sum(p.numel() for p in self.parameters()), "adapter_parameters": adapter_params,
+        stats = {"parameters": sum(p.numel() for p in self.parameters()), "adapter_parameters": adapter_params,
                 "tokens_per_image": t, "forward_matmul_flops_per_image_estimate": base_flops + adapter_flops,
                 "flop_estimate_excludes": "elementwise operations, reductions, normalization and backward",
                 "adapter_input": self.adapter_input,
@@ -346,13 +556,38 @@ class CIFAR10DiT(nn.Module):
                 "decoder_group_layers": [indices for indices, _ in self.grouped_decoders()],
                 "adapter_parameter_tensors": len(unique_parameters),
                 "unconditional_class_embedding": self.enable_unconditional,
-                "coefficient_parameters": sum(p.numel() for a in adapters for p in a.coefficients.parameters()) if self.variant == "dplr" else None,
-                "decoder_parameters": sum(a.U.numel()+a.V.numel() +
-                                          (a.U_offset.numel()+a.V_offset.numel() if a.factor_offsets else 0)
-                                          for _,a in self.grouped_decoders()) if self.variant == "dplr" else None,
+                "coefficient_parameters": sum(p.numel() for a in adapters if hasattr(a,"coefficients") for p in a.coefficients.parameters()) if self.variant == "dplr" else None,
+                "decoder_parameters": sum(p.numel() for _,a in self.grouped_decoders()
+                                          for _,p in a.decoder_named_parameters()) if self.variant == "dplr" else None,
                 "factor_generation": ("static factors; rank gains generated once per sample" if self.variant == "conditional_bottleneck"
                                       else "static outer factors; dense core generated once per sample" if self.variant == "conditional_core"
                                       else "static outer factors; diagonal and low-rank core components generated once per sample" if self.variant == "conditional_dplr_core"
                                       else "once per sample and projector group; reused across group layers and image tokens" if self.projector_groups < self.depth
                                       else "once per sample; factors reused across image tokens"),
                 "conditioning": "normalized learned class-plus-timestep vector; common AdaLN heads and residual gates"}
+        if self.decoder_cp_width:
+            stats.update(decoder_parameterization="cp", decoder_cp_width=self.decoder_cp_width,
+                         decoder_dense_bases_materialized=False)
+        if self.decoder_tucker_width:
+            stats.update(decoder_parameterization="tucker_channel", decoder_tucker_width=self.decoder_tucker_width,
+                         decoder_dense_bases_materialized=False)
+        if self.decoder_channel_mode != "none":
+            stats.update(decoder_parameterization="channel_"+self.decoder_channel_mode,
+                         decoder_channel_mode=self.decoder_channel_mode,decoder_dense_bases_materialized=False)
+            if self.decoder_channel_mode == "static":
+                stats["factor_generation"] = "static factors and offsets; common AdaLN remains conditional"
+        if self.structured_operator != "none":
+            stats.update(structured_operator=self.structured_operator,
+                         structured_block_size=self.structured_block_size,
+                         adapter_placement="parallel square delta before shared MLP input projection",
+                         generated_operator_rank_bound=adapters[0].rank,
+                         factor_generation="once per sample; square factors/diagonals/blocks reused across image tokens",
+                         butterfly_additions_per_image=(2*self.depth*t*d*int(math.log2(d)) if self.structured_operator == "hadamard" else 0))
+        if self.structured_operator == "tt":
+            a = adapters[0]
+            stats.update(tt_modes=list(a.modes), tt_bond_rank=a.bond_rank,
+                         generated_core_values_per_sample=sum(a.core_sizes),
+                         largest_contraction_state_values_per_image=t*d*a.bond_rank,
+                         dense_operator_materialized_in_training=False,
+                         factor_generation="one affine latent per sample, independent affine TT-core decoders with static offsets; broadcast across tokens")
+        return stats

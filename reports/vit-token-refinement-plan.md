@@ -70,3 +70,17 @@ checkpoints are saved. The quality comparison and final audit are pending; the
 original coarse-grid failure remains preserved.
 
 [Audited calibration selection](vit-token-refinement-calibration.json).
+
+ViT quality completed on 2026-10-11 at 19:26 UTC: all16 runs and the frozen
+workflow audit passed. Mean validation accuracy is65.96% plain,69.04% diagonal,
+66.64% static rank8+diagonal,63.16% matched static capacity,68.40% DPLR s12,
+69.82% s24,70.05% s48 and68.72% detached s24. s24 beats diagonal in both seeds
+by0.48/1.08 points; s48 versus s24 is mixed (−0.56/+1.02). Fresh-seed early
+update bounds transfer, but the static control's12× adapter LR also scales
+its affine head, and endpoint combined/base RMS is11.69–19.68. Separate
+affine/low-rank rates before stronger claims. s24 remains a provisional
+practical choice; these two-seed ten-epoch results do not settle long-run
+quality. All private controllers are closed and our claims released; no
+weights/checkpoints/test evaluation or additional GPU runs.
+
+[Completed comparison and limitations](vit-token-refinement.md).

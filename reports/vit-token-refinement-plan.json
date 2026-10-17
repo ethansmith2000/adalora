@@ -1,5 +1,5 @@
 {
-  "state": "quality",
+  "state": "complete",
   "raw_workflow": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z",
   "protocol": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z/protocol.json",
   "launch_validation": "/workspace/adalora/runs/vit-token-refinement-20261011T185940Z/launch_validation.json",
@@ -7,11 +7,11 @@
   "new_calibration_pilots": 8,
   "reused_calibration_pilots": 28,
   "gated_quality_runs": 16,
-  "quality_runs_started": 4,
+  "quality_runs_started": 16,
   "weights_saved": false,
   "artifact_bound_bytes": 4294967296,
   "original_gate_preserved": true,
-  "updated_utc": "2026-10-11T19:09:39.084703+00:00",
+  "updated_utc": "2026-10-11T21:37:30.333317+00:00",
   "calibration_pilots_complete": 8,
   "quality_gate_passed": true,
   "selected_rates": {
@@ -40,14 +40,20 @@
     ]
   },
   "calibration_sha256": "01f2af75f2b3e5f08c4bded4be5c5090e5165bfd500282e4993548b8bb312e60",
-  "quality_runs_complete": 2,
+  "quality_runs_complete": 16,
   "quality_progress_snapshot": {
-    "utc": "2026-10-11T19:09:33.560945+00:00",
+    "utc": "2026-10-11T19:26:42.161118+00:00",
     "stage": "quality",
-    "completed": 2,
-    "submitted": 4,
+    "completed": 16,
+    "submitted": 16,
     "total": 16,
-    "active": 2
+    "active": 0
   },
-  "calibration_report": "reports/vit-token-refinement-calibration.json"
+  "calibration_report": "reports/vit-token-refinement-calibration.json",
+  "completed_utc": "2026-10-11T19:26:43.803625+00:00",
+  "final_audit_passed": true,
+  "controllers_closed": true,
+  "our_active_gpu_claims": 0,
+  "bytes_retained": 549811172,
+  "final_report": "reports/vit-token-refinement.md"
 }

@@ -1,0 +1,120 @@
+{
+  "updated_utc": "2026-10-14T06:59:35.587322+00:00",
+  "raw_workflow": "/workspace/adalora/runs/dit-decoder-compression-20261013T181112Z",
+  "state": "complete",
+  "completed_results": 10,
+  "final_audit_pending": false,
+  "limits": "Final audited report is authoritative; prior_partial_snapshot preserves the earlier incomplete readout.",
+  "final_audit_passed": true,
+  "report": "/workspace/adalora/reports/dit-decoder-compression.md",
+  "prior_partial_snapshot": {
+    "rows": [
+      {
+        "family": "cp_s32_p128",
+        "seed": 120,
+        "adapter_parameters": 1606144,
+        "total_parameters": 11364912,
+        "cfg1_fid": 47.520145416259766,
+        "cfg2_fid": 33.98698043823242,
+        "cfg2_class_agreement_percent": 86.77999973297119,
+        "images_per_second": 2396.579841899669,
+        "peak_allocated_gib": 1.1524724960327148
+      },
+      {
+        "family": "cp_s32_p128",
+        "seed": 121,
+        "adapter_parameters": 1606144,
+        "total_parameters": 11364912,
+        "cfg1_fid": 48.03227996826172,
+        "cfg2_fid": 34.69336700439453,
+        "cfg2_class_agreement_percent": 86.41999959945679,
+        "images_per_second": 2485.320841726976,
+        "peak_allocated_gib": 1.1524724960327148
+      },
+      {
+        "family": "cp_s32_p64",
+        "seed": 120,
+        "adapter_parameters": 909824,
+        "total_parameters": 10668592,
+        "cfg1_fid": 47.51819610595703,
+        "cfg2_fid": 34.38671112060547,
+        "cfg2_class_agreement_percent": 85.51999926567078,
+        "images_per_second": 2627.5699052183854,
+        "peak_allocated_gib": 1.1386175155639648
+      },
+      {
+        "family": "cp_s32_p64",
+        "seed": 121,
+        "adapter_parameters": 909824,
+        "total_parameters": 10668592,
+        "cfg1_fid": 48.3231315612793,
+        "cfg2_fid": 35.51519012451172,
+        "cfg2_class_agreement_percent": 85.92000007629395,
+        "images_per_second": 2585.175980769802,
+        "peak_allocated_gib": 1.1381597518920898
+      },
+      {
+        "family": "cp_s64_p128",
+        "seed": 120,
+        "adapter_parameters": 1803264,
+        "total_parameters": 11562032,
+        "cfg1_fid": 48.03079605102539,
+        "cfg2_fid": 34.6125602722168,
+        "cfg2_class_agreement_percent": 87.3199999332428,
+        "images_per_second": 2622.4247068527466,
+        "peak_allocated_gib": 1.1558904647827148
+      },
+      {
+        "family": "cp_s64_p128",
+        "seed": 121,
+        "adapter_parameters": 1803264,
+        "total_parameters": 11562032,
+        "cfg1_fid": 47.384185791015625,
+        "cfg2_fid": 34.04092025756836,
+        "cfg2_class_agreement_percent": 87.27999925613403,
+        "images_per_second": 2689.686960751164,
+        "peak_allocated_gib": 1.1558904647827148
+      },
+      {
+        "family": "dense_s32",
+        "seed": 121,
+        "adapter_parameters": 2834944,
+        "total_parameters": 12593712,
+        "cfg1_fid": 46.8863525390625,
+        "cfg2_fid": 33.50895690917969,
+        "cfg2_class_agreement_percent": 89.24000263214111,
+        "images_per_second": 2886.676078285623,
+        "peak_allocated_gib": 1.1684942245483398
+      },
+      {
+        "family": "dense_s64",
+        "seed": 120,
+        "adapter_parameters": 5587968,
+        "total_parameters": 15346736,
+        "cfg1_fid": 46.53207015991211,
+        "cfg2_fid": 33.0079231262207,
+        "cfg2_class_agreement_percent": 89.42000269889832,
+        "images_per_second": 2819.743911261901,
+        "peak_allocated_gib": 1.2181897163391113
+      }
+    ],
+    "progress": {
+      "event": "stage_progress",
+      "utc": "2026-10-13T20:38:00.510204+00:00",
+      "stage": "quality",
+      "completed": 8,
+      "submitted": 10,
+      "total": 10,
+      "active": 2
+    }
+  },
+  "progress": {
+    "event": "stage_progress",
+    "utc": "2026-10-13T20:41:41.860329+00:00",
+    "stage": "quality",
+    "completed": 10,
+    "submitted": 10,
+    "total": 10,
+    "active": 0
+  }
+}

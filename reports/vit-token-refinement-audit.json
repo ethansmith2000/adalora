@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "original_gate_and_audited_pilots_preserved": true,
+    "exact_eight_new_rates_and_36_case_selection": true,
+    "unchanged_training_sources_runtime_split_initialization_and_streams": true,
+    "all_new_workers_completed_with_claim_identity": true,
+    "unchanged_per_seed_per_probe_bounds_and_update_only_selection": true,
+    "sixteen_fresh_quality_runs_with_frozen_rates": true,
+    "two_gpu_worker_cap": true,
+    "no_weights_test_evaluation_and_storage_bound": true
+  },
+  "report_sha256": "df116773bdbf439dc27147b1eee0d48461d310f595bd900fc1d8834b431c749f",
+  "bytes_retained": 549811180
+}

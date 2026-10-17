@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/venv/main/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "test_dit_channel_lr_study.py",
+    "test_dit_channel_factor_study.py",
+    "test_dit_channel_factors.py"
+  ],
+  "result": "36 passed in 11.89s; final orchestration source additionally validated in the frozen runner",
+  "workspace_source_sha256": {
+    "dit_channel_lr_study.py": "08a0906627e97c6aab8af875d5e8cbdea35ea9ba21eb4c413bc61e9e8e70b954",
+    "test_dit_channel_lr_study.py": "0419931e6517fa56b15bc6deb5c712937655416f473bae3026a81a000b775316"
+  },
+  "frozen_checks_passed": 36,
+  "frozen_tests_log": "/workspace/adalora/runs/dit-channel-lr-20261015T061259Z/frozen-protocol-tests.log"
+}

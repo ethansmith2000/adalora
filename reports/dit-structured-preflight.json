@@ -1,0 +1,249 @@
+{
+  "created_utc": "2026-10-16T20:46:12.548951+00:00",
+  "raw_workflow": "/workspace/adalora/runs/dit-structured-20261016T203614Z",
+  "independent_frozen_replay_passed": true,
+  "preflight_workers_completed": 6,
+  "rows": [
+    {
+      "name": "adaln_a1_s128",
+      "parameters": 9758768,
+      "adapter_parameters": 0,
+      "structured_operator": "none",
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 1.0,
+      "adapter_gradient_tensors": 0,
+      "all_adapter_gradients_by_step": null,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    },
+    {
+      "name": "rectangular_lowrank_a2_s128",
+      "parameters": 12593712,
+      "adapter_parameters": 2834944,
+      "structured_operator": "none",
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 2.0,
+      "adapter_gradient_tensors": 48,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 512,
+          "initial_lr": 0.0016,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 2834432,
+          "initial_lr": 0.0016,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    },
+    {
+      "name": "square_lowrank_a2_s128",
+      "parameters": 10971696,
+      "adapter_parameters": 1212928,
+      "structured_operator": "lowrank",
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 2.0,
+      "adapter_gradient_tensors": 48,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 512,
+          "initial_lr": 0.0016,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1212416,
+          "initial_lr": 0.0016,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    },
+    {
+      "name": "square_diagonal_a2_s128",
+      "parameters": 10154800,
+      "adapter_parameters": 396032,
+      "structured_operator": "diagonal",
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 2.0,
+      "adapter_gradient_tensors": 32,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 2816,
+          "initial_lr": 0.0016,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 393216,
+          "initial_lr": 0.0016,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    },
+    {
+      "name": "square_block16_a2_s128",
+      "parameters": 10905904,
+      "adapter_parameters": 1147136,
+      "structured_operator": "block",
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 2.0,
+      "adapter_gradient_tensors": 32,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 33024,
+          "initial_lr": 0.0016,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 1114112,
+          "initial_lr": 0.0016,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    },
+    {
+      "name": "square_hadamard_a2_s128",
+      "parameters": 10158896,
+      "adapter_parameters": 400128,
+      "structured_operator": "hadamard",
+      "completed_steps": 12,
+      "adapter_lr_multiplier": 2.0,
+      "adapter_gradient_tensors": 64,
+      "all_adapter_gradients_by_step": 5,
+      "optimizer_groups": [
+        {
+          "is_adapter": false,
+          "parameter_count": 32304,
+          "initial_lr": 0.0008,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": false,
+          "parameter_count": 9726464,
+          "initial_lr": 0.0008,
+          "weight_decay": 0.0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 6912,
+          "initial_lr": 0.0016,
+          "weight_decay": 0
+        },
+        {
+          "is_adapter": true,
+          "parameter_count": 393216,
+          "initial_lr": 0.0016,
+          "weight_decay": 0.0
+        }
+      ],
+      "weights_saved": false,
+      "test_evaluated": false
+    }
+  ],
+  "runtime": {
+    "package_versions": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "diffusers": "0.40.0",
+      "datasets": "5.0.1",
+      "torchmetrics": "1.9.0",
+      "torch-fidelity": "0.4.0"
+    },
+    "cuda_wheel": "12.8"
+  },
+  "source_sha256": {
+    "train_dit_cifar10.py": "7a2b47ddb2d0ed4ef0cf9b347cd1a1ebc47cf9deeb07e2e6f474b48210b14a81",
+    "dit_cifar10.py": "38c6af44bdc984a841321d94613cf6e71aa3f5dbf6c6d5b1d69777ec9ac4ed0c",
+    "train_cifar10.py": "963c549407067a047078e26c2d48d7dba1d6006874ada901763dea5f8b208423",
+    "vit.py": "0524dc8f4d8992ae987033ff90678eb5a4ffb5933812291efe37ae42b829a384",
+    "conditioning.py": "0a3d509682e27ebe6086385a1978ffe6466f7b848d8f8e9c3df97a1476c78962",
+    "condlr.py": "a691847e065627117ec36eac8c8a5cfe615fa6994879c5a88f3f533347fb4fa4",
+    "class_fidelity.py": "a182e2c231f1321ea30a01ca4901758cea6848bc1bb8e8dc857b0881704ab95f",
+    "vit_initialization.py": "59e20b50e78373a364b325b589f10526d85cb276b8ae3bfc42fe5bdb8a5921bd",
+    "structured_operators.py": "dbe87df0ae75c83b2ebf291e91b9a4aa4f108cdfaa0453585064a79a8a6fba8d",
+    "dit_quality_diagnostics.py": "b3ffd3efff9313de4d9f2c6ee58824cd17114401fc4db290379b231ba3cd2310",
+    "benchmark_dit_design.py": "e87820014cf680c940be3f34b72c806265cf9c009308a0f2323789dfa2abccc6"
+  },
+  "quality_audit_pending": true
+}

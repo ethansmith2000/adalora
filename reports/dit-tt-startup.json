@@ -1,0 +1,84 @@
+{
+  "output": "/workspace/adalora/runs/dit-tt-20261017T045056Z",
+  "state": "quality",
+  "started_utc": "2026-10-17T04:51:56.748046+00:00",
+  "cpu_validation": {
+    "verified_utc": "2026-10-17T04:51:37.273329+00:00",
+    "runner": "/workspace/adalora/runs/dit-tt-20261017T045056Z/runner",
+    "workspace_tests": "109 passed",
+    "frozen_tests_log_sha256": "6399e9b68f6be136bd2064b669493da3398b0aaf44ce798705159491338ae0d9",
+    "planned_configs_validated": 30,
+    "quality_initial_models_validated": 24,
+    "frozen_source_files": 47,
+    "unchanged_reference_files": 39,
+    "exact_configs_statistics_optimizer_ownership_and_lrs": true,
+    "paired_base_and_within_design_rate_initialization": true,
+    "runtime_matches_completed_reference": {
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "torchvision": "0.26.0+cu128",
+        "diffusers": "0.40.0",
+        "datasets": "5.0.1",
+        "torchmetrics": "1.9.0",
+        "torch-fidelity": "0.4.0"
+      },
+      "cuda_wheel": "12.8"
+    },
+    "dynamic_cpu_fullgraph_trace": {
+      "operator": "TT11",
+      "batches": [
+        2,
+        3
+      ],
+      "nonzero_branch": true,
+      "bf16_forward_and_backward": true,
+      "backend": "eager",
+      "cuda_inductor_preflight_required": true
+    },
+    "no_cuda_context": true,
+    "disk_free_bytes": 313697792000,
+    "artifact_policy": {
+      "expected_bound_bytes": 4294967296,
+      "no_weights_or_checkpoints": true
+    }
+  },
+  "planned_runs": {
+    "preflight": 6,
+    "quality": 24
+  },
+  "max_concurrent_workers": 2,
+  "weights_saved": false,
+  "quality_gated_on_compiled_preflight": true,
+  "verified_utc": "2026-10-17T04:58:39.089361+00:00",
+  "preflight_independent_replay": true,
+  "last_progress": {
+    "event": "stage_progress",
+    "utc": "2026-10-17T04:58:29.617070+00:00",
+    "stage": "quality",
+    "completed": 0,
+    "submitted": 2,
+    "total": 24,
+    "active": 2
+  },
+  "active_claims": [
+    {
+      "pid": 745245,
+      "owner": "adalora",
+      "job": "optimizer_cfg_dit_tt_20261017T045056Z_quality_square_block16_a2_s131",
+      "uuid": "GPU-55fc0669-93bd-9223-674d-212086d4258b",
+      "index": 3,
+      "started": "2026-10-17T04:58:03Z",
+      "locker": "gpu-claim"
+    },
+    {
+      "pid": 745272,
+      "owner": "adalora",
+      "job": "optimizer_cfg_dit_tt_20261017T045056Z_quality_square_tt6_a1_s130",
+      "uuid": "GPU-0d8515c7-fc33-c2b3-7e6e-48791efad78d",
+      "index": 4,
+      "started": "2026-10-17T04:58:06Z",
+      "locker": "gpu-claim"
+    }
+  ],
+  "quality_final_audit_pending": true
+}
